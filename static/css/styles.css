@@ -1,0 +1,33 @@
+/*Fuentes*/
+.poppins{
+	font-family: 'Poppins', sans-serif !important;
+}
+.monserrat{
+	font-family: 'Montserrat', sans-serif !important;
+}
+.tam-fuente{
+	font-size: 23px !important;
+}
+.tamfuente26{
+	font-size: 26px !important;
+}
+.tamfuente22{
+	font-size: 22px !important;
+}
+.main_contenededor{
+	min-height: 100vh;
+	height: 100%
+}
+.aligncenter{
+	text-align: center;
+}
+.textblack{color: #141d28!important;}
+
+.nav-link{color: #141d28!important;}
+.search-bar{
+	position: initial!important;
+	margin: auto;
+	display: block;
+	margin-bottom: 10px;
+	max-width: 900px;
+}
