@@ -25,7 +25,7 @@ SECRET_KEY = 'syad(=k^9n9a2l-n$vmlkmteb!+91z4%f1n6u!6rmd1-opj*!z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['34.233.135.60']
 
 
 # Application definition
@@ -125,4 +125,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static/"),
 )
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
+
