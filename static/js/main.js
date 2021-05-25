@@ -14,7 +14,7 @@ function prueba(){
 	  redirect: 'follow'
 	};
 
-	fetch("34.233.135.60/api/boleta/12345", requestOptions)
+	fetch("api/boleta/12345", requestOptions)
 	  .then(response => response.text())
 	  .then(result => console.log(result))
 	  .catch(error => console.log('error', error));
