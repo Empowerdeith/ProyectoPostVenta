@@ -22,13 +22,14 @@ function mostrarBoleta(data){
 	var region = document.getElementById("region");
 	var ciudad = document.getElementById("ciudad");
 	var direccion = document.getElementById("direccion");
+	var fecha_formato =dateFormat(Date.parse(data.date_ordered), "yyyy, mm, dd");
 
 	numero_bol.innerHTML = data.numero_boleta;
 	comprador.innerHTML = data.Comprador;
-	fecha.innerHTML = data.numero_boleta;
-	producto.innerHTML =  data.date_ordered;
-	cantidad.innerHTML = data.producto;
-	total.innerHTML = data.cantidad;
+	fecha.innerHTML = fecha_formato;
+	producto.innerHTML =  data.producto;
+	cantidad.innerHTML = data.cantidad;
+	total.innerHTML = data.total;
 	region.innerHTML =  data.region;
 	ciudad.innerHTML = data.ciudad;
 	direccion.innerHTML =  data.direccion;
