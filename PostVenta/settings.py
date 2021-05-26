@@ -25,7 +25,7 @@ SECRET_KEY = 'syad(=k^9n9a2l-n$vmlkmteb!+91z4%f1n6u!6rmd1-opj*!z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['34.233.135.60']
+ALLOWED_HOSTS = ['18.207.25.202','127.0.0.1','localhost']
 
 
 # Application definition
