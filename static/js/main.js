@@ -15,13 +15,13 @@ function mostrarBoleta(data){
 		
 	//}
 }
-//mostrarBoleta(data)
+//console.log(data)
 function prueba(){
 	var buscar1 = document.getElementById('id_buscar').value.toString();
 	let url="http://18.207.25.202/api/boleta/"+buscar1
 	fetch(url)
 	.then(response => response.json())
-	.then(data => console.log(data))
+	.then(data => mostrarBoleta(data))
 	.catch(error => console.log(error))
 }
 
