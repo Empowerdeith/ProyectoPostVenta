@@ -5,7 +5,7 @@ function prueba(){
 		.then(data => console.log(data))
 		.catch(error => console.log(error))*/
 
-	/*var buscar1 = document.getElementById('id_buscar').value.toString();*/
+	var buscar1 = document.getElementById('id_buscar').value.toString();
 	//var formdata = new FormData();
 
 	var requestOptions = {
@@ -14,7 +14,7 @@ function prueba(){
 	  redirect: 'follow'
 	};
 
-	fetch("http://34.233.135.60/api/boleta/12345", requestOptions)
+	fetch("http://34.233.135.60/api/boleta/"+buscar1, requestOptions)
 	  .then(response => response.text())
 	  .then(result => console.log(result))
 	  .catch(error => console.log('error', error));
