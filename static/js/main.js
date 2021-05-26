@@ -1,16 +1,19 @@
 function mostrarBoleta(data){
 	var mainContainer = document.getElementById("myData");
-  	for (var i = 0; i < data.length; i++) {
-		var div = document.createElement("div");
-		div.innerHTML = 'Id: ' + data[i].id;
+	var div = document.createElement("div");
+	div.innerHTML = 'Id: ' + data[0].id;
+	mainContainer.appendChild(div);
+  	/*for (var i = 0; i < data.length; i++) {
+		var div = document.createElement("div");*/
+		
 		//console.log(data[i].numero_boleta.value);
 		/*div.innerHTML = 'Número Boleta: ' + data[i].numero_boleta.value;
 		div.innerHTML = 'Comprador: ' + data[i].Comprador;
 		div.innerHTML = 'Producto: ' + data[i].producto;
 		div.innerHTML = 'Cantidad: ' + data[i].cantidad;
 		div.innerHTML = 'Total: ' + data[i].total;*/
-		mainContainer.appendChild(div);
-	}
+		
+	//}
 }
 //mostrarBoleta(data)
 function prueba(){
