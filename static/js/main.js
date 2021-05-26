@@ -17,10 +17,9 @@ function prueba(){
 	var buscar1 = document.getElementById('id_buscar').value.toString();
 	let url="http://34.233.135.60/api/boleta/"+buscar1
 	fetch(url)
-		.then(response => response.json())
-		.then(data => console.log(JSON.parse(data))
-		.catch(error => console.log(error))
-
+	.then(response => response.json())
+	.then(data => console.log(JSON.parse(data)))
+	.catch(error => console.log(error))
 }
 /*function prueba(){
 	var buscar1 = document.getElementById('id_buscar').value.toString();
