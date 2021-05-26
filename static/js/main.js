@@ -2,7 +2,7 @@ function mostrarBoleta(data){
 	console.log(data);
 	var mainContainer = document.getElementById("myData");
 	var div = document.createElement("div");
-	div.innerHTML = 'Id: ' + data[0].id.value;
+	div.innerHTML = 'Id: ' + data.id;
 	mainContainer.appendChild(div);
 }
 //console.log(data)
