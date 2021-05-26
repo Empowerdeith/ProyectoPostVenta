@@ -22,11 +22,23 @@ function mostrarBoleta(data){
 	var region = document.getElementById("region");
 	var ciudad = document.getElementById("ciudad");
 	var direccion = document.getElementById("direccion");
-	var fecha_formato =data.date_ordered.format('dd-mm-yy');
+	//Tratamiento de fechas
+	var fecha_formato =data.date_ordered.toString();
+	var fecha_obtenida = new Date(fecha_formato);
+	var dia = fecha_obtenida.getDay();
+	var mes = fecha_obtenida.getMonth();
+	var annio = fecha_obtenida.getYear();
 	console.log(fecha_formato)
+	console.log(fecha_obtenida)
+	console.log(dia)
+	console.log(mes)
+	console.log(annio)
+
+	
+	
 	numero_bol.innerHTML = data.numero_boleta;
 	comprador.innerHTML = data.Comprador;
-	fecha.innerHTML = fecha_formato;
+	fecha.innerHTML = data.date_ordered;
 	producto.innerHTML =  data.producto;
 	cantidad.innerHTML = data.cantidad;
 	total.innerHTML = data.total;
