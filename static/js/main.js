@@ -13,7 +13,7 @@
 
 
 
-function prueba(){
+/*function prueba(){
 	var buscar1 = document.getElementById('id_buscar').value.toString();
 	let url="http://34.233.135.60/api/boleta/"+buscar1
 	fetch(url)
@@ -21,6 +21,20 @@ function prueba(){
 		.then(data => mostrarBoleta(data))
 		.catch(error => console.log(error))
 
+}*/
+function prueba(){
+	var buscar1 = document.getElementById('id_buscar').value.toString();
+	let url="http://34.233.135.60/api/boleta/"+buscar1
+	fetch(url)
+	.then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                mostrarBoleta(data);
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
 }
 
 function mostrarBoleta(data){
