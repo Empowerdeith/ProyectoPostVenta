@@ -1,13 +1,13 @@
 function mostrarBoleta(data){
 	var mainContainer = document.getElementById("myData");
 	var div = document.createElement("div");
-	div.innerHTML = 'Id: ' + data.id;
-	div.innerHTML += 'Número Boleta: ' + data.numero_boleta.value;
-	div.innerHTML += 'Comprador: ' + data.Comprador;
-	div.innerHTML += 'Fecha de orden: ' + data.date_ordered;
-	div.innerHTML += 'Producto: ' + data.producto;
-	div.innerHTML += 'Cantidad: ' + data.cantidad;
-	div.innerHTML += 'Total: ' + data.total;
+	div.innerHTML = 'Id: ' + data.id+'<br>';
+	div.innerHTML += 'Número Boleta: ' + data.numero_boleta.value+'<br>';
+	div.innerHTML += 'Comprador: ' + data.Comprador+'<br>';
+	div.innerHTML += 'Fecha de orden: ' + data.date_ordered+'<br>';
+	div.innerHTML += 'Producto: ' + data.producto+'<br>';
+	div.innerHTML += 'Cantidad: ' + data.cantidad+'<br>';
+	div.innerHTML += 'Total: ' + data.total+'<br>';
 	mainContainer.appendChild(div);
 }
 //console.log(data)
