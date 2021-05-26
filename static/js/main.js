@@ -27,7 +27,7 @@ function mostrarBoleta(data){
 	var fecha_obtenida = new Date(fecha_formato);
 	var dia = fecha_obtenida.getDay();
 	var mes = fecha_obtenida.getMonth();
-	var annio = fecha_obtenida.getYear();
+	var annio = fecha_obtenida.getFullYear();
 	console.log(fecha_formato)
 	console.log(fecha_obtenida)
 	console.log(dia)
