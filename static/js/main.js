@@ -12,13 +12,13 @@ function mostrarBoleta(data){
 		mainContainer.appendChild(div);
 	}
 }
-
+//mostrarBoleta(data)
 function prueba(){
 	var buscar1 = document.getElementById('id_buscar').value.toString();
 	let url="http://18.207.25.202/api/boleta/"+buscar1
 	fetch(url)
 	.then(response => response.json())
-	.then(data => mostrarBoleta(data))
+	.then(data => console.log(data))
 	.catch(error => console.log(error))
 }
 
