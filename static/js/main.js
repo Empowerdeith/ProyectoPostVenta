@@ -22,8 +22,8 @@ function mostrarBoleta(data){
 	var region = document.getElementById("region");
 	var ciudad = document.getElementById("ciudad");
 	var direccion = document.getElementById("direccion");
-	var fecha_formato =dateFormat(Date.parse(data.date_ordered), "yyyy, mm, dd");
-
+	var fecha_formato =Date.parse(data.date_ordered);
+	console.log(fecha_formato)
 	numero_bol.innerHTML = data.numero_boleta;
 	comprador.innerHTML = data.Comprador;
 	fecha.innerHTML = fecha_formato;
