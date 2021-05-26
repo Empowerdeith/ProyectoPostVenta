@@ -1,4 +1,4 @@
-function mostrarBoleta(data){
+/*function mostrarBoleta(data){
 	var mainContainer = document.getElementById("myData");
 	var div = document.createElement("div");
 	div.innerHTML = 'Número Boleta: ' + data.numero_boleta+'<br>';
@@ -11,6 +11,27 @@ function mostrarBoleta(data){
 	div.innerHTML += 'Ciudad: ' + data.ciudad+'<br>';
 	div.innerHTML += 'Dirección: ' + data.direccion+'<br>';
 	mainContainer.appendChild(div);
+}*/
+function mostrarBoleta(data){
+	var numero_bol = document.getElementById("numero_bol");
+	var comprador = document.getElementById("comprador");
+	var fecha = document.getElementById("fecha");
+	var producto = document.getElementById("producto");
+	var cantidad = document.getElementById("cantidad");
+	var total = document.getElementById("total");
+	var region = document.getElementById("region");
+	var ciudad = document.getElementById("ciudad");
+	var direccion = document.getElementById("direccion");
+
+	numero_bol.innerHTML = data.numero_boleta;
+	comprador.innerHTML = data.Comprador;
+	fecha.innerHTML = data.numero_boleta;
+	producto.innerHTML =  data.date_ordered;
+	cantidad.innerHTML = data.producto;
+	total.innerHTML = data.cantidad;
+	region.innerHTML =  data.region;
+	ciudad.innerHTML = data.ciudad;
+	direccion.innerHTML =  data.direccion;
 }
 //console.log(data)
 function prueba(){

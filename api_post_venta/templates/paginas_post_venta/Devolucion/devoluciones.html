@@ -5,12 +5,41 @@
 	<br><br><br>
 	<h1 class="aligncenter">Proceso de Devolución de Productos.</h1>
 	<br><br>
-	<div class="search-bar mt-sm-2 ">
-			<input type="text" class="form-control tamfuente22" name="q" id="id_buscar" placeholder="Busca su boleta aquí...">
+	<div class="search-bar mt-sm-2">
+			<input type="text" class="form-control tamfuente22" name="q" id="id_buscar" placeholder="Escriba el Id de Transacción aquí...">
 			<button class="btn btn-lg btn-primary btn-block" onclick="prueba()" id="bton_buscar2" type="button">Buscar</button>
-			<div id="myData"></div>
+			<div id="myData">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Número Boleta</th>
+							<th scope="col">Comprador</th>
+							<th scope="col">Fecha de orden</th>
+							<th scope="col">Producto</th>
+							<th scope="col">Cantidad</th>
+							<th scope="col">Total</th>
+							<th scope="col">Región</th>
+							<th scope="col">Ciudad</th>
+							<th scope="col">Dirección</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">1</th>
+							<td id="numero_bol"></td>
+							<td id="comprador"></td>
+							<td id="fecha"></td>
+							<td id="producto"></td>
+							<td id="cantidad"></td>
+							<td id="total"></td>
+							<td id="region"></td>
+							<td id="ciudad"></td>
+							<td id="direccion"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 	</div>
-	
-
 </div>
 {% endblock contenido %}
