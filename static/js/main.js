@@ -18,16 +18,21 @@ function prueba(){
 	let url="http://34.233.135.60/api/boleta/"+buscar1
 	fetch(url)
 		.then(response => response.json())
-		.then(data => console.log(data))
+		.then(data => mostrarBoleta(data))
 		.catch(error => console.log(error))
 
 }
-/*function appendData(data) {
-  var mainContainer = document.getElementById("myData");
-  for (var i = 0; i < data.length; i++) {
-    var div = document.createElement("div");
-    div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
-    mainContainer.appendChild(div);
-  }
-}*/	
-/**/
+
+function mostrarBoleta(data){
+	var mainContainer = document.getElementById("myData");
+  	for (var i = 0; i < data.length; i++) {
+		var div = document.createElement("div");
+		//div.innerHTML = 'Id: ' + data[i].id;
+		div.innerHTML = 'Número Boleta: ' + data[i].numero_boleta;
+		div.innerHTML = 'Comprador: ' + data[i].Comprador;
+		div.innerHTML = 'Producto: ' + data[i].producto;
+		div.innerHTML = 'Cantidad: ' + data[i].cantidad;
+		div.innerHTML = 'Total: ' + data[i].total;
+		mainContainer.appendChild(div);
+	}
+}
