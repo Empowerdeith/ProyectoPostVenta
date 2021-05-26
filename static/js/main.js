@@ -15,7 +15,7 @@ function mostrarBoleta(data){
 //console.log(data)
 function prueba(){
 	var buscar1 = document.getElementById('id_buscar').value.toString();
-	if(buscar1 != null || buscar1 != ""){
+	if(buscar1 != null || buscar1 != ""|| buscar1!="Escriba el Id de Transacción aquí..."){
 		let url="http://18.207.25.202/api/boleta/"+buscar1
 		fetch(url)
 		.then(response => response.json())
