@@ -34,15 +34,15 @@ function mostrarBoleta(data){
 	var mes = fecha_obtenida.getMonth()+1;
 	var annio = fecha_obtenida.getFullYear();
 	var full_fecha= dia+"/"+mes+"/"+annio;
-	numero_bol.innerHTML = data.numero_boleta;
-	comprador.innerHTML = data.Comprador;
-	fecha.innerHTML = full_fecha;
-	producto.innerHTML =  data.producto;
-	cantidad.innerHTML = data.cantidad;
-	total.innerHTML = data.total;
-	region.innerHTML =  data.region;
-	ciudad.innerHTML = data.ciudad;
-	direccion.innerHTML =  data.direccion;
+	numero_bol.html() = data.numero_boleta;
+	comprador.html() = data.Comprador;
+	fecha.html() = full_fecha;
+	producto.html() =  data.producto;
+	cantidad.html() = data.cantidad;
+	total.html() = data.total;
+	region.html() =  data.region;
+	ciudad.html() = data.ciudad;
+	direccion.html() =  data.direccion;
 }
 Object.prototype.isEmpty = function () {
     return Object.keys(this).length == 0;
