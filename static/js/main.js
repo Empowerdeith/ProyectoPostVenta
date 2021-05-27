@@ -18,9 +18,11 @@ function hide_table() {
 setTimeout(hide_table, 40);
 function mostrarBoleta(data){
 	if (data == "No existe la boleta ingresada."){
-		window.alert(data);
+		hide_table()
+		$("#error_msg").text(data);
 	}
 	else{
+		$("#error_msg").text("");
 		$( "#myData" ).show();
 		var numero_bol = $("#numero_bol");
 		var comprador = $("#comprador");
@@ -63,6 +65,7 @@ function prueba(){
 		.catch(error => console.log(error))
 	}
 	else{
-		window.alert("Debe ingresar un número de transacción.");
+		hide_table()
+		$("#error_msg").text("Debe ingresar un número de transacción.");
 	}
 }

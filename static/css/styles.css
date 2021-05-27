@@ -35,3 +35,6 @@
 	display: inline-block!important;
 	width: calc( 100% - 107px )!important;
 }
+#error_msg{
+	color: red;
+}
