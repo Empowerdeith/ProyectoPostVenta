@@ -32,6 +32,6 @@
 	max-width: 900px;
 }
 .form-control{
-	display: inline-block;
-	width: calc( 100% - 104px );
+	display: inline-block!important;
+	width: calc( 100% - 104px )!important;
 }
