@@ -48,7 +48,7 @@ Object.prototype.isEmpty = function () {
     return Object.keys(this).length == 0;
 }
 function prueba(){
-	var buscar1 = $('#id_buscar').value().toString();
+	var buscar1 = $('#id_buscar').val().toString();
 	// console.log(buscar1);
 	if(!buscar1.isEmpty()){
 		let url="http://18.207.25.202/api/boleta/"+buscar1
