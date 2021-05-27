@@ -39,10 +39,13 @@ function mostrarBoleta(data){
 	ciudad.innerHTML = data.ciudad;
 	direccion.innerHTML =  data.direccion;
 }
+Object.prototype.isEmpty = function () {
+    return Object.keys(this).length == 0;
+}
 function prueba(){
 	var buscar1 = document.getElementById('id_buscar').value.toString();
 	console.log(buscar1);
-	if(buscar1 != null || buscar1 != ""|| buscar1!="Escriba el Id de Transacción aquí..."){
+	if(!buscar1.isEmpty()){
 		let url="http://18.207.25.202/api/boleta/"+buscar1
 		fetch(url)
 		.then(response => response.json())
