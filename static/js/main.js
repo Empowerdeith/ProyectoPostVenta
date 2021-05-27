@@ -12,6 +12,11 @@
 	div.innerHTML += 'Dirección: ' + data.direccion+'<br>';
 	mainContainer.appendChild(div);
 }*/
+Date.prototype.formatMMDDYYYY = function(){
+    return (this.getMonth() + 1) + 
+    "/" +  this.getDate() +
+    "/" +  this.getFullYear();
+}
 function mostrarBoleta(data){
 	var numero_bol = document.getElementById("numero_bol");
 	var comprador = document.getElementById("comprador");
@@ -23,9 +28,10 @@ function mostrarBoleta(data){
 	var ciudad = document.getElementById("ciudad");
 	var direccion = document.getElementById("direccion");
 	//Tratamiento de fechas
+	var test =data.date_ordered.toString().formatMMDDYYYY();
 	var fecha_formato =data.date_ordered.toString();
 	var fecha_obtenida = new Date(fecha_formato);
-	var dia = fecha_obtenida.getDay();
+	var dia = fecha_obtenida.getDate();
 	var mes = fecha_obtenida.getMonth();
 	var annio = fecha_obtenida.getFullYear();
 	console.log(fecha_formato)
@@ -33,7 +39,7 @@ function mostrarBoleta(data){
 	console.log(dia)
 	console.log(mes)
 	console.log(annio)
-
+	console.log(test)
 	
 	
 	numero_bol.innerHTML = data.numero_boleta;
