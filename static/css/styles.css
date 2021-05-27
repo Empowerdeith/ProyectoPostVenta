@@ -31,3 +31,7 @@
 	margin-bottom: 10px;
 	max-width: 900px;
 }
+.form-control{
+	display: inline-block;
+	width: calc( 100% - 104px );
+}
