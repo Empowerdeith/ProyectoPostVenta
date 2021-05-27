@@ -28,7 +28,7 @@ function mostrarBoleta(data){
 	var ciudad = document.getElementById("ciudad");
 	var direccion = document.getElementById("direccion");
 	//Tratamiento de fechas
-	var test =data.date_ordered.toString().formatMMDDYYYY();
+	var test =fecha_obtenida.formatMMDDYYYY();
 	var fecha_formato =data.date_ordered.toString();
 	var fecha_obtenida = new Date(fecha_formato);
 	var dia = fecha_obtenida.getDate();
