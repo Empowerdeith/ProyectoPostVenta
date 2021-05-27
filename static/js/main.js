@@ -12,7 +12,10 @@
 	div.innerHTML += 'Dirección: ' + data.direccion+'<br>';
 	mainContainer.appendChild(div);
 }*/
-setTimeout(function(){ $( "#myData" ).hide(); }, 40);
+function hide_table() {
+  $( "#myData" ).hide();
+}
+setTimeout(hide_table, 40);
 function mostrarBoleta(data){
 	var numero_bol = document.getElementById("numero_bol");
 	var comprador = document.getElementById("comprador");
