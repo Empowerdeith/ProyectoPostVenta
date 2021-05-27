@@ -1,5 +1,5 @@
 /*function mostrarBoleta(data){
-	var mainContainer = document.getElementById("myData");
+	var mainContainer = $("myData");
 	var div = document.createElement("div");
 	div.innerHTML = 'Número Boleta: ' + data.numero_boleta+'<br>';
 	div.innerHTML += 'Comprador: ' + data.Comprador+'<br>';
@@ -17,15 +17,16 @@ function hide_table() {
 }
 setTimeout(hide_table, 40);
 function mostrarBoleta(data){
-	var numero_bol = document.getElementById("numero_bol");
-	var comprador = document.getElementById("comprador");
-	var fecha = document.getElementById("fecha");
-	var producto = document.getElementById("producto");
-	var cantidad = document.getElementById("cantidad");
-	var total = document.getElementById("total");
-	var region = document.getElementById("region");
-	var ciudad = document.getElementById("ciudad");
-	var direccion = document.getElementById("direccion");
+	$( "#myData" ).show();
+	var numero_bol = $("#numero_bol");
+	var comprador = $("#comprador");
+	var fecha = $("#fecha");
+	var producto = $("#producto");
+	var cantidad = $("#cantidad");
+	var total = $("#total");
+	var region = $("#region");
+	var ciudad = $("#ciudad");
+	var direccion = $("#direccion");
 	//Tratamiento de fechas
 	var fecha_formato =data.date_ordered.toString();
 	var fecha_obtenida = new Date(fecha_formato);
@@ -47,7 +48,7 @@ Object.prototype.isEmpty = function () {
     return Object.keys(this).length == 0;
 }
 function prueba(){
-	var buscar1 = document.getElementById('id_buscar').value.toString();
+	var buscar1 = $('#id_buscar').value().toString();
 	// console.log(buscar1);
 	if(!buscar1.isEmpty()){
 		let url="http://18.207.25.202/api/boleta/"+buscar1
