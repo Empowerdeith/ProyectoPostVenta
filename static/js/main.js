@@ -34,13 +34,12 @@ function mostrarBoleta(data){
 	console.log(dia)
 	console.log(mes)
 	console.log(annio)
-	console.log(test)
 	console.log(full_fecha)
 	
 	
 	numero_bol.innerHTML = data.numero_boleta;
 	comprador.innerHTML = data.Comprador;
-	fecha.innerHTML = data.date_ordered;
+	fecha.innerHTML = full_fecha;
 	producto.innerHTML =  data.producto;
 	cantidad.innerHTML = data.cantidad;
 	total.innerHTML = data.total;
