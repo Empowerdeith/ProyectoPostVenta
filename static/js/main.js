@@ -17,8 +17,8 @@ function hide_table() {
 }
 setTimeout(hide_table, 40);
 function mostrarBoleta(data){
-	if (response == "No existe la boleta ingresada."){
-		window.alert(response);
+	if (data == "No existe la boleta ingresada."){
+		window.alert(data);
 	}
 	else{
 		$( "#myData" ).show();
