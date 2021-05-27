@@ -44,7 +44,7 @@ Object.prototype.isEmpty = function () {
 }
 function prueba(){
 	var buscar1 = document.getElementById('id_buscar').value.toString();
-	console.log(buscar1);
+	//console.log(buscar1);
 	if(!buscar1.isEmpty()){
 		let url="http://18.207.25.202/api/boleta/"+buscar1
 		fetch(url)
