@@ -29,14 +29,6 @@ function mostrarBoleta(data){
 	var mes = fecha_obtenida.getMonth()+1;
 	var annio = fecha_obtenida.getFullYear();
 	var full_fecha= dia+"/"+mes+"/"+annio;
-	console.log(fecha_formato)
-	console.log(fecha_obtenida)
-	console.log(dia)
-	console.log(mes)
-	console.log(annio)
-	console.log(full_fecha)
-	
-	
 	numero_bol.innerHTML = data.numero_boleta;
 	comprador.innerHTML = data.Comprador;
 	fecha.innerHTML = full_fecha;
@@ -47,9 +39,9 @@ function mostrarBoleta(data){
 	ciudad.innerHTML = data.ciudad;
 	direccion.innerHTML =  data.direccion;
 }
-//console.log(data)
 function prueba(){
 	var buscar1 = document.getElementById('id_buscar').value.toString();
+	console.log(buscar1);
 	if(buscar1 != null || buscar1 != ""|| buscar1!="Escriba el Id de Transacción aquí..."){
 		let url="http://18.207.25.202/api/boleta/"+buscar1
 		fetch(url)
