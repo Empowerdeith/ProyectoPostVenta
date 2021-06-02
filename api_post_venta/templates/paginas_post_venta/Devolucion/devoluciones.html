@@ -39,11 +39,10 @@
 						</tr>
 					</tbody>
 				</table>
-				<table class="table table-striped dt-responsive nowrap table-bordered">
+				<table class="table table-striped dt-responsive nowrap table-bordered" id="table_checkbox">
 					<thead>
 						<tr>
-							<th scope="col">Select</th>
-							<th scope="col">Select 2</th>		
+							<th scope="col">Select</th>		
 							<th scope="col">Número Boleta</th>
 							<th scope="col">Comprador</th>
 							<th scope="col">Fecha de orden</th>
@@ -87,8 +86,8 @@
 
 					</tbody>
 				</table>
-				<button>Unselect all</button>
-				<button>Select all</button>
+				<button onclick="unselectall()">Unselect all</button>
+				<button onclick="selectall()">Select all</button>
 			</div>
 	</div>
 </div>
