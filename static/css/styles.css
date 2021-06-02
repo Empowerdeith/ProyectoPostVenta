@@ -23,7 +23,7 @@
 }
 .textblack{color: #141d28!important;}
 
-.nav-link{color: #141d28!important;}
+.nav-link{color: #abb5c7!important;}
 .search-bar{
 	position: initial!important;
 	margin: auto;
@@ -60,4 +60,6 @@ a{
 }
 #header_container{
 	background-color: black!important;
+	padding-left: 32px!important;
+    padding-right: 32px!important;
 }
