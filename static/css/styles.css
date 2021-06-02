@@ -44,7 +44,9 @@ footer{
 
 }
 .flexcontainer{
-	text-decoration: none;
 	color: white;
 	font-size: larger;
+}
+.nodecoration{
+	text-decoration: none!important;
 }
