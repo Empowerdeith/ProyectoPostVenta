@@ -69,9 +69,9 @@ function prueba(){
 		$("#error_msg").html("<br><br>Debe ingresar un número de transacción.");
 	}
 }
-function selectall{
+function selectall(){
 	$( "#table_checkbox").find( "input" ).prop('checked', true);
 }
-function unselectall{
+function unselectall(){
 	$( "#table_checkbox").find( "input" ).prop('checked', false);
 }
