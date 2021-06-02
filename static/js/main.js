@@ -1,17 +1,3 @@
-/*function mostrarBoleta(data){
-	var mainContainer = $("myData");
-	var div = document.createElement("div");
-	div.innerHTML = 'Número Boleta: ' + data.numero_boleta+'<br>';
-	div.innerHTML += 'Comprador: ' + data.Comprador+'<br>';
-	div.innerHTML += 'Fecha de orden: ' + data.date_ordered+'<br>';
-	div.innerHTML += 'Producto: ' + data.producto+'<br>';
-	div.innerHTML += 'Cantidad: ' + data.cantidad+'<br>';
-	div.innerHTML += 'Total: ' + data.total+'<br>';
-	div.innerHTML += 'Región: ' + data.region+'<br>';
-	div.innerHTML += 'Ciudad: ' + data.ciudad+'<br>';
-	div.innerHTML += 'Dirección: ' + data.direccion+'<br>';
-	mainContainer.appendChild(div);
-}*/
 function hide_table() {
   $( "#myData" ).hide();
 }

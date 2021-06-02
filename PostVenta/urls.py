@@ -3,6 +3,7 @@ from django.urls import path, include
 from api_post_venta.views import(
     home,
 	devoluciones1,
+	cuenta,
 	)
 
 urlpatterns = [
@@ -10,5 +11,6 @@ urlpatterns = [
     path('', home, name="home"),
     path('devolucion/', devoluciones1, name="devolucion"),
     path('api/', include('api_post_venta.api.urls'), name= "api_web"),
+    path('cuenta/', cuenta, name="cuenta"),
 ]
 
