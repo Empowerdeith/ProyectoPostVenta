@@ -40,6 +40,11 @@
 }
 footer{
 	text-align: center;
-	
+	background-color: black;
 
+}
+.flexcontainer{
+	text-decoration: none;
+	color: white;
+	font-size: larger;
 }
