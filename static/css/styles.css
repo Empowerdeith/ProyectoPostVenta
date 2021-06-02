@@ -50,3 +50,7 @@ footer{
 .nodecoration{
 	text-decoration: none!important;
 }
+a{
+	text-decoration: none!important;
+	color: white;
+}
