@@ -22,7 +22,9 @@
 	text-align: center;
 }
 .textblack{color: #141d28!important;}
-
+.text-light-grey{
+	color: #abb5c7!important;
+}
 .nav-link{color: #abb5c7!important;}
 .search-bar{
 	position: initial!important;
