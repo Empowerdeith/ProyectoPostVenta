@@ -97,3 +97,8 @@ margin-bottom: 15px;
 border-top-left-radius: 0;
 border-top-right-radius: 0;
 }
+#bton_login{
+	max-width: 400px!important;
+	background-color: #181a1d!important;
+	border-color: #181a1d!important;
+}
