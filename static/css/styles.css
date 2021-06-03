@@ -69,36 +69,41 @@ a{
 					LOGIN DE BOOTSTRAP
 ---------------------------------------------------------*/
 .form-signin .checkbox {
-font-weight: 400;
+	font-weight: 400;
 }
 .form-signin {
-width: 100%;
-max-width: 400px;
-padding: 15px;
-margin: auto;
+	width: 100%;
+	max-width: 400px;
+	padding: 15px;
+	margin: auto;
 }
 .form-signin .form-control {
-position: relative;
-box-sizing: border-box;
-height: auto;
-padding: 10px;
-font-size: 16px;
+	position: relative;
+	box-sizing: border-box;
+	height: auto;
+	padding: 10px;
+	font-size: 16px;
 }
 .form-signin .form-control:focus {
 z-index: 2;
 }
 .form-signin input[type="email"] {
-margin-bottom: 15px;
-border-bottom-right-radius: 0;
-border-bottom-left-radius: 0;
+	margin-bottom: 15px;
+	width: 330px!important;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
 }
 .form-signin input[type="password"] {
-margin-bottom: 15px;
-border-top-left-radius: 0;
-border-top-right-radius: 0;
+	margin-bottom: 15px;
+	width: 330px!important;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
 }
 #bton_login{
-	max-width: 400px!important;
+	width: 330px!important;
 	background-color: #181a1d!important;
 	border-color: #181a1d!important;
+}
+#olvidar_pass{
+	color: #181a1d!important;
 }
