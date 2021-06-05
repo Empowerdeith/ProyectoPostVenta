@@ -21,6 +21,9 @@
 .aligncenter{
 	text-align: center;
 }
+.dark_black{
+	color: #181a1d!important;
+}
 .textblack{color: #141d28!important;}
 .text-light-grey{
 	color: #abb5c7!important;
