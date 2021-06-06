@@ -50,6 +50,8 @@ function mostrarBoleta(data){
 	for(let i = 0; i < data.boletas.length; i++){
 		content += "<tr><td><input id=\"checkbox_" +i+ "\" type=\"checkbox\">"+"</td>";
 		content += "<td>" + data.boletas[i].num_boleta + "</td>";
+		content += "<td>" + data.boletas[i].created_at + "</td>";
+		content += "<td>" + data.boletas[i].total + "</td>";
 		content += "</tr>";
 	}
 	$( "#table_checkbox").find( "tbody" ).html(content);
