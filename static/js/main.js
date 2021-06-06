@@ -41,6 +41,7 @@ Object.prototype.isEmpty = function () {
     return Object.keys(this).length == 0;
 }
 
+
 function prueba(){
 	var buscar1 = $('#id_buscar').val().toString();
 	// console.log(buscar1);
