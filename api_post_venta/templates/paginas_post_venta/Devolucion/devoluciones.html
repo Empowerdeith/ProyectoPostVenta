@@ -10,42 +10,75 @@
 		<button class="btn btn-lg btn-primary btn-block" onclick="prueba()" id="bton_buscar2" type="button">Buscar</button>
 		<div id="error_msg" class="aligncenter"></div>
 		<br><br>
-		<h2>Datos del Cliente</h2>
-		<br>
-		<table class="table table-striped dt-responsive nowrap table-bordered">
+		<div id="myData">
+			<h2>Datos del Cliente</h2>
+			<br>
+			<table class="table table-striped dt-responsive nowrap table-bordered">
+					<thead>
+						<tr>
+							<th scope="col">Rut</th>
+							<th scope="col">Nombre Cliente</th>
+							<th scope="col">Dirección</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td id="rut_p"></td>
+							<td id="nombre_cliente"></td>
+							<td id="direccion"></td>
+						</tr>
+					</tbody>
+			</table>
+			<br>
+			<h2>Seleccione su Boleta:</h2>
+			<br>
+			<table class="table table-striped dt-responsive nowrap table-bordered" id="table_checkbox">
 				<thead>
 					<tr>
-						<th scope="col">Rut</th>
-						<th scope="col">Nombre Cliente</th>
+						<th scope="col">#</th>	
+						<th scope="col">Número Boleta</th>
+						<th scope="col">Fecha</th>
+						<th scope="col">Total</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			<br>
+			<button onclick="selectall()">Seleccionar Todas</button>
+			<button onclick="unselectall()">Deseleccionar todas</button>
+			<button>Siguiente</button>
+			<br>
+			<table class="table table-striped dt-responsive nowrap table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Número Boleta</th>
+						<th scope="col">Comprador</th>
+						<th scope="col">Fecha de orden</th>
+						<th scope="col">Producto</th>
+						<th scope="col">Cantidad</th>
+						<th scope="col">Total</th>
+						<th scope="col">Región</th>
+						<th scope="col">Ciudad</th>
 						<th scope="col">Dirección</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td id="rut_p"></td>
-						<td id="nombre_cliente"></td>
+						<td id="numero_bol"></td>
+						<td id="comprador"></td>
+						<td id="fecha"></td>
+						<td id="producto"></td>
+						<td id="cantidad"></td>
+						<td id="total"></td>
+						<td id="region"></td>
+						<td id="ciudad"></td>
 						<td id="direccion"></td>
 					</tr>
 				</tbody>
-		</table>
-		<br>
-		<h2>Seleccione su Boleta:</h2>
-		<br>
-		<table class="table table-striped dt-responsive nowrap table-bordered" id="table_checkbox">
-			<thead>
-				<tr>
-					<th scope="col">#</th>	
-					<th scope="col">Número Boleta</th>
-					<th scope="col">Fecha</th>
-					<th scope="col">Total</th>
-				</tr>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>
-		<br>
-		<button onclick="selectall()">Seleccionar Todas</button>
-		<button onclick="unselectall()">Deseleccionar todas</button>
+			</table>
+		</div>
+
 		<!--<div id="myData">
 			<table class="table table-striped dt-responsive nowrap table-bordered">
 				<thead>
