@@ -40,9 +40,20 @@ setTimeout(hide_table, 40);
 Object.prototype.isEmpty = function () {
     return Object.keys(this).length == 0;
 }
-
-
 function prueba(){
+	var buscar1 = $('#id_buscar').val().toString();
+	var requestOptions = {
+	  method: 'GET',
+	  redirect: 'follow'
+	};
+
+fetch("http://3.83.24.216/Cliente/"+buscar1, requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+}
+
+/*function prueba(){
 	var buscar1 = $('#id_buscar').val().toString();
 	// console.log(buscar1);
 	if(!buscar1.isEmpty()){
@@ -57,7 +68,7 @@ function prueba(){
 		hide_table()
 		$("#error_msg").html("<br><br>Debe ingresar un número de transacción.");
 	}
-}
+}*/
 /*function prueba(){
 	var buscar1 = $('#id_buscar').val().toString();
 	// console.log(buscar1);
