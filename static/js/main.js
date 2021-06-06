@@ -37,8 +37,41 @@ setTimeout(hide_table, 40);
 		direccion.html(data.direccion);
 	}
 }*/
+
+function mostrarBoleta(data){
+	var rut_p = $("#rut_p");
+	var nombre_cliente = $("#nombre_cliente");
+	var direccion = $("#direccion");
+	rut_p.html(data.rut);
+	nombre_cliente.html(data.nombre_cl);
+	direccion.html(data.direccion);
+}
 Object.prototype.isEmpty = function () {
     return Object.keys(this).length == 0;
+}
+
+function prueba(){
+	var buscar1 = $('#id_buscar').val().toString();
+	// console.log(buscar1);
+	if(!buscar1.isEmpty()){
+		let url="http://3.83.24.216/Cliente/"+buscar1
+		fetch(url)
+		.then(response => response.json())
+		.then(data => mostrarBoleta(data))
+		.then(data => console.log(data))
+		.catch(error => console.log(error))
+	}
+	else{
+		hide_table()
+		$("#error_msg").html("<br><br>Debe ingresar un número de transacción.");
+	}
+}
+
+function selectall(){
+	$( "#table_checkbox").find( "input" ).prop('checked', true);
+}
+function unselectall(){
+	$( "#table_checkbox").find( "input" ).prop('checked', false);
 }
 /*function prueba(){
 	var buscar1 = $('#id_buscar').val().toString();
@@ -53,22 +86,6 @@ fetch("http://3.83.24.216/Cliente/"+buscar1, requestOptions)
   .catch(error => console.log('error', error));
 }
 */
-function prueba(){
-	var buscar1 = $('#id_buscar').val().toString();
-	// console.log(buscar1);
-	if(!buscar1.isEmpty()){
-		let url="http://3.83.24.216/Cliente/"+buscar1
-		fetch(url)
-		.then(response => response.json())
-		.then(data => console.log(data))
-		//.then(data => mostrarBoleta(data))
-		.catch(error => console.log(error))
-	}
-	else{
-		hide_table()
-		$("#error_msg").html("<br><br>Debe ingresar un número de transacción.");
-	}
-}
 /*function prueba(){
 	var buscar1 = $('#id_buscar').val().toString();
 	// console.log(buscar1);
@@ -84,9 +101,3 @@ function prueba(){
 		$("#error_msg").html("<br><br>Debe ingresar un número de transacción.");
 	}
 }*/
-function selectall(){
-	$( "#table_checkbox").find( "input" ).prop('checked', true);
-}
-function unselectall(){
-	$( "#table_checkbox").find( "input" ).prop('checked', false);
-}
