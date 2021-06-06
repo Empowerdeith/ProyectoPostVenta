@@ -28,7 +28,7 @@
 					</tr>
 				</tbody>
 		</table>
-		<br><br>
+		<br>
 		<h2>Seleccione su Boleta:</h2>
 		<br>
 		<table class="table table-striped dt-responsive nowrap table-bordered" id="table_checkbox">
@@ -44,23 +44,8 @@
 			</tbody>
 		</table>
 		<br>
-		<table class="table table-striped dt-responsive nowrap table-bordered" id="table_checkbox">
-			<thead>
-				<tr>
-					<th scope="col">#</th>	
-					<th scope="col">test</th>
-					<th scope="col">test</th>
-					<th scope="col">test</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						<input type="checkbox" id="check_1">
-					</td>	
-				</tr>
-			</tbody>
-		</table>
+		<button onclick="unselectall()">Deseleccionar todas</button>
+		<button onclick="selectall()">Seleccionar Todas</button>
 		<!--<div id="myData">
 			<table class="table table-striped dt-responsive nowrap table-bordered">
 				<thead>
@@ -137,8 +122,6 @@
 
 				</tbody>
 			</table>-->
-			<button onclick="unselectall()">Unselect all</button>
-			<button onclick="selectall()">Select all</button>
 		<!--</div>-->
 	</div>
 </div>
