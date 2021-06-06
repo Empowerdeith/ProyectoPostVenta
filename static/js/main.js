@@ -49,6 +49,7 @@ function mostrarBoleta(data){
 	var content = "";
 	for(let i = 0; i < data.boletas.length; i++){
 		content += "<tr><input id=\"checkbox_" +i+ "\" type=\"checkbox\">";
+		content += "</tr>";
 	}
 	$( "#table_checkbox").find( "tbody" ).html(content);
 }
