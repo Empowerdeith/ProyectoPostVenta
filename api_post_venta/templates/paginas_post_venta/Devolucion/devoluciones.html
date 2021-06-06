@@ -6,11 +6,12 @@
 	<h1 class="aligncenter">Proceso de Devolución de Productos.</h1>
 	<br><br>
 	<div class="search-bar mt-sm-2">
-		<h2>B</h2>
 		<input type="text" class="form-control tamfuente22" name="q" id="id_buscar" placeholder="Escriba el Id de Transacción aquí...">
 		<button class="btn btn-lg btn-primary btn-block" onclick="prueba()" id="bton_buscar2" type="button">Buscar</button>
 		<div id="error_msg" class="aligncenter"></div>
 		<br><br>
+		<h2>Datos del Cliente</h2>
+		<br>
 		<table class="table table-striped dt-responsive nowrap table-bordered">
 				<thead>
 					<tr>
@@ -26,6 +27,21 @@
 						<td id="direccion"></td>
 					</tr>
 				</tbody>
+		</table>
+		<br><br>
+		<h2>Seleccione su Boleta:</h2>
+		<br>
+		<table class="table table-striped dt-responsive nowrap table-bordered" id="table_checkbox">
+			<thead>
+				<tr>
+					<th scope="col">#</th>	
+					<th scope="col">Número Boleta</th>
+					<th scope="col">Fecha</th>
+					<th scope="col">Total</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
 		</table>
 		<!--<div id="myData">
 			<table class="table table-striped dt-responsive nowrap table-bordered">

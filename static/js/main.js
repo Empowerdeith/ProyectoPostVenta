@@ -45,6 +45,12 @@ function mostrarBoleta(data){
 	rut_p.html(data.rut);
 	nombre_cliente.html(data.nombre_cl);
 	direccion.html(data.direccion);
+	console.log(data.boletas.length);
+	var content = "";
+	for(let i = 0; i < data.boletas.length; i++){
+		content += "<tr><input id=\"checkbox_" +i+ "\" type=\"checkbox\">";
+	}
+	$( "#table_checkbox").find( "tbody" ).html(content);
 }
 Object.prototype.isEmpty = function () {
     return Object.keys(this).length == 0;
@@ -58,7 +64,6 @@ function prueba(){
 		fetch(url)
 		.then(response => response.json())
 		.then(data => mostrarBoleta(data))
-		.then(data => console.log(data))
 		.catch(error => console.log(error))
 	}
 	else{
