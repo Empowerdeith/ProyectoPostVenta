@@ -36,10 +36,10 @@ setTimeout(hide_table, 40);
 		ciudad.html(data.ciudad);
 		direccion.html(data.direccion);
 	}
-}
+}*/
 Object.prototype.isEmpty = function () {
     return Object.keys(this).length == 0;
-}*/
+}
 
 
 function prueba(){
