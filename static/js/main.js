@@ -40,7 +40,7 @@ setTimeout(hide_table, 40);
 Object.prototype.isEmpty = function () {
     return Object.keys(this).length == 0;
 }
-function prueba(){
+/*function prueba(){
 	var buscar1 = $('#id_buscar').val().toString();
 	var requestOptions = {
 	  method: 'GET',
@@ -52,8 +52,8 @@ fetch("http://3.83.24.216/Cliente/"+buscar1, requestOptions)
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
 }
-
-/*function prueba(){
+*/
+function prueba(){
 	var buscar1 = $('#id_buscar').val().toString();
 	// console.log(buscar1);
 	if(!buscar1.isEmpty()){
@@ -68,7 +68,7 @@ fetch("http://3.83.24.216/Cliente/"+buscar1, requestOptions)
 		hide_table()
 		$("#error_msg").html("<br><br>Debe ingresar un número de transacción.");
 	}
-}*/
+}
 /*function prueba(){
 	var buscar1 = $('#id_buscar').val().toString();
 	// console.log(buscar1);
