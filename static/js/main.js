@@ -2,7 +2,7 @@ function hide_table() {
   $( "#myData" ).hide();
 }
 setTimeout(hide_table, 40);
-function mostrarBoleta(data){
+/*function mostrarBoleta(data){
 	if (data == "No existe la boleta ingresada."){
 		hide_table()
 		$("#error_msg").html("<br><br>"+data);
@@ -39,10 +39,10 @@ function mostrarBoleta(data){
 }
 Object.prototype.isEmpty = function () {
     return Object.keys(this).length == 0;
-}
+}*/
 
 
-/*function prueba(){
+function prueba(){
 	var buscar1 = $('#id_buscar').val().toString();
 	// console.log(buscar1);
 	if(!buscar1.isEmpty()){
@@ -57,8 +57,8 @@ Object.prototype.isEmpty = function () {
 		hide_table()
 		$("#error_msg").html("<br><br>Debe ingresar un número de transacción.");
 	}
-}*/
-function prueba(){
+}
+/*function prueba(){
 	var buscar1 = $('#id_buscar').val().toString();
 	// console.log(buscar1);
 	if(!buscar1.isEmpty()){
@@ -72,7 +72,7 @@ function prueba(){
 		hide_table()
 		$("#error_msg").html("<br><br>Debe ingresar un número de transacción.");
 	}
-}
+}*/
 function selectall(){
 	$( "#table_checkbox").find( "input" ).prop('checked', true);
 }
