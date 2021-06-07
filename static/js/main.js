@@ -60,9 +60,19 @@ function selectall(){
 function unselectall(){
 	$( "#table_checkbox").find( "input" ).prop('checked', false);
 }
-function buscarcheckbox(){
+/*function buscarcheckbox(){
 	var check;
 	check = $( "#table_checkbox").find( "input" ).prop('checked');
 	check = check.attr('id');
 	console.log(check);
-  }
+}*/
+
+function buscarcheckbox(){
+    let input = $( "#tabla_checkboxes").find( "input" ) //guarda el elemento
+    let isChecked = input.prop('checked'); //comprueba si esta o no seleccionado
+    let checkedId;
+    if(isChecked){ //si lo esta guardar el id en checkedId
+        checkedId = input.attr('id');
+    }
+    console.log(checkedId)
+}
