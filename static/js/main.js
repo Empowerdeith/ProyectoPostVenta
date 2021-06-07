@@ -1,3 +1,12 @@
+//Para al presionar Enter realizar acción
+document.getElementById("id_buscar")
+    .addEventListener("keyup", function(e) {
+        if (e.keyCode === 13) {
+            document.getElementById("bton_buscar2").click();
+        }
+    });
+
+
 function hide_table() {
   $( "#myData" ).hide();
 }
