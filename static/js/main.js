@@ -60,3 +60,9 @@ function selectall(){
 function unselectall(){
 	$( "#table_checkbox").find( "input" ).prop('checked', false);
 }
+function selectone(){
+	$( "#table_checkbox").find( "input" ).on('change', function() {
+  		$('input').not(this).prop('checked', false);
+   		console.log($('input:checked').attr("id"));
+  	});
+}
