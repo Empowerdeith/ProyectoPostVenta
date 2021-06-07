@@ -82,7 +82,7 @@ function unselectall(){
 function buscarcheckbox() {
     var ids;
     
-    ids = $('input[type=checkbox]:checked').map(function() {
+    ids = $('input[name=boleta]:checked').map(function() {
         return $(this).attr('id');
     }).get();
     
