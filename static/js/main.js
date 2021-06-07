@@ -67,7 +67,7 @@ function unselectall(){
 	console.log(check);
 }*/
 
-function buscarcheckbox(){
+/*function buscarcheckbox(){
     let input = $( "#tabla_checkboxes").find( "input" )
     console.log(input);//guarda el elemento
     let isChecked = input.prop('checked'); //comprueba si esta o no seleccionado
@@ -78,4 +78,13 @@ function buscarcheckbox(){
         console.log(checkedId);
     }
     
+}*/
+function buscarcheckbox() {
+    var ids;
+    
+    ids = $('input[type=checkbox]:checked').map(function() {
+        return $(this).attr('id');
+    }).get();
+    
+    alert('IDS: ' + ids);
 }
