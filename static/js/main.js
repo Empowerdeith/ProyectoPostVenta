@@ -20,7 +20,7 @@ function mostrarBoleta(data){
 		console.log(data.boletas.length);
 		var content = "";
 		for(let i = 0; i < data.boletas.length; i++){
-			content += "<tr><td><input id=\"checkbox_" +i+ "\" type=\"checkbox\">"+"</td>";
+			content += "<tr><td><input id=\"checkbox_" +i+ "\" type=\"checkbox\" name=\"boleta\" >"+"</td>";
 			content += "<td>" + data.boletas[i].num_boleta + "</td>";
 			//content += "<td>" + data.boletas[i].created_at + "</td>";
 			var fecha_obtenida = new Date(data.boletas[i].created_at);
@@ -66,3 +66,9 @@ function selectone(){
    		console.log($('input:checked').attr("id"));
   	});
 }
+$(document).ready(function(){
+  	$('input[name="boleta"]').on('change', function() {
+  		$('input[name="boleta"]').not(this).prop('checked', false);
+   		alert("boleta is: " + $('input[name="boleta"]:checked').attr("id"));
+  	});
+});
