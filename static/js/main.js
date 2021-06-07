@@ -92,7 +92,7 @@ function buscarcheckbox() {
         return $(this).attr('id');
     }).get();
     console.log(ids);
-    info = productostore();
+    info = productostore(data);
     mostrarproductos(info, ids);
     
 }
