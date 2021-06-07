@@ -1,9 +1,13 @@
-function productosShow(data){
-	console.log("recibi la información");
+function productostore(data){
+	//console.log("recibi la información");
 	return data;
 }
 
+function mostrarproductos(info, ids){
+	console.log(info);
+	console.log(ids);
 
+}
 
 
 
@@ -47,7 +51,7 @@ function mostrarBoleta(data){
 		}
 		$( "#table_checkbox").find( "tbody" ).html(content);
 	}
-	productosShow(data);
+	productostore(data);
 }
 //Función para verifica si esta vacío en input principal.
 Object.prototype.isEmpty = function () {
@@ -81,10 +85,13 @@ function unselectall(){
 }
 //------------------------------------------------------------------------------------
 function buscarcheckbox() {
-    var ids;
+    var ids, info;
     
     ids = $('input[name=boleta]:checked').map(function() {
         return $(this).attr('id');
     }).get();
-    return ids;
+    console.log(ids);
+    info = productostore(data);
+    mostrarproductos(info, ids);
+    
 }
