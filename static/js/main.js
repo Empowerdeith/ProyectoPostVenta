@@ -3,6 +3,7 @@ function hide_table() {
 }
 setTimeout(hide_table, 40);
 function mostrarBoleta(data){
+	console.log(data);
 	if (data == "No existe cliente."){
 		hide_table()
 		$("#error_msg").html("<br><br>"+data);
@@ -39,7 +40,7 @@ function prueba(){
 	var buscar1 = $('#id_buscar').val().toString();
 	// console.log(buscar1);
 	if(!buscar1.isEmpty()){
-		let url="http://3.83.24.216/Cliente/"+buscar1
+		let url="http://3.83.24.216/api/cl/"+buscar1
 		fetch(url)
 		.then(response => response.json())
 		.then(data => mostrarBoleta(data))
