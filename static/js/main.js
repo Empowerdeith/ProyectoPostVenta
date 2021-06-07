@@ -62,10 +62,6 @@ function unselectall(){
 }
 function buscarcheckbox(){
 	var check;
-	check = $( "#table_checkbox").find( "input" ).prop('checked');
-	if (check) {
-		alert("Checkbox is checked.");
-    } else {
-        alert("Checkbox is unchecked.");
-    }
+	check = $( "#table_checkbox").find( "input" ).prop('checked').attr('id');
+	console.log(check);
   }
