@@ -1,4 +1,7 @@
-
+function productosShow(data){
+	console.log(data);
+	console.log("recibi la información");
+}
 function hide_table() {
   $( "#myData" ).hide();
 }
@@ -34,7 +37,7 @@ function mostrarBoleta(data){
 		}
 		$( "#table_checkbox").find( "tbody" ).html(content);
 	}
-	console.log(data);
+	productosShow(data);
 }
 Object.prototype.isEmpty = function () {
     return Object.keys(this).length == 0;
