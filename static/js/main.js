@@ -60,13 +60,13 @@ function selectall(){
 function unselectall(){
 	$( "#table_checkbox").find( "input" ).prop('checked', false);
 }
-function selectone(){
+/*function selectone(){
 	$( "#table_checkbox").find( "input" ).on('change', function() {
   		$('input').not(this).prop('checked', false);
    		console.log($('input:checked').attr("id"));
   	});
-}
-$(document).ready(function(){
+}*/
+$(document).ready(function selectone(){
   	$('input[name="boleta"]').on('change', function() {
   		$('input[name="boleta"]').not(this).prop('checked', false);
    		alert("boleta is: " + $('input[name="boleta"]:checked').attr("id"));
