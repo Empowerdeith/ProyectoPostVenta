@@ -85,6 +85,5 @@ function buscarcheckbox() {
     ids = $('input[name=boleta]:checked').map(function() {
         return $(this).attr('id');
     }).get();
-    
-    alert('IDS: ' + ids);
+    console.log(ids);
 }
