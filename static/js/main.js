@@ -1,11 +1,21 @@
 function productosShow(data){
-	console.log(data);
 	console.log("recibi la información");
+	return data;
 }
+
+
+
+
+
+//Esconder todo el div con todo su contenido
 function hide_table() {
   $( "#myData" ).hide();
 }
 setTimeout(hide_table, 40);
+
+
+
+//Mostrar información principal de Boleta
 function mostrarBoleta(data){
 	console.log(data);
 	if (data == "No existe cliente."){
@@ -39,10 +49,11 @@ function mostrarBoleta(data){
 	}
 	productosShow(data);
 }
+//Función para verifica si esta vacío en input principal.
 Object.prototype.isEmpty = function () {
     return Object.keys(this).length == 0;
 }
-
+//Función que realiza el fetch a la ip
 function prueba(){
 	var buscar1 = $('#id_buscar').val().toString();
 	// console.log(buscar1);
@@ -59,36 +70,21 @@ function prueba(){
 	}
 }
 
+/*-----------------------------------------------------------------------------------
+			Funciones para Reset de checkboxes        
+----------------------------------------------------------------------------------*/
 function selectall(){
 	$( "#table_checkbox").find( "input" ).prop('checked', true);
 }
 function unselectall(){
 	$( "#table_checkbox").find( "input" ).prop('checked', false);
 }
-/*function buscarcheckbox(){
-	var check;
-	check = $( "#table_checkbox").find( "input" ).prop('checked');
-	check = check.attr('id');
-	console.log(check);
-}*/
-
-/*function buscarcheckbox(){
-    let input = $( "#tabla_checkboxes").find( "input" )
-    console.log(input);//guarda el elemento
-    let isChecked = input.prop('checked'); //comprueba si esta o no seleccionado
-    console.log(isChecked);
-    let checkedId;
-    if(isChecked){ //si lo esta guardar el id en checkedId
-        checkedId = input.attr('id');
-        console.log(checkedId);
-    }
-    
-}*/
+//------------------------------------------------------------------------------------
 function buscarcheckbox() {
     var ids;
     
     ids = $('input[name=boleta]:checked').map(function() {
         return $(this).attr('id');
     }).get();
-    console.log(ids);
+    return ids;
 }
