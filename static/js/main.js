@@ -66,9 +66,9 @@ function unselectall(){
    		console.log($('input:checked').attr("id"));
   	});
 }*/
-$(document).ready(function selectone(){
+function selectone(){
   	$('input[name="boleta"]').on('change', function() {
   		$('input[name="boleta"]').not(this).prop('checked', false);
    		alert("boleta is: " + $('input[name="boleta"]:checked').attr("id"));
   	});
-});
+  }
