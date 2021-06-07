@@ -1,6 +1,7 @@
 function productostore(data){
+	var data1 = data;
 	//console.log("recibi la información");
-	return data;
+	return data1;
 }
 
 function mostrarproductos(info, ids){
@@ -21,7 +22,7 @@ setTimeout(hide_table, 40);
 
 //Mostrar información principal de Boleta
 function mostrarBoleta(data){
-	console.log(data);
+	//console.log(data);
 	if (data == "No existe cliente."){
 		hide_table()
 		$("#error_msg").html("<br><br>"+data);
@@ -35,7 +36,7 @@ function mostrarBoleta(data){
 		rut_p.html(data.rut);
 		nombre_cliente.html(data.nombre_cl);
 		direccion.html(data.direccion);
-		console.log(data.boletas.length);
+		//console.log(data.boletas.length);
 		var content = "";
 		for(let i = 0; i < data.boletas.length; i++){
 			content += "<tr><td><input id=\""+i+"\" type=\"checkbox\" name=\"boleta\" >"+"</td>";
@@ -91,7 +92,7 @@ function buscarcheckbox() {
         return $(this).attr('id');
     }).get();
     console.log(ids);
-    info = productostore(data);
+    info = productostore();
     mostrarproductos(info, ids);
     
 }
