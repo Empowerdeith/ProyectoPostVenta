@@ -9,6 +9,8 @@ function mostrarBoleta(data){
 		$("#error_msg").html("<br><br>"+data);
 	}
 	else{
+		$("#error_msg").html("");
+        $( "#myData" ).show();
 		var rut_p = $("#rut_p");
 		var nombre_cliente = $("#nombre_cliente");
 		var direccion = $("#direccion");
