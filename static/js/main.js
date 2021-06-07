@@ -62,6 +62,7 @@ function unselectall(){
 }
 function buscarcheckbox(){
 	var check;
-	check = $( "#table_checkbox").find( "input" ).prop('checked').attr('id');
+	check = $( "#table_checkbox").find( "input" ).prop('checked');
+	check = check.attr('id');
 	console.log(check);
   }
