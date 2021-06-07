@@ -34,6 +34,7 @@ function mostrarBoleta(data){
 		}
 		$( "#table_checkbox").find( "tbody" ).html(content);
 	}
+	console.log(data);
 }
 Object.prototype.isEmpty = function () {
     return Object.keys(this).length == 0;
