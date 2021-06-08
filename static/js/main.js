@@ -56,20 +56,20 @@ function mostrarBoleta(data){
 			content += "</tr>";
 		}
 		$( "#table_checkbox").find( "tbody" ).html(content);
-	}
-	/*while(true){
-		if($('input[name=boleta]:checked')==true){
-			break;
-			var ids, info;
-    		info = data;
-    		ids = $('input[name=boleta]:checked').map(function() {
-        		return $(this).attr('id');
-    		}).get();
-    		console.log(info);
-    		console.log(ids);
+		while(true){
+			if($('input[name=boleta]:checked')==true){
+				break;
+				var ids, info;
+	    		info = data;
+	    		ids = $('input[name=boleta]:checked').map(function() {
+	        		return $(this).attr('id');
+	    		}).get();
+	    		console.log(info);
+	    		console.log(ids);
+			}
 		}
-
-	}*/
+	}
+	
 	//productostore(data);
 }
 //Función para verifica si esta vacío en input principal.
