@@ -57,15 +57,17 @@ function mostrarBoleta(data){
 			content += "</tr>";
 		}
 		$( "#table_checkbox").find( "tbody" ).html(content);
-		$('input[type="checkbox" name="boleta"]').click(function() {
-              if($(this).prop("checked") == true) {
-              	var ids;
-			    ids = $('input[name=boleta]:checked').map(function() {
-			        return $(this).attr('id');
-			    }).get();
-                console.log("Checkbox is checked.");
-                console.log(ids);
-                console.log(data);
+		$('input[type="checkbox" name="boleta"]').click(function(data) {
+			var data1=data;
+			console.log(data1);
+			if($(this).prop("checked") == true) {
+				var ids;
+				ids = $('input[name=boleta]:checked').map(function() {
+				return $(this).attr('id');
+				}).get();
+				console.log("Checkbox is checked.");
+				console.log(ids);
+				//console.log(data);
                 //console.log(data.boletas[0].productos);
                 //console.log(data.boletas[ids].productos);
                 //var contenido="";
