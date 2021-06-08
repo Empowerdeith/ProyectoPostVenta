@@ -58,12 +58,13 @@ function mostrarBoleta(data){
 		}
 		$( "#table_checkbox").find( "tbody" ).html(content);
 		//selección de boleta
-		$('input[type="checkbox" name="boleta"]').click(function(){
+		/*$('input[type="checkbox" name="boleta"]').click(function(){
 			if($(this).prop("checked") == true) {
 				var id=1;
 				//id= $(this);
 				console.log(id);
-              }});  
+			}
+		});  */
 	}
 }
 
