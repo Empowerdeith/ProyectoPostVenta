@@ -92,7 +92,7 @@ function unselectall(){
 //------------------------------------------------------------------------------------
 function buscarcheckbox(){
 	var values = new Array();
-	$.each($("input[name='case[]']:checked").closest("td").siblings("td"),
+	$.each($("input[name=boleta]:checked").closest("td").siblings("td"),
 	       function () {
 	            values.push($(this).text());
 	       });
