@@ -42,7 +42,6 @@ function mostrarBoleta(data){
 		rut_p.html(data.rut);
 		nombre_cliente.html(data.nombre_cl);
 		direccion.html(data.direccion);
-		console.log(data.boletas[0].productos[0].nombre_pro);
 		var content = "";
 		for(let i = 0; i < data.boletas.length; i++){
 			content += "<tr><td><input id=\""+i+"\" type=\"checkbox\" name=\"boleta\" >"+"</td>";
@@ -148,3 +147,4 @@ function buscarcheckbox(data) {
 				console.log(id);
 			}
 		});*/
+//console.log(data.boletas[0].productos[0].nombre_pro);
