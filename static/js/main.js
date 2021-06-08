@@ -61,18 +61,12 @@ function mostrarBoleta(data){
 		$('input[type="checkbox"]').click(
 			function(){
 				if($(this).prop("checked") == true) {
-	                alert("Checkbox is checked.");
+	                var id;
+	                id = $(this).attr('id');
+	                console.log(id);
 	            }
 	        }
 	    );
-
-		/*$('input[type="checkbox" name="boleta"]').click(function(){
-			if($(this).prop("checked") == true) {
-				var id=1;
-				//id= $(this);
-				console.log(id);
-			}
-		});*/
 	}
 }
 
@@ -146,3 +140,10 @@ function buscarcheckbox(data) {
 				return $(this).attr('id');
 				}).get();
 				console.log(ids);*/
+/*		/*$('input[type="checkbox" name="boleta"]').click(function(){
+			if($(this).prop("checked") == true) {
+				var id=1;
+				//id= $(this);
+				console.log(id);
+			}
+		});*/
