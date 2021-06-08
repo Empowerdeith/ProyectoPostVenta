@@ -77,7 +77,9 @@ function mostrarBoleta(data){
 	            }
 	        }
 	    );
-	    console.log(hola);
+	    if(hola>=0){
+	    	console.log(hola);
+	    } 
 	}
 }
 
