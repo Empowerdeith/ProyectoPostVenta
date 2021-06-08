@@ -60,7 +60,7 @@ function mostrarBoleta(data){
 		//selección de boleta
 		$('input[type="checkbox"][name="boleta"]').click(
 			function(element){
-				var data1=mostrarBoleta(element);
+				var data1=element;
 				console.log(data1);
 				if($(this).prop("checked") == true) {
 	                var id;
