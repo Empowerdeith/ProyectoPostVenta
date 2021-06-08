@@ -63,7 +63,7 @@ function mostrarBoleta(data){
 			function(){
 				if($(this).prop("checked") == true) {
 	                var id;
-	                id = parseInt($(this).attr('id');
+	                id = parseInt($(this).attr('id'));
 	                console.log(id);
 	            }
 	        }
