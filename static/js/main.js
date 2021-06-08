@@ -64,11 +64,11 @@ function mostrarBoleta(data){
 		$( "#table_checkbox").find( "tbody" ).html(content);
 		//productostore(data, undefined);
 		//selección de boleta
-		var tuCheckBox;
     	$("input[type='checkbox'][name='boleta']").each(function (index) {
        		if($(this).is(':checked')){
-	          	tuCheckBox = parseInt(this.attr("id"));
-	          	console.log(tuCheckBox);
+       			var id;
+                id = parseInt($(this).attr('id'));
+                console.log(id);
 	          	console.log(data.boletas.length);
 	        }
 	    });
