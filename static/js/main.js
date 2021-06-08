@@ -56,7 +56,7 @@ function mostrarBoleta(data){
 			content += "</tr>";
 		}
 		$( "#table_checkbox").find( "tbody" ).html(content);
-		while(true){
+		/*while(true){
 			if($('input[name=boleta]:checked')==true){
 				break;
 				var ids, info;
@@ -67,7 +67,7 @@ function mostrarBoleta(data){
 	    		console.log(info);
 	    		console.log(ids);
 			}
-		}
+		}*/
 	}
 	
 	//productostore(data);
