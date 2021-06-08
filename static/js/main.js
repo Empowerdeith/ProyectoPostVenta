@@ -65,7 +65,7 @@ function mostrarBoleta(data){
 		//productostore(data, undefined);
 		//selección de boleta
 		var values = new Array();
-		$("input[type='checkbox'][name='boleta']:checked").closest("td").siblings("td"),
+		$("input[name='boleta']:checked").closest("td").siblings("td"),
        function () {
             values.push($(this).text());
         }
