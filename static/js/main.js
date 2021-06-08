@@ -57,6 +57,19 @@ function mostrarBoleta(data){
 		}
 		$( "#table_checkbox").find( "tbody" ).html(content);
 	}
+	while(true){
+		if($('input[name=boleta]:checked')==true){
+			break;
+			var ids, info;
+    		info = data;
+    		ids = $('input[name=boleta]:checked').map(function() {
+        		return $(this).attr('id');
+    		}).get();
+    		console.log(info);
+    		console.log(ids);
+		}
+
+	}
 	//productostore(data);
 }
 //Función para verifica si esta vacío en input principal.
@@ -90,10 +103,13 @@ function unselectall(){
 	$( "#table_checkbox").find( "input" ).prop('checked', false);
 }
 //------------------------------------------------------------------------------------
-function buscarcheckbox(){
+/*function buscarcheckbox(){
 	$('input[name=boleta]:checked').each(function () {
         alert('selected: ' + $(this).val());
     });
+}*/
+function buscarcheckbox(){
+
 }
 /*function buscarcheckbox() {
     var ids, info;
