@@ -68,6 +68,7 @@ function mostrarBoleta(data){
     	$("input[type='checkbox'][name='boleta']").each(function (index) {
        		if($(this).is(':checked')){
           	tuCheckBox = parseInt(this.attr("id"));
+          	console.log(tuCheckBox);
           	console.log(data.boletas.length);
           }
       });
