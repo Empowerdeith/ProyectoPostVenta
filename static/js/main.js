@@ -71,11 +71,12 @@ function mostrarBoleta(data){
 	                var id;
 	                id = parseInt($(this).attr('id'));
 	                hola=id;
+	                console.log(hola);
 	                //console.log(id);
 	                //productostore(undefined, id);
 	            }
 	        }
-	    );;
+	    );
 	    console.log(hola);
 	}
 }
