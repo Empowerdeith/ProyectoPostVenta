@@ -2,10 +2,10 @@
 
 function productostore(data, id){
 	var data1, id1;
-	if(data != undefined){
+	if(data !== undefined){
 		data1=data;
 	}
-	if(id != undefined){
+	if(id !== undefined){
 		id1=id;
 	}
 	console.log("recibi la información");
