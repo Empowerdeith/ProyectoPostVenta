@@ -64,22 +64,14 @@ function mostrarBoleta(data){
 		$( "#table_checkbox").find( "tbody" ).html(content);
 		//productostore(data, undefined);
 		//selección de boleta
-		var hola;
-		$('input[type="checkbox"][name="boleta"]').click(
-			function(){
-				if($(this).prop("checked") == true) {
-	                var id;
-	                id = parseInt($(this).attr('id'));
-	                hola=id;
-	                console.log(hola);
-	                //console.log(id);
-	                //productostore(undefined, id);
-	            }
-	        }
-	    );
-	    if(hola>=0){
-	    	console.log(hola);
-	    } 
+		var tuCheckBox= '';
+    	$("input[type='checkbox'][name='boleta']").each(function (index) {
+
+       		if($(this).is(':checked')){
+          	tuCheckBox = this.attr("id");
+          }
+      });
+    	console.log(tuCheckBox);
 	}
 }
 
@@ -161,3 +153,22 @@ function buscarcheckbox(data) {
 			}
 		});*/
 //console.log(data.boletas[0].productos[0].nombre_pro);
+
+
+//seleccion boleta
+/*		var hola;
+		$('input[type="checkbox"][name="boleta"]').click(
+			function(){
+				if($(this).prop("checked") == true) {
+	                var id;
+	                id = parseInt($(this).attr('id'));
+	                hola=id;
+	                console.log(hola);
+	                //console.log(id);
+	                //productostore(undefined, id);
+	            }
+	        }
+	    );
+	    if(hola>=0){
+	    	console.log(hola);
+	    } */
