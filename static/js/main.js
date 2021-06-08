@@ -1,11 +1,16 @@
 
 
-function productostore(data){
-	var data1 = data;
+function productostore(data, id){
+	var data1, id1;
+	if(data != undefined){
+		data1=data;
+	}
+	if(id != undefined){
+		id1=id;
+	}
 	console.log("recibi la información");
 	console.log(data1);
-	buscarcheckbox(data);
-	//return data1;
+	console.log(id1);
 }
 
 
@@ -57,15 +62,15 @@ function mostrarBoleta(data){
 			content += "</tr>";
 		}
 		$( "#table_checkbox").find( "tbody" ).html(content);
+		productostore(data, undefined);
 		//selección de boleta
 		$('input[type="checkbox"][name="boleta"]').click(
-			function(element){
-				var data1=element;
-				console.log(data1);
+			function(){
 				if($(this).prop("checked") == true) {
 	                var id;
 	                id = parseInt($(this).attr('id'));
 	                console.log(id);
+	                productostore(undefined, id);
 	            }
 	        }
 	    );
