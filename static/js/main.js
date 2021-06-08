@@ -59,7 +59,12 @@ function mostrarBoleta(data){
 		$( "#table_checkbox").find( "tbody" ).html(content);
 		$('input[type="checkbox"]').click(function() {
               if($(this).prop("checked") == true) {
-                alert("Checkbox is checked.");
+              	var ids;
+			    ids = $('input[name=boleta]:checked').map(function() {
+			        return $(this).attr('id');
+			    }).get();
+                console.log("Checkbox is checked.");
+                console.log(ids);
               }});
         
 		//productostore(data);
