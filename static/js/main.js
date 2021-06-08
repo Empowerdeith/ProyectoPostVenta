@@ -1,9 +1,18 @@
+function test(data){
+	var a=data;
+	console.log(a);
+}
+
+
 function productostore(data){
 	var data1 = data;
 	console.log("recibi la información");
-	console.log(data1);
-	return data1;
+	//console.log(data1);
+	//return data1;
+	test(data1);
 }
+
+
 
 /*function mostrarproductos(info, ids){
 	console.log(info);
