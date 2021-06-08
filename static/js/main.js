@@ -62,18 +62,20 @@ function mostrarBoleta(data){
 			content += "</tr>";
 		}
 		$( "#table_checkbox").find( "tbody" ).html(content);
-		productostore(data, undefined);
+		var check_box;
+		//productostore(data, undefined);
 		//selección de boleta
-		$('input[type="checkbox"][name="boleta"]').click(
+		check_box=$('input[type="checkbox"][name="boleta"]').click(
 			function(){
 				if($(this).prop("checked") == true) {
 	                var id;
 	                id = parseInt($(this).attr('id'));
-	                console.log(id);
-	                productostore(undefined, id);
+	                //console.log(id);
+	                return id;
 	            }
 	        }
-	    );
+	    );;
+	    console.log(check_box);
 	}
 }
 
