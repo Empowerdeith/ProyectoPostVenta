@@ -1,11 +1,12 @@
 
 
-/*function productostore(data){
+function productostore(data){
 	var data1 = data;
 	console.log("recibi la información");
-	//console.log(data1);
+	console.log(data1);
+	buscarcheckbox(data);
 	//return data1;
-}*/
+}
 
 
 
@@ -56,6 +57,13 @@ function mostrarBoleta(data){
 			content += "</tr>";
 		}
 		$( "#table_checkbox").find( "tbody" ).html(content);
+		if($('input[name=boleta]:checked')==true){
+			console.log("hola");
+		}
+		//productostore(data);
+	}
+	
+}
 		/*while(true){
 			if($('input[name=boleta]:checked')==true){
 				break;
@@ -68,10 +76,6 @@ function mostrarBoleta(data){
 	    		console.log(ids);
 			}
 		}*/
-	}
-	
-	//productostore(data);
-}
 //Función para verifica si esta vacío en input principal.
 Object.prototype.isEmpty = function () {
     return Object.keys(this).length == 0;
@@ -103,19 +107,11 @@ function unselectall(){
 	$( "#table_checkbox").find( "input" ).prop('checked', false);
 }
 //------------------------------------------------------------------------------------
-/*function buscarcheckbox(){
-	$('input[name=boleta]:checked').each(function () {
-        alert('selected: ' + $(this).val());
-    });
-}*/
-function buscarcheckbox(){
-
-}
-/*function buscarcheckbox() {
+function buscarcheckbox(data) {
     var ids, info;
     info = data;
     ids = $('input[name=boleta]:checked').map(function() {
         return $(this).attr('id');
     }).get();
     //mostrarproductos(info, ids);
-}*/
+}
