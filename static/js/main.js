@@ -64,17 +64,12 @@ function mostrarBoleta(data){
 		$( "#table_checkbox").find( "tbody" ).html(content);
 		//productostore(data, undefined);
 		//selección de boleta
-		$('input[type="checkbox"][name="boleta"]').click(
-            function(){
-                if($(this).prop("checked") == true) {
-                    var id;
-                    id = parseInt($(this).attr('id'));
-                    //creo que deberia rellenarla aca
-                    console.log(id);
-                }
-            }
-        );
-
+		var values = new Array();
+		$('input[type="checkbox"][name="boleta"]:checked').closest("td").siblings("td"),
+       function () {
+            values.push($(this).text());
+        }
+        alert("val---" + values.join(", "));
 	}
 }
 
@@ -175,3 +170,15 @@ function buscarcheckbox(data) {
 	    if(hola>=0){
 	    	console.log(hola);
 	    } */
+
+/*golden code
+$('input[type="checkbox"][name="boleta"]').click(
+            function(){
+                if($(this).prop("checked") == true) {
+                    var id;
+                    id = parseInt($(this).attr('id'));
+                    //creo que deberia rellenarla aca
+                    console.log(id);
+                }
+            }
+        );*/
