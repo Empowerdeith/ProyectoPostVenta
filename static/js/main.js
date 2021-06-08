@@ -64,6 +64,9 @@ function mostrarBoleta(data){
               }
               else if($(this).prop("checked") == false) {
                 alert("Checkbox is unchecked.");
+              }
+            });
+        });
 		//productostore(data);
 	}
 	
