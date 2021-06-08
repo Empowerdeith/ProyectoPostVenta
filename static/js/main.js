@@ -57,9 +57,13 @@ function mostrarBoleta(data){
 			content += "</tr>";
 		}
 		$( "#table_checkbox").find( "tbody" ).html(content);
-		if($('input[name=boleta]:checked')==true){
-			console.log("hola");
-		}
+		$(document).ready(function() {
+          $('input[type="checkbox"]').click(function() {
+              if($(this).prop("checked") == true) {
+                alert("Checkbox is checked.");
+              }
+              else if($(this).prop("checked") == false) {
+                alert("Checkbox is unchecked.");
 		//productostore(data);
 	}
 	
