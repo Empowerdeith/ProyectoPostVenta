@@ -42,57 +42,31 @@ function mostrarBoleta(data){
 		rut_p.html(data.rut);
 		nombre_cliente.html(data.nombre_cl);
 		direccion.html(data.direccion);
-		//console.log(data.boletas.length);
 		var content = "";
 		for(let i = 0; i < data.boletas.length; i++){
 			content += "<tr><td><input id=\""+i+"\" type=\"checkbox\" name=\"boleta\" >"+"</td>";
 			content += "<td>" + data.boletas[i].num_boleta + "</td>";
-			//content += "<td>" + data.boletas[i].created_at + "</td>";
+			//Probablemente se puede optimizar
 			var fecha_obtenida = new Date(data.boletas[i].created_at);
 			var dia = fecha_obtenida.getDate();
 			var mes = fecha_obtenida.getMonth()+1;
 			var annio = fecha_obtenida.getFullYear();
+			//--------------------------------------------------
 			content += "<td>" + dia+"/"+mes+"/"+annio + "</td>";
 			content += "<td>" + data.boletas[i].total + "</td>";
 			content += "</tr>";
 		}
 		$( "#table_checkbox").find( "tbody" ).html(content);
-		$('input[type="checkbox" name="boleta"]').click(function(data) {
-			var data1=data;
-			console.log(data1);
+		//selección de boleta
+		$('input[type="checkbox" name="boleta"]').click(function() {
 			if($(this).prop("checked") == true) {
-				var ids;
-				ids = $('input[name=boleta]:checked').map(function() {
-				return $(this).attr('id');
-				}).get();
-				console.log("Checkbox is checked.");
-				console.log(ids);
-				//console.log(data);
-                //console.log(data.boletas[0].productos);
-                //console.log(data.boletas[ids].productos);
-                //var contenido="";
-                /*for(let k = 0; k < data.boletas[ids].productos.length; k++){
-
-
-                }*/
-              }});
-        
-		//productostore(data);
+				var id;
+				id= $(this);
+				console.log(id);
+              }});  
 	}
-	
 }
-		/*while(true){
-			if($('input[name=boleta]:checked')==true){
-				break;
-				var ids, info;
-	    		info = data;
-	    		ids = $('input[name=boleta]:checked').map(function() {
-	        		return $(this).attr('id');
-	    		}).get();
-	    		console.log(info);
-	    		console.log(ids);
-			}
-		}*/
+
 //Función para verifica si esta vacío en input principal.
 Object.prototype.isEmpty = function () {
     return Object.keys(this).length == 0;
@@ -132,3 +106,34 @@ function buscarcheckbox(data) {
     }).get();
     //mostrarproductos(info, ids);
 }
+		/*while(true){
+			if($('input[name=boleta]:checked')==true){
+				break;
+				var ids, info;
+	    		info = data;
+	    		ids = $('input[name=boleta]:checked').map(function() {
+	        		return $(this).attr('id');
+	    		}).get();
+	    		console.log(info);
+	    		console.log(ids);
+			}
+		}*/
+//content += "<td>" + data.boletas[i].created_at + "</td>";
+
+
+
+//Seccion boleta
+				//console.log(data);
+                //console.log(data.boletas[0].productos);
+                //console.log(data.boletas[ids].productos);
+                //var contenido="";
+                /*for(let k = 0; k < data.boletas[ids].productos.length; k++){
+
+
+                }*/
+
+/*var ids;
+				ids = $('input[name=boleta]:checked').map(function() {
+				return $(this).attr('id');
+				}).get();
+				console.log(ids);*/
