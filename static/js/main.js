@@ -59,7 +59,8 @@ function mostrarBoleta(data){
 		$( "#table_checkbox").find( "tbody" ).html(content);
 		//selección de boleta
 		$('input[type="checkbox"]').click(
-			function(){
+			function(data){
+				data1=data;
 				if($(this).prop("checked") == true) {
 	                var id;
 	                id = parseInt($(this).attr('id'));
