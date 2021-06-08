@@ -2,10 +2,10 @@
 
 function productostore(data, id){
 	var data1, id1;
-	if(data !== "undefined"){
+	if(typeof data !== "undefined"){
 		data1=data;
 	}
-	if(id !== "undefined"){
+	if(typeof  id !== "undefined"){
 		id1=id;
 	}
 	console.log("recibi la información");
@@ -62,16 +62,15 @@ function mostrarBoleta(data){
 			content += "</tr>";
 		}
 		$( "#table_checkbox").find( "tbody" ).html(content);
-		var check_box;
-		//productostore(data, undefined);
+		productostore(data, undefined);
 		//selección de boleta
-		check_box=$('input[type="checkbox"][name="boleta"]').click(
+		$('input[type="checkbox"][name="boleta"]').click(
 			function(){
 				if($(this).prop("checked") == true) {
 	                var id;
 	                id = parseInt($(this).attr('id'));
 	                //console.log(id);
-	                return id;
+	                productostore(undefined, id);
 	            }
 	        }
 	    );;
