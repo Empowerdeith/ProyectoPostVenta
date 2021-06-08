@@ -65,6 +65,12 @@ function mostrarBoleta(data){
 			    }).get();
                 console.log("Checkbox is checked.");
                 console.log(ids);
+                console.log(data.boletas[ids].productos);
+                //var contenido="";
+                /*for(let k = 0; k < data.boletas[ids].productos.length; k++){
+
+
+                }*/
               }});
         
 		//productostore(data);

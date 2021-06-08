@@ -50,35 +50,18 @@
 			<button onclick="unselectall()">Deseleccionar todas</button>
 			<button onclick="buscarcheckbox()">Siguiente</button>
 			<br>
-			<table class="table table-striped dt-responsive nowrap table-bordered">
+			<table class="table table-striped dt-responsive nowrap table-bordered" id="table_product">
 				<thead>
 					<tr>
-						<th scope="col">Número Boleta</th>
-						<th scope="col">Comprador</th>
-						<th scope="col">Fecha de orden</th>
 						<th scope="col">Producto</th>
-						<th scope="col">Cantidad</th>
-						<th scope="col">Total</th>
-						<th scope="col">Región</th>
-						<th scope="col">Ciudad</th>
-						<th scope="col">Dirección</th>
+						<th scope="col">Precio c/u.</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td id="numero_bol"></td>
-						<td id="comprador"></td>
-						<td id="fecha"></td>
-						<td id="producto"></td>
-						<td id="cantidad"></td>
-						<td id="total"></td>
-						<td id="region"></td>
-						<td id="ciudad"></td>
-						<td id="direccion"></td>
-					</tr>
 				</tbody>
 			</table>
 		</div>
+		<br><br>
 	</div>
 </div>
 {% endblock contenido %}
