@@ -61,6 +61,7 @@ function mostrarBoleta(data){
 		$('input[type="checkbox"]').click(
 			function(data){
 				data1=data;
+				console.log(data1);
 				if($(this).prop("checked") == true) {
 	                var id;
 	                id = parseInt($(this).attr('id'));
