@@ -64,14 +64,17 @@ function mostrarBoleta(data){
 		$( "#table_checkbox").find( "tbody" ).html(content);
 		//productostore(data, undefined);
 		//selección de boleta
-    	$("input[type='checkbox'][name='boleta']").each(function (index) {
-       		if($(this).is(':checked')){
-       			var id;
-                id = parseInt($(this).attr('id'));
-                console.log(id);
-	          	console.log(data.boletas.length);
-	        }
-	    });
+		$('input[type="checkbox"][name="boleta"]').click(
+            function(){
+                if($(this).prop("checked") == true) {
+                    var id;
+                    id = parseInt($(this).attr('id'));
+                    //creo que deberia rellenarla aca
+                    console.log(id);
+                }
+            }
+        );
+
 	}
 }
 
