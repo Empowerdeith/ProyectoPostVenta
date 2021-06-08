@@ -91,12 +91,9 @@ function unselectall(){
 }
 //------------------------------------------------------------------------------------
 function buscarcheckbox(){
-	var values = new Array();
-	$.each($("input[name=boleta]:checked").closest("td").siblings("td"),
-	       function () {
-	            values.push($(this).text());
-	       });
-   alert("val---" + values.join(", "));
+	$('input[name=boleta]:checked').each(function () {
+        alert('selected: ' + $(this).val());
+    });
 }
 /*function buscarcheckbox() {
     var ids, info;
