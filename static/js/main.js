@@ -62,7 +62,7 @@ function mostrarBoleta(data){
 			content += "</tr>";
 		}
 		$( "#table_checkbox").find( "tbody" ).html(content);
-		productostore(data, undefined);
+		//productostore(data, undefined);
 		//selección de boleta
 		var hola;
 		$('input[type="checkbox"][name="boleta"]').click(
@@ -72,7 +72,7 @@ function mostrarBoleta(data){
 	                id = parseInt($(this).attr('id'));
 	                hola=id;
 	                //console.log(id);
-	                productostore(undefined, id);
+	                //productostore(undefined, id);
 	            }
 	        }
 	    );;
