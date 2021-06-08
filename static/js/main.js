@@ -57,7 +57,7 @@ function mostrarBoleta(data){
 		}
 		$( "#table_checkbox").find( "tbody" ).html(content);
 	}
-	while(true){
+	/*while(true){
 		if($('input[name=boleta]:checked')==true){
 			break;
 			var ids, info;
@@ -69,7 +69,7 @@ function mostrarBoleta(data){
     		console.log(ids);
 		}
 
-	}
+	}*/
 	//productostore(data);
 }
 //Función para verifica si esta vacío en input principal.
