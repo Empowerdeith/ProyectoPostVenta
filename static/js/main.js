@@ -61,15 +61,21 @@ function mostrarBoleta(data){
 			content += "<td>" + data.boletas[i].total + "</td>";
 			content += "</tr>";
 		}
-		$( "#table_checkbox").find( "tbody" ).html(content);
+		$( "#table_checkbox").find( "tbody" ).html(content);	
 		//productostore(data, undefined);
 		//selección de boleta
-		var values = new Array();
-		$("input[name='boleta']:checked").closest("td").siblings("td"),
-       function () {
-            values.push($(this).text());
-        }
-        alert("val---" + values.join(", "));
+		$('input[type="checkbox"][name="boleta"]').click(
+            function(data){
+            	console.log(data);
+                if($(this).prop("checked") == true) {
+                	console.log(data);
+                    var id;
+                    id = parseInt($(this).attr('id'));
+                    //creo que deberia rellenarla aca
+                    console.log(id);
+                }
+            }
+        );
 	}
 }
 
