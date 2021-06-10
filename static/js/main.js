@@ -61,14 +61,15 @@ function mostrarBoleta(data){
 			content += "<td>" + data.boletas[i].total + "</td>";
 			content += "</tr>";
 		}
+		var data1=data;
 		$( "#table_checkbox").find( "tbody" ).html(content);	
 		//productostore(data, undefined);
 		//selección de boleta
 		$('input[type="checkbox"][name="boleta"]').click(
-            function(data){
-            	console.log(data);
+            function(data1){
+            	console.log(data1);
                 if($(this).prop("checked") == true) {
-                	console.log(data);
+                	console.log(data1);
                     var id;
                     id = parseInt($(this).attr('id'));
                     //creo que deberia rellenarla aca
