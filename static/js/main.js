@@ -62,9 +62,13 @@ function mostrarBoleta(data){
 			content += "</tr>";
 		}
 		var data1=data;
-		$( "#table_checkbox").find( "tbody" ).html(content);	
+		$( "#table_checkbox").find( "tbody" ).html(content);
+		hello(data1);	
 		//productostore(data, undefined);
 		//selección de boleta
+		function hello(data1){
+			console.log(data1);
+		}
 		$('input[type="checkbox"][name="boleta"]').click(
             function(data1){
             	console.log(data1);
