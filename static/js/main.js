@@ -67,17 +67,18 @@ function mostrarBoleta(data){
 		//productostore(data, undefined);
 		//selección de boleta
 		function test(data1){
-			console.log(data1);
-			var data2=data1;
+			//console.log(data1);
+			var data2=data1;var id;
 			$('input[type="checkbox"][name="boleta"]').click(
             	function(){
             		console.log(data2);
 	                if($(this).prop("checked") == true) {
-	                	//console.log(data1);
-	                    var id;
+	                    var contenido = "";
 	                    id = parseInt($(this).attr('id'));
 	                    //creo que deberia rellenarla aca
 	                    console.log(id);
+	                    console.log(data2.boletas[id].productos.length);
+	                    //for(let k = 0; k < data.boletas[id].productos.length; k++){}     
 	                }
 	            }
 	        );
