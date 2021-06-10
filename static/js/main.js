@@ -61,8 +61,9 @@ function mostrarBoleta(data){
 			content += "<td>" + data.boletas[i].total + "</td>";
 			content += "</tr>";
 		}
-		var data1=data;
 		$( "#table_checkbox").find( "tbody" ).html(content);
+		//Comienzo tabla productos
+		var data1=data;
 		test(data1);	
 		//productostore(data, undefined);
 		//selección de boleta
@@ -71,14 +72,20 @@ function mostrarBoleta(data){
 			var data2=data1;var id;
 			$('input[type="checkbox"][name="boleta"]').click(
             	function(){
-            		console.log(data2);
+            		//console.log(data2);
 	                if($(this).prop("checked") == true) {
 	                    var contenido = "";
 	                    id = parseInt($(this).attr('id'));
 	                    //creo que deberia rellenarla aca
 	                    console.log(id);
 	                    console.log(data2.boletas[id].productos.length);
-	                    //for(let k = 0; k < data.boletas[id].productos.length; k++){}     
+	                    for(let k = 0; k < data2.boletas[id].productos.length; k++){
+	                    	contenido += "<tr><td><input id=\""+k+"\" type=\"checkbox\" name=\"producto\" >"+"</td>";
+	                    	contenido += "<td>" + data2.boletas[id].productos[k].nombre_pro + "</td>";
+	                    	contenido += "<td>" + data2.boletas[id].productos[k].precio + "</td>";
+	                    	contenido += "</tr>";
+	                    }
+	                    $("#table_product").find( "tbody" ).html(content);   
 	                }
 	            }
 	        );
@@ -152,38 +159,6 @@ function buscarcheckbox(data) {
 
                 }*/
 
-/*var ids;
-				ids = $('input[name=boleta]:checked').map(function() {
-				return $(this).attr('id');
-				}).get();
-				console.log(ids);*/
-/*		/*$('input[type="checkbox" name="boleta"]').click(function(){
-			if($(this).prop("checked") == true) {
-				var id=1;
-				//id= $(this);
-				console.log(id);
-			}
-		});*/
-//console.log(data.boletas[0].productos[0].nombre_pro);
-
-
-//seleccion boleta
-/*		var hola;
-		$('input[type="checkbox"][name="boleta"]').click(
-			function(){
-				if($(this).prop("checked") == true) {
-	                var id;
-	                id = parseInt($(this).attr('id'));
-	                hola=id;
-	                console.log(hola);
-	                //console.log(id);
-	                //productostore(undefined, id);
-	            }
-	        }
-	    );
-	    if(hola>=0){
-	    	console.log(hola);
-	    } */
 
 /*golden code
 $('input[type="checkbox"][name="boleta"]').click(
