@@ -1,11 +1,3 @@
-$(document).ready(function() {
-    $('#table_checkbox').DataTable( {
-        select: {
-            style: 'single'
-        }
-    } );
-} );
-
 function productostore(data, id){
 	var data1, id1;
 	if(typeof data !== "undefined"){
