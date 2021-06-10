@@ -69,18 +69,19 @@ function mostrarBoleta(data){
 		function test(data1){
 			console.log(data1);
 			$('input[type="checkbox"][name="boleta"]').click(
-            function(data1){
-            	console.log(data1);
-                if($(this).prop("checked") == true) {
-                	console.log(data1);
-                    var id;
-                    id = parseInt($(this).attr('id'));
-                    //creo que deberia rellenarla aca
-                    console.log(id);
-                }
-            }
-        );
+				console.log(data1)
+            	function(){
+	                if($(this).prop("checked") == true) {
+	                	console.log(data1);
+	                    var id;
+	                    id = parseInt($(this).attr('id'));
+	                    //creo que deberia rellenarla aca
+	                    console.log(id);
+	                }
+	            }
+	        );
 		}
+		//end checkbox
 	}
 }
 
