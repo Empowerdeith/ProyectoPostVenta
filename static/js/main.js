@@ -61,7 +61,7 @@ function mostrarBoleta(data){
 			content += "<td>" + data.boletas[i].total + "</td>";
 			content += "</tr>";
 		}
-		$( "#table_checkbox").find( "tbody" ).html(content);
+		$("#table_checkbox").find( "tbody" ).html(content);
 		//Comienzo tabla productos
 		var data1=data;
 		test(data1);	
@@ -70,12 +70,13 @@ function mostrarBoleta(data){
 		function test(data1){
 			//console.log(data1);
 			var data2=data1;
+			var id;
 			$('input[type="checkbox"][name="boleta"]').click(
             	function(){
             		//console.log(data2);
 	                if($(this).prop("checked") == true) {
 	                    var contenido = "";
-	                    var id;
+	                    
 	                    id = parseInt($(this).attr('id'));
 	                    //creo que deberia rellenarla aca
 	                    console.log(id);
@@ -86,7 +87,7 @@ function mostrarBoleta(data){
 	                    	contenido += "<td>" + data2.boletas[id].productos[k].precio + "</td>";
 	                    	contenido += "</tr>";
 	                    }
-	                    $("#table_product").find( "tbody" ).html(content);   
+	                    $("#table_product").find( "tbody" ).html(contenido);   
 	                }
 	            }
 	        );
