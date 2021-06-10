@@ -68,11 +68,12 @@ function mostrarBoleta(data){
 		//selección de boleta
 		function test(data1){
 			console.log(data1);
+			var data2=data1;
 			$('input[type="checkbox"][name="boleta"]').click(
-				console.log(data1)
             	function(){
+            		console.log(data2);
 	                if($(this).prop("checked") == true) {
-	                	console.log(data1);
+	                	//console.log(data1);
 	                    var id;
 	                    id = parseInt($(this).attr('id'));
 	                    //creo que deberia rellenarla aca
