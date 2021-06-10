@@ -121,10 +121,10 @@ function prueba(){
 			Funciones para Reset de checkboxes        
 ----------------------------------------------------------------------------------*/
 function selectall(){
-	$( "#table_checkbox").find( "input" ).prop('checked', true);
+	$( "#table_product").find( "input" ).prop('checked', true);
 }
 function unselectall(){
-	$( "#table_checkbox").find( "input" ).prop('checked', false);
+	$( "#table_product").find( "input" ).prop('checked', false);
 }
 //------------------------------------------------------------------------------------
 function buscarcheckbox(data) {
