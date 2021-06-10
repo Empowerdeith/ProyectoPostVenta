@@ -63,13 +63,12 @@ function mostrarBoleta(data){
 		}
 		var data1=data;
 		$( "#table_checkbox").find( "tbody" ).html(content);
-		hello(data1);	
+		test(data1);	
 		//productostore(data, undefined);
 		//selección de boleta
-		function hello(data1){
+		function test(data1){
 			console.log(data1);
-		}
-		$('input[type="checkbox"][name="boleta"]').click(
+			$('input[type="checkbox"][name="boleta"]').click(
             function(data1){
             	console.log(data1);
                 if($(this).prop("checked") == true) {
@@ -81,6 +80,7 @@ function mostrarBoleta(data){
                 }
             }
         );
+		}
 	}
 }
 
