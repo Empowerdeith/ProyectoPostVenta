@@ -56,8 +56,8 @@ function mostrarBoleta(data){
 	                if($(this).prop("checked") == true) {
 	                    var contenido = "";	                    
 	                    id = parseInt($(this).attr('id'));
-	                    console.log(id);
-	                    console.log(data2.boletas[id].productos.length);
+	                    /*console.log(id);
+	                    console.log(data2.boletas[id].productos.length);*/
 	                    for(let k = 0; k < data2.boletas[id].productos.length; k++){
 	                    	contenido += "<tr><td><input id=\""+k+"\" type=\"checkbox\" name=\"producto\" >"+"</td>";
 	                    	contenido += "<td>" + data2.boletas[id].productos[k].nombre_pro + "</td>";
@@ -71,7 +71,9 @@ function mostrarBoleta(data){
 			//Botón siguiente, para completar solicitud
 	        $('#button_save').click(
 	        	function(){
+	        		console.log("id de boleta:");
 	        		console.log(id);
+	        		console.log("información de boleta:");
 					console.log(data2);
 					var arr = [];
 					$('input[name="producto"]:checked').each(
@@ -120,10 +122,3 @@ function unselectall(){
 	$( "#table_product").find( "input" ).prop('checked', false);
 }
 //------------------------------------------------------------------------------------
-function buscarcheckbox() {
-    var ids, info;
-    info = data;
-    ids = $('input[name=boleta]:checked').map(function() {
-        return $(this).attr('id');
-    }).get();
-}
