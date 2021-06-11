@@ -70,10 +70,18 @@ function mostrarBoleta(data){
 	        	function(){
 	        		console.log(id);
 					console.log(data2);
+					var arr = [];
+					$('input[name="producto"]:checked').each(
+						function () {
+    						arr.push($(this).val());
+    					}
+    				);
+    				console.log(arr);
 	        	}
 	        );
+	        //termino boton completar solicitud
 		}
-		//end checkbox
+		//termino function test
 	}
 }
 
