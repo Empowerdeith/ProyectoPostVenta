@@ -117,15 +117,3 @@ function buscarcheckbox() {
         return $(this).attr('id');
     }).get();
 }
-
-/*golden code
-$('input[type="checkbox"][name="boleta"]').click(
-            function(){
-                if($(this).prop("checked") == true) {
-                    var id;
-                    id = parseInt($(this).attr('id'));
-                    //creo que deberia rellenarla aca
-                    console.log(id);
-                }
-            }
-        );*/
