@@ -1,25 +1,3 @@
-function productostore(data, id){
-	var data1, id1;
-	if(typeof data !== "undefined"){
-		data1=data;
-	}
-	if(typeof  id !== "undefined"){
-		id1=id;
-	}
-	console.log("recibi la información");
-	console.log(data1);
-	console.log(id1);
-}
-
-
-
-/*function mostrarproductos(info, ids){
-	console.log(info);
-	console.log(ids);
-
-}*/
-
-
 
 //Esconder todo el div con todo su contenido
 function hide_table() {
@@ -73,10 +51,8 @@ function mostrarBoleta(data){
             	function(){
             		//console.log(data2);
 	                if($(this).prop("checked") == true) {
-	                    var contenido = "";
-	                    
+	                    var contenido = "";	                    
 	                    id = parseInt($(this).attr('id'));
-	                    //creo que deberia rellenarla aca
 	                    console.log(id);
 	                    console.log(data2.boletas[id].productos.length);
 	                    for(let k = 0; k < data2.boletas[id].productos.length; k++){
@@ -98,6 +74,7 @@ function mostrarBoleta(data){
 Object.prototype.isEmpty = function () {
     return Object.keys(this).length == 0;
 }
+//-------------------------------------------------------
 //Función que realiza el fetch a la ip
 function prueba(){
 	var buscar1 = $('#id_buscar').val().toString();
@@ -125,40 +102,13 @@ function unselectall(){
 	$( "#table_product").find( "input" ).prop('checked', false);
 }
 //------------------------------------------------------------------------------------
-function buscarcheckbox(data) {
+function buscarcheckbox() {
     var ids, info;
     info = data;
     ids = $('input[name=boleta]:checked').map(function() {
         return $(this).attr('id');
     }).get();
-    //mostrarproductos(info, ids);
 }
-		/*while(true){
-			if($('input[name=boleta]:checked')==true){
-				break;
-				var ids, info;
-	    		info = data;
-	    		ids = $('input[name=boleta]:checked').map(function() {
-	        		return $(this).attr('id');
-	    		}).get();
-	    		console.log(info);
-	    		console.log(ids);
-			}
-		}*/
-//content += "<td>" + data.boletas[i].created_at + "</td>";
-
-
-
-//Seccion boleta
-				//console.log(data);
-                //console.log(data.boletas[0].productos);
-                //console.log(data.boletas[ids].productos);
-                //var contenido="";
-                /*for(let k = 0; k < data.boletas[ids].productos.length; k++){
-
-
-                }*/
-
 
 /*golden code
 $('input[type="checkbox"][name="boleta"]').click(
