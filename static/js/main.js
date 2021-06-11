@@ -40,13 +40,13 @@ function mostrarBoleta(data){
 		$("#table_checkbox").find( "tbody" ).html(content);
 		//Comienzo tabla productos
 		var data1=data;
-		test(data1);	
-		//productostore(data, undefined);
+		test(data1);
 		//selección de boleta
 		function test(data1){
 			//console.log(data1);
 			var data2=data1;
 			var id;
+			//revisión checkbox boleta para rellenar productos
 			$('input[type="checkbox"][name="boleta"]').click(
             	function(){
             		//console.log(data2);
@@ -64,6 +64,14 @@ function mostrarBoleta(data){
 	                    $("#table_product").find( "tbody" ).html(contenido);   
 	                }
 	            }
+	        );
+			//Botón siguiente, para completar solicitud
+	        $('button_save').click(
+	        	function(){
+	        		console.log(Hola soy el botón de solicitud)
+	        		console.log(data2)
+	        		console.log(id);
+	        	}
 	        );
 		}
 		//end checkbox
