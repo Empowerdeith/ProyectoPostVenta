@@ -73,7 +73,7 @@ function mostrarBoleta(data){
 					var arr = [];
 					$('input[name="producto"]:checked').each(
 						function () {
-    						arr.push($(this).val());
+    						arr.push(parseInt($(this).attr('id')));
     					}
     				);
     				console.log(arr);
