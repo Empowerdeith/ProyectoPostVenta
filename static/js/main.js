@@ -68,8 +68,8 @@ function mostrarBoleta(data){
 			//Botón siguiente, para completar solicitud
 	        $('button_save').click(
 	        	function(){
-	        		console.log(Hola soy el botón de solicitud);
-	        		console.log(data2);
+	        		//console.log(Hola soy el botón de solicitud);
+	        		//console.log(data2);
 	        		console.log(id);
 	        	}
 	        );
