@@ -46,6 +46,7 @@ function mostrarBoleta(data){
 			//console.log(data1);
 			var data2=data1;
 			var id;
+			
 			//revisión checkbox boleta para rellenar productos
 			$('input[type="checkbox"]').on('change', function() {
     			$('input[name="boleta"]').not(this).prop('checked', false);
@@ -56,6 +57,10 @@ function mostrarBoleta(data){
 	                if($(this).prop("checked") == true) {
 	                    var contenido = "";	                    
 	                    id = parseInt($(this).attr('id'));
+	                    var fecha_bol = new Date(data2.boletas[id].created_at);
+	                    var mes = fecha_bol.getMonth()+1;
+	                    console.log(mes);
+	                    console.log(fecha_bol);
 	                    /*console.log(id);
 	                    console.log(data2.boletas[id].productos.length);*/
 	                    for(let k = 0; k < data2.boletas[id].productos.length; k++){
