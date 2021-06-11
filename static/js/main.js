@@ -47,6 +47,9 @@ function mostrarBoleta(data){
 			var data2=data1;
 			var id;
 			//revisión checkbox boleta para rellenar productos
+			$('input[type="checkbox"]').on('change', function() {
+    			$('input[name="boleta"]').not(this).prop('checked', false);
+    		});
 			$('input[type="checkbox"][name="boleta"]').click(
             	function(){
             		//console.log(data2);
