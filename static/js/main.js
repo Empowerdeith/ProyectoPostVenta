@@ -57,13 +57,17 @@ function mostrarBoleta(data){
 	                if($(this).prop("checked") == true) {
 	                    var contenido = "";	                    
 	                    id = parseInt($(this).attr('id'));
+	                    //Comprobación de fechas
 	                    var fecha_bol = new Date(data2.boletas[id].created_at);
-	                    var mes = fecha_bol.getMonth()+1;
 	                    var fecha_actual = new Date();
+	                    var calc;
+	                    fecha_bol = fecha_bol.getMonth()+1;
 	                    fecha_actual = fecha_actual.getMonth()+1;
-	                    console.log(mes);
+	                    //calc fecha
+	                    calc = fecha_actual-fecha_bol;
 	                    console.log(fecha_bol);
 	                    console.log(fecha_actual);
+	                    console.log(calc);
 	                    /*console.log(id);
 	                    console.log(data2.boletas[id].productos.length);*/
 	                    for(let k = 0; k < data2.boletas[id].productos.length; k++){
