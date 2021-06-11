@@ -69,8 +69,8 @@ function mostrarBoleta(data){
 	        $('button_save').click(
 	        	function(){
 	        		//console.log(Hola soy el botón de solicitud);
-	        		//console.log(data2);
 	        		console.log(id);
+	        		console.log(data2);
 	        	}
 	        );
 		}
