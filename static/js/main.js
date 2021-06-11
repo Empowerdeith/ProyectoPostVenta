@@ -3,17 +3,17 @@
 function hide_table() {
   	$( "#myData" ).hide();
 }
+setTimeout(hide_table, 40);
 function esconder_prod{
 	$( "#tabla_de_productos" ).hide();
 }
-setTimeout(hide_table, 40);
 setTimeout(esconder_prod, 40);
 
 //Mostrar información principal de Boleta
 function mostrarBoleta(data){
 	//console.log(data);
 	if (data == "No existe cliente."){
-		hide_table();
+		hide_table()
 		$("#error_msg").html("<br><br>"+data);
 	}
 	else{
@@ -72,7 +72,7 @@ function mostrarBoleta(data){
 		                console.log(calc);
 
 	                    if(calc>3){
-	                    	esconder_prod();
+	                    	esconder_prod()
 	                    	$("#error_msg2").html("La boleta no cumple con la fecha de garantía de devolución.");
 	                    }
 	                    else{
