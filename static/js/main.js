@@ -66,14 +66,14 @@ function mostrarBoleta(data){
 	            }
 	        );
 			//Botón siguiente, para completar solicitud
-	        //$('button_save').click();
-	       	function saveme(){
-	        	//console.log(Hola soy el botón de solicitud);
-				console.log(id);
-				console.log(data2);
-	        }    
+	        $('#button_save').click(
+	        	function(){
+	        		console.log(id);
+					console.log(data2);
+	        	}
+	        );
 		}
-	//end checkbox
+		//end checkbox
 	}
 }
 
