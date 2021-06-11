@@ -64,7 +64,7 @@ function mostrarBoleta(data){
 	                    fecha_bol = fecha_bol.getMonth()+1;
 	                    fecha_actual = fecha_actual.getMonth()+1;
 	                    //calc fecha
-	                    calc = fecha_actual-fecha_bol+2;
+	                    calc = fecha_actual-fecha_bol+6;
 	                    console.log(fecha_bol);
 		                console.log(fecha_actual);
 		                console.log(calc);
