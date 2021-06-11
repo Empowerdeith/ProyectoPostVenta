@@ -64,19 +64,26 @@ function mostrarBoleta(data){
 	                    fecha_bol = fecha_bol.getMonth()+1;
 	                    fecha_actual = fecha_actual.getMonth()+1;
 	                    //calc fecha
-	                    calc = fecha_actual-fecha_bol;
+	                    calc = fecha_actual-fecha_bol+2;
 	                    console.log(fecha_bol);
-	                    console.log(fecha_actual);
-	                    console.log(calc);
-	                    /*console.log(id);
-	                    console.log(data2.boletas[id].productos.length);*/
-	                    for(let k = 0; k < data2.boletas[id].productos.length; k++){
-	                    	contenido += "<tr><td><input id=\""+k+"\" type=\"checkbox\" name=\"producto\" >"+"</td>";
-	                    	contenido += "<td>" + data2.boletas[id].productos[k].nombre_pro + "</td>";
-	                    	contenido += "<td>" + data2.boletas[id].productos[k].precio + "</td>";
-	                    	contenido += "</tr>";
+		                console.log(fecha_actual);
+		                console.log(calc);
+
+	                    if(calc>3){
+	                    	$("#error_msg2").html("La boleta no cumple con la fecha de garantía de devolución.");
 	                    }
-	                    $("#table_product").find( "tbody" ).html(contenido);   
+	                    else{
+	                    	$("#error_msg2").html("");
+		                    /*console.log(id);
+		                    console.log(data2.boletas[id].productos.length);*/
+		                    for(let k = 0; k < data2.boletas[id].productos.length; k++){
+		                    	contenido += "<tr><td><input id=\""+k+"\" type=\"checkbox\" name=\"producto\" >"+"</td>";
+		                    	contenido += "<td>" + data2.boletas[id].productos[k].nombre_pro + "</td>";
+		                    	contenido += "<td>" + data2.boletas[id].productos[k].precio + "</td>";
+		                    	contenido += "</tr>";
+		                    }
+		                    $("#table_product").find( "tbody" ).html(contenido);
+		                } 
 	                }
 	            }
 	        );
