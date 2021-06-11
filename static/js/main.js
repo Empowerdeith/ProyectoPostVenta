@@ -122,6 +122,7 @@ Object.prototype.isEmpty = function () {
 //Función que realiza el fetch a la ip
 function prueba(){
 	var buscar1 = $('#id_buscar').val().toString();
+
 	// console.log(buscar1);
 	if(!buscar1.isEmpty()){
 		let url="http://3.83.24.216/api/cl/"+buscar1
@@ -129,6 +130,7 @@ function prueba(){
 		.then(response => response.json())
 		.then(data => mostrarBoleta(data))
 		.catch(error => console.log(error))
+		esconder_prod();
 	}
 	else{
 		hide_table()
