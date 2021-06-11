@@ -59,8 +59,11 @@ function mostrarBoleta(data){
 	                    id = parseInt($(this).attr('id'));
 	                    var fecha_bol = new Date(data2.boletas[id].created_at);
 	                    var mes = fecha_bol.getMonth()+1;
+	                    var fecha_actual = new Date();
+	                    fecha_actual = fecha_actual.getMonth()+1;
 	                    console.log(mes);
 	                    console.log(fecha_bol);
+	                    console.log(fecha_actual);
 	                    /*console.log(id);
 	                    console.log(data2.boletas[id].productos.length);*/
 	                    for(let k = 0; k < data2.boletas[id].productos.length; k++){
