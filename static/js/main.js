@@ -89,7 +89,7 @@ function mostrarBoleta(data){
 			//Botón siguiente, para completar solicitud
 	        $('#button_save').click(
 	        	function(){
-	        		console.log("id de boleta:");
+	        		//console.log("id de boleta:");
 	        		//console.log(id);
 	        		console.log("información de boleta:");
 					//console.log(data2);
@@ -107,7 +107,7 @@ function mostrarBoleta(data){
 					formdata.append("rut", data2.rut);
 					formdata.append("nombre_cl", data2.nombre_cl);
 					formdata.append("direccion", data2.direccion);
-					formdata.append("boletas", "");
+					formdata.append("boletas", "1");
 					console.log(formdata);
 
 					var requestOptions = {
