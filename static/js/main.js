@@ -105,7 +105,8 @@ function mostrarBoleta(data){
     				console.log(data2.nombre_cl.toString());
     				console.log(data2.direccion.toString());*/
     				console.log(arr.length);
-    				//for(let k = 0; k < arr.length; k++){}
+    				console.log(arr);
+    				//for(let k = 0; k < arr.length; k++){   				}
 					/*var formdata = new FormData();
 					formdata.append("rut", data2.rut);
 					formdata.append("nombre_cl", data2.nombre_cl);
