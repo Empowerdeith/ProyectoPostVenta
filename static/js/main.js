@@ -106,8 +106,21 @@ function mostrarBoleta(data){
     				console.log(data2.direccion.toString());*/
     				console.log(arr.length);
     				console.log(arr);
-    				
-    				//for(let k = 0; k < arr.length; k++){   				}
+    				for(let k = 0; k < arr.length; k++){	
+    					var formprod = new FormData();
+						formprod.append("nombre_pro", data2.boletas[id].productos[k].nombre_pro);
+						formprod.append("precio", data2.boletas[id].productos[k].precio);
+						console.log(formprod);
+						var requestOptions = {
+						method: 'POST',
+						body: formprod,
+						redirect: 'follow'
+						};
+						fetch("http://18.207.25.202/api/devolucion/Producto/", requestOptions)
+						.then(response => response.json())
+						.then(data => console.log(data))
+						.catch(error => console.log('error', error));
+    				}
 					/*var formdata = new FormData();
 					formdata.append("rut", data2.rut);
 					formdata.append("nombre_cl", data2.nombre_cl);
