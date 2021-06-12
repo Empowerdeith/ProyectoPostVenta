@@ -102,21 +102,7 @@ function mostrarBoleta(data){
     				console.log(data2.rut.toString());
     				console.log(data2.nombre_cl.toString());
     				console.log(data2.direccion.toString());
-					var settings = {
-						"url": "http://18.207.25.202/api/devolucion/Cliente/",
-						"method": "POST",
-						"timeout": 0,
-						"headers": {"Content-Type": "application/json"},
-						"data": JSON.stringify({
-							"rut": "1311312",
-							"nombre_cl": "asdhuasdha",
-							"direccion": "asdasdsada",
-							"boletas": []	
-						}),
-					};
-					$.ajax(settings).done(function (response) {
-						console.log(response);
-					});
+
     				//console.log(arr);
 	        	}
 	        );
@@ -160,3 +146,26 @@ function unselectall(){
 	$( "#table_product").find( "input" ).prop('checked', false);
 }
 //------------------------------------------------------------------------------------
+function test(){
+	var myHeaders = new Headers();
+	myHeaders.append("Content-Type", "application/json");
+
+	var raw = JSON.stringify({
+	  "rut": "23123",
+	  "nombre_cl": "Juan T23123apis",
+	  "direccion": "Ambrossio O'Hi123213ggins #44",
+	  "boletas": []
+	});
+
+	var requestOptions = {
+	  method: 'POST',
+	  headers: myHeaders,
+	  body: raw,
+	  redirect: 'follow'
+	};
+
+	fetch("http://18.207.25.202/api/devolucion/Cliente/", requestOptions)
+	  .then(response => response.text())
+	  .then(result => console.log(result))
+	  .catch(error => console.log('error', error));
+}
