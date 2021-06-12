@@ -90,15 +90,18 @@ function mostrarBoleta(data){
 	        $('#button_save').click(
 	        	function(){
 	        		console.log("id de boleta:");
-	        		console.log(id);
+	        		//console.log(id);
 	        		console.log("información de boleta:");
-					console.log(data2);
+					//console.log(data2);
 					var arr = [];
 					$('input[name="producto"]:checked').each(
 						function () {
     						arr.push(parseInt($(this).attr('id')));
     					}
     				);
+    				console.log(data2.rut.toString());
+    				console.log(data2.nombre_cl.toString());
+    				console.log(data2.direccion.toString());
     				var settings = {
 						"url": "http://18.207.25.202/api/devolucion/Cliente/",
 						"method": "POST",
@@ -111,7 +114,6 @@ function mostrarBoleta(data){
 							"boletas": []
 						}),
 					};
-
 					$.ajax(settings).done(function (response) {
 						console.log(response);
 					});
