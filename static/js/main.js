@@ -101,12 +101,13 @@ function mostrarBoleta(data){
     						arr.push(parseInt($(this).attr('id')));
     					}
     				);
-    				console.log(data2.rut.toString());
+    				/*console.log(data2.rut.toString());
     				console.log(data2.nombre_cl.toString());
-    				console.log(data2.direccion.toString());
-    				console.log("me estoy ejecutando");
-					var formdata = new FormData();
-					formdata.append("rut", "31243234324324332423");
+    				console.log(data2.direccion.toString());*/
+    				console.log(arr.length);
+    				//for(let k = 0; k < arr.length; k++){}
+					/*var formdata = new FormData();
+					formdata.append("rut", data2.rut);
 					formdata.append("nombre_cl", data2.nombre_cl);
 					formdata.append("direccion", data2.direccion);
 					formdata.append("boletas", data2.boletas[id].num_boleta);
@@ -121,7 +122,7 @@ function mostrarBoleta(data){
 					fetch("http://18.207.25.202/api/devolucion/Cliente/", requestOptions)
 					.then(response => response.json())
 					.then(data => console.log(data))
-					.catch(error => console.log('error', error));
+					.catch(error => console.log('error', error));*/
 	        	}
 	        );
 	        //termino boton completar solicitud
