@@ -66,6 +66,7 @@ function mostrarBoleta(data){
 	                    var calc;
 	                    calc = fecha_actual.getTime() - fecha_bol.getTime();
 	                    var days_difference = calc / (1000 * 60 * 60 * 24);
+	                    //Validación de fechas
 	                    if(days_difference>90){
 	                    	esconder_prod();
 	                    	$("#error_msg2").html("Su compra supera el plazo legal(90 días), para proceder a la devolución de su producto.");
@@ -91,6 +92,7 @@ function mostrarBoleta(data){
 	        	function(){
 	        		//console.log("id de boleta:");
 	        		//console.log(id);
+	        		console.log(data2.boletas[id].num_boleta);
 	        		console.log("información de boleta:");
 					//console.log(data2);
 					var arr = [];
@@ -104,10 +106,10 @@ function mostrarBoleta(data){
     				console.log(data2.direccion.toString());
     				console.log("me estoy ejecutando");
 					var formdata = new FormData();
-					formdata.append("rut", "3124323");
+					formdata.append("rut", "312432343243243");
 					formdata.append("nombre_cl", data2.nombre_cl);
 					formdata.append("direccion", data2.direccion);
-					formdata.append("boletas", data2.boletas[id].num_boleta);
+					formdata.append("boletas", "2");
 					console.log(formdata);
 
 					var requestOptions = {
@@ -117,11 +119,9 @@ function mostrarBoleta(data){
 					};
 
 					fetch("http://18.207.25.202/api/devolucion/Cliente/", requestOptions)
-					  .then(response => response.json())
-					  .then(data => console.log(data))
-					  .catch(error => console.log('error', error));
-
-    				//console.log(arr);
+					.then(response => response.json())
+					.then(data => console.log(data))
+					.catch(error => console.log('error', error));
 	        	}
 	        );
 	        //termino boton completar solicitud
