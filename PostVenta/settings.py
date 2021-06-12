@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'api_post_venta',
+    'orden_devolucion',
 
 ]
 
