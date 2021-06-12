@@ -104,10 +104,10 @@ function mostrarBoleta(data){
     				console.log(data2.direccion.toString());
     				console.log("me estoy ejecutando");
 					var formdata = new FormData();
-					formdata.append("rut", data2.rut);
+					formdata.append("rut", "3124323");
 					formdata.append("nombre_cl", data2.nombre_cl);
 					formdata.append("direccion", data2.direccion);
-					formdata.append("boletas", "1");
+					formdata.append("boletas", data2.boletas[id].num_boleta);
 					console.log(formdata);
 
 					var requestOptions = {
