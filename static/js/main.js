@@ -147,25 +147,23 @@ function unselectall(){
 }
 //------------------------------------------------------------------------------------
 function test(){
-	var myHeaders = new Headers();
-	myHeaders.append("Content-Type", "application/json");
+	var form = new FormData();
+	form.append("rut", "2343242");
+	form.append("nombre_cl", "213123324324213");
+	form.append("direccion", "2131232343243242131");
+	form.append("boletas", "1");
 
-	var raw = JSON.stringify({
-	  "rut": "23123",
-	  "nombre_cl": "Juan T23123apis",
-	  "direccion": "Ambrossio O'Hi123213ggins #44",
-	  "boletas": []
-	});
-
-	var requestOptions = {
-	  method: 'POST',
-	  headers: myHeaders,
-	  body: raw,
-	  redirect: 'follow'
+	var settings = {
+	  "url": "http://18.207.25.202/api/devolucion/Cliente/",
+	  "method": "POST",
+	  "timeout": 0,
+	  "processData": false,
+	  "mimeType": "multipart/form-data",
+	  "contentType": false,
+	  "data": form
 	};
 
-	fetch("http://18.207.25.202/api/devolucion/Cliente/", requestOptions)
-	  .then(response => response.text())
-	  .then(result => console.log(result))
-	  .catch(error => console.log('error', error));
+	$.ajax(settings).done(function (response) {
+	  console.log(response);
+	});
 }
