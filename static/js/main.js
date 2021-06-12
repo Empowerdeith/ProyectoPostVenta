@@ -79,7 +79,8 @@ function mostrarBoleta(data){
 		                    for(let k = 0; k < data2.boletas[id].productos.length; k++){
 		                    	contenido += "<tr><td><input id=\""+k+"\" type=\"checkbox\" name=\"producto\" >"+"</td>";
 		                    	contenido += "<td>" + data2.boletas[id].productos[k].nombre_pro + "</td>";
-		                    	contenido += "<td>" + data2.boletas[id].productos[k].precio + "</td>";
+		                    	var monea = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
+		                    	contenido += "<td>" + monea.format(data2.boletas[id].productos[k].precio) + "</td>";
 		                    	contenido += "</tr>";
 		                    }
 		                    $("#table_product").find( "tbody" ).html(contenido);
