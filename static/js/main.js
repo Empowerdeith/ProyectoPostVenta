@@ -125,7 +125,7 @@ function prueba(){
 
 	// console.log(buscar1);
 	if(!buscar1.isEmpty()){
-		let url="http://3.83.24.216/api/cl/"+buscar1
+		let url="http://3.83.24.216/Cliente/"+buscar1
 		fetch(url)
 		.then(response => response.json())
 		.then(data => mostrarBoleta(data))
