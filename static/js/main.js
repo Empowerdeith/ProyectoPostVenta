@@ -65,18 +65,10 @@ function mostrarBoleta(data){
 	                    var fecha_actual = new Date();
 	                    var calc;
 	                    calc = fecha_actual.getTime() - fecha_bol.getTime();
-	                    console.log(calc);
-	                    var days_difference = calc / (1000 * 60 * 60 * 24); 
-	                    console.log(days_difference); 
-	                    /*fecha_bol = fecha_bol.getMonth()+1;
-	                    fecha_actual = fecha_actual.getMonth()+1;*/
-	                    //calc fecha
-	                    /*calc = fecha_actual-fecha_bol;
-	                    console.log(fecha_bol);
-		                console.log(fecha_actual);*/
+	                    var days_difference = calc / (1000 * 60 * 60 * 24);
 	                    if(days_difference>90){
 	                    	esconder_prod();
-	                    	$("#error_msg2").html("La boleta no cumple con la fecha de garantía de devolución.");
+	                    	$("#error_msg2").html("Su compra supera el plazo legal(90 días), para proceder a la devolución de su producto.");
 	                    }
 	                    else{
 	                    	$("#error_msg2").html("");
