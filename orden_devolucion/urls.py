@@ -9,5 +9,5 @@ router.register("Producto",views.ProductoApi, basename="producto")
 router.register("Cliente",views.ClienteApi, basename="cliente")
 
 urlpatterns = [
-    path('',include(router.urls)),
+    path('devolucion/',include(router.urls)),
 ]

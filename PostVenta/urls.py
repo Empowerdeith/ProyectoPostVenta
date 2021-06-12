@@ -12,5 +12,5 @@ urlpatterns = [
     path('devolucion/', devoluciones1, name="devolucion"),
     path('api/', include('api_post_venta.api.urls'), name= "api_web"),
     path('cuenta/', cuenta, name="cuenta"),
-    re_path('', include('orden_devolucion.urls')),
+    re_path('api/', include('orden_devolucion.urls')),
 ]
