@@ -123,7 +123,7 @@ function prueba(){
 
 	// console.log(buscar1);
 	if(!buscar1.isEmpty()){
-		let url="http://3.83.24.216/Cliente/"+buscar1
+		let url="http://3.83.24.216/api/cl/"+buscar1
 		fetch(url)
 		.then(response => response.json())
 		.then(data => mostrarBoleta(data))
@@ -149,8 +149,8 @@ function unselectall(){
 function post_test(){
 	console.log("me estoy ejecutando");
 	var formdata = new FormData();
-	formdata.append("rut", "holarut23232234");
-	formdata.append("nombre_cl", "2131233242213");
+	formdata.append("rut", "funcionando");
+	formdata.append("nombre_cl", "tontera");
 	formdata.append("direccion", "2131223432131");
 	formdata.append("boletas", "1");
 	console.log(formdata);
