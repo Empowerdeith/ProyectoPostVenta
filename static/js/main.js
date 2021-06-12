@@ -102,16 +102,16 @@ function mostrarBoleta(data){
     				console.log(data2.rut.toString());
     				console.log(data2.nombre_cl.toString());
     				console.log(data2.direccion.toString());
-    				var settings = {
+					var settings = {
 						"url": "http://18.207.25.202/api/devolucion/Cliente/",
 						"method": "POST",
 						"timeout": 0,
 						"headers": {"Content-Type": "application/json"},
 						"data": JSON.stringify({
-							"rut": data2.rut.toString(),
-							"nombre_cl": data2.nombre_cl.toString(),
-							"direccion": data2.direccion.toString(),
-							"boletas": []
+							"rut": "1311312",
+							"nombre_cl": "asdhuasdha",
+							"direccion": "asdasdsada",
+							"boletas": []	
 						}),
 					};
 					$.ajax(settings).done(function (response) {
