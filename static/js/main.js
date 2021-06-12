@@ -146,24 +146,23 @@ function unselectall(){
 	$( "#table_product").find( "input" ).prop('checked', false);
 }
 //------------------------------------------------------------------------------------
-function test(){
-	var form = new FormData();
-	form.append("rut", "2343242");
-	form.append("nombre_cl", "213123324324213");
-	form.append("direccion", "2131232343243242131");
-	form.append("boletas", "1");
+function post_test(){
+	console.log("me estoy ejecutando");
+	var formdata = new FormData();
+	formdata.append("rut", "holarut23232234");
+	formdata.append("nombre_cl", "2131233242213");
+	formdata.append("direccion", "2131223432131");
+	formdata.append("boletas", "1");
+	console.log(formdata);
 
-	var settings = {
-	  "url": "http://18.207.25.202/api/devolucion/Cliente/",
-	  "method": "POST",
-	  "timeout": 0,
-	  "processData": false,
-	  "mimeType": "multipart/form-data",
-	  "contentType": false,
-	  "data": form
+	var requestOptions = {
+	  method: 'POST',
+	  body: formdata,
+	  redirect: 'follow'
 	};
 
-	$.ajax(settings).done(function (response) {
-	  console.log(response);
-	});
+	fetch("http://18.207.25.202/api/devolucion/Cliente/", requestOptions)
+	  .then(response => response.json())
+	  .then(data => console.log(data))
+	  .catch(error => console.log('error', error));
 }
