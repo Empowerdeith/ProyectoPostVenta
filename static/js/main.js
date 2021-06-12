@@ -99,7 +99,23 @@ function mostrarBoleta(data){
     						arr.push(parseInt($(this).attr('id')));
     					}
     				);
-    				console.log(arr);
+    				var settings = {
+						"url": "http://18.207.25.202/api/devolucion/Cliente/",
+						"method": "POST",
+						"timeout": 0,
+						"headers": {"Content-Type": "application/json"},
+						"data": JSON.stringify({
+							"rut": data2.rut.toString(),
+							"nombre_cl": data2.nombre_cl.toString(),
+							"direccion": data2.direccion.toString(),
+							"boletas": []
+						}),
+					};
+
+					$.ajax(settings).done(function (response) {
+						console.log(response);
+					});
+    				//console.log(arr);
 	        	}
 	        );
 	        //termino boton completar solicitud
