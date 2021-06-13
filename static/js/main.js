@@ -129,12 +129,12 @@ function mostrarBoleta(data){
     				for(let k = 0; k < arr.length; k++){
     					array_id.push(parseInt(data2.boletas[id].productos[k].id));
     				}
-    				console.log(array_id);
+    				console.log(array_id);//<----- array contiene los productos
     				var formboleta = new FormData();
 					formboleta.append("num_boleta", data2.boletas[id].num_boleta);
 					formboleta.append("created_at", data2.boletas[id].created_at);
 					formboleta.append("total", data2.boletas[id].total);
-					formboleta.append("productos", "[]");
+					formboleta.append("productos", "2","6");
 					console.log(formboleta);
 					var requestOptions = {
 					  method: 'POST',
@@ -204,23 +204,3 @@ function unselectall(){
 	$( "#table_product").find( "input" ).prop('checked', false);
 }
 //------------------------------------------------------------------------------------
-function post_test(){
-	console.log("me estoy ejecutando");
-	var formdata = new FormData();
-	formdata.append("rut", "funcionando");
-	formdata.append("nombre_cl", "tontera");
-	formdata.append("direccion", "2131223432131");
-	formdata.append("boletas", "1");
-	console.log(formdata);
-
-	var requestOptions = {
-	  method: 'POST',
-	  body: formdata,
-	  redirect: 'follow'
-	};
-
-	fetch("http://18.207.25.202/api/devolucion/Cliente/", requestOptions)
-	  .then(response => response.json())
-	  .then(data => console.log(data))
-	  .catch(error => console.log('error', error));
-}
