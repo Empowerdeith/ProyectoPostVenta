@@ -36,9 +36,9 @@ function mostrarBoleta(data){
 			var mes = fecha_obtenida.getMonth()+1;
 			var annio = fecha_obtenida.getFullYear();
 			//--------------------------------------------------
+			var  dineros = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
 			content += "<td>" + dia+"/"+mes+"/"+annio + "</td>";
-			var monea = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
-			content += "<td>" + monea.format(data.boletas[i].total) + "</td>";
+			content += "<td>" + dineros.format(data.boletas[i].total) + "</td>";
 			content += "</tr>";
 		}
 		$("#table_checkbox").find( "tbody" ).html(content);
@@ -70,7 +70,7 @@ function mostrarBoleta(data){
 	                    //Validación de fechas
 	                    if(days_difference>90){
 	                    	esconder_prod();
-	                    	$("#error_msg2").html("Su compra supera el plazo legal (90 días), para proceder a la devolución de su producto.");
+	                    	$("#error_msg2").html("Su compra supera el plazo legal(90 días), para proceder a la devolución de su producto.");
 	                    }
 	                    else{
 	                    	$("#error_msg2").html("");
@@ -80,15 +80,15 @@ function mostrarBoleta(data){
 		                    for(let k = 0; k < data2.boletas[id].productos.length; k++){
 		                    	contenido += "<tr><td><input id=\""+k+"\" type=\"checkbox\" name=\"producto\" >"+"</td>";
 		                    	contenido += "<td>" + data2.boletas[id].productos[k].nombre_pro + "</td>";
-		                    	var monea = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
+		                    	var  monea = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
 		                    	contenido += "<td>" + monea.format(data2.boletas[id].productos[k].precio) + "</td>";
 		                    	contenido += "</tr>";
 		                    }
 		                    $("#table_product").find( "tbody" ).html(contenido);
 		                } 
-	                }
-	            }
-	        );
+		            }
+		        }
+		    );
 			//Botón siguiente, para completar solicitud
 	        $('#button_save').click(
 	        	function(){
@@ -122,7 +122,7 @@ function mostrarBoleta(data){
 						.then(response => response.json())
 						.then(data => console.log(data))
 						.catch(error => console.log('error', error));
-    				}
+    				};
     				/*var formboleta = new FormData();
 					formboleta.append("num_boleta", data2.boletas[id].num_boleta);
 					formboleta.append("created_at", data2.boletas[id].created_at);
@@ -157,13 +157,11 @@ function mostrarBoleta(data){
 					.then(response => response.json())
 					.then(data => console.log(data))
 					.catch(error => console.log('error', error));*/
-	        	}
-	        );
-	        //termino boton completar solicitud
-		}
-		//termino function test
-	}
-}
+    			}
+    		)
+	    }
+	}	
+}		
 
 //Función para verifica si esta vacío en input principal.
 Object.prototype.isEmpty = function () {
