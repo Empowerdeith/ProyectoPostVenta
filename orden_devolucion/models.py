@@ -4,7 +4,7 @@ from django.utils import timezone
 # Create your models here.
 
 class Producto(models.Model):
-    id=models.AutoField(primary_key=True)
+    id = models.IntegerField(primary_key=True)
     nombre_pro = models.CharField(max_length=100)
     precio = models.IntegerField()
 
@@ -12,7 +12,7 @@ class Producto(models.Model):
         return self.nombre_pro
 
 class Boleta(models.Model):
-    num_boleta = models.AutoField(primary_key=True)
+    num_boleta = models.IntegerField(primary_key=True)
     created_at = models.DateTimeField(auto_now_add=True)
     total = models.IntegerField()
     productos = models.ManyToManyField('Producto', related_name='boletas', blank=True)
