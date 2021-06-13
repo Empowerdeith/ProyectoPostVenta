@@ -37,7 +37,8 @@ function mostrarBoleta(data){
 			var annio = fecha_obtenida.getFullYear();
 			//--------------------------------------------------
 			content += "<td>" + dia+"/"+mes+"/"+annio + "</td>";
-			content += "<td>" + data.boletas[i].total + "</td>";
+			var monea = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
+			content += "<td>" + monea.format(data.boletas[i].total) + "</td>";
 			content += "</tr>";
 		}
 		$("#table_checkbox").find( "tbody" ).html(content);
@@ -69,7 +70,7 @@ function mostrarBoleta(data){
 	                    //Validación de fechas
 	                    if(days_difference>90){
 	                    	esconder_prod();
-	                    	$("#error_msg2").html("Su compra supera el plazo legal(90 días), para proceder a la devolución de su producto.");
+	                    	$("#error_msg2").html("Su compra supera el plazo legal (90 días), para proceder a la devolución de su producto.");
 	                    }
 	                    else{
 	                    	$("#error_msg2").html("");
