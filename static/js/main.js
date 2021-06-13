@@ -129,11 +129,12 @@ function mostrarBoleta(data){
     				for(let k = 0; k < arr.length; k++){
     					array_id.push(parseInt(data2.boletas[id].productos[k].id));
     				}
+    				console.log(array_id);
     				var formboleta = new FormData();
 					formboleta.append("num_boleta", data2.boletas[id].num_boleta);
 					formboleta.append("created_at", data2.boletas[id].created_at);
 					formboleta.append("total", data2.boletas[id].total);
-					formboleta.append("productos", array_id);
+					formboleta.append("productos", );
 					console.log(formboleta);
 					var requestOptions = {
 					  method: 'POST',
