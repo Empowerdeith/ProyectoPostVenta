@@ -106,6 +106,7 @@ function mostrarBoleta(data){
     				/*console.log(data2.rut.toString());
     				console.log(data2.nombre_cl.toString());
     				console.log(data2.direccion.toString());*/
+    				console.log(data2.boletas[id].productos[0].id);
     				console.log(arr.length);
     				console.log(arr);
     				for(let k = 0; k < arr.length; k++){	
