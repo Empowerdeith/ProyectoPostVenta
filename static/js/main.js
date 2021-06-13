@@ -98,6 +98,7 @@ function mostrarBoleta(data){
 	        		console.log("información de boleta:");
 					//console.log(data2);
 					var arr = [];
+					var array_id = [];
 					$('input[name="producto"]:checked').each(
 						function () {
     						arr.push(parseInt($(this).attr('id')));
@@ -124,24 +125,28 @@ function mostrarBoleta(data){
 						.then(data => console.log(data))
 						.catch(error => console.log('error', error));
     				};
-    				/*var formboleta = new FormData();
+    				//arreglo id productos
+    				for(let k = 0; k < arr.length; k++){
+    					array_id.push(parseInt(data2.boletas[id].productos[k].id));
+    				}
+    				var formboleta = new FormData();
 					formboleta.append("num_boleta", data2.boletas[id].num_boleta);
 					formboleta.append("created_at", data2.boletas[id].created_at);
 					formboleta.append("total", data2.boletas[id].total);
-					formboleta.append("productos", arr);
+					formboleta.append("productos", array_id);
 					console.log(formboleta);
 					var requestOptions = {
 					  method: 'POST',
 					  body: formboleta,
 					  redirect: 'follow'
-					};*/
+					};
 
-					/*fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
+					fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
 					.then(response => response.json())
 					.then(data => console.log(data))
 					.catch(error => console.log('error', error));
 
-					var formdata = new FormData();
+					/*var formdata = new FormData();
 					formdata.append("rut", data2.rut);
 					formdata.append("nombre_cl", data2.nombre_cl);
 					formdata.append("direccion", data2.direccion);
