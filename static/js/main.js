@@ -134,7 +134,7 @@ function mostrarBoleta(data){
 					formboleta.append("num_boleta", data2.boletas[id].num_boleta);
 					formboleta.append("created_at", data2.boletas[id].created_at);
 					formboleta.append("total", data2.boletas[id].total);
-					formboleta.append("productos", "");
+					formboleta.append("productos", []);
 					console.log(formboleta);
 					var requestOptions = {
 					  method: 'POST',
