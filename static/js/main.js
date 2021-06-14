@@ -104,7 +104,7 @@ function mostrarBoleta(data){
     				boleta();
     				//productos();
     				//-------Sección productos operativa-----------------------------------------------
-    				/*function productos(){
+    				function productos(){
     					var check=false;
 	    				for(let k = 0; k < arr.length; k++){	
 	    					var formprod = new FormData();
@@ -126,7 +126,7 @@ function mostrarBoleta(data){
 						if(check==true){
 							boleta();
 						}	
-    				}*/
+    				}
 					//-------Sección boletas operativa-----------------------------------------------------
 					function boleta(){
 						var check = false;
