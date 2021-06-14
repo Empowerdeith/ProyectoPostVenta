@@ -104,8 +104,8 @@ function mostrarBoleta(data){
     						arr.push(parseInt($(this).attr('id')));
     					}
     				);
-    				console.log(arr.length);
-    				console.log(arr);
+    				/*console.log(arr.length);
+    				console.log(arr);*/
 
     				//-------Sección productos operativa-----------------------------------------------
     				/*for(let k = 0; k < arr.length; k++){	
@@ -124,20 +124,19 @@ function mostrarBoleta(data){
 						.then(data => console.log(data))
 						.catch(error => console.log('error', error));
     				};*/
-    				//arreglo id productos
-    				/*for(let k = 0; k < arr.length; k++){
-    					array_id.push(parseInt(data2.boletas[id].productos[k].id));
-    				}*/
+    				
     				//-------------------------------------------------------------------------------------
 
 					//-------Sección boletas operativa-----------------------------------------------------
     				//console.log(array_id);//<----- array contiene los productos
-    				/*var formboleta = new FormData();
+    				var formboleta = new FormData();
 					formboleta.append("num_boleta", data2.boletas[id].num_boleta);
 					formboleta.append("created_at", data2.boletas[id].created_at);
 					formboleta.append("total", data2.boletas[id].total);
-
-					formboleta.append("productos", );
+					//arreglo id productos
+					for(let k = 0; k < arr.length; k++){
+    					formboleta.append("productos", data2.boletas[id].productos[k].id);
+    				}
 					console.log(formboleta);
 					var requestOptions = {
 					  method: 'POST',
@@ -148,7 +147,7 @@ function mostrarBoleta(data){
 					fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
 					.then(response => response.json())
 					.then(data => console.log(data))
-					.catch(error => console.log('error', error));*/
+					.catch(error => console.log('error', error));
 					//-----------------------------------------------------------------------------------------
 
 
