@@ -110,7 +110,7 @@ function mostrarBoleta(data){
 	    					formprod.append("id",data2.boletas[id].productos[k].id);
 							formprod.append("nombre_pro", data2.boletas[id].productos[k].nombre_pro);
 							formprod.append("precio", data2.boletas[id].productos[k].precio);
-							console.log(formprod);
+							//console.log(formprod);
 							var requestOptions = {
 							method: 'POST',
 							body: formprod,
@@ -135,7 +135,7 @@ function mostrarBoleta(data){
 						for(let k = 0; k < arr.length; k++){
 	    					formboleta.append("productos", data2.boletas[id].productos[k].id);
 	    				}
-						console.log(formboleta);
+						//console.log(formboleta);
 						var requestOptions = {
 						  method: 'POST',
 						  body: formboleta,
@@ -158,8 +158,7 @@ function mostrarBoleta(data){
 						formdata.append("nombre_cl", data2.nombre_cl);
 						formdata.append("direccion", data2.direccion);
 						formdata.append("boletas", data2.boletas[id].num_boleta);
-						console.log(formdata);
-
+						//console.log(formdata);
 						var requestOptions = {
 						  method: 'POST',
 						  body: formdata,
