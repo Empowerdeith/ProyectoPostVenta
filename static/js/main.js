@@ -101,10 +101,10 @@ function mostrarBoleta(data){
     						arr.push(parseInt($(this).attr('id')));
     					}
     				);
-    				boleta();
-    				//productos();
+    				//boleta();
+    				productos();
     				//-------Sección productos operativa-----------------------------------------------
-    				/*function productos(){
+    				function productos(){
     					var check=false;
 	    				for(let k = 0; k < arr.length; k++){	
 	    					var formprod = new FormData();
@@ -126,7 +126,7 @@ function mostrarBoleta(data){
 						if(check==true){
 							boleta();
 						}	
-    				}*/
+    				}
     				//-------------------------------------------------------------------------------------
 
 					//-------Sección boletas operativa-----------------------------------------------------
@@ -153,14 +153,14 @@ function mostrarBoleta(data){
 						.catch(error => console.log('error', error));
 						check=true;
 						if(check==true){
-							cliente();
+							//cliente();
 						}
 					}
 
 
 					//-----------------------------------------------------------------------------------------
 					//----Sección datos Cliente----------------------------------------------------------------
-					function cliente(){					
+					/*function cliente(){					
 						var formdata = new FormData();
 						formdata.append("rut", data2.rut);
 						formdata.append("nombre_cl", data2.nombre_cl);
@@ -177,7 +177,7 @@ function mostrarBoleta(data){
 						.then(response => response.json())
 						.then(data => console.log(data))
 						.catch(error => console.log('error', error));
-					}
+					}*/
 					//-----------------------------------------------------------------------------------------
     			}
     		)
