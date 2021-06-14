@@ -104,6 +104,7 @@ function mostrarBoleta(data){
     				productos();
     				//-------Sección productos operativa-----------------------------------------------
     				function productos(){
+    					var check=false;
 	    				for(let k = 0; k < arr.length; k++){	
 	    					var formprod = new FormData();
 	    					formprod.append("id",data2.boletas[id].productos[k].id);
@@ -120,7 +121,10 @@ function mostrarBoleta(data){
 							//.then(data => console.log(data))
 							.catch(error => console.log('error', error));
 	    				};
-	    				boleta();
+	    				check=true;
+						if(check==true){
+							boleta();
+						}	
     				}
     				//-------------------------------------------------------------------------------------
 
