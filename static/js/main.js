@@ -101,6 +101,7 @@ function mostrarBoleta(data){
     						arr.push(parseInt($(this).attr('id')));
     					}
     				);
+    				boleta();
     				//productos();
     				//-------Sección productos operativa-----------------------------------------------
     				/*function productos(){
