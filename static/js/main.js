@@ -90,10 +90,10 @@ function mostrarBoleta(data){
 		        }
 		    );
 			//Botón siguiente, para completar solicitud
-	        $('#button_save').click(
-	        	function(){
-	        		//console.log("id de boleta:");
-	        		//console.log(id);
+			$('#button_save').click(
+					function(){
+					//console.log("id de boleta:");
+					//console.log(id);
 					//console.log(data2);
 					var arr = [];
 					$('input[name="producto"]:checked').each(
@@ -127,8 +127,6 @@ function mostrarBoleta(data){
 							boleta();
 						}	
     				}*/
-    				//-------------------------------------------------------------------------------------
-
 					//-------Sección boletas operativa-----------------------------------------------------
 					function boleta(){
 						var check = false;
@@ -145,25 +143,33 @@ function mostrarBoleta(data){
 						  body: formboleta,
 						  redirect: 'follow'
 						};
-						let status;
 						fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
-						  .then((response) => {
-						    // Get status using response.status
-							status = response.status;
-						    console.log(`status in first then ${status}`);
-						    return response.json();
-						  })
-						  .then((json) => {
-						    // Get status in after the first .then
-						    console.log(`status in second then 4 ${status}`);
-						    console.log(console.log(json));
-							});
+						.then(response =>  response.json())
+						.then(data => cliente(data))
+						.catch(error => console.log('error', error));
 					}
-    			}
-    		)
-	    }
-	}	
-}		
+					//----Sección datos Cliente----------------------------------------------------------------
+					function cliente(data){
+						var formdata = new FormData();
+						formdata.append("rut", data2.rut);
+						formdata.append("nombre_cl", data2.nombre_cl);
+						formdata.append("direccion", data2.direccion);
+						formdata.append("boletas", data2.boletas[id].num_boleta);
+						var requestOptions = {
+						  method: 'POST',
+						  body: formdata,
+						  redirect: 'follow'
+						};
+						fetch("http://18.207.25.202/api/devolucion/Cliente/", requestOptions)
+						.then(response => response.json())
+						.then(data => console.log(data))
+						.catch(error => console.log('error', error));
+					}
+				}
+			)
+		}
+	}
+}
 
 //Función para verifica si esta vacío en input principal.
 Object.prototype.isEmpty = function () {
