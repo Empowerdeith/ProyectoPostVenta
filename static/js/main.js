@@ -94,7 +94,6 @@ function mostrarBoleta(data){
 	        	function(){
 	        		//console.log("id de boleta:");
 	        		//console.log(id);
-	        		console.log(data2.boletas[id].num_boleta);
 	        		console.log("información de boleta:");
 					//console.log(data2);
 					var arr = [];
@@ -103,11 +102,8 @@ function mostrarBoleta(data){
     						arr.push(parseInt($(this).attr('id')));
     					}
     				);
-    				/*console.log(arr.length);
-    				console.log(arr);*/
-
     				//-------Sección productos operativa-----------------------------------------------
-    				/*for(let k = 0; k < arr.length; k++){	
+    				for(let k = 0; k < arr.length; k++){	
     					var formprod = new FormData();
     					formprod.append("id",data2.boletas[id].productos[k].id);
 						formprod.append("nombre_pro", data2.boletas[id].productos[k].nombre_pro);
@@ -122,7 +118,7 @@ function mostrarBoleta(data){
 						.then(response => response.json())
 						.then(data => console.log(data))
 						.catch(error => console.log('error', error));
-    				};*/
+    				};
     				
     				//-------------------------------------------------------------------------------------
 
