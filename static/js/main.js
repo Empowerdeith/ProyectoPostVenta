@@ -126,6 +126,7 @@ function mostrarBoleta(data){
 
 					//-------Sección boletas operativa-----------------------------------------------------
 					function boleta(){
+						var check = false;
 						var formboleta = new FormData();
 						formboleta.append("num_boleta", data2.boletas[id].num_boleta);
 						formboleta.append("created_at", data2.boletas[id].created_at);
@@ -145,7 +146,10 @@ function mostrarBoleta(data){
 						.then(response => response.json())
 						//.then(data => console.log(data))
 						.catch(error => console.log('error', error));
-						//cliente();
+						check=true;
+						if(check==true){
+							cliente();
+						}
 					}
 
 
