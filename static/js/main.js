@@ -101,9 +101,9 @@ function mostrarBoleta(data){
     						arr.push(parseInt($(this).attr('id')));
     					}
     				);
-    				productos();
+    				//productos();
     				//-------Sección productos operativa-----------------------------------------------
-    				function productos(){
+    				/*function productos(){
     					var check=false;
 	    				for(let k = 0; k < arr.length; k++){	
 	    					var formprod = new FormData();
@@ -125,7 +125,7 @@ function mostrarBoleta(data){
 						if(check==true){
 							boleta();
 						}	
-    				}
+    				}*/
     				//-------------------------------------------------------------------------------------
 
 					//-------Sección boletas operativa-----------------------------------------------------
