@@ -146,20 +146,23 @@ function mostrarBoleta(data){
 						  body: formboleta,
 						  redirect: 'follow'
 						};
-						let status;
 						fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
-						.then((response) => {
-							status = response.status;
-							return response.json();
-						})
-						.catch(error => console.log('error', error));
-						//.then(response => {if(response.ok) { return response.json(); } throw 'Error en petición'; })
-						/*.then(response =>  {if(response.ok){
-							return response.json();}
-							throw 'Error en petición';
-						})*/
-						//.then(response => console.log(response.status))
-						//
+						.then(response => {
+					        // La petición fue exitosa, estado HTTP = 200
+					        if(response.ok) {
+					            // Interpretar como JSON y pasarlo al segundo .then()
+					            // Si esto falla, en consola aparecerá un error
+					            return response.json();
+					        }
+				        	// Lanzar error, será capturado en .catch()
+				        	throw 'Error en petición';
+				    	})
+					    .then(data => {
+					        // data es un objeto JSON, puedes usarlo para llamar otra función
+					        cliente();
+					    })
+					    .catch(error => console.log('error', error));
+
 					}
 					/*function boleta(){
 						var check = false;
