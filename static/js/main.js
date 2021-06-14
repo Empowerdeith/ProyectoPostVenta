@@ -133,7 +133,7 @@ function mostrarBoleta(data){
 					function boleta(){
 						var check = false;
 						var formboleta = new FormData();
-						formboleta.append("num_boleta", "69");
+						formboleta.append("num_boleta", "698");
 						formboleta.append("created_at", "123213132");
 						formboleta.append("total", "43453");
 						//arreglo id productos
@@ -149,7 +149,7 @@ function mostrarBoleta(data){
 
 						fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
 						.then(response =>  response.json())
-						.then(response => console.log(response))
+						.then(response => console.log(response.ok))
 						.catch(error => console.log('error', error));
 					}
 					/*function boleta(){
