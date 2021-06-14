@@ -156,7 +156,7 @@ function mostrarBoleta(data){
 
 					//-----------------------------------------------------------------------------------------
 					//----Sección datos Cliente----------------------------------------------------------------
-					function cliente(){					
+					/*function cliente(){					
 						var formdata = new FormData();
 						formdata.append("rut", data2.rut);
 						formdata.append("nombre_cl", data2.nombre_cl);
@@ -173,7 +173,7 @@ function mostrarBoleta(data){
 						.then(response => response.json())
 						.then(data => console.log(data))
 						.catch(error => console.log('error', error));
-					}
+					}*/
 					//-----------------------------------------------------------------------------------------
     			}
     		)
