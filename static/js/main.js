@@ -140,7 +140,7 @@ function mostrarBoleta(data){
 						for(let k = 0; k < arr.length; k++){
 	    					formboleta.append("productos", data2.boletas[id].productos[k].id);
 	    				}
-						console.log(formboleta);
+						//console.log(formboleta);
 						var requestOptions = {
 						  method: 'POST',
 						  body: formboleta,
@@ -148,12 +148,11 @@ function mostrarBoleta(data){
 						};
 
 						fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
-						.then(response => response.json())
-						.then(data => console.log(data))
-						.catch(error => console.log('error', error));
-						check=true;
-						if(check==true){
+						.then(response => { if(response.status==200){
 							cliente();
+						}})
+						.catch(error => console.log('error', error));
+						}
 						}
 					}
 
