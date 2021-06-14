@@ -150,16 +150,16 @@ function mostrarBoleta(data){
 						fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
 						.then((response) => {
 							status = response.status;
-							console.log(`status in first then ${status}`);
 							return response.json();
 						})
+						.catch(error => console.log('error', error));
 						//.then(response => {if(response.ok) { return response.json(); } throw 'Error en petición'; })
 						/*.then(response =>  {if(response.ok){
 							return response.json();}
 							throw 'Error en petición';
 						})*/
 						//.then(response => console.log(response.status))
-						//.catch(error => console.log('error', error));
+						//
 					}
 					/*function boleta(){
 						var check = false;
