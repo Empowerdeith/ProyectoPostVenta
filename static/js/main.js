@@ -146,9 +146,14 @@ function mostrarBoleta(data){
 						  body: formboleta,
 						  redirect: 'follow'
 						};
-
+						let status;
 						fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
-						.then(response => {if(response.ok) { return response.json(); } throw 'Error en petición'; })
+						.then((response) => {
+							status = response.status;
+							console.log(`status in first then ${status}`);
+							return response.json();
+						})
+						//.then(response => {if(response.ok) { return response.json(); } throw 'Error en petición'; })
 						/*.then(response =>  {if(response.ok){
 							return response.json();}
 							throw 'Error en petición';
