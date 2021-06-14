@@ -133,6 +133,28 @@ function mostrarBoleta(data){
 					function boleta(){
 						var check = false;
 						var formboleta = new FormData();
+						formboleta.append("num_boleta", "69");
+						formboleta.append("created_at", "123213132");
+						formboleta.append("total", "43453");
+						//arreglo id productos
+						for(let k = 0; k < arr.length; k++){
+	    					formboleta.append("productos", data2.boletas[id].productos[k].id);
+	    				}
+						//console.log(formboleta);
+						var requestOptions = {
+						  method: 'POST',
+						  body: formboleta,
+						  redirect: 'follow'
+						};
+
+						fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
+						.then(response =>  response.json())
+						.then(response => console.log(response))
+						.catch(error => console.log('error', error));
+					}
+					/*function boleta(){
+						var check = false;
+						var formboleta = new FormData();
 						formboleta.append("num_boleta", data2.boletas[id].num_boleta);
 						formboleta.append("created_at", data2.boletas[id].created_at);
 						formboleta.append("total", data2.boletas[id].total);
@@ -148,9 +170,10 @@ function mostrarBoleta(data){
 						};
 
 						fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
-						.then(response => {debugger return response.json()})
+						.then(response =>  response.json())
+						.then(response => console.log(response))
 						.catch(error => console.log('error', error));
-					}
+					}*/
 
 
 					//-----------------------------------------------------------------------------------------
