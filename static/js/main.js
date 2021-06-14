@@ -104,12 +104,11 @@ function mostrarBoleta(data){
     						arr.push(parseInt($(this).attr('id')));
     					}
     				);
-    				/*console.log(data2.rut.toString());
-    				console.log(data2.nombre_cl.toString());
-    				console.log(data2.direccion.toString());*/
     				console.log(arr.length);
     				console.log(arr);
-    				for(let k = 0; k < arr.length; k++){	
+
+    				//-------Sección productos operativa-----------------------------------------------
+    				/*for(let k = 0; k < arr.length; k++){	
     					var formprod = new FormData();
     					formprod.append("id",data2.boletas[id].productos[k].id);
 						formprod.append("nombre_pro", data2.boletas[id].productos[k].nombre_pro);
@@ -124,17 +123,21 @@ function mostrarBoleta(data){
 						.then(response => response.json())
 						.then(data => console.log(data))
 						.catch(error => console.log('error', error));
-    				};
+    				};*/
     				//arreglo id productos
-    				for(let k = 0; k < arr.length; k++){
+    				/*for(let k = 0; k < arr.length; k++){
     					array_id.push(parseInt(data2.boletas[id].productos[k].id));
-    				}
-    				console.log(array_id);//<----- array contiene los productos
-    				var formboleta = new FormData();
+    				}*/
+    				//-------------------------------------------------------------------------------------
+
+					//-------Sección boletas operativa-----------------------------------------------------
+    				//console.log(array_id);//<----- array contiene los productos
+    				/*var formboleta = new FormData();
 					formboleta.append("num_boleta", data2.boletas[id].num_boleta);
 					formboleta.append("created_at", data2.boletas[id].created_at);
 					formboleta.append("total", data2.boletas[id].total);
-					formboleta.append("productos", "2","6");
+
+					formboleta.append("productos", );
 					console.log(formboleta);
 					var requestOptions = {
 					  method: 'POST',
@@ -145,7 +148,9 @@ function mostrarBoleta(data){
 					fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
 					.then(response => response.json())
 					.then(data => console.log(data))
-					.catch(error => console.log('error', error));
+					.catch(error => console.log('error', error));*/
+					//-----------------------------------------------------------------------------------------
+
 
 					/*var formdata = new FormData();
 					formdata.append("rut", data2.rut);
