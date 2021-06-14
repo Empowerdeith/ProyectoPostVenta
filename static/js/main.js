@@ -159,11 +159,54 @@ function mostrarBoleta(data){
 				    	})
 					    .then(data => {
 					        // data es un objeto JSON, puedes usarlo para llamar otra función
-					        cliente();
+					        cliente(data);
 					    })
 					    .catch(error => console.log('error', error));
-
 					}
+    			}
+    		)
+	    }
+	}	
+}		
+
+//Función para verifica si esta vacío en input principal.
+Object.prototype.isEmpty = function () {
+    return Object.keys(this).length == 0;
+}
+//-------------------------------------------------------
+//Función que realiza el fetch a la ip
+function prueba(){
+	var buscar1 = $('#id_buscar').val().toString();
+
+	// console.log(buscar1);
+	if(!buscar1.isEmpty()){
+		let url="http://3.83.24.216/api/cl/"+buscar1
+		fetch(url)
+		.then(response => response.json())
+		.then(data => mostrarBoleta(data))
+		.catch(error => console.log(error))
+		esconder_prod();
+	}
+	else{
+		hide_table()
+		$("#error_msg").html("<br><br>Debe ingresar un número de transacción.");
+	}
+}
+
+/*-----------------------------------------------------------------------------------
+			Funciones para Reset de checkboxes        
+----------------------------------------------------------------------------------*/
+function selectall(){
+	$( "#table_product").find( "input" ).prop('checked', true);
+}
+function unselectall(){
+	$( "#table_product").find( "input" ).prop('checked', false);
+}
+//------------------------------------------------------------------------------------
+
+.then(response => {if(response.status == "200"){
+	cliente();}
+})
 					/*function boleta(){
 						var check = false;
 						var formboleta = new FormData();
@@ -209,47 +252,3 @@ function mostrarBoleta(data){
 						.catch(error => console.log('error', error));
 					}*/
 					//-----------------------------------------------------------------------------------------
-    			}
-    		)
-	    }
-	}	
-}		
-
-//Función para verifica si esta vacío en input principal.
-Object.prototype.isEmpty = function () {
-    return Object.keys(this).length == 0;
-}
-//-------------------------------------------------------
-//Función que realiza el fetch a la ip
-function prueba(){
-	var buscar1 = $('#id_buscar').val().toString();
-
-	// console.log(buscar1);
-	if(!buscar1.isEmpty()){
-		let url="http://3.83.24.216/api/cl/"+buscar1
-		fetch(url)
-		.then(response => response.json())
-		.then(data => mostrarBoleta(data))
-		.catch(error => console.log(error))
-		esconder_prod();
-	}
-	else{
-		hide_table()
-		$("#error_msg").html("<br><br>Debe ingresar un número de transacción.");
-	}
-}
-
-/*-----------------------------------------------------------------------------------
-			Funciones para Reset de checkboxes        
-----------------------------------------------------------------------------------*/
-function selectall(){
-	$( "#table_product").find( "input" ).prop('checked', true);
-}
-function unselectall(){
-	$( "#table_product").find( "input" ).prop('checked', false);
-}
-//------------------------------------------------------------------------------------
-
-.then(response => {if(response.status == "200"){
-	cliente();}
-})
