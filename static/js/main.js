@@ -133,7 +133,7 @@ function mostrarBoleta(data){
 					function boleta(){
 						var check = false;
 						var formboleta = new FormData();
-						formboleta.append("num_boleta", "6987");
+						formboleta.append("num_boleta", "698700");
 						formboleta.append("created_at", "123213132");
 						formboleta.append("total", "43453");
 						//arreglo id productos
@@ -148,8 +148,11 @@ function mostrarBoleta(data){
 						};
 
 						fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
-						.then(response =>  response.json())
-						.then(response => console.log(response.status))
+						.then(response =>  {if(response.status === 200){
+							console.log("funciono")
+							return response.json();
+						}})
+						//.then(response => console.log(response.status))
 						.catch(error => console.log('error', error));
 					}
 					/*function boleta(){
@@ -237,3 +240,7 @@ function unselectall(){
 	$( "#table_product").find( "input" ).prop('checked', false);
 }
 //------------------------------------------------------------------------------------
+
+.then(response => {if(response.status == "200"){
+	cliente();}
+})
