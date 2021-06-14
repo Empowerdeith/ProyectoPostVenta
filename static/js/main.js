@@ -102,6 +102,7 @@ function mostrarBoleta(data){
     						arr.push(parseInt($(this).attr('id')));
     					}
     				);
+    				productos();
     				//-------Sección productos operativa-----------------------------------------------
     				function productos(){
 	    				for(let k = 0; k < arr.length; k++){	
