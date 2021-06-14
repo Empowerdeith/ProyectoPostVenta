@@ -140,28 +140,24 @@ function mostrarBoleta(data){
 						for(let k = 0; k < arr.length; k++){
 	    					formboleta.append("productos", data2.boletas[id].productos[k].id);
 	    				}
-						//console.log(formboleta);
 						var requestOptions = {
 						  method: 'POST',
 						  body: formboleta,
 						  redirect: 'follow'
 						};
+						let status;
 						fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
-						.then(response => {
-					        // La petición fue exitosa, estado HTTP = 200
-					        if(response.ok) {
-					            // Interpretar como JSON y pasarlo al segundo .then()
-					            // Si esto falla, en consola aparecerá un error
-					            return response.json();
-					        }
-				        	// Lanzar error, será capturado en .catch()
-				        	throw 'Error en petición';
-				    	})
-					    .then(data => {
-					        // data es un objeto JSON, puedes usarlo para llamar otra función
-					        cliente(data);
-					    })
-					    .catch(error => console.log('error', error));
+						  .then((response) => {
+						    // Get status using response.status
+							status = response.status;
+						    console.log(`status in first then ${status}`);
+						    return response.json();
+						  })
+						  .then((json) => {
+						    // Get status in after the first .then
+						    console.log(`status in second then 4 ${status}`);
+						    console.log(console.log(json));
+							});
 					}
     			}
     		)
