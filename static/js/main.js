@@ -149,8 +149,8 @@ function mostrarBoleta(data){
 
 						fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
 						.then(response => response.json())
-						.then(response => console.log('Success:', response));
 						.catch(error => console.log('error', error));
+						.then(response => console.log('Success:', response));
 					}
 
 
