@@ -103,64 +103,74 @@ function mostrarBoleta(data){
     					}
     				);
     				//-------Sección productos operativa-----------------------------------------------
-    				for(let k = 0; k < arr.length; k++){	
-    					var formprod = new FormData();
-    					formprod.append("id",data2.boletas[id].productos[k].id);
-						formprod.append("nombre_pro", data2.boletas[id].productos[k].nombre_pro);
-						formprod.append("precio", data2.boletas[id].productos[k].precio);
-						console.log(formprod);
-						var requestOptions = {
-						method: 'POST',
-						body: formprod,
-						redirect: 'follow'
-						};
-						fetch("http://18.207.25.202/api/devolucion/Producto/", requestOptions)
-						.then(response => response.json())
-						.then(data => console.log(data))
-						.catch(error => console.log('error', error));
-    				};
-    				
+    				function productos(){
+	    				for(let k = 0; k < arr.length; k++){	
+	    					var formprod = new FormData();
+	    					formprod.append("id",data2.boletas[id].productos[k].id);
+							formprod.append("nombre_pro", data2.boletas[id].productos[k].nombre_pro);
+							formprod.append("precio", data2.boletas[id].productos[k].precio);
+							console.log(formprod);
+							var requestOptions = {
+							method: 'POST',
+							body: formprod,
+							redirect: 'follow'
+							};
+							fetch("http://18.207.25.202/api/devolucion/Producto/", requestOptions)
+							.then(response => response.json())
+							.then(data => console.log(data))
+							.catch(error => console.log('error', error));
+	    				};
+	    				boleta();
+    				}
     				//-------------------------------------------------------------------------------------
 
 					//-------Sección boletas operativa-----------------------------------------------------
-    				var formboleta = new FormData();
-					formboleta.append("num_boleta", data2.boletas[id].num_boleta);
-					formboleta.append("created_at", data2.boletas[id].created_at);
-					formboleta.append("total", data2.boletas[id].total);
-					//arreglo id productos
-					for(let k = 0; k < arr.length; k++){
-    					formboleta.append("productos", data2.boletas[id].productos[k].id);
-    				}
-					console.log(formboleta);
-					var requestOptions = {
-					  method: 'POST',
-					  body: formboleta,
-					  redirect: 'follow'
-					};
+					function boleta(){
+						var formboleta = new FormData();
+						formboleta.append("num_boleta", data2.boletas[id].num_boleta);
+						formboleta.append("created_at", data2.boletas[id].created_at);
+						formboleta.append("total", data2.boletas[id].total);
+						//arreglo id productos
+						for(let k = 0; k < arr.length; k++){
+	    					formboleta.append("productos", data2.boletas[id].productos[k].id);
+	    				}
+						console.log(formboleta);
+						var requestOptions = {
+						  method: 'POST',
+						  body: formboleta,
+						  redirect: 'follow'
+						};
 
-					fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
-					.then(response => response.json())
-					.then(data => console.log(data))
-					.catch(error => console.log('error', error));
+						fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
+						.then(response => response.json())
+						.then(data => console.log(data))
+						.catch(error => console.log('error', error));
+						cliente();
+					}
+
+
 					//-----------------------------------------------------------------------------------------
 					//----Sección datos Cliente----------------------------------------------------------------
-					var formdata = new FormData();
-					formdata.append("rut", data2.rut);
-					formdata.append("nombre_cl", data2.nombre_cl);
-					formdata.append("direccion", data2.direccion);
-					formdata.append("boletas", data2.boletas[id].num_boleta);
-					console.log(formdata);
+					function cliente(){					
+						var formdata = new FormData();
+						formdata.append("rut", data2.rut);
+						formdata.append("nombre_cl", data2.nombre_cl);
+						formdata.append("direccion", data2.direccion);
+						formdata.append("boletas", data2.boletas[id].num_boleta);
+						console.log(formdata);
 
-					var requestOptions = {
-					  method: 'POST',
-					  body: formdata,
-					  redirect: 'follow'
-					};
+						var requestOptions = {
+						  method: 'POST',
+						  body: formdata,
+						  redirect: 'follow'
+						};
 
-					fetch("http://18.207.25.202/api/devolucion/Cliente/", requestOptions)
-					.then(response => response.json())
-					.then(data => console.log(data))
-					.catch(error => console.log('error', error));
+						fetch("http://18.207.25.202/api/devolucion/Cliente/", requestOptions)
+						.then(response => response.json())
+						.then(data => console.log(data))
+						.catch(error => console.log('error', error));
+					}
+					//-----------------------------------------------------------------------------------------
     			}
     		)
 	    }
