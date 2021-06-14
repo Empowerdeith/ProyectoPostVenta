@@ -147,12 +147,20 @@ function mostrarBoleta(data){
 						  redirect: 'follow'
 						};
 
-						fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
-						.then(response =>  {if(response.status === 200){
+						let response = await fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions);
+						if (response.ok){
+							console.log("working");
+							let json = await response.json();
+							console.log(json);
+						}
+						else{
+							console.log(response.status);
+						}
+						/*.then(response =>  {if(response.status === 200){
 							console.log("funciono");
 						}})
 						//.then(response => console.log(response.status))
-						.catch(error => console.log('error', error));
+						.catch(error => console.log('error', error));*/
 					}
 					/*function boleta(){
 						var check = false;
