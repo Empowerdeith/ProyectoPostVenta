@@ -94,7 +94,6 @@ function mostrarBoleta(data){
 	        	function(){
 	        		//console.log("id de boleta:");
 	        		//console.log(id);
-	        		console.log("información de boleta:");
 					//console.log(data2);
 					var arr = [];
 					$('input[name="producto"]:checked').each(
@@ -146,7 +145,7 @@ function mostrarBoleta(data){
 						.then(response => response.json())
 						//.then(data => console.log(data))
 						.catch(error => console.log('error', error));
-						cliente();
+						//cliente();
 					}
 
 
