@@ -171,7 +171,7 @@ function prueba(){
 		.then(response => response.json())
 		.then(data => mostrarBoleta(data))
 		.catch(error => console.log(error))
-		esconder_prod();
+		//esconder_prod();
 	}
 	else{
 		hide_table()
