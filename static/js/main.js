@@ -110,6 +110,7 @@ function mostrarBoleta(data){
 				console.log(data2.nombre_cl);
 				console.log(data2.direccion);
 				console.log("Termino boleta");
+				data2 = {};
 				//boleta();
 				//productos();
 				/*function productos(){
