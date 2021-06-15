@@ -12,7 +12,6 @@ setTimeout(esconder_prod, 40);
 
 //Mostrar información principal de Boleta
 function mostrarBoleta(data){
-	console.log(data);
 	if (data == "No existe cliente."){
 		hide_table();
 		$("#error_msg").html("<br><br>"+data);
@@ -50,7 +49,6 @@ function mostrarBoleta(data){
 			console.log(data1);
 			var data2=data1;
 			var id;
-			id=0;
 			$('input[type="checkbox"]').on('change', function() {$('input[name="boleta"]').not(this).prop('checked', false);});
 			$('input[type="checkbox"][name="boleta"]').click(function(){
 				if($(this).prop("checked") == true) {
@@ -82,6 +80,7 @@ function mostrarBoleta(data){
 			});
 			$('#button_save').click(function(){
 				var arr = [];
+				arr.splice(0, arr.length)
 				$('input[name="producto"]:checked').each(function(){
 					arr.push(parseInt($(this).attr('id')));
 				});
@@ -89,7 +88,7 @@ function mostrarBoleta(data){
 				console.log(arr);
 				boleta();
 				//productos();
-				function productos(){
+				/*function productos(){
 					for(let k = 0; k < arr.length; k++){
 						var formprod = new FormData();
 						formprod.append("id",data2.boletas[id].productos[k].id);
@@ -105,9 +104,13 @@ function mostrarBoleta(data){
 						//.then(data => console.log(data))
 						.catch(error => console.log('error', error));
 					}
-				}
+				}*/
 				function boleta(){
+					console.log("Boleta");
+					console.log(id);
 					console.log(data2.boletas[id].num_boleta);
+					console.log(data2.boletas[id].created_at);
+					console.log(data2.boletas[id].total);
 					var formboleta = new FormData();
 					formboleta.append("num_boleta", data2.boletas[id].num_boleta);
 					formboleta.append("created_at", data2.boletas[id].created_at);
