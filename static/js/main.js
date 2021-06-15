@@ -89,7 +89,7 @@ function mostrarBoleta(data){
 				function boleta(){
 					var check = false;
 					var formboleta = new FormData();
-					formboleta.append("num_boleta", "698700");
+					formboleta.append("num_boleta", "6987001");
 					formboleta.append("created_at", "123213132");
 					formboleta.append("total", "43453");
 					//arreglo id productos
@@ -101,9 +101,14 @@ function mostrarBoleta(data){
 					  body: formboleta,
 					  redirect: 'follow'
 					};
+					let status;
 					fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
-					.then(response =>  response.json())
-					.then(data => console.log(data))
+					.then((response) => {
+						// Get status using response.status
+						status = response.status;
+						console.log(`status in first then ${status}`);
+						return response.json();
+					})
 					.catch(error => console.log('error', error));
 				}
 				//----------------------Término operaciones Post----------------------------------
