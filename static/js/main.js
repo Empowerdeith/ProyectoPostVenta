@@ -42,12 +42,12 @@ function mostrarBoleta(data){
 		}
 		$("#table_checkbox").find( "tbody" ).html(content);
 		//Comienzo tabla productos
-		var data1=data;
-		test(data1);
+		//var data1=data;
+		test(data);
 		//selección de boleta
-		function test(data1){
-			console.log(data1);
-			var data2=data1;
+		function test(data){
+			console.log(data);
+			var data2=data;
 			var id;
 			$('input[type="checkbox"]').on('change', function() {$('input[name="boleta"]').not(this).prop('checked', false);});
 			$('input[type="checkbox"][name="boleta"]').click(function(){
