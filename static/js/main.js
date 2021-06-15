@@ -114,7 +114,7 @@ function mostrarBoleta(data){
 					console.log("producto: "+data.boletas[id].productos[k].nombre_pro);
 				}
 				console.log("Termino boleta");
-				data;
+				data= {};
 				//boleta();
 				//productos();
 				/*function productos(){
