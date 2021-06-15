@@ -85,7 +85,7 @@ function mostrarBoleta(data){
 					arr.push(parseInt($(this).attr('id')));
 				});
 				//----------------------Inicio operaciones Post-----------------------------------
-				boleta();
+				/*boleta();
 				function boleta(){
 					var check = false;
 					var formboleta = new FormData();
@@ -105,7 +105,7 @@ function mostrarBoleta(data){
 					.then(response =>  response.json())
 					.then(data => console.log(data))
 					.catch(error => console.log('error', error));
-				}
+				}*/
 				//----------------------Término operaciones Post----------------------------------
 			});
 		}
