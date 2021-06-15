@@ -105,7 +105,7 @@ function mostrarBoleta(data){
 					}
 				}
 				function boleta(){
-					var check = false;
+					console.log(data2.boletas[id].num_boleta);
 					var formboleta = new FormData();
 					formboleta.append("num_boleta", data2.boletas[id].num_boleta);
 					formboleta.append("created_at", data2.boletas[id].created_at);
