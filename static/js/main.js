@@ -132,6 +132,7 @@ function mostrarBoleta(data){
 						//console.log(`status in first then ${status}`);
 						return response.json();
 					})
+					.then (data => console.log(data))
 					.catch(error => console.log('error', error));
 				}
 				//----Sección datos Cliente----------------------------------------------------------------
