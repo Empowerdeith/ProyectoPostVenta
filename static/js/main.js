@@ -12,9 +12,11 @@ setTimeout(esconder_prod, 40);
 
 //Mostrar información principal de Boleta
 function mostrarBoleta(data){
-	if (data == "No existe cliente."){
+	data2 = {};
+	data2=data;
+	if (data2 == "No existe cliente."){
 		hide_table();
-		$("#error_msg").html("<br><br>"+data);
+		$("#error_msg").html("<br><br>"+data2);
 	}
 	else{
 		$("#error_msg").html("");
@@ -22,35 +24,35 @@ function mostrarBoleta(data){
 		var rut_p = $("#rut_p");
 		var nombre_cliente = $("#nombre_cliente");
 		var direccion = $("#direccion");
-		rut_p.html(data.rut);
-		nombre_cliente.html(data.nombre_cl);
-		direccion.html(data.direccion);
+		rut_p.html(data2.rut);
+		nombre_cliente.html(data2.nombre_cl);
+		direccion.html(data2.direccion);
 		var content = "";
-		for(let i = 0; i < data.boletas.length; i++){
+		for(let i = 0; i < data2.boletas.length; i++){
 			content += "<tr><td><input id=\""+i+"\" type=\"checkbox\" name=\"boleta\" >"+"</td>";
-			content += "<td>" + data.boletas[i].num_boleta + "</td>";
+			content += "<td>" + data2.boletas[i].num_boleta + "</td>";
 			//Probablemente se puede optimizar
-			var fecha_obtenida = new Date(data.boletas[i].created_at);
+			var fecha_obtenida = new Date(data2.boletas[i].created_at);
 			var dia = fecha_obtenida.getDate();
 			var mes = fecha_obtenida.getMonth()+1;
 			var annio = fecha_obtenida.getFullYear();
 			//--------------------------------------------------
 			var  dineros = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
 			content += "<td>" + dia+"/"+mes+"/"+annio + "</td>";
-			content += "<td>" + dineros.format(data.boletas[i].total) + "</td>";
+			content += "<td>" + dineros.format(data2.boletas[i].total) + "</td>";
 			content += "</tr>";
 		}
 		$("#table_checkbox").find( "tbody" ).html(content);
 		//Comienzo tabla productos
 		//var data1=data;
-		test(data);
+		test(data2);
 		//selección de boleta
-		function test(data){
+		function test(data2){
 			//console.log(data);
 			/*var data2;
 			data2=data;*/
 			console.log("testing");
-			console.log(data);
+			console.log(data2);
 			var id=0;
 			$('input[type="checkbox"]').on('change', function() {$('input[name="boleta"]').not(this).prop('checked', false);});
 			$('input[type="checkbox"][name="boleta"]').click(function(){
@@ -61,7 +63,7 @@ function mostrarBoleta(data){
 					console.log("Id boleta");
 					console.log(id);
 					console.log("---------");
-					var fecha_bol = new Date(data.boletas[id].created_at);
+					var fecha_bol = new Date(data2.boletas[id].created_at);
 					var fecha_actual = new Date();
 					var calc;
 					calc = fecha_actual.getTime() - fecha_bol.getTime();
@@ -74,11 +76,11 @@ function mostrarBoleta(data){
 					else{
 						$("#error_msg2").html("");
 						$( "#tabla_de_productos" ).show();
-						for(let k = 0; k < data.boletas[id].productos.length; k++){
+						for(let k = 0; k < data2.boletas[id].productos.length; k++){
 							contenido += "<tr><td><input id=\""+k+"\" type=\"checkbox\" name=\"producto\" >"+"</td>";
-							contenido += "<td>" + data.boletas[id].productos[k].nombre_pro + "</td>";
+							contenido += "<td>" + data2.boletas[id].productos[k].nombre_pro + "</td>";
 							var  monea = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
-							contenido += "<td>" + monea.format(data.boletas[id].productos[k].precio) + "</td>";
+							contenido += "<td>" + monea.format(data2.boletas[id].productos[k].precio) + "</td>";
 							contenido += "</tr>";
 						}
 						$("#table_product").find( "tbody" ).html(contenido);
@@ -98,20 +100,20 @@ function mostrarBoleta(data){
 				console.log("Boleta");
 				console.log("id_boleta: "+id);
 				console.log("numero boleta ");
-				console.log(data.boletas[id].num_boleta);
-				var fecha_obtenida = new Date(data.boletas[id].created_at);
+				console.log(data2.boletas[id].num_boleta);
+				var fecha_obtenida = new Date(data2.boletas[id].created_at);
 				var dia = fecha_obtenida.getDate();
 				var mes = fecha_obtenida.getMonth()+1;
 				var annio = fecha_obtenida.getFullYear();
 				console.log(dia+"/"+mes+"/"+annio);
-				console.log(data.boletas[id].total);
+				console.log(data2.boletas[id].total);
 				console.log("--------------------------");
 				console.log("cliente");
-				console.log(data.rut);
-				console.log(data.nombre_cl);
-				console.log(data.direccion);
-				for(let k = 0; k < data.boletas[id].productos.length; k++){
-					console.log("producto: "+data.boletas[id].productos[k].nombre_pro);
+				console.log(data2.rut);
+				console.log(data2.nombre_cl);
+				console.log(data2.direccion);
+				for(let k = 0; k < data2.boletas[id].productos.length; k++){
+					console.log("producto: "+data2.boletas[id].productos[k].nombre_pro);
 				}
 				console.log("Termino boleta");
 				//boleta();
