@@ -114,7 +114,6 @@ function mostrarBoleta(data){
 					console.log("producto: "+data.boletas[id].productos[k].nombre_pro);
 				}
 				console.log("Termino boleta");
-				data= {};
 				//boleta();
 				//productos();
 				/*function productos(){
@@ -135,22 +134,6 @@ function mostrarBoleta(data){
 					}
 				}*/
 				function boleta(){
-					console.log("Boleta");
-					console.log(id);
-					console.log(data2.boletas[id].num_boleta);
-					var fecha_obtenida = new Date(data2.boletas[id].created_at);
-					var dia = fecha_obtenida.getDate();
-					var mes = fecha_obtenida.getMonth()+1;
-					var annio = fecha_obtenida.getFullYear();
-					console.log(dia+"/"+mes+"/"+annio);
-					console.log(data2.boletas[id].total);
-					console.log("--------------------------");
-					console.log("cliente");
-					console.log(data2.rut);
-					console.log(data2.nombre_cl);
-					console.log(data2.direccion);
-					console.log(data2.boletas[id].num_boleta);
-
 					/*var formboleta = new FormData();
 					formboleta.append("num_boleta", data2.boletas[id].num_boleta);
 					formboleta.append("created_at", data2.boletas[id].created_at);
