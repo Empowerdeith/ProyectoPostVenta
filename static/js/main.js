@@ -89,9 +89,9 @@ function mostrarBoleta(data){
 				function boleta(){
 					var check = false;
 					var formboleta = new FormData();
-					formboleta.append("num_boleta", "698700321");
-					formboleta.append("created_at", "123213132");
-					formboleta.append("total", "43453");
+					formboleta.append("num_boleta", data2.boletas[id].num_boleta);
+					formboleta.append("created_at", data2.boletas[id].created_at);
+					formboleta.append("total", data2.boletas[id].total);
 					//arreglo id productos
 					for(let k = 0; k < arr.length; k++){
     					formboleta.append("productos", data2.boletas[id].productos[k].id);
@@ -101,14 +101,34 @@ function mostrarBoleta(data){
 					  body: formboleta,
 					  redirect: 'follow'
 					};
-					let status;
+					let status=false;
 					fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
 					.then((response) => {
 						// Get status using response.status
 						status = response.ok;
-						console.log(`status in first then ${status}`);
+						//console.log(`status in first then ${status}`);
 						return response.json();
 					})
+					.catch(error => console.log('error', error));
+					if(status==true){
+						cliente();
+					}
+				}
+				//----Sección datos Cliente----------------------------------------------------------------
+				function cliente(){
+					var formdata = new FormData();
+					formdata.append("rut", data2.rut);
+					formdata.append("nombre_cl", data2.nombre_cl);
+					formdata.append("direccion", data2.direccion);
+					formdata.append("boletas", data2.boletas[id].num_boleta);
+					var requestOptions = {
+					  method: 'POST',
+					  body: formdata,
+					  redirect: 'follow'
+					};
+					fetch("http://18.207.25.202/api/devolucion/Cliente/", requestOptions)
+					.then(response => response.json())
+					.then(data => console.log(data))
 					.catch(error => console.log('error', error));
 				}
 				//----------------------Término operaciones Post----------------------------------
