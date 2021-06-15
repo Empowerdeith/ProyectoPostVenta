@@ -46,7 +46,7 @@ function mostrarBoleta(data){
 		test(data);
 		//selección de boleta
 		function test(data){
-			console.log(data);
+			//console.log(data);
 			var data2 ={};
 			data2=data;
 			console.log("testing");
@@ -57,6 +57,10 @@ function mostrarBoleta(data){
 				if($(this).prop("checked") == true) {
 					var contenido = "";
 					id = parseInt($(this).attr('id'));
+					console.log("______comienzo boleta____");			
+					console.log("Id boleta");
+					console.log(id);
+					console.log("---------");
 					var fecha_bol = new Date(data2.boletas[id].created_at);
 					var fecha_actual = new Date();
 					var calc;
@@ -81,9 +85,7 @@ function mostrarBoleta(data){
 					}
 				}
 			});
-			console.log("Id boleta");
-			console.log(id);
-			console.log("---------");
+
 			$('#button_save').click(function(){
 				var arr = [];
 				arr.splice(0, arr.length)
@@ -91,8 +93,24 @@ function mostrarBoleta(data){
 					arr.push(parseInt($(this).attr('id')));
 				});
 				//----------------------Inicio operaciones Post-----------------------------------
+				console.log("arreglo con cantidad de productos");
 				console.log(arr);
-				boleta();
+				console.log("Boleta");
+				console.log("id_boleta: "+id);
+				console.log("numero boleta"+data2.boletas[id].num_boleta);
+				var fecha_obtenida = new Date(data2.boletas[id].created_at);
+				var dia = fecha_obtenida.getDate();
+				var mes = fecha_obtenida.getMonth()+1;
+				var annio = fecha_obtenida.getFullYear();
+				console.log(dia+"/"+mes+"/"+annio);
+				console.log(data2.boletas[id].total);
+				console.log("--------------------------");
+				console.log("cliente");
+				console.log(data2.rut);
+				console.log(data2.nombre_cl);
+				console.log(data2.direccion);
+				console.log("Termino boleta");
+				//boleta();
 				//productos();
 				/*function productos(){
 					for(let k = 0; k < arr.length; k++){
