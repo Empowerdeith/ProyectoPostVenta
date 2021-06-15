@@ -89,7 +89,7 @@ function mostrarBoleta(data){
 				function boleta(){
 					var check = false;
 					var formboleta = new FormData();
-					formboleta.append("num_boleta", "6987001");
+					formboleta.append("num_boleta", "698700321");
 					formboleta.append("created_at", "123213132");
 					formboleta.append("total", "43453");
 					//arreglo id productos
