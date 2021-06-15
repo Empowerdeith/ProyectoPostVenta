@@ -47,7 +47,7 @@ function mostrarBoleta(data){
 		//selección de boleta
 		function test(data){
 			//console.log(data);
-			var data2 ={};
+			var data2;
 			data2=data;
 			console.log("testing");
 			console.log(data2);
@@ -97,7 +97,8 @@ function mostrarBoleta(data){
 				console.log(arr);
 				console.log("Boleta");
 				console.log("id_boleta: "+id);
-				console.log("numero boleta"+data2.boletas[id].num_boleta);
+				console.log("numero boleta ");
+				console.log(data2.boletas[id].num_boleta);
 				var fecha_obtenida = new Date(data2.boletas[id].created_at);
 				var dia = fecha_obtenida.getDate();
 				var mes = fecha_obtenida.getMonth()+1;
@@ -109,6 +110,7 @@ function mostrarBoleta(data){
 				console.log(data2.rut);
 				console.log(data2.nombre_cl);
 				console.log(data2.direccion);
+				console.log("producto: "+data2.boletas[id].productos[k].nombre_pro);
 				console.log("Termino boleta");
 				data2 = {};
 				//boleta();
