@@ -105,7 +105,7 @@ function mostrarBoleta(data){
 					fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
 					.then((response) => {
 						// Get status using response.status
-						status = response.status;
+						status = response.ok;
 						console.log(`status in first then ${status}`);
 						return response.json();
 					})
