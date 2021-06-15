@@ -107,7 +107,7 @@ function mostrarBoleta(data){
 						// Get status using response.status
 						status = response.ok;
 						if (status==true){
-							console.log("hola");
+							cliente();
 						}
 						//console.log(`status in first then ${status}`);
 						return response.json();
