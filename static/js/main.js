@@ -109,7 +109,7 @@ function mostrarBoleta(data){
 					console.log("Boleta");
 					console.log(id);
 					console.log(data2.boletas[id].num_boleta);
-					var fecha_obtenida = new Date(data2.boletas[i].created_at);
+					var fecha_obtenida = new Date(data2.boletas[id].created_at);
 					var dia = fecha_obtenida.getDate();
 					var mes = fecha_obtenida.getMonth()+1;
 					var annio = fecha_obtenida.getFullYear();
