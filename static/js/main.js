@@ -47,7 +47,8 @@ function mostrarBoleta(data){
 		//selección de boleta
 		function test(data){
 			console.log(data);
-			var data2=data;
+			var data2 ={};
+			data2=data;
 			var id=0;
 			$('input[type="checkbox"]').on('change', function() {$('input[name="boleta"]').not(this).prop('checked', false);});
 			$('input[type="checkbox"][name="boleta"]').click(function(){
