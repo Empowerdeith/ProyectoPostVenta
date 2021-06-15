@@ -109,8 +109,19 @@ function mostrarBoleta(data){
 					console.log("Boleta");
 					console.log(id);
 					console.log(data2.boletas[id].num_boleta);
-					console.log(data2.boletas[id].created_at);
+					var fecha_obtenida = new Date(data2.boletas[i].created_at);
+					var dia = fecha_obtenida.getDate();
+					var mes = fecha_obtenida.getMonth()+1;
+					var annio = fecha_obtenida.getFullYear();
+					console.log(dia+"/"+mes+"/"+annio);
 					console.log(data2.boletas[id].total);
+					console.log("--------------------------");
+					console.log("cliente");
+					console.log(data2.rut);
+					console.log(data2.nombre_cl);
+					console.log(data2.direccion);
+					console.log(data2.boletas[id].num_boleta);
+
 					var formboleta = new FormData();
 					formboleta.append("num_boleta", data2.boletas[id].num_boleta);
 					formboleta.append("created_at", data2.boletas[id].created_at);
@@ -140,6 +151,7 @@ function mostrarBoleta(data){
 				}
 				//----Sección datos Cliente----------------------------------------------------------------
 				function cliente(){
+
 					var formdata = new FormData();
 					formdata.append("rut", data2.rut);
 					formdata.append("nombre_cl", data2.nombre_cl);
