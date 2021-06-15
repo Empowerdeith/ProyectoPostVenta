@@ -47,10 +47,10 @@ function mostrarBoleta(data){
 		//selección de boleta
 		function test(data){
 			//console.log(data);
-			var data2;
-			data2=data;
+			/*var data2;
+			data2=data;*/
 			console.log("testing");
-			console.log(data2);
+			console.log(data);
 			var id=0;
 			$('input[type="checkbox"]').on('change', function() {$('input[name="boleta"]').not(this).prop('checked', false);});
 			$('input[type="checkbox"][name="boleta"]').click(function(){
@@ -61,7 +61,7 @@ function mostrarBoleta(data){
 					console.log("Id boleta");
 					console.log(id);
 					console.log("---------");
-					var fecha_bol = new Date(data2.boletas[id].created_at);
+					var fecha_bol = new Date(data.boletas[id].created_at);
 					var fecha_actual = new Date();
 					var calc;
 					calc = fecha_actual.getTime() - fecha_bol.getTime();
@@ -74,11 +74,11 @@ function mostrarBoleta(data){
 					else{
 						$("#error_msg2").html("");
 						$( "#tabla_de_productos" ).show();
-						for(let k = 0; k < data2.boletas[id].productos.length; k++){
+						for(let k = 0; k < data.boletas[id].productos.length; k++){
 							contenido += "<tr><td><input id=\""+k+"\" type=\"checkbox\" name=\"producto\" >"+"</td>";
-							contenido += "<td>" + data2.boletas[id].productos[k].nombre_pro + "</td>";
+							contenido += "<td>" + data.boletas[id].productos[k].nombre_pro + "</td>";
 							var  monea = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
-							contenido += "<td>" + monea.format(data2.boletas[id].productos[k].precio) + "</td>";
+							contenido += "<td>" + monea.format(data.boletas[id].productos[k].precio) + "</td>";
 							contenido += "</tr>";
 						}
 						$("#table_product").find( "tbody" ).html(contenido);
@@ -98,23 +98,22 @@ function mostrarBoleta(data){
 				console.log("Boleta");
 				console.log("id_boleta: "+id);
 				console.log("numero boleta ");
-				console.log(data2.boletas[id].num_boleta);
-				var fecha_obtenida = new Date(data2.boletas[id].created_at);
+				console.log(data.boletas[id].num_boleta);
+				var fecha_obtenida = new Date(data.boletas[id].created_at);
 				var dia = fecha_obtenida.getDate();
 				var mes = fecha_obtenida.getMonth()+1;
 				var annio = fecha_obtenida.getFullYear();
 				console.log(dia+"/"+mes+"/"+annio);
-				console.log(data2.boletas[id].total);
+				console.log(data.boletas[id].total);
 				console.log("--------------------------");
 				console.log("cliente");
-				console.log(data2.rut);
-				console.log(data2.nombre_cl);
-				console.log(data2.direccion);
-				for(let k = 0; k < data2.boletas[id].productos.length; k++){
-					console.log("producto: "+data2.boletas[id].productos[k].nombre_pro);
+				console.log(data.rut);
+				console.log(data.nombre_cl);
+				console.log(data.direccion);
+				for(let k = 0; k < data.boletas[id].productos.length; k++){
+					console.log("producto: "+data.boletas[id].productos[k].nombre_pro);
 				}
 				console.log("Termino boleta");
-
 				//boleta();
 				//productos();
 				/*function productos(){
