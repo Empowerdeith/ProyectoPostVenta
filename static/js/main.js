@@ -81,6 +81,7 @@ function mostrarBoleta(data){
 					}
 				}
 			});
+			console.log(id);
 			$('#button_save').click(function(){
 				var arr = [];
 				arr.splice(0, arr.length)
