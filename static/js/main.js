@@ -86,6 +86,24 @@ function mostrarBoleta(data){
 				});
 				//----------------------Inicio operaciones Post-----------------------------------
 				boleta();
+				//productos();
+				function productos(){
+					for(let k = 0; k < arr.length; k++){
+						var formprod = new FormData();
+						formprod.append("id",data2.boletas[id].productos[k].id);
+						formprod.append("nombre_pro", data2.boletas[id].productos[k].nombre_pro);
+						formprod.append("precio", data2.boletas[id].productos[k].precio);
+						var requestOptions = {
+							method: 'POST',
+							body: formprod,
+							redirect: 'follow'
+						};
+						fetch("http://18.207.25.202/api/devolucion/Producto/", requestOptions)
+						.then(response => response.json())
+						//.then(data => console.log(data))
+						.catch(error => console.log('error', error));
+					}
+				}
 				function boleta(){
 					var check = false;
 					var formboleta = new FormData();
@@ -113,9 +131,6 @@ function mostrarBoleta(data){
 						return response.json();
 					})
 					.catch(error => console.log('error', error));
-					/*if(status==true){
-						cliente();
-					}*/
 				}
 				//----Sección datos Cliente----------------------------------------------------------------
 				function cliente(){
@@ -139,110 +154,6 @@ function mostrarBoleta(data){
 		}
 	}
 }
-/*			$('input[type="checkbox"][name="boleta"]').click(
-            	function(){
-            		//console.log(data2);
-	                if($(this).prop("checked") == true) {
-	                    var contenido = "";	                    
-	                    id = parseInt($(this).attr('id'));
-	                    //Comprobación de fechas
-	                    var fecha_bol = new Date(data2.boletas[id].created_at);
-	                    var fecha_actual = new Date();
-	                    var calc;
-	                    calc = fecha_actual.getTime() - fecha_bol.getTime();
-	                    var days_difference = calc / (1000 * 60 * 60 * 24);
-	                    //Validación de fechas
-	                    if(days_difference>90){
-	                    	esconder_prod();
-	                    	$("#error_msg2").html("Su compra supera el plazo legal(90 días), para proceder a la devolución de su producto.");
-	                    }
-	                    else{
-	                    	$("#error_msg2").html("");
-	                    	$( "#tabla_de_productos" ).show();*/
-		                    /*console.log(id);
-		                    console.log(data2.boletas[id].productos.length);*/
-/*		                    for(let k = 0; k < data2.boletas[id].productos.length; k++){
-		                    	contenido += "<tr><td><input id=\""+k+"\" type=\"checkbox\" name=\"producto\" >"+"</td>";
-		                    	contenido += "<td>" + data2.boletas[id].productos[k].nombre_pro + "</td>";
-		                    	var  monea = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
-		                    	contenido += "<td>" + monea.format(data2.boletas[id].productos[k].precio) + "</td>";
-		                    	contenido += "</tr>";
-		                    }
-		                    $("#table_product").find( "tbody" ).html(contenido);
-		                } 
-		            }
-		        }
-		    );
-			//Botón siguiente, para completar solicitud
-			$('#button_save').click(function(){
-				var arr = [];
-				$('input[name="producto"]:checked').each(
-					function () {
-						arr.push(parseInt($(this).attr('id')));
-					}
-				);
-				boleta();
-				//productos();
-				//-------Sección productos operativa-----------------------------------------------
-				/*function productos(){
-    				for(let k = 0; k < arr.length; k++){	
-    					var formprod = new FormData();
-    					formprod.append("id",data2.boletas[id].productos[k].id);
-						formprod.append("nombre_pro", data2.boletas[id].productos[k].nombre_pro);
-						formprod.append("precio", data2.boletas[id].productos[k].precio);
-						//console.log(formprod);
-						var requestOptions = {
-						method: 'POST',
-						body: formprod,
-						redirect: 'follow'
-						};
-						fetch("http://18.207.25.202/api/devolucion/Producto/", requestOptions)
-						.then(response => response.json())
-						//.then(data => console.log(data))
-						.catch(error => console.log('error', error));
-    				};
-				}*/
-				//-------Sección boletas operativa-----------------------------------------------------
-/*				function boleta(){
-					var check = false;
-					var formboleta = new FormData();
-					formboleta.append("num_boleta", "698700");
-					formboleta.append("created_at", "123213132");
-					formboleta.append("total", "43453");
-					//arreglo id productos
-					for(let k = 0; k < arr.length; k++){
-    					formboleta.append("productos", data2.boletas[id].productos[k].id);
-    				}
-					var requestOptions = {
-					  method: 'POST',
-					  body: formboleta,
-					  redirect: 'follow'
-					};
-					fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
-					.then(response =>  response.json())
-					//.then(data => cliente(data))
-					.catch(error => console.log('error', error));
-				}
-				//----Sección datos Cliente----------------------------------------------------------------
-				function cliente(data){
-					var formdata = new FormData();
-					formdata.append("rut", data2.rut);
-					formdata.append("nombre_cl", data2.nombre_cl);
-					formdata.append("direccion", data2.direccion);
-					formdata.append("boletas", data2.boletas[id].num_boleta);
-					var requestOptions = {
-					  method: 'POST',
-					  body: formdata,
-					  redirect: 'follow'
-					};
-					fetch("http://18.207.25.202/api/devolucion/Cliente/", requestOptions)
-					.then(response => response.json())
-					.then(data => console.log(data))
-					.catch(error => console.log('error', error));
-				}	
-			});}
-	}
-}*/
 
 //Función para verifica si esta vacío en input principal.
 Object.prototype.isEmpty = function () {
@@ -278,49 +189,3 @@ function unselectall(){
 	$( "#table_product").find( "input" ).prop('checked', false);
 }
 //------------------------------------------------------------------------------------
-
-					/*function boleta(){
-						var check = false;
-						var formboleta = new FormData();
-						formboleta.append("num_boleta", data2.boletas[id].num_boleta);
-						formboleta.append("created_at", data2.boletas[id].created_at);
-						formboleta.append("total", data2.boletas[id].total);
-						//arreglo id productos
-						for(let k = 0; k < arr.length; k++){
-	    					formboleta.append("productos", data2.boletas[id].productos[k].id);
-	    				}
-						//console.log(formboleta);
-						var requestOptions = {
-						  method: 'POST',
-						  body: formboleta,
-						  redirect: 'follow'
-						};
-
-						fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
-						.then(response =>  response.json())
-						.then(response => console.log(response))
-						.catch(error => console.log('error', error));
-					}*/
-
-
-					//-----------------------------------------------------------------------------------------
-					//----Sección datos Cliente----------------------------------------------------------------
-					/*function cliente(){					
-						var formdata = new FormData();
-						formdata.append("rut", data2.rut);
-						formdata.append("nombre_cl", data2.nombre_cl);
-						formdata.append("direccion", data2.direccion);
-						formdata.append("boletas", data2.boletas[id].num_boleta);
-						//console.log(formdata);
-						var requestOptions = {
-						  method: 'POST',
-						  body: formdata,
-						  redirect: 'follow'
-						};
-
-						fetch("http://18.207.25.202/api/devolucion/Cliente/", requestOptions)
-						.then(response => response.json())
-						.then(data => console.log(data))
-						.catch(error => console.log('error', error));
-					}*/
-					//-----------------------------------------------------------------------------------------
