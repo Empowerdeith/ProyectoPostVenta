@@ -81,7 +81,9 @@ function mostrarBoleta(data){
 					}
 				}
 			});
+			console.log("Id boleta");
 			console.log(id);
+			console.log("---------");
 			$('#button_save').click(function(){
 				var arr = [];
 				arr.splice(0, arr.length)
