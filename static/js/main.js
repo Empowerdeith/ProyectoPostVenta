@@ -122,7 +122,7 @@ function mostrarBoleta(data){
 					console.log(data2.direccion);
 					console.log(data2.boletas[id].num_boleta);
 
-					var formboleta = new FormData();
+					/*var formboleta = new FormData();
 					formboleta.append("num_boleta", data2.boletas[id].num_boleta);
 					formboleta.append("created_at", data2.boletas[id].created_at);
 					formboleta.append("total", data2.boletas[id].total);
@@ -147,7 +147,7 @@ function mostrarBoleta(data){
 						return response.json();
 					})
 					.then (data => console.log(data))
-					.catch(error => console.log('error', error));
+					.catch(error => console.log('error', error));*/
 				}
 				//----Sección datos Cliente----------------------------------------------------------------
 				function cliente(){
