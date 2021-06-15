@@ -172,7 +172,6 @@ function prueba(){
 
 	// console.log(buscar1);
 	if(!buscar1.isEmpty()){
-		for (var it in $.cookie()) $.removeCookie(it);
 		let url="http://3.83.24.216/api/cl/"+buscar1
 		fetch(url)
 		.then(response => response.json())
