@@ -110,7 +110,9 @@ function mostrarBoleta(data){
 				console.log(data2.rut);
 				console.log(data2.nombre_cl);
 				console.log(data2.direccion);
-				console.log("producto: "+data2.boletas[id].productos[k].nombre_pro);
+				for(let k = 0; k < data2.boletas[id].productos.length; k++){
+					console.log("producto: "+data2.boletas[id].productos[k].nombre_pro);
+				}
 				console.log("Termino boleta");
 				data2 = {};
 				//boleta();
