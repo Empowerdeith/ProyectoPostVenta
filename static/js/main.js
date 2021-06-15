@@ -12,7 +12,7 @@ setTimeout(esconder_prod, 40);
 
 //Mostrar información principal de Boleta
 function mostrarBoleta(data){
-	//console.log(data);
+	console.log(data);
 	if (data == "No existe cliente."){
 		hide_table();
 		$("#error_msg").html("<br><br>"+data);
@@ -47,7 +47,7 @@ function mostrarBoleta(data){
 		test(data1);
 		//selección de boleta
 		function test(data1){
-			//console.log(data1);
+			console.log(data1);
 			var data2=data1;
 			var id;
 			$('input[type="checkbox"]').on('change', function() {$('input[name="boleta"]').not(this).prop('checked', false);});
@@ -85,6 +85,7 @@ function mostrarBoleta(data){
 					arr.push(parseInt($(this).attr('id')));
 				});
 				//----------------------Inicio operaciones Post-----------------------------------
+				console.log(arr);
 				boleta();
 				//productos();
 				function productos(){
