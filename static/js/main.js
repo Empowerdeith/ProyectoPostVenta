@@ -50,6 +50,7 @@ function mostrarBoleta(data){
 			console.log(data1);
 			var data2=data1;
 			var id;
+			id=0;
 			$('input[type="checkbox"]').on('change', function() {$('input[name="boleta"]').not(this).prop('checked', false);});
 			$('input[type="checkbox"][name="boleta"]').click(function(){
 				if($(this).prop("checked") == true) {
