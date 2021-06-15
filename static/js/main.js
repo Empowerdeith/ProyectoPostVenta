@@ -101,7 +101,7 @@ function mostrarBoleta(data){
 					  body: formboleta,
 					  redirect: 'follow'
 					};
-					let status=false;
+					let status;
 					fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
 					.then((response) => {
 						// Get status using response.status
