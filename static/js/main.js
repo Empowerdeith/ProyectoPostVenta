@@ -106,13 +106,16 @@ function mostrarBoleta(data){
 					.then((response) => {
 						// Get status using response.status
 						status = response.ok;
+						if (status==true){
+							console.log("hola");
+						}
 						//console.log(`status in first then ${status}`);
 						return response.json();
 					})
 					.catch(error => console.log('error', error));
-					if(status==true){
+					/*if(status==true){
 						cliente();
-					}
+					}*/
 				}
 				//----Sección datos Cliente----------------------------------------------------------------
 				function cliente(){
