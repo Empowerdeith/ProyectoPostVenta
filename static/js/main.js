@@ -34,7 +34,7 @@ function showvalues(data){
 		$("#table_checkbox").find( "tbody" ).html(content);
 		showproducts(data);
 		function showproducts(){
-			$('input[type="checkbox"][name="boleta"]').click(function(){
+			/*$('input[type="checkbox"][name="boleta"]').click(function(){
 				if($(this).prop("checked") == true) {
 					var id = parseInt($(this).attr('id'));
 					var contenido = "";
@@ -62,7 +62,7 @@ function showvalues(data){
 						$("#table_product").find( "tbody" ).html(contenido);
 					}
 				}
-			});
+			});*/
 			$('#button_save').click(function(){
 				console.log("--------------------------");
 				console.log("Datos cliente");
