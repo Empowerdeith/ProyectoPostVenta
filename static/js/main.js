@@ -12,7 +12,7 @@ setTimeout(esconder_prod, 40);
 
 //Mostrar información principal de Boleta
 function mostrarBoleta(data){
-	data2;
+	var data2;
 	data2=data;
 	if (data2 == "No existe cliente."){
 		hide_table();
