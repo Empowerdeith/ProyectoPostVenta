@@ -8,7 +8,7 @@ function showvalues(data){
 	console.log("--------------------------");
 	if (data == "No existe cliente."){
 		hide_table();
-		$("#error_msg").html("<br><br>"+data);
+		$("#error_msg").html("<br><br>No Existe el cliente ingresado.");
 	}
 }
 
