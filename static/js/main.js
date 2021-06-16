@@ -1,4 +1,26 @@
 
+function testingvalues(data){
+	if (data == "No existe cliente."){
+		hide_table();
+		$("#error_msg").html("<br><br>No Existe el cliente ingresado.");
+	}
+	else{
+		showproducts(data);
+		function showproducts(){
+			$('#button_test').click(function(){
+				console.log("--------------------------");
+				console.log("Datos cliente");
+				console.log("rut: "+data.rut);
+				console.log("nombre: "+data.nombre_cl);
+				console.log("dirección: "+data.direccion);
+				console.log("--------------------------");
+			});
+		}
+	}
+}
+
+
+
 function showvalues(data){
 	if (data == "No existe cliente."){
 		hide_table();
@@ -214,7 +236,7 @@ function prueba(){
 		let url="http://3.83.24.216/api/cl/"+buscar1
 		fetch(url)
 		.then(response => response.json())
-		.then(data => showvalues(data))
+		.then(data => testingvalues(data))
 		.catch(error => console.log(error))
 
 	}
