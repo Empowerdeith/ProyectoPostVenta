@@ -9,7 +9,7 @@ function testingvalues(data){
 	
 	}
 }
-function showproducts(){
+function showproducts(data){
 	$('#button_test').click(function(){
 		console.log("--------------------------");
 		console.log("Datos cliente");
