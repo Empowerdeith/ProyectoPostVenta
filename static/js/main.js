@@ -13,6 +13,8 @@ setTimeout(esconder_prod, 40);
 //Mostrar información principal de Boleta
 function mostrarBoleta(data){
 	var data2;
+	console.log(data2);
+	data2={};
 	data2=data;
 	if (data2 == "No existe cliente."){
 		hide_table();
@@ -207,7 +209,6 @@ function prueba(){
 		.then(response => response.json())
 		.then(data => mostrarBoleta(data))
 		.catch(error => console.log(error))
-		console.log(data);
 		$("#table_checkbox").find("tbody").empty();
 		$("#table_product").find("tbody").empty();
 		//esconder_prod();
