@@ -8,7 +8,7 @@ function testingvalues(data){
 		showproducts(data);
 	}
 }
-function showproducts(data){
+function showproducts(){
 	$('#button_test').click(function(){
 		console.log("--------------------------");
 		console.log("Datos cliente");
