@@ -135,7 +135,7 @@ function mostrarBoleta(data){
 				console.log(arr);
 				console.log(arr.length);
 				arr.forEach(function(arr, index){
-					console.log("producto: "+arr);
+					console.log("producto: "+data.boletas[id].productos[arr].id);
 				});
 				console.log("Termino boleta");
 			});
