@@ -5,7 +5,15 @@ function testingvalues(data){
 		$("#error_msg").html("<br><br>No Existe el cliente ingresado.");
 	}
 	else{
-		showproducts(data);
+		//showproducts(data);
+		$('#button_test').click(function(){
+			console.log("--------------------------");
+			console.log("Datos cliente");
+			console.log("rut: "+data.rut);
+			console.log("nombre: "+data.nombre_cl);
+			console.log("dirección: "+data.direccion);
+			console.log("--------------------------");}
+		);
 	}
 }
 function showproducts(data){
