@@ -6,7 +6,6 @@ function testingvalues(data){
 	}
 	else{
 		showproducts(data);
-	
 	}
 }
 function showproducts(data){
