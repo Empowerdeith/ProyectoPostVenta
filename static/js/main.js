@@ -21,6 +21,7 @@ function mostrarBoleta(data){
 	else{
 		$("#error_msg").html("");
         $( "#myData" ).show();
+        $("#table_checkbox").find("tbody").empty();
 		var rut_p = $("#rut_p");
 		var nombre_cliente = $("#nombre_cliente");
 		var direccion = $("#direccion");
@@ -75,6 +76,7 @@ function mostrarBoleta(data){
 					}
 					else{
 						$("#error_msg2").html("");
+						$("#table_checkbox").find("tbody").empty();
 						$( "#tabla_de_productos" ).show();
 						for(let k = 0; k < data2.boletas[id].productos.length; k++){
 							contenido += "<tr><td><input id=\""+k+"\" type=\"checkbox\" name=\"producto\" >"+"</td>";
@@ -185,7 +187,6 @@ function mostrarBoleta(data){
 			});
 		}
 	}
-	data2={};
 }
 
 //Función para verifica si esta vacío en input principal.
