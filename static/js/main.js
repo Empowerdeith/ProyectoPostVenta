@@ -24,49 +24,42 @@ function mostrarBoleta(data){
 	else{
 		$("#error_msg").html("");
         $( "#myData" ).show();
-        $("#table_checkbox").find("tbody").empty();
+        //table Cliente
 		var rut_p = $("#rut_p");
 		var nombre_cliente = $("#nombre_cliente");
 		var direccion = $("#direccion");
 		rut_p.html(data2.rut);
 		nombre_cliente.html(data2.nombre_cl);
 		direccion.html(data2.direccion);
+		//table Boletas
+		$("#table_checkbox").find("tbody").empty();
 		var content = "";
 		for(let i = 0; i < data2.boletas.length; i++){
 			content += "<tr><td><input id=\""+i+"\" type=\"checkbox\" name=\"boleta\" >"+"</td>";
 			content += "<td>" + data2.boletas[i].num_boleta + "</td>";
-			//Probablemente se puede optimizar
+			//---------Sección fechas---------------------------------
 			var fecha_obtenida = new Date(data2.boletas[i].created_at);
 			var dia = fecha_obtenida.getDate();
 			var mes = fecha_obtenida.getMonth()+1;
 			var annio = fecha_obtenida.getFullYear();
-			//--------------------------------------------------
+			//-------------------------------------------------------
 			var  dineros = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
 			content += "<td>" + dia+"/"+mes+"/"+annio + "</td>";
 			content += "<td>" + dineros.format(data2.boletas[i].total) + "</td>";
 			content += "</tr>";
 		}
 		$("#table_checkbox").find( "tbody" ).html(content);
-		//Comienzo tabla productos
-		//var data1=data;
 		test(data2);
 		//selección de boleta
 		function test(data2){
-			//console.log(data);
-			/*var data2;
-			data2=data;*/
 			console.log("testing");
 			console.log(data2);
-			var id=0;
+			var id;
 			$('input[type="checkbox"]').on('change', function() {$('input[name="boleta"]').not(this).prop('checked', false);});
 			$('input[type="checkbox"][name="boleta"]').click(function(){
 				if($(this).prop("checked") == true) {
 					var contenido = "";
 					id = parseInt($(this).attr('id'));
-					console.log("______comienzo boleta____");			
-					console.log("Id boleta");
-					console.log(id);
-					console.log("---------");
 					var fecha_bol = new Date(data2.boletas[id].created_at);
 					var fecha_actual = new Date();
 					var calc;
@@ -93,34 +86,76 @@ function mostrarBoleta(data){
 				}
 			});
 
-			$('#button_save').click(function(){
-				var arr = [];
-				arr.splice(0, arr.length)
-				$('input[name="producto"]:checked').click(function(){
-					arr.push(parseInt($(this).attr('id')));
-				});
-				//----------------------Inicio operaciones Post-----------------------------------
-				console.log("arreglo con cantidad de productos");
-				console.log(arr);
-				console.log("Boleta");
-				console.log("id_boleta: "+id);
-				console.log("numero boleta ");
-				console.log(data2.boletas[id].num_boleta);
+			$('#button_save').click(function(){				
 				var fecha_obtenida = new Date(data2.boletas[id].created_at);
 				var dia = fecha_obtenida.getDate();
 				var mes = fecha_obtenida.getMonth()+1;
 				var annio = fecha_obtenida.getFullYear();
-				console.log(dia+"/"+mes+"/"+annio);
-				console.log(data2.boletas[id].total);
+				console.log("Datos Boleta");
+				console.log("id_boleta: "+id);
+				console.log("numero boleta: "+data2.boletas[id].num_boleta);
+				console.log("fecha: "+dia+"/"+mes+"/"+annio);
+				console.log("total boleta: "+data2.boletas[id].total);
 				console.log("--------------------------");
-				console.log("cliente");
-				console.log(data2.rut);
-				console.log(data2.nombre_cl);
-				console.log(data2.direccion);
+				console.log("Datos cliente");
+				console.log("rut: "+data2.rut);
+				console.log("nombre: "+data2.nombre_cl);
+				console.log("dirección: "+data2.direccion);
+				console.log("--------------------------");
+				/*var arr = [];
+				arr.splice(0, arr.length);*/
+				/*$('input[name="producto"]:checked').click(function(){
+					arr.push(parseInt($(this).attr('id')));
+				});*/
+
+				//----------------------Inicio operaciones Post-----------------------------------
+				/*console.log("arreglo con cantidad de productos");
+				console.log(arr);
 				for(let k = 0; k < data2.boletas[id].productos.length; k++){
 					console.log("producto: "+data2.boletas[id].productos[k].nombre_pro);
 				}
-				console.log("Termino boleta");
+				console.log("Termino boleta");*/
+			});
+		}
+	}
+}
+
+//Función para verifica si esta vacío en input principal.
+Object.prototype.isEmpty = function () {
+    return Object.keys(this).length == 0;
+}
+//-------------------------------------------------------
+//Función que realiza el fetch a la ip
+function prueba(){
+	var buscar1 = $('#id_buscar').val().toString();
+
+	// console.log(buscar1);
+	if(!buscar1.isEmpty()){
+		let url="http://3.83.24.216/api/cl/"+buscar1
+		fetch(url)
+		.then(response => response.json())
+		.then(data => mostrarBoleta(data))
+		.catch(error => console.log(error))
+		$("#table_checkbox").find("tbody").empty();
+		$("#table_product").find("tbody").empty();
+		//esconder_prod();
+	}
+	else{
+		hide_table()
+		$("#error_msg").html("<br><br>Debe ingresar un número de transacción.");
+	}
+}
+
+/*-----------------------------------------------------------------------------------
+			Funciones para Reset de checkboxes        
+----------------------------------------------------------------------------------*/
+function selectall(){
+	$( "#table_product").find( "input" ).prop('checked', true);
+}
+function unselectall(){
+	$( "#table_product").find( "input" ).prop('checked', false);
+}
+//------------------------------------------------------------------------------------
 				//boleta();
 				//productos();
 				/*function productos(){
@@ -169,7 +204,7 @@ function mostrarBoleta(data){
 					.catch(error => console.log('error', error));
 				}*/
 				//----Sección datos Cliente----------------------------------------------------------------
-				function cliente(){
+				/*function cliente(){
 
 					var formdata = new FormData();
 					formdata.append("rut", data2.rut);
@@ -185,47 +220,5 @@ function mostrarBoleta(data){
 					.then(response => response.json())
 					.then(data => console.log(data))
 					.catch(error => console.log('error', error));
-				}
+				}*/
 				//----------------------Término operaciones Post----------------------------------
-			});
-		}
-		data2={};
-	}
-}
-
-//Función para verifica si esta vacío en input principal.
-Object.prototype.isEmpty = function () {
-    return Object.keys(this).length == 0;
-}
-//-------------------------------------------------------
-//Función que realiza el fetch a la ip
-function prueba(){
-	var buscar1 = $('#id_buscar').val().toString();
-
-	// console.log(buscar1);
-	if(!buscar1.isEmpty()){
-		let url="http://3.83.24.216/api/cl/"+buscar1
-		fetch(url)
-		.then(response => response.json())
-		.then(data => mostrarBoleta(data))
-		.catch(error => console.log(error))
-		$("#table_checkbox").find("tbody").empty();
-		$("#table_product").find("tbody").empty();
-		//esconder_prod();
-	}
-	else{
-		hide_table()
-		$("#error_msg").html("<br><br>Debe ingresar un número de transacción.");
-	}
-}
-
-/*-----------------------------------------------------------------------------------
-			Funciones para Reset de checkboxes        
-----------------------------------------------------------------------------------*/
-function selectall(){
-	$( "#table_product").find( "input" ).prop('checked', true);
-}
-function unselectall(){
-	$( "#table_product").find( "input" ).prop('checked', false);
-}
-//------------------------------------------------------------------------------------
