@@ -127,7 +127,7 @@ function mostrarBoleta(data){
 				console.log("dirección: "+data.direccion);
 				console.log("--------------------------");
 				var arr = [];
-				$('input[name="producto"]:checked').click(function(){
+				$('input[name="producto"]:checked').each(function(){
 					arr.push(parseInt($(this).attr('id')));
 				});
 				//----------------------Inicio operaciones Post-----------------------------------
