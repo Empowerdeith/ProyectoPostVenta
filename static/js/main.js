@@ -32,7 +32,7 @@ function showvalues(data){
 			content += "</tr>";
 		}
 		$("#table_checkbox").find( "tbody" ).html(content);
-		showproducts(data);
+		//showproducts(data);
 		function showproducts(){
 			/*$('input[type="checkbox"][name="boleta"]').click(function(){
 				if($(this).prop("checked") == true) {
@@ -63,7 +63,7 @@ function showvalues(data){
 					}
 				}
 			});*/
-			$('#button_save').click(function(){
+			$('#button_test').click(function(){
 				console.log("--------------------------");
 				console.log("Datos cliente");
 				console.log("rut: "+data.rut);
