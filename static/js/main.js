@@ -12,7 +12,7 @@ setTimeout(esconder_prod, 40);
 
 //Mostrar información principal de Boleta
 function mostrarBoleta(data){
-	data2 = {};
+	data2;
 	data2=data;
 	if (data2 == "No existe cliente."){
 		hide_table();
@@ -135,8 +135,8 @@ function mostrarBoleta(data){
 						.catch(error => console.log('error', error));
 					}
 				}*/
-				function boleta(){
-					/*var formboleta = new FormData();
+				/*function boleta(){
+					var formboleta = new FormData();
 					formboleta.append("num_boleta", data2.boletas[id].num_boleta);
 					formboleta.append("created_at", data2.boletas[id].created_at);
 					formboleta.append("total", data2.boletas[id].total);
@@ -161,8 +161,8 @@ function mostrarBoleta(data){
 						return response.json();
 					})
 					.then (data => console.log(data))
-					.catch(error => console.log('error', error));*/
-				}
+					.catch(error => console.log('error', error));
+				}*/
 				//----Sección datos Cliente----------------------------------------------------------------
 				function cliente(){
 
@@ -185,6 +185,7 @@ function mostrarBoleta(data){
 			});
 		}
 	}
+	data2={};
 }
 
 //Función para verifica si esta vacío en input principal.
