@@ -34,6 +34,7 @@ function showvalues(data){
 		$("#table_checkbox").find( "tbody" ).html(content);
 		showproducts(data);
 		function showproducts(){
+			console.log(data);
 			$('input[type="checkbox"][name="boleta"]').click(function(){
 				if($(this).prop("checked") == true) {
 					id = parseInt($(this).attr('id'));
