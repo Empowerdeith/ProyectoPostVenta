@@ -34,7 +34,6 @@ function showvalues(data){
 		$("#table_checkbox").find( "tbody" ).html(content);
 		showproducts(data);
 		function showproducts(){
-			console.log(data);
 			$('input[type="checkbox"][name="boleta"]').click(function(){
 				if($(this).prop("checked") == true) {
 					id = parseInt($(this).attr('id'));
@@ -64,15 +63,15 @@ function showvalues(data){
 					}
 				}
 			});
+			$('#button_save').click(function(){
+				console.log("--------------------------");
+				console.log("Datos cliente");
+				console.log("rut: "+data.rut);
+				console.log("nombre: "+data.nombre_cl);
+				console.log("dirección: "+data.direccion);
+				console.log("--------------------------");
+			});
 		}
-		console.log("--------------------------");
-		console.log("Datos cliente");
-		console.log("rut: "+data.rut);
-		console.log("nombre: "+data.nombre_cl);
-		console.log("dirección: "+data.direccion);
-		console.log("--------------------------");
-
-
 	}
 }
 
