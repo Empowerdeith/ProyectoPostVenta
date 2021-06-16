@@ -36,7 +36,7 @@ function showvalues(data){
 		function showproducts(){
 			$('input[type="checkbox"][name="boleta"]').click(function(){
 				if($(this).prop("checked") == true) {
-					id = parseInt($(this).attr('id'));
+					var id = parseInt($(this).attr('id'));
 					var contenido = "";
 					var fecha_bol = new Date(data.boletas[id].created_at);
 					var fecha_actual = new Date();
