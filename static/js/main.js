@@ -6,6 +6,10 @@ function showvalues(data){
 	console.log("nombre: "+data.nombre_cl);
 	console.log("dirección: "+data.direccion);
 	console.log("--------------------------");
+	if (data == "No existe cliente."){
+		hide_table();
+		$("#error_msg").html("<br><br>"+data);
+	}
 }
 
 
