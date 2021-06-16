@@ -5,12 +5,6 @@ function showvalues(data){
 		$("#error_msg").html("<br><br>No Existe el cliente ingresado.");
 	}
 	else{
-		console.log("--------------------------");
-		console.log("Datos cliente");
-		console.log("rut: "+data.rut);
-		console.log("nombre: "+data.nombre_cl);
-		console.log("dirección: "+data.direccion);
-		console.log("--------------------------");
 		$("#error_msg").html("");
 		$( "#myData" ).show();
 		//table Cliente
@@ -38,6 +32,45 @@ function showvalues(data){
 			content += "</tr>";
 		}
 		$("#table_checkbox").find( "tbody" ).html(content);
+		showproducts(data);
+		function showproducts(){
+			$('input[type="checkbox"][name="boleta"]').click(function(){
+				if($(this).prop("checked") == true) {
+					id = parseInt($(this).attr('id'));
+					var contenido = "";
+					var fecha_bol = new Date(data.boletas[id].created_at);
+					var fecha_actual = new Date();
+					var calc;
+					calc = fecha_actual.getTime() - fecha_bol.getTime();
+					var days_difference = calc / (1000 * 60 * 60 * 24);
+					//Validación de fechas
+					if(days_difference>90){
+						esconder_prod();
+						$("#error_msg2").html("Su compra supera el plazo legal(90 días), para proceder a la devolución de su producto.");
+					}
+					else{
+						$("#error_msg2").html("");
+						$("#table_product").find("tbody").empty();
+						$( "#tabla_de_productos" ).show();
+						for(let k = 0; k < data.boletas[id].productos.length; k++){
+							contenido += "<tr><td><input id=\""+k+"\" type=\"checkbox\" name=\"producto\" >"+"</td>";
+							contenido += "<td>" + data.boletas[id].productos[k].nombre_pro + "</td>";
+							var  monea = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
+							contenido += "<td>" + monea.format(data.boletas[id].productos[k].precio) + "</td>";
+							contenido += "</tr>";
+						}
+						$("#table_product").find( "tbody" ).html(contenido);
+					}
+				}
+			});
+		}
+		console.log("--------------------------");
+		console.log("Datos cliente");
+		console.log("rut: "+data.rut);
+		console.log("nombre: "+data.nombre_cl);
+		console.log("dirección: "+data.direccion);
+		console.log("--------------------------");
+
 
 	}
 }
