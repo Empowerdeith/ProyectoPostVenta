@@ -17,6 +17,7 @@ function mostrarBoleta(data){
 	if (data2 == "No existe cliente."){
 		hide_table();
 		$("#error_msg").html("<br><br>"+data2);
+		data2={};
 	}
 	else{
 		$("#error_msg").html("");
@@ -93,7 +94,7 @@ function mostrarBoleta(data){
 			$('#button_save').click(function(){
 				var arr = [];
 				arr.splice(0, arr.length)
-				$('input[name="producto"]:checked').each(function(){
+				$('input[name="producto"]:checked').click(function(){
 					arr.push(parseInt($(this).attr('id')));
 				});
 				//----------------------Inicio operaciones Post-----------------------------------
@@ -186,6 +187,7 @@ function mostrarBoleta(data){
 				//----------------------Término operaciones Post----------------------------------
 			});
 		}
+		data2={};
 	}
 }
 
