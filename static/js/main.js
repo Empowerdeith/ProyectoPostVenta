@@ -1,22 +1,27 @@
 
-function testingvalues(data){
+/*function testingvalues(data){
 	if (data == "No existe cliente."){
 		hide_table();
 		$("#error_msg").html("<br><br>No Existe el cliente ingresado.");
 	}
 	else{
 		showproducts(data);
-		/*$('#button_test').click(function(){
-			console.log("--------------------------");
-			console.log("Datos cliente");
-			console.log("rut: "+data.rut);
-			console.log("nombre: "+data.nombre_cl);
-			console.log("dirección: "+data.direccion);
-			console.log("--------------------------");}
-		);*/
+	}
+}*/
+function testingvalues(data){
+	if (data == "No existe cliente."){
+		hide_table();
+		$("#error_msg").html("<br><br>No Existe el cliente ingresado.");
+	}
+	else{
+		testing_bton(data);
 	}
 }
+function testing_bton(data){
+
+}
 function showproducts(data){
+	$('#buttonTest').off('click');
 	$('#button_test').click(function(){
 		console.log("--------------------------");
 		console.log("Datos cliente");
