@@ -14,14 +14,11 @@ function testingvalues(data){
 		$("#error_msg").html("<br><br>No Existe el cliente ingresado.");
 	}
 	else{
-		testing_bton(data);
+		showproducts(data);
 	}
 }
-function testing_bton(data){
-
-}
 function showproducts(data){
-	$('#buttonTest').off('click');
+	$('#button_test').off('click');
 	$('#button_test').click(function(){
 		console.log("--------------------------");
 		console.log("Datos cliente");
