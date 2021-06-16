@@ -11,6 +11,34 @@ function showvalues(data){
 		console.log("nombre: "+data.nombre_cl);
 		console.log("dirección: "+data.direccion);
 		console.log("--------------------------");
+		$("#error_msg").html("");
+		$( "#myData" ).show();
+		//table Cliente
+		var rut_p = $("#rut_p");
+		var nombre_cliente = $("#nombre_cliente");
+		var direccion = $("#direccion");
+		rut_p.html(data.rut);
+		nombre_cliente.html(data.nombre_cl);
+		direccion.html(data.direccion);
+		//table Boletas
+		$("#table_checkbox").find("tbody").empty();
+		var content = "";
+		for(let i = 0; i < data.boletas.length; i++){
+			content += "<tr><td><input id=\""+i+"\" type=\"checkbox\" name=\"boleta\" >"+"</td>";
+			content += "<td>" + data.boletas[i].num_boleta + "</td>";
+			//---------Sección fechas---------------------------------
+			var fecha_obtenida = new Date(data.boletas[i].created_at);
+			var dia = fecha_obtenida.getDate();
+			var mes = fecha_obtenida.getMonth()+1;
+			var annio = fecha_obtenida.getFullYear();
+			//-------------------------------------------------------
+			var  dineros = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
+			content += "<td>" + dia+"/"+mes+"/"+annio + "</td>";
+			content += "<td>" + dineros.format(data.boletas[i].total) + "</td>";
+			content += "</tr>";
+		}
+		$("#table_checkbox").find( "tbody" ).html(content);
+
 	}
 }
 
