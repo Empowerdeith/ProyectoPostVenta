@@ -6,19 +6,19 @@ function testingvalues(data){
 	}
 	else{
 		showproducts(data);
-		function showproducts(){
-			$('#button_test').click(function(){
-				console.log("--------------------------");
-				console.log("Datos cliente");
-				console.log("rut: "+data.rut);
-				console.log("nombre: "+data.nombre_cl);
-				console.log("dirección: "+data.direccion);
-				console.log("--------------------------");
-			});
-		}
+	
 	}
 }
-
+function showproducts(){
+	$('#button_test').click(function(){
+		console.log("--------------------------");
+		console.log("Datos cliente");
+		console.log("rut: "+data.rut);
+		console.log("nombre: "+data.nombre_cl);
+		console.log("dirección: "+data.direccion);
+		console.log("--------------------------");
+	});
+}
 
 
 function showvalues(data){
