@@ -209,8 +209,6 @@ function prueba(){
 		.catch(error => console.log(error))		
 		$("#table_checkbox").find("tbody").empty();
 		$("#table_product").find("tbody").empty();
-
-		
 		//esconder_prod();
 	}
 	else{
