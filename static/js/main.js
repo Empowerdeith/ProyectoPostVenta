@@ -1,4 +1,17 @@
 
+function showvalues(data){
+	console.log("--------------------------");
+	console.log("Datos cliente");
+	console.log("rut: "+data.rut);
+	console.log("nombre: "+data.nombre_cl);
+	console.log("dirección: "+data.direccion);
+	console.log("--------------------------");
+}
+
+
+
+
+
 //Esconder todo el div con todo su contenido
 function hide_table() {
   	$( "#myData" ).hide();
@@ -134,17 +147,23 @@ function prueba(){
 		let url="http://3.83.24.216/api/cl/"+buscar1
 		fetch(url)
 		.then(response => response.json())
-		.then(data => mostrarBoleta(data))
+		.then(data => showvalues(data))
 		.catch(error => console.log(error))
-		$("#table_checkbox").find("tbody").empty();
-		$("#table_product").find("tbody").empty();
-		//esconder_prod();
+
 	}
 	else{
 		hide_table()
 		$("#error_msg").html("<br><br>Debe ingresar un número de transacción.");
 	}
 }
+//Inside buscar.isEmpty
+/*
+		.then(data => mostrarBoleta(data))
+		$("#table_checkbox").find("tbody").empty();
+		$("#table_product").find("tbody").empty();
+		//esconder_prod();
+
+*/
 
 /*-----------------------------------------------------------------------------------
 			Funciones para Reset de checkboxes        
