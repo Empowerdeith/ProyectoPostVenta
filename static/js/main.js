@@ -186,7 +186,6 @@ function mostrarBoleta(data){
 				}
 				//----------------------Término operaciones Post----------------------------------
 			});
-			data2={};
 		}
 		data2={};
 	}
