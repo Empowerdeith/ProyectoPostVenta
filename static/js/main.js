@@ -5,15 +5,15 @@ function testingvalues(data){
 		$("#error_msg").html("<br><br>No Existe el cliente ingresado.");
 	}
 	else{
-		//showproducts(data);
-		$('#button_test').click(function(){
+		showproducts(data);
+		/*$('#button_test').click(function(){
 			console.log("--------------------------");
 			console.log("Datos cliente");
 			console.log("rut: "+data.rut);
 			console.log("nombre: "+data.nombre_cl);
 			console.log("dirección: "+data.direccion);
 			console.log("--------------------------");}
-		);
+		);*/
 	}
 }
 function showproducts(data){
@@ -62,7 +62,7 @@ function showvalues(data){
 		}
 		$("#table_checkbox").find( "tbody" ).html(content);
 		//showproducts(data);
-		function showproducts(){
+		/*function showproducts(){
 			/*$('input[type="checkbox"][name="boleta"]').click(function(){
 				if($(this).prop("checked") == true) {
 					var id = parseInt($(this).attr('id'));
@@ -92,15 +92,15 @@ function showvalues(data){
 					}
 				}
 			});*/
-			$('#button_test').click(function(){
+			/*$('#button_test').click(function(){
 				console.log("--------------------------");
 				console.log("Datos cliente");
 				console.log("rut: "+data.rut);
 				console.log("nombre: "+data.nombre_cl);
 				console.log("dirección: "+data.direccion);
 				console.log("--------------------------");
-			});
-		}
+			});*/
+		//}*/
 	}
 }
 
