@@ -1,14 +1,16 @@
 
 function showvalues(data){
-	console.log("--------------------------");
-	console.log("Datos cliente");
-	console.log("rut: "+data.rut);
-	console.log("nombre: "+data.nombre_cl);
-	console.log("dirección: "+data.direccion);
-	console.log("--------------------------");
 	if (data == "No existe cliente."){
 		hide_table();
 		$("#error_msg").html("<br><br>No Existe el cliente ingresado.");
+	}
+	else{
+		console.log("--------------------------");
+		console.log("Datos cliente");
+		console.log("rut: "+data.rut);
+		console.log("nombre: "+data.nombre_cl);
+		console.log("dirección: "+data.direccion);
+		console.log("--------------------------");
 	}
 }
 
