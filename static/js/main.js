@@ -206,7 +206,8 @@ function prueba(){
 		fetch(url)
 		.then(response => response.json())
 		.then(data => mostrarBoleta(data))
-		.catch(error => console.log(error))		
+		.catch(error => console.log(error))
+		console.log(data);
 		$("#table_checkbox").find("tbody").empty();
 		$("#table_product").find("tbody").empty();
 		//esconder_prod();
