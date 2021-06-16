@@ -196,7 +196,7 @@ function mostrarBoleta(data){
 					}
 				}
 			});
-
+			$('#button_save').off('click');
 			$('#button_save').click(function(){				
 				var fecha_obtenida = new Date(data2.boletas[id].created_at);
 				var dia = fecha_obtenida.getDate();
@@ -213,19 +213,19 @@ function mostrarBoleta(data){
 				console.log("nombre: "+data2.nombre_cl);
 				console.log("dirección: "+data2.direccion);
 				console.log("--------------------------");
-				/*var arr = [];
-				arr.splice(0, arr.length);*/
-				/*$('input[name="producto"]:checked').click(function(){
+				var arr = [];
+				arr.splice(0, arr.length);
+				$('input[name="producto"]:checked').click(function(){
 					arr.push(parseInt($(this).attr('id')));
-				});*/
+				});
 
 				//----------------------Inicio operaciones Post-----------------------------------
-				/*console.log("arreglo con cantidad de productos");
+				console.log("arreglo con cantidad de productos");
 				console.log(arr);
 				for(let k = 0; k < data2.boletas[id].productos.length; k++){
 					console.log("producto: "+data2.boletas[id].productos[k].nombre_pro);
 				}
-				console.log("Termino boleta");*/
+				console.log("Termino boleta");
 			});
 		}
 	}
@@ -245,7 +245,7 @@ function prueba(){
 		let url="http://3.83.24.216/api/cl/"+buscar1
 		fetch(url)
 		.then(response => response.json())
-		.then(data => testingvalues(data))
+		.then(data => mostrarBoleta(data))
 		.catch(error => console.log(error))
 
 	}
