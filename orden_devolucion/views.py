@@ -21,6 +21,12 @@ class ClienteApi(viewsets.ModelViewSet):
     permission_classes = ()
     queryset = Cliente.objects.all()
     serializer_class = ClienteSerializer
+
+def listar_clientes(request):
+    lista_clientes = Cliente.objects.all()
+    return render(request, 'paginas_post_venta/Devolucion/revision_postventa.html',
+        {'lista_clientes': lista_clientes})
+
 @api_view(['GET'])
 def cliente_detail_view(request,pk=None):
     if request.method == 'GET':
@@ -30,3 +36,13 @@ def cliente_detail_view(request,pk=None):
         else:
             cliente_serializer= ClienteSerializer(cliente)
             return Response(cliente_serializer.data)
+
+@api_view(['GET'])
+def boleta_detail_view(request,pk=None):
+	if request.method == 'GET':
+		boleta = Boleta.objects.filter(num_boleta=pk).first()
+		if boleta == None:
+			return Response("No existe la boleta ingresada.")
+		else:
+			boleta_serializer= BoletaSerializer(boleta)
+			return Response(boleta_serializer.data)
