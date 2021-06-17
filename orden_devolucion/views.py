@@ -6,6 +6,15 @@ from rest_framework import filters
 from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 import requests
+from django.views.generic import ListView, TemplateView
+from rest_framework.generics import (
+    ListAPIView,
+    CreateAPIView,
+    RetrieveAPIView,
+    DestroyAPIView,
+    UpdateAPIView,
+    RetrieveUpdateAPIView,
+)
 
 # ViewSets define the view behavior.
 
