@@ -3,6 +3,8 @@ from rest_framework.response import Response
 from .serializers import ProductoSerializer, BoletaSerializer, ClienteSerializer
 from .models import Producto, Cliente, Boleta
 from rest_framework import filters
+from rest_framework.decorators import api_view
+from rest_framework.views import APIView
 
 # ViewSets define the view behavior.
 
