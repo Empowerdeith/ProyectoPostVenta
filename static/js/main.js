@@ -250,5 +250,15 @@ function revisionShow(data){
 		bloc +="<td>" + data.direccion + "</td>";
 		bloc +="<td>" + data.boletas + "</td></tr>";
 		$("#tabla_cliente").find( "tbody" ).html(bloc);
+		
+		var prods = "";
+		for(let k = 0; k < data.boletas.productos.length; k++){	
+			prods += "<tr><td><input id=\""+k+"\" type=\"checkbox\" name=\"producto\" >"+"</td>";
+			prods += "<td>" + data.boletas.productos[k].nombre_pro + "</td>";
+			var  monea = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
+			prods += "<td>" + monea.format(data.boletas.productos[k].precio) + "</td>";
+			prods += "</tr>";
+		}
+		$("#tabla_revision_prod").find( "tbody" ).html(prods);
 	}	
 }
