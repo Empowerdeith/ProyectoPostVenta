@@ -218,4 +218,25 @@ function selectall(){
 function unselectall(){
 	$( "#table_product").find( "input" ).prop('checked', false);
 }
-/*--------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------
+																GEt Api PostVenta																									
+---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+function revision_search(){
+	var buscar1 = $('#id_buscar').val().toString();
+
+	// console.log(buscar1);
+	if(!buscar1.isEmpty()){
+		let url="http://3.83.24.216/api/cl/"+buscar1
+		fetch(url)
+		.then(response => response.json())
+		.then(data => revisionShow(data))
+		.catch(error => console.log(error))
+	}
+	else{
+		hide_table()
+		$("#error_msg").html("<br><br>Debe ingresar un número de transacción.");
+	}
+}
+function revisionShow(data){
+	console.log();
+}
