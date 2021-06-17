@@ -7,7 +7,7 @@ from api_post_venta.views import(
     revision,
 	)
 from orden_devolucion.views import (
-    cliente_detail_view, boleta_detail_view, listar_clientes
+    listar_clientes
 )
 
 urlpatterns = [
