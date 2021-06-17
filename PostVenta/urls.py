@@ -4,8 +4,8 @@ from api_post_venta.views import(
     home,
 	devoluciones1,
 	cuenta,
-    revision,
 	)
+from orden_devolucion.views import(revision)
     
 urlpatterns = [
     path('admin/', admin.site.urls),
