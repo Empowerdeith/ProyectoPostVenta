@@ -22,11 +22,6 @@ class ClienteApi(viewsets.ModelViewSet):
     queryset = Cliente.objects.all()
     serializer_class = ClienteSerializer
 
-def listar_clientes(request):
-    lista_clientes = Cliente.objects.all()
-    return render(request, 'paginas_post_venta/Devolucion/revision_postventa.html',
-        {'lista_clientes': lista_clientes})
-
 @api_view(['GET'])
 def cliente_detail_view(request,pk=None):
     if request.method == 'GET':
