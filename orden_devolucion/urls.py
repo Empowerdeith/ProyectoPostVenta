@@ -3,7 +3,7 @@ from django.urls import path, re_path, include
 from . import views
 from rest_framework.routers import DefaultRouter
 from orden_devolucion.views import (
-    cliente_detail_view, boleta_detail_view, listar_clientes
+    cliente_detail_view, boleta_detail_view, listar_clientes,
 )
 
 router=DefaultRouter()

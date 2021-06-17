@@ -9,7 +9,3 @@ def cuenta(request):
 	return render(request,"paginas_post_venta/login/cuenta.html")
 def revision(request):
 	return render(request,"paginas_post_venta/Devolucion/revision_postventa.html")
-def listar_clientes(request):
-    lista_clientes = Cliente.objects.all()
-    return render(request, 'paginas_post_venta/Devolucion/rev_pendientes.html',
-        {'lista_clientes': lista_clientes})
