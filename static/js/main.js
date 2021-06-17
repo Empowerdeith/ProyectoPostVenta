@@ -238,4 +238,16 @@ function revision_search(){
 }
 function revisionShow(data){
 	console.log(data);
+	if (data == "No existe cliente."){
+		hide_table();
+		$("#error_msg5").html("<br><br>No Existe el cliente ingresado.");
+	}
+	else{
+		$("#error_msg5").html("");
+		var bloc = "";
+		bloc +="<tr><td>" + data.rut + "</td>";
+		bloc +="<td>" + data.nombre_cl + "</td>"
+		bloc +="<td>" + data.direccion + "</td>";
+		bloc +="<td>" + data.boletas + "</td></tr>";
+	}
 }
