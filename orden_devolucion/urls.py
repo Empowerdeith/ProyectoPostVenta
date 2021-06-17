@@ -15,5 +15,5 @@ urlpatterns = [
     path('devolucion/',include(router.urls)),
     path('cl/<int:pk>/', cliente_detail_view, name= "cliente_api"),
     path('bol/<int:pk>/', boleta_detail_view, name= "boleta_api"),
-    path('listar_clientes/', listar_clientes, name="listar_clientes"),
+    path('listar_clientes/', listar_clientes, name="lista"),
 ]
