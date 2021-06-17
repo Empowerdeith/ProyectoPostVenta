@@ -110,8 +110,61 @@ function mostrarBoleta(data){
 				}
 			});
 			$('#button_save').off('click');
-			$('#button_save').click(function(){				
-				var fecha_obtenida = new Date(data.boletas[id].created_at);
+			$('#button_save').click(function(){
+				boleta();
+				function boleta(){
+					var formboleta = new FormData();
+					formboleta.append("num_boleta", data.boletas[id].num_boleta);
+					formboleta.append("created_at", data.boletas[id].created_at);
+					formboleta.append("total", data.boletas[id].total);
+					//arreglo id productos
+					arr.forEach(function(arr, index){
+						formboleta.append("productos", data.boletas[id].productos[arr].id);
+						//console.log("producto: "+data.boletas[id].productos[arr].nombre_pro);
+					});
+					/*for(let k = 0; k < arr.length; k++){
+    					formboleta.append("productos", data.boletas[id].productos[k].id);
+    				}*/
+					var requestOptions = {
+						method: 'POST',
+						body: formboleta,
+						redirect: 'follow'
+					};
+					let status;
+					fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
+					.then((response) => {
+						// Get status using response.status
+						status = response.ok;
+						if (status==true){
+							cliente();
+						}
+						//console.log(`status in first then ${status}`);
+						return response.json();
+					})
+					.then (data => console.log(data))
+					.catch(error => console.log('error', error));
+				}
+				//----Sección datos Cliente----------------------------------------------------------------
+				function cliente(){
+
+					var formdata = new FormData();
+					formdata.append("rut", data.rut);
+					formdata.append("nombre_cl", data.nombre_cl);
+					formdata.append("direccion", data.direccion);
+					formdata.append("boletas", data.boletas[id].num_boleta);
+					var requestOptions = {
+						method: 'POST',
+						body: formdata,
+						redirect: 'follow'
+					};
+					fetch("http://18.207.25.202/api/devolucion/Cliente/", requestOptions)
+					.then(response => response.json())
+					.then(data => console.log(data))
+					.catch(error => console.log('error', error));
+				}
+				//----------------------Término operaciones Post----------------------------------
+
+				/*var fecha_obtenida = new Date(data.boletas[id].created_at);
 				var dia = fecha_obtenida.getDate();
 				var mes = fecha_obtenida.getMonth()+1;
 				var annio = fecha_obtenida.getFullYear();
@@ -132,12 +185,13 @@ function mostrarBoleta(data){
 				});
 				//----------------------Inicio operaciones Post-----------------------------------
 				console.log("arreglo con cantidad de productos");
-				console.log(arr);
-				console.log(arr.length);
+				//console.log(arr);
+				//console.log(arr.length);
 				arr.forEach(function(arr, index){
 					console.log("producto: "+data.boletas[id].productos[arr].nombre_pro);
 				});
 				console.log("Termino boleta");
+				*/
 			});
 		}
 	}
@@ -159,6 +213,7 @@ function prueba(){
 		.then(response => response.json())
 		.then(data => mostrarBoleta(data))
 		.catch(error => console.log(error))
+		//esconder_prod();
 
 	}
 	else{
@@ -166,15 +221,7 @@ function prueba(){
 		$("#error_msg").html("<br><br>Debe ingresar un número de transacción.");
 	}
 }
-//Inside buscar.isEmpty
-/*
-		.then(data => mostrarBoleta(data))
-		$("#table_checkbox").find("tbody").empty();
-		$("#table_product").find("tbody").empty();
-		//esconder_prod();
-
-*/
-
+//$("#table_checkbox").find("tbody").empty();
 /*-----------------------------------------------------------------------------------
 			Funciones para Reset de checkboxes        
 ----------------------------------------------------------------------------------*/
