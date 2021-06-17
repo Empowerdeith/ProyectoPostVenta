@@ -226,7 +226,7 @@ function revision_search(){
 
 	// console.log(buscar1);
 	if(!buscar2.isEmpty()){
-		let url="http://http://18.207.25.202/api/cl/"+buscar2
+		let url="http:18.207.25.202/api/cl/"+buscar2
 		fetch(url)
 		.then(response => response.json())
 		.then(data => revisionShow(data))
