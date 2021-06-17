@@ -16,5 +16,4 @@ urlpatterns = [
     path('cl/<int:pk>/', cliente_detail_view, name= "cliente_api"),
     path('bol/<int:pk>/', boleta_detail_view, name= "boleta_api"),
     path('listar_clientes/', listar_clientes, name="listar_clientes"),
-    
 ]
