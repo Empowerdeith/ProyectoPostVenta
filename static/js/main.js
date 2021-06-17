@@ -1,33 +1,3 @@
-
-/*function testingvalues(data){
-	if (data == "No existe cliente."){
-		hide_table();
-		$("#error_msg").html("<br><br>No Existe el cliente ingresado.");
-	}
-	else{
-		showproducts(data);
-	}
-}*/
-function testingvalues(data){
-	if (data == "No existe cliente."){
-		hide_table();
-		$("#error_msg").html("<br><br>No Existe el cliente ingresado.");
-	}
-	else{
-		showproducts(data);
-	}
-}
-function showproducts(data){
-	$('#button_test').off('click');
-	$('#button_test').click(function(){
-		console.log("--------------------------");
-		console.log("Datos cliente");
-		console.log("rut: "+data.rut);
-		console.log("nombre: "+data.nombre_cl);
-		console.log("dirección: "+data.direccion);
-		console.log("--------------------------");
-	});
-}
 //Esconder todo el div con todo su contenido
 function hide_table() {
   	$( "#myData" ).hide();
@@ -116,6 +86,23 @@ function mostrarBoleta(data){
 					arr.push(parseInt($(this).attr('id')));
 				});
 				boleta();
+				/*function productos(){
+					for(let k = 0; k < arr.length; k++){
+						var formprod = new FormData();
+						formprod.append("id",data2.boletas[id].productos[k].id);
+						formprod.append("nombre_pro", data2.boletas[id].productos[k].nombre_pro);
+						formprod.append("precio", data2.boletas[id].productos[k].precio);
+						var requestOptions = {
+							method: 'POST',
+							body: formprod,
+							redirect: 'follow'
+						};
+						fetch("http://18.207.25.202/api/devolucion/Producto/", requestOptions)
+						.then(response => response.json())
+						//.then(data => console.log(data))
+						.catch(error => console.log('error', error));
+					}
+				}*/
 				function boleta(){
 					var formboleta = new FormData();
 					formboleta.append("num_boleta", data.boletas[id].num_boleta);
@@ -124,11 +111,7 @@ function mostrarBoleta(data){
 					//arreglo id productos
 					arr.forEach(function(arr, index){
 						formboleta.append("productos", data.boletas[id].productos[arr].id);
-						//console.log("producto: "+data.boletas[id].productos[arr].nombre_pro);
 					});
-					/*for(let k = 0; k < arr.length; k++){
-    					formboleta.append("productos", data.boletas[id].productos[k].id);
-    				}*/
 					var requestOptions = {
 						method: 'POST',
 						body: formboleta,
@@ -235,70 +218,3 @@ function selectall(){
 function unselectall(){
 	$( "#table_product").find( "input" ).prop('checked', false);
 }
-//------------------------------------------------------------------------------------
-				//boleta();
-				//productos();
-				/*function productos(){
-					for(let k = 0; k < arr.length; k++){
-						var formprod = new FormData();
-						formprod.append("id",data2.boletas[id].productos[k].id);
-						formprod.append("nombre_pro", data2.boletas[id].productos[k].nombre_pro);
-						formprod.append("precio", data2.boletas[id].productos[k].precio);
-						var requestOptions = {
-							method: 'POST',
-							body: formprod,
-							redirect: 'follow'
-						};
-						fetch("http://18.207.25.202/api/devolucion/Producto/", requestOptions)
-						.then(response => response.json())
-						//.then(data => console.log(data))
-						.catch(error => console.log('error', error));
-					}
-				}*/
-				/*function boleta(){
-					var formboleta = new FormData();
-					formboleta.append("num_boleta", data2.boletas[id].num_boleta);
-					formboleta.append("created_at", data2.boletas[id].created_at);
-					formboleta.append("total", data2.boletas[id].total);
-					//arreglo id productos
-					for(let k = 0; k < arr.length; k++){
-    					formboleta.append("productos", data2.boletas[id].productos[k].id);
-    				}
-					var requestOptions = {
-					  method: 'POST',
-					  body: formboleta,
-					  redirect: 'follow'
-					};
-					let status;
-					fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
-					.then((response) => {
-						// Get status using response.status
-						status = response.ok;
-						if (status==true){
-							cliente();
-						}
-						//console.log(`status in first then ${status}`);
-						return response.json();
-					})
-					.then (data => console.log(data))
-					.catch(error => console.log('error', error));
-				}*/
-				//----Sección datos Cliente----------------------------------------------------------------
-				/*function cliente(){
-
-					var formdata = new FormData();
-					formdata.append("rut", data2.rut);
-					formdata.append("nombre_cl", data2.nombre_cl);
-					formdata.append("direccion", data2.direccion);
-					formdata.append("boletas", data2.boletas[id].num_boleta);
-					var requestOptions = {
-					  method: 'POST',
-					  body: formdata,
-					  redirect: 'follow'
-					};
-					fetch("http://18.207.25.202/api/devolucion/Cliente/", requestOptions)
-					.then(response => response.json())
-					.then(data => console.log(data))
-					.catch(error => console.log('error', error));
-				}*/
-				//----------------------Término operaciones Post----------------------------------
