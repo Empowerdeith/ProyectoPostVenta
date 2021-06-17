@@ -222,21 +222,20 @@ function unselectall(){
 																GEt Api PostVenta																									
 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
 function revision_search(){
-	var buscar1 = $('#id_buscar').val().toString();
+	var buscar2 = $('#id_buscar5').val().toString();
 
 	// console.log(buscar1);
-	if(!buscar1.isEmpty()){
-		let url="http://3.83.24.216/api/cl/"+buscar1
+	if(!buscar2.isEmpty()){
+		let url="http://http://18.207.25.202/api/cl/"+buscar2
 		fetch(url)
 		.then(response => response.json())
 		.then(data => revisionShow(data))
 		.catch(error => console.log(error))
 	}
 	else{
-		hide_table()
-		$("#error_msg").html("<br><br>Debe ingresar un número de transacción.");
+		$("#error_msg5").html("<br><br>Debe ingresar un número de transacción.");
 	}
 }
 function revisionShow(data){
-	console.log();
+	console.log(data);
 }
