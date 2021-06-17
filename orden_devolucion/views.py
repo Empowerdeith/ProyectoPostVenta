@@ -5,6 +5,7 @@ from .models import Producto, Cliente, Boleta
 from rest_framework import filters
 from rest_framework.decorators import api_view
 from rest_framework.views import APIView
+import requests
 
 # ViewSets define the view behavior.
 
