@@ -1,9 +1,10 @@
 {% extends "paginas_post_venta/base/main.html" %}
 {% block contenido %}
 {% load static %}
-
-
-<h1>Solicitudes Devolución Pendientes</h1>
+<div class="main_contenededor poppins">
+	<br><br><br>
+	<h1 class="aligncenter">Solicitudes Devolución Pendientes</h1>
+	<br><br>
 	<table class="table table-striped table-hover table table-bordered">
 		<thead>
 			<tr>
@@ -22,5 +23,5 @@
 		</tbody>
 		{% endfor %}
 	</table>
-
+</div>
 {% endblock contenido %}
