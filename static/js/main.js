@@ -111,6 +111,10 @@ function mostrarBoleta(data){
 			});
 			$('#button_save').off('click');
 			$('#button_save').click(function(){
+				var arr = [];
+				$('input[name="producto"]:checked').each(function(){
+					arr.push(parseInt($(this).attr('id')));
+				});
 				boleta();
 				function boleta(){
 					var formboleta = new FormData();
