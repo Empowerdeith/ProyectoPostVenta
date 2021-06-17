@@ -249,5 +249,6 @@ function revisionShow(data){
 		bloc +="<td>" + data.nombre_cl + "</td>"
 		bloc +="<td>" + data.direccion + "</td>";
 		bloc +="<td>" + data.boletas + "</td></tr>";
-	}
+		$("#tabla_cliente").find( "tbody" ).html(bloc);
+	}	
 }
