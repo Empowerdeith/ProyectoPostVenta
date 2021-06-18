@@ -250,7 +250,7 @@ function revisionShow(data){
 		bloc +="<td>" + data.direccion + "</td>";
 		bloc +="<td>" + data.boletas + "</td></tr>";
 		$("#tabla_cliente").find( "tbody" ).html(bloc);
-		console.log(data.boletas.productos.length);
+		
 
 		/*var prods = "";
 		for(let k = 0; k < data.boletas.productos.length; k++){	
