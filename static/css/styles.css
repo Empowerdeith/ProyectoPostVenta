@@ -118,6 +118,6 @@ z-index: 2;
 .swal-button--confirm{
 	background-color: #288620;
 }
-.swal-button--confirm:active {
-	background-color: #288620;
+.swal-button:not([disabled]):hover {
+    background-color: #288620;
 }
