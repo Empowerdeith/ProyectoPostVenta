@@ -266,15 +266,15 @@ function revisionShow(data){
 		bloc +="<tr><td>" + data.rut + "</td>";
 		bloc +="<td>" + data.nombre_cl + "</td>"
 		bloc +="<td>" + data.direccion + "</td>";
-		bloc +="<td>" + data.boletas + "</td></tr>";
+		bloc +="<td>" + data.boletas.num_boleta + "</td></tr>";
 		$("#tabla_cliente").find( "tbody" ).html(bloc);
 
-		let url="http:18.207.25.202/api/cl/"+data.boletas
+		/*let url="http:18.207.25.202/api/bol2/"+data.boletas.num_boleta
 		fetch(url)
 		.then(response => response.json())
-		.then(data)
+		.then(data)*/
 	
-		var prods = "";
+		/*var prods = "";
 		for(let k = 0; k < data.boletas.productos.length; k++){	
 			prods += "<tr><td><input id=\""+k+"\" type=\"checkbox\" name=\"producto\" >"+"</td>";
 			prods += "<td>" + data.boletas.productos[k].nombre_pro + "</td>";
@@ -282,7 +282,7 @@ function revisionShow(data){
 			prods += "<td>" + monea.format(data.boletas.productos[k].precio) + "</td>";
 			prods += "</tr>";
 		}
-		$("#tabla_revision_prod").find( "tbody" ).html(prods);
+		$("#tabla_revision_prod").find( "tbody" ).html(prods);*/
 	}	
 }
 function alerta_bton(){
