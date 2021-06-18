@@ -250,9 +250,13 @@ function revisionShow(data){
 		bloc +="<td>" + data.direccion + "</td>";
 		bloc +="<td>" + data.boletas + "</td></tr>";
 		$("#tabla_cliente").find( "tbody" ).html(bloc);
-		
 
-		/*var prods = "";
+		let url="http:18.207.25.202/api/cl/"+data.boletas
+		fetch(url)
+		.then(response => response.json())
+		.then(data)
+	
+		var prods = "";
 		for(let k = 0; k < data.boletas.productos.length; k++){	
 			prods += "<tr><td><input id=\""+k+"\" type=\"checkbox\" name=\"producto\" >"+"</td>";
 			prods += "<td>" + data.boletas.productos[k].nombre_pro + "</td>";
@@ -260,6 +264,24 @@ function revisionShow(data){
 			prods += "<td>" + monea.format(data.boletas.productos[k].precio) + "</td>";
 			prods += "</tr>";
 		}
-		$("#tabla_revision_prod").find( "tbody" ).html(prods);*/
+		$("#tabla_revision_prod").find( "tbody" ).html(prods);
 	}	
+}
+function alerta_bton(){
+	Swal.fire({
+	  title: 'Are you sure?',
+	  text: "You won't be able to revert this!",
+	  icon: 'warning',
+	  showCancelButton: true,
+	  confirmButtonColor: '#3085d6',
+	  cancelButtonColor: '#d33',
+	  confirmButtonText: 'Yes, delete it!'}).then((result) => {
+  	if (result.isConfirmed) {
+	    Swal.fire(
+	      'Deleted!',
+	      'Your file has been deleted.',
+	      'success'
+	    )
+	}
+	})
 }
