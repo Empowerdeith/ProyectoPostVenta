@@ -283,7 +283,7 @@ function alerta_bton(){
 				icon: "success"
 			});
 			check=true;
+			console.log(check);
 		}
 	});
-	console.log(check);
 }
