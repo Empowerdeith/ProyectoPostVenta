@@ -114,3 +114,7 @@ z-index: 2;
 #inputPassword{
 	width: 330px!important;
 }
+/*Estilos visuales SweetAlert*/
+.swal-button--confirm{
+	background-color: #288620;
+}
