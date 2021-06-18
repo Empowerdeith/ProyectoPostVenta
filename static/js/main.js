@@ -276,7 +276,8 @@ function alerta_bton(){
 			confirm: "Confirmar"
 		}
 	}).then (val => {
-		if(val.isConfirmed){
+		console.log(val);
+		if(val){
 			swal({
 				title: "Su devolución ha sido ingresada.",
 				icon: "success"
