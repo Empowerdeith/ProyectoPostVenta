@@ -268,8 +268,9 @@ function revisionShow(data){
 	}	
 }
 function alerta_bton(){
-	Swal.fire(
-		tittle: 'Funcionoo?',
-		confirmButtonText: 'sí',
-		)
+	$.alert({
+        title: 'Alert!',
+        content: 'Simple alert!',
+    });
+
 }
