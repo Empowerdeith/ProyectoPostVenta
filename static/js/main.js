@@ -268,9 +268,5 @@ function revisionShow(data){
 	}	
 }
 function alerta_bton(){
-	$.alert({
-        title: 'Alert!',
-        content: 'Simple alert!',
-    });
-
+	swal("Good job!", "You clicked the button!", "success");
 }
