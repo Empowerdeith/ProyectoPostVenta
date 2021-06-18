@@ -268,8 +268,9 @@ function revisionShow(data){
 	}	
 }
 function alerta_bton(){
+	check=false;
 	swal({
-		title: "¿Desea confirmar la devolución de está boleta?.",
+		title: "¿Desea confirmar la devolución de está boleta?",
 		text: "Al aceptar, usted acepta nuestros términos y condiciones de devolución.",
 		buttons: {
 			cancel: "Cancelar",
@@ -281,6 +282,8 @@ function alerta_bton(){
 				title: "Su devolución ha sido ingresada.",
 				icon: "success"
 			});
+			check=true;
 		}
 	});
+	console.log(check);
 }
