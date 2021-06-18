@@ -266,10 +266,10 @@ function revisionShow(data){
 		bloc +="<tr><td>" + data.rut + "</td>";
 		bloc +="<td>" + data.nombre_cl + "</td>"
 		bloc +="<td>" + data.direccion + "</td>";
-		console.log(data.boletas.length);
-		/*for(let i = 0; i < data.boletas.length; i++){
+		//console.log(data.boletas.length);
+		for(let i = 0; i < data.boletas.length; i++){
 			bloc +="<td>" + data.boletas[i].num_boleta + "</td></tr>";
-		}*/
+		}
 		$("#tabla_cliente").find( "tbody" ).html(bloc);
 
 
