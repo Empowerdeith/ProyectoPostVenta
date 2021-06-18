@@ -27,7 +27,7 @@
 			{% endfor %}
 		</table>
 		<br><br>
-		<input type="text" class="form-control tamfuente22" name="q" id="id_buscar5" placeholder="Escriba el Id de Transacción aquí...">
+		<input type="text" class="form-control tamfuente22" name="q" id="id_buscar5" placeholder="Escriba el Rut de la peticion a buscar...">
 		<button class="btn btn-lg btn-primary btn-block" id="bton_buscar3" onclick="revision_search()" type="button">Buscar</button>
 		<div id="error_msg5" class="aligncenter"></div>
 		<br><br>
@@ -69,16 +69,16 @@
 		</div>
 		<br><br>
 		<form class="form" id="myForm">
-		<label for="rut">rut</label>
-		<input type="text" name="rut" id="rut">
+		<label for="Rut">rut</label>
+		<input type="text" name="rut" id="rut"><br>
 		<label for="nombre_cl">Cliente</label>
-		<input type="text" name="nombre_cl" id="nombre_cl">
+		<input type="text" name="nombre_cl" id="nombre_cl"><br>
 		<label for="nombre_pro">Producto</label>
-		<input type="text" name="nombre_pro" id="nombre_pro">
+		<input type="text" name="nombre_pro" id="nombre_pro"><br>
 		<label for="direccion">Direccion</label>
-		<input type="text" name="direccion" id="direccion">
+		<input type="text" name="direccion" id="direccion"><br>
 		<label for="telefono">Telefono</label>
-		<input type="number" name="telefono" id="telefono">
+		<input type="tel" id="telefono" name="telefono" placeholder="9-12345678" pattern="[0-9]{1}-[0-9]{8}" required><br>
 		<button type="submit">Enviar</button>
 		</form>
 	
