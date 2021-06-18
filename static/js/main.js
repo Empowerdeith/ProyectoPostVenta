@@ -217,6 +217,7 @@ function prueba(){
 		.then(response => response.json())
 		.then(data => mostrarBoleta(data))
 		.catch(error => console.log(error))
+		$("#table_product").find("tbody").empty();
 		//esconder_prod();
 
 	}
@@ -225,7 +226,7 @@ function prueba(){
 		$("#error_msg").html("<br><br>Debe ingresar un número de transacción.");
 	}
 }
-//$("#table_checkbox").find("tbody").empty();
+//
 /*-----------------------------------------------------------------------------------
 			Funciones para Reset de checkboxes        
 ----------------------------------------------------------------------------------*/
