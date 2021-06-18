@@ -268,5 +268,8 @@ function revisionShow(data){
 	}	
 }
 function alerta_bton(){
-	Swal.fire('Any fool can use a computer')
+	Swal.fire(
+		tittle: 'Funcionoo?',
+		confirmButtonText: 'sí'
+		)
 }
