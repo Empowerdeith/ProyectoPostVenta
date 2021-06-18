@@ -275,5 +275,12 @@ function alerta_bton(){
 			cancel: "cancelar",
 			confirm: "confirmar"
 		}
+	}).then (val => {
+		if(val){
+			swal({
+				title: "Su devolución ha sido ingresada.",
+				icon: "success"
+			});
+		}
 	});
 }
