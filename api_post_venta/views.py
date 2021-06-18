@@ -7,5 +7,3 @@ def devoluciones1(request):
 	return render(request,"paginas_post_venta/Devolucion/devoluciones.html")
 def cuenta(request):
 	return render(request,"paginas_post_venta/login/cuenta.html")
-def revision(request):
-	return render(request,"paginas_post_venta/Devolucion/revision_postventa.html")
