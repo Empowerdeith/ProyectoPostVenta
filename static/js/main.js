@@ -266,8 +266,12 @@ function revisionShow(data){
 		bloc +="<tr><td>" + data.rut + "</td>";
 		bloc +="<td>" + data.nombre_cl + "</td>"
 		bloc +="<td>" + data.direccion + "</td>";
-		bloc +="<td>" + data.boletas.num_boleta + "</td></tr>";
+		console.log(data.boletas.length);
+		/*for(let i = 0; i < data.boletas.length; i++){
+			bloc +="<td>" + data.boletas[i].num_boleta + "</td></tr>";
+		}*/
 		$("#tabla_cliente").find( "tbody" ).html(bloc);
+
 
 		/*let url="http:18.207.25.202/api/bol2/"+data.boletas.num_boleta
 		fetch(url)
