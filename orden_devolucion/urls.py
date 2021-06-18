@@ -18,6 +18,6 @@ urlpatterns = [
     path('devolucion/',include(router.urls)),
     path('cl/<int:pk>/', cliente_detail_view, name= "cliente_api"),
     path('bol/<int:pk>/', boleta_detail_view, name= "boleta_api"),
-    path('cl2/<int:pk>/', cliente_detail_viewDepth, name= "cliente_api"),
-    path('bol2/<int:pk>/', boleta_detail_viewDepth, name= "boleta_api"),
+    path('cl2/<int:pk>/', cliente_detail_viewDepth, name= "cliente_api2"),
+    path('bol2/<int:pk>/', boleta_detail_viewDepth, name= "boleta_api2"),
 ]
