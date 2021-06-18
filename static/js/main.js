@@ -270,8 +270,9 @@ function revisionShow(data){
 		//console.log(data.boletas.length);
 		for(let i = 0; i < data.boletas.length; i++){
 			bloc +="<td>" + data.boletas[i].num_boleta + "</td></tr>";
+			console.log(data.boletas[i].num_boleta);
 			//variable id_bol es provisional y debe ser removida.
-			id_bol= data.boletas[i].num_boleta;
+			//id_bol = data.boletas[i].num_boleta;
 		}
 		$("#tabla_cliente").find( "tbody" ).html(bloc);
 
@@ -280,7 +281,7 @@ function revisionShow(data){
 		.then(response => response.json())
 		.then(data)*/
 	
-		var prods = "";
+		/*var prods = "";
 		for(let k = 0; k < data.boletas[id_bol].productos.length; k++){	
 			//prods += "<tr><td><input id=\""+k+"\" type=\"checkbox\" name=\"producto\" >"+"</td>";
 			prods += "<td>" + data.boletas.productos[k].nombre_pro + "</td>";
@@ -288,7 +289,7 @@ function revisionShow(data){
 			prods += "<td>" + monea.format(data.boletas.productos[k].precio) + "</td>";
 			prods += "</tr>";
 		}
-		$("#tabla_revision_prod").find( "tbody" ).html(prods);
+		$("#tabla_revision_prod").find( "tbody" ).html(prods);*/
 	}	
 }
 function alerta_bton(){
