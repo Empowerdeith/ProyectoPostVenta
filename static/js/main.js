@@ -85,7 +85,24 @@ function mostrarBoleta(data){
 				$('input[name="producto"]:checked').each(function(){
 					arr.push(parseInt($(this).attr('id')));
 				});
-				boleta();
+				swal({
+					title: "¿Desea confirmar la devolución de está boleta?",
+					text: "Al aceptar, usted acepta nuestros términos y condiciones de devolución.",
+					buttons: {
+						cancel: "Cancelar",
+						confirm: "Confirmar"
+					}
+				}).then (val => {
+					console.log(val);
+					if(val){
+						swal({
+							title: "Su devolución ha sido ingresada.",
+							icon: "success"
+						});
+						boleta();
+					}
+				});
+				//boleta();
 				/*function productos(){
 					for(let k = 0; k < arr.length; k++){
 						var formprod = new FormData();
