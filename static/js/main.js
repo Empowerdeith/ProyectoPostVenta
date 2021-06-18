@@ -270,7 +270,7 @@ function revisionShow(data){
 		//console.log(data.boletas.length);
 		for(let i = 0; i < data.boletas.length; i++){
 			bloc +="<td>" + data.boletas[i].num_boleta + "</td></tr>";
-			console.log(data.boletas[i].num_boleta);
+			console.log(data.boletas[i]);
 			//variable id_bol es provisional y debe ser removida.
 			//id_bol = data.boletas[i].num_boleta;
 		}
