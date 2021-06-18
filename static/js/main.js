@@ -268,5 +268,12 @@ function revisionShow(data){
 	}	
 }
 function alerta_bton(){
-	swal("Good job!", "You clicked the button!", "success");
+	swal({
+		title: "Confirmar acción",
+		text: "are you sure?",
+		buttons: {
+			cancel: "cancelar",
+			confirm: "confirmar"
+		}
+	});
 }
