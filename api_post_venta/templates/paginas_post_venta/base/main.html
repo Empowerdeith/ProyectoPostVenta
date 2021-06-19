@@ -8,8 +8,8 @@
 	<link rel="shortcut icon" type="image/png" href="{% static 'img/favicon/favicon-16x16.png' %}">
 	<title>Post Venta</title>
 </head>
-<body>
-	<div class="main_contenededor" style="background-image: url({% static '/img/test.jpg'%});">
+<body style="background-image: url({% static '/img/test.jpg'%});">
+	<div class="main_contenededor">
 		{% block contenido %}{% endblock %}
 	</div>
 	{% include 'paginas_post_venta/snippets/footer.html' %}
