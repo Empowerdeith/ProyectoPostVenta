@@ -119,11 +119,8 @@ z-index: 2;
 }
 #bton_login{
 	width: 330px!important;
-	background-color: #181a1d!important;
-	border-color: #181a1d!important;
-}
-#olvidar_pass{
-	color: #181a1d!important;
+	background-color: rgb(11,13,38)!important;
+	border-color: white!important;
 }
 #inputEmail{
 	width: 330px!important;
