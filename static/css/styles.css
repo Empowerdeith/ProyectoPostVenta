@@ -43,11 +43,7 @@
 #error_msg{
 	color: red;
 }
-footer{
-	text-align: center;
-	background-color: black;
 
-}
 .flexcontainer{
 	color: white;
 	font-size: larger;
@@ -62,10 +58,17 @@ a{
 	background-color: #181a1d!important;
 	border-color: #181a1d!important;
 }
+/*Header container*/
 #header_container{
 	background-color: black!important;
 	padding-left: 32px!important;
     padding-right: 32px!important;
+}
+/*Footer configs*/
+footer{
+	text-align: center;
+	background-color: black;
+
 }
 /*-------------------------------------------------------
 					LOGIN DE BOOTSTRAP
@@ -118,3 +121,9 @@ z-index: 2;
 .swal-button--confirm{
 	background-color: #288620;
 }
+/*---------------------------------------------Ediciones de Tabla---------------------------------*/
+thead{
+	background-color: #009635;
+	color: #abb5c7;
+}
+/*------------------------------------------------------------------------------------------------*/
