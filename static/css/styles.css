@@ -60,15 +60,14 @@ a{
 }
 /*Header container*/
 #header_container{
-	background-color: black!important;
+	background-color: #009635!important;
 	padding-left: 32px!important;
     padding-right: 32px!important;
 }
 /*Footer configs*/
 footer{
 	text-align: center;
-	background-color: black;
-
+	background-color: #009635;
 }
 /*-------------------------------------------------------
 					LOGIN DE BOOTSTRAP
@@ -124,6 +123,6 @@ z-index: 2;
 /*---------------------------------------------Ediciones de Tabla---------------------------------*/
 thead{
 	background-color: #009635;
-	color: #abb5c7;
+	color: #fff;
 }
 /*------------------------------------------------------------------------------------------------*/
