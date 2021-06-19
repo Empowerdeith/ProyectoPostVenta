@@ -130,6 +130,9 @@ z-index: 2;
 .green-esmerald{
 	color: #68b030 !important;
 }
+body{
+	background-color: rgb(rgb(11,13,38));
+}
 /*---------------------------------------------Ediciones de Tabla---------------------------------*/
 thead{
 	background-color:  rgb(11,13,38);
