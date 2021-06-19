@@ -7,7 +7,12 @@ setTimeout(hide_table, 40);
 function esconder_prod(){
 	$( "#tabla_de_productos" ).hide();
 }
+function esconder_revision(){
+	$( "#tabla_revision_cli" ).hide();
+}
 setTimeout(esconder_prod, 40);
+
+setTimeout(esconder_revision, 40);
 
 //Mostrar información principal de Boleta
 function mostrarBoleta(data){
@@ -257,11 +262,12 @@ function revision_search(){
 function revisionShow(data){
 	console.log(data);
 	if (data == "No existe cliente."){
-		hide_table();
+		esconder_revision();
 		$("#error_msg5").html("<br><br>No Existe el cliente ingresado.");
 	}
 	else{
 		$("#error_msg5").html("");
+		$( "#tabla_revision_cli" ).show();
 		var bloc = "";
 		bloc +="<tr><td>" + data.rut + "</td>";
 		bloc +="<td>" + data.nombre_cl + "</td>"
