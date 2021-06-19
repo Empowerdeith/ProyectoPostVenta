@@ -123,6 +123,10 @@ z-index: 2;
 .swal-button--confirm{
 	background-color: #288620;
 }
+/*colores titulos*/
+.green-esmerald{
+	color: #68b030 !important;
+}
 /*---------------------------------------------Ediciones de Tabla---------------------------------*/
 thead{
 	background-color: #118038;
