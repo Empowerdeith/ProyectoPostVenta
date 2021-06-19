@@ -17,6 +17,7 @@
 .main_contenededor{
 	min-height: 100vh;
 	height: 100%
+	background:none;
 }
 .aligncenter{
 	text-align: center;
