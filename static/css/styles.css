@@ -17,7 +17,7 @@
 .main_contenededor{
 	min-height: 100vh;
 	height: 100%
-	background:none;
+	background-image: url({% static '/img/test.jpg'%});
 }
 .aligncenter{
 	text-align: center;
