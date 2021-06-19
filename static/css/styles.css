@@ -58,7 +58,7 @@ a{
 	text-decoration: none!important;
 }
 #bton_buscar2{
-	background-color: rgb(11,13,38)!important;
+	background-color: transparent!important;
 	border-color: white!important;
 }
 .decoracion_linea{
@@ -132,7 +132,10 @@ z-index: 2;
 }
 /*---------------------------------------------Ediciones de Tabla---------------------------------*/
 thead{
-	background-color: #118038;
+	background-color:  rgb(11,13,38);
 	color: #fff;
+}
+tbody{
+	color:white!important;
 }
 /*------------------------------------------------------------------------------------------------*/
