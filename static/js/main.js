@@ -218,7 +218,7 @@ function prueba(){
 		.then(data => mostrarBoleta(data))
 		.catch(error => console.log(error))
 		$("#table_product").find("tbody").empty();
-		//esconder_prod();
+		esconder_prod();
 
 	}
 	else{
