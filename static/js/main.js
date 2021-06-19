@@ -297,7 +297,7 @@ function revisionShow(data){
 function alerta_bton(){
 	swal({
 		title: "¿Desea confirmar la devolución de está boleta?",
-		icon: "warning",
+		icon: "info",
 		text: "Al aceptar, usted acepta nuestros términos y condiciones de devolución.",
 		buttons: {
 			cancel: "Cancelar",
