@@ -28,6 +28,9 @@
 .text-light-grey{
 	color: #abb5c7!important;
 }
+.text-white{
+	color:white;
+}
 .nav-link{color: #abb5c7!important;}
 .search-bar{
 	position: initial!important;
@@ -55,8 +58,8 @@ a{
 	text-decoration: none!important;
 }
 #bton_buscar2{
-	background-color: #181a1d!important;
-	border-color: #181a1d!important;
+	background-color: #009635!important;
+	border-color: #009635!important;
 }
 /*Header container*/
 #header_container{
