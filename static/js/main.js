@@ -263,16 +263,21 @@ function revisionShow(data){
 	else{
 		$("#error_msg5").html("");
 		var bloc = "";
-		var id_bol;
 		bloc +="<tr><td>" + data.rut + "</td>";
 		bloc +="<td>" + data.nombre_cl + "</td>"
 		bloc +="<td>" + data.direccion + "</td>";
 		//console.log(data.boletas.length);
+		//Todo esto es provisional y debe ser removido.
 		for(let i = 0; i < data.boletas.length; i++){
 			bloc +="<td>" + data.boletas[i].num_boleta + "</td></tr>";
-			console.log(data.boletas[i]);
-			//variable id_bol es provisional y debe ser removida.
-			//id_bol = data.boletas[i].num_boleta;
+			var prods = "";
+			for(let k = 0; k < data.boletas[i].productos.length; k++){
+				prods += "<tr><td>" + data.boletas.productos[k].nombre_pro + "</td>";
+				var  monea = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
+				prods += "<td>" + monea.format(data.boletas.productos[k].precio) + "</td>";
+				prods += "</tr>";
+			}
+			$("#tabla_revision_prod").find( "tbody" ).html(prods);
 		}
 		$("#tabla_cliente").find( "tbody" ).html(bloc);
 
@@ -280,16 +285,6 @@ function revisionShow(data){
 		fetch(url)
 		.then(response => response.json())
 		.then(data)*/
-	
-		/*var prods = "";
-		for(let k = 0; k < data.boletas[id_bol].productos.length; k++){	
-			//prods += "<tr><td><input id=\""+k+"\" type=\"checkbox\" name=\"producto\" >"+"</td>";
-			prods += "<td>" + data.boletas.productos[k].nombre_pro + "</td>";
-			var  monea = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
-			prods += "<td>" + monea.format(data.boletas.productos[k].precio) + "</td>";
-			prods += "</tr>";
-		}
-		$("#tabla_revision_prod").find( "tbody" ).html(prods);*/
 	}	
 }
 function alerta_bton(){
