@@ -272,13 +272,13 @@ function revisionShow(data){
 			bloc +="<td>" + data.boletas[i].num_boleta + "</td></tr>";
 			var prods = "";
 			console.log(data.boletas[i].productos.length);
-			/*for(let k = 0; k < data.boletas[i].productos.length; k++){
+			for(let k = 0; k < data.boletas[i].productos.length; k++){
 				prods += "<tr><td>" + data.boletas[i].productos[k].nombre_pro + "</td>";
 				var  monea = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
 				prods += "<td>" + monea.format(data.boletas[i].productos[k].precio) + "</td>";
 				prods += "</tr>";
 			}
-			$("#tabla_revision_prod").find( "tbody" ).html(prods);*/
+			$("#tabla_revision_prod").find( "tbody" ).html(prods);
 		}
 		$("#tabla_cliente").find( "tbody" ).html(bloc);
 
