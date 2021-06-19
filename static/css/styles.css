@@ -58,8 +58,11 @@ a{
 	text-decoration: none!important;
 }
 #bton_buscar2{
-	background-color: #118038!important;
-	border-color: #118038!important;
+	background-color: rgb(11,13,38)!important;
+	border-color: white!important;
+}
+.decoracion_linea{
+	text-decoration: underline;
 }
 /*Header container*/
 #header_container{
