@@ -58,19 +58,19 @@ a{
 	text-decoration: none!important;
 }
 #bton_buscar2{
-	background-color: #009635!important;
-	border-color: #009635!important;
+	background-color: #118038!important;
+	border-color: #118038!important;
 }
 /*Header container*/
 #header_container{
-	background-color: #009635!important;
+	background-color: #118038!important;
 	padding-left: 32px!important;
     padding-right: 32px!important;
 }
 /*Footer configs*/
 footer{
 	text-align: center;
-	background-color: #009635;
+	background-color: #118038;
 }
 /*-------------------------------------------------------
 					LOGIN DE BOOTSTRAP
@@ -125,7 +125,7 @@ z-index: 2;
 }
 /*---------------------------------------------Ediciones de Tabla---------------------------------*/
 thead{
-	background-color: #009635;
+	background-color: #118038;
 	color: #fff;
 }
 /*------------------------------------------------------------------------------------------------*/
