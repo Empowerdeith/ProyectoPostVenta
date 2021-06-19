@@ -92,7 +92,7 @@ function mostrarBoleta(data){
 				});
 				swal({
 					title: "¿Desea confirmar la devolución de está boleta?",
-					text: "Al aceptar, usted acepta nuestros términos y condiciones de devolución.",
+					text: "Al confirmar, usted acepta nuestros términos y condiciones de devolución.",
 					icon: "warning",
 					buttons: {
 						cancel: "Cancelar",
