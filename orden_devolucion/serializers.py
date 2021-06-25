@@ -41,3 +41,7 @@ class ProductoSerializerDepth(serializers.ModelSerializer):
     class Meta:
         model = Producto
         fields = ("id",'nombre_pro','precio','boletas')
+
+
+def saludar:
+    return print("hola")
