@@ -213,7 +213,7 @@ Object.prototype.isEmpty = function () {
 }
 //-------------------------------------------------------
 //Función que realiza el fetch a la ip
-/*function prueba(){
+function prueba(){
 	var buscar1 = $('#id_buscar').val().toString();
 
 	// console.log(buscar1);
@@ -231,7 +231,7 @@ Object.prototype.isEmpty = function () {
 		hide_table()
 		$("#error_msg").html("<br><br>Debe ingresar un número de transacción.");
 	}
-}*/
+}
 //
 /*-----------------------------------------------------------------------------------
 			Funciones para Reset de checkboxes        
@@ -313,58 +313,4 @@ function alerta_bton(){
 			});
 		}
 	});
-}
-
-
-
-function TestingBoletaCantidad(data){
-	console.log(data);
-	$("#error_msg").html("");
-	$( "#myData" ).show();
-	//table Cliente
-	var rut_p = $("#rut_p");
-	var nombre_cliente = $("#nombre_cliente");
-	var direccion = $("#direccion");
-	rut_p.html(data.rut);
-	nombre_cliente.html(data.nombre_cl);
-	direccion.html(data.direccion);
-	//table Boletas
-	$("#table_checkbox").find("tbody").empty();
-	var content = "";
-	for(let i = 0; i < data.boletas.length; i++){
-		content += "<tr><td><input id=\""+i+"\" type=\"checkbox\" name=\"boleta\" >"+"</td>";
-		content += "<td>" + data.boletas[i].num_boleta + "</td>";
-		//---------Sección fechas---------------------------------
-		var fecha_obtenida = new Date(data.boletas[i].created_at);
-		var dia = fecha_obtenida.getDate();
-		var mes = fecha_obtenida.getMonth()+1;
-		var annio = fecha_obtenida.getFullYear();
-		//-------------------------------------------------------
-		var  dineros = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
-		content += "<td>" + dia+"/"+mes+"/"+annio + "</td>";
-		content += "<td>" + dineros.format(data.boletas[i].total) + "</td>";
-		content += "</tr>";
-	}
-	$("#table_checkbox").find( "tbody" ).html(content);
-
-
-}
-function prueba(){
-	var buscar1 = $('#id_buscar').val().toString();
-
-	// console.log(buscar1);
-	if(!buscar1.isEmpty()){
-		let url="http://3.83.24.216/api/cl/"+buscar1
-		fetch(url)
-		.then(response => response.json())
-		.then(data => TestingBoletaCantidad(data))
-		.catch(error => console.log(error))
-		//$("#table_product").find("tbody").empty();
-		//esconder_prod();
-
-	}
-	else{
-		//hide_table()
-		$("#error_msg").html("<br><br>Debe ingresar un número de transacción.");
-	}
 }
