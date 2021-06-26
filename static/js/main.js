@@ -329,8 +329,11 @@ function TestingBoletaCantidad(data){
 	direccion.html(data.direccion);
 	//table Boletas
 	console.log(data.boletas[0].ItemProductos.length);
+	console.log(data.boletas[0].ItemProductos[0].cantidad);
+	console.log(data.boletas[0].ItemProductos[0].productos[0].nombre_pro);
 	$("#table_checkbox").find("tbody").empty();
 	var content = "";
+	var total;
 	for(let i = 0; i < data.boletas.length; i++){
 		content += "<tr><td><input id=\""+i+"\" type=\"checkbox\" name=\"boleta\" >"+"</td>";
 		content += "<td>" + data.boletas[i].num_boleta + "</td>";
@@ -342,6 +345,11 @@ function TestingBoletaCantidad(data){
 		//-------------------------------------------------------
 		var  dineros = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
 		content += "<td>" + dia+"/"+mes+"/"+annio + "</td>";
+		//Inicio Cálculo total		
+		/*for(let j = 0; j < data.boletas[i].ItemProductos.length; j++){
+
+			
+		}*/
 		//content += "<td>" + dineros.format(data.boletas[i].total) + "</td>";
 		content += "</tr>";
 	}
