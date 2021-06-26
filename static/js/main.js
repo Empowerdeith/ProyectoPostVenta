@@ -332,7 +332,16 @@ function TestingBoletaCantidad(data){
 	console.log(data.boletas[0].ItemProductos[0].cantidad);
 	console.log(data.boletas[0].ItemProductos[0].productos.nombre_pro);
 	console.log(data.boletas[0].ItemProductos[0].productos.precio);
-	
+	var precio_prod, cantidad_prod, calc_prec_prod;
+
+	precio_prod = data.boletas[0].ItemProductos[0].productos.precio;
+
+	cantidad_prod = data.boletas[0].ItemProductos[0].cantidad;
+
+	calc_prec_prod = precio_prod*cantidad_prod;
+
+	console.log(calc_prec_prod);
+
 	$("#table_checkbox").find("tbody").empty();
 	var content = "";
 	var total;
