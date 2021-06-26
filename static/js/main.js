@@ -77,13 +77,14 @@ function mostrarBoleta(data){
 						$("#error_msg2").html("");
 						$("#table_product").find("tbody").empty();
 						$( "#tabla_de_productos" ).show();
+						/*
 						for(let k = 0; k < data.boletas[id].productos.length; k++){
 							contenido += "<tr><td><input id=\""+k+"\" type=\"checkbox\" name=\"producto\" >"+"</td>";
 							contenido += "<td>" + data.boletas[id].productos[k].nombre_pro + "</td>";
 							var  monea = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
 							contenido += "<td>" + monea.format(data.boletas[id].productos[k].precio) + "</td>";
 							contenido += "</tr>";
-						}
+						}*/
 						$("#table_product").find( "tbody" ).html(contenido);
 					}
 				}
