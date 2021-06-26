@@ -344,7 +344,7 @@ function TestingBoletaCantidad(data){
 
 	$("#table_checkbox").find("tbody").empty();
 	var content = "";
-	var total;
+	var total = 0;
 	for(let i = 0; i < data.boletas.length; i++){
 		content += "<tr><td><input id=\""+i+"\" type=\"checkbox\" name=\"boleta\" >"+"</td>";
 		content += "<td>" + data.boletas[i].num_boleta + "</td>";
@@ -363,13 +363,12 @@ function TestingBoletaCantidad(data){
 			cantidad = data.boletas[i].ItemProductos[j].cantidad;
 			precio_pro = data.boletas[i].ItemProductos[j].productos.precio;
 			calc = precio_pro*cantidad;
-			total = total+calc;
+			total += calc;
 			console.log(precio_pro);
 			console.log(cantidad);
 			console.log(calc);
-			console.log("Total boleta: "+total);
 		}
-		
+		console.log("Total boleta: "+total);
 		//content += "<td>" + dineros.format(data.boletas[i].total) + "</td>";
 		content += "</tr>";
 	}
