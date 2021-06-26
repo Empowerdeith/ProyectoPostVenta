@@ -90,7 +90,8 @@ function mostrarBoleta(data){
 							contenido += "<td>" + nombre_producto + "</td>";	
 							var  monea = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
 							contenido += "<td>" + monea.format(precio_pro) + "</td>";
-							contenido += "<td>" + cantidad + "</td>";
+							contenido += "<td><input type=\"number\" name=\"cantidad_producto\" min=\"1\" max=\""+cantidad+"\" value=\""+cantidad+"\">"+"</td>";
+							//contenido += "<td>" + cantidad + "</td>";
 							contenido += "</tr>";
 							//calc = precio_pro*cantidad;
 							//console.log(nombre_producto);
