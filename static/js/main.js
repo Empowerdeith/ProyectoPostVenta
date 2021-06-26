@@ -77,26 +77,23 @@ function mostrarBoleta(data){
 						$("#error_msg2").html("");
 						$("#table_product").find("tbody").empty();
 						$( "#tabla_de_productos" ).show();
-						console.log(data.boletas[id].ItemProductos.length);
+						//console.log(data.boletas[id].ItemProductos.length);
 						//Inicio Cálculo total
-						console.log("Inicio cálculo total");	
+						//console.log("Inicio cálculo total");	
 						for(let j = 0; j < data.boletas[id].ItemProductos.length; j++){
 							var cantidad, precio_pro, nombre;
 							nombre_producto = data.boletas[id].ItemProductos[j].productos.nombre_pro;
 							cantidad = data.boletas[id].ItemProductos[j].cantidad;
 							precio_pro = data.boletas[id].ItemProductos[j].productos.precio;
-
-							contenido += "<tr><td><input id=\""+j+"\" type=\"checkbox\" name=\"producto\" >"+"</td>";
-							contenido += "<td>" + nombre_producto + "</td>";	
 							var  monea = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
+							//Llenado tabla de productos
+							//Checkbox
+							contenido += "<tr><td><input id=\""+j+"\" type=\"checkbox\" name=\"producto\" >"+"</td>";
+							contenido += "<td>" + nombre_producto + "</td>";
 							contenido += "<td>" + monea.format(precio_pro) + "</td>";
+							//Aquí va cantidad del producto
 							contenido += "<td><input type=\"number\" name=\"cantidad_producto\" min=\"1\" max=\""+cantidad+"\" value=\""+cantidad+"\" onkeydown=\"return false;\">"+"</td>";
-							//contenido += "<td>" + cantidad + "</td>";
 							contenido += "</tr>";
-							//calc = precio_pro*cantidad;
-							//console.log(nombre_producto);
-							/*console.log(precio_pro);
-							console.log(cantidad);*/
 						}
 						$("#table_product").find( "tbody" ).html(contenido);
 						console.log($('input[name="cantidad_producto"]').val());
@@ -108,8 +105,11 @@ function mostrarBoleta(data){
 				var arr = [];
 				$('input[name="producto"]:checked').each(function(){
 					arr.push(parseInt($(this).attr('id')));
+					var respuesta = $(this).parent().siblings().find('input[name="cantidad_producto"]').val();
+					console.log(respuesta);
 				});
-				swal({
+				//-----------------------------------------Inicio Swal-----------------------------------
+				/*swal({
 					title: "¿Desea confirmar la devolución de está boleta?",
 					text: "Al confirmar, usted acepta nuestros términos y condiciones de devolución.",
 					icon: "warning",
@@ -126,7 +126,8 @@ function mostrarBoleta(data){
 						});
 						boleta();
 					}
-				});
+				});*/
+				//-----------------------------------------Término Swal-----------------------------------
 				/*function productos(){
 					for(let k = 0; k < arr.length; k++){
 						var formprod = new FormData();
