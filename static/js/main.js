@@ -331,6 +331,8 @@ function TestingBoletaCantidad(data){
 	console.log(data.boletas[0].ItemProductos.length);
 	console.log(data.boletas[0].ItemProductos[0].cantidad);
 	console.log(data.boletas[0].ItemProductos[0].productos.nombre_pro);
+	console.log(data.boletas[0].ItemProductos[0].productos.precio);
+	
 	$("#table_checkbox").find("tbody").empty();
 	var content = "";
 	var total;
