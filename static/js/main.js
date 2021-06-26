@@ -363,9 +363,10 @@ function TestingBoletaCantidad(data){
 			cantidad = data.boletas[i].ItemProductos[j].cantidad;
 			precio_pro = data.boletas[i].ItemProductos[j].productos.precio;
 			calc = precio_pro*cantidad;
-			total += calc;
+			//total += calc;
 			console.log(precio_pro);
 			console.log(cantidad);
+			console.log(calc);
 		}
 		console.log("Total boleta: "+total);
 		//content += "<td>" + dineros.format(data.boletas[i].total) + "</td>";
