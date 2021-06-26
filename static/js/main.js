@@ -57,6 +57,7 @@ function mostrarBoleta(data){
 		function test(data){
 			console.log("testing");
 			console.log(data);
+			var total=0;
 			var id;
 			$('input[type="checkbox"]').on('change', function() {$('input[name="boleta"]').not(this).prop('checked', false);});
 			$('input[type="checkbox"][name="boleta"]').click(function(){
@@ -119,10 +120,11 @@ function mostrarBoleta(data){
 				arr.forEach(function(arr, index){
 						var result = data.boletas[id].ItemProductos[arr].productos.nombre_pro;
 						var price = data.boletas[id].ItemProductos[arr].productos.precio;
-						//total += price*
+						total += price*arr_cantidad[index];
 						console.log(result, price);
 					}
 				);
+				console.log(total);
 
 				//-----------------------------------------Inicio Swal-----------------------------------
 				/*swal({
