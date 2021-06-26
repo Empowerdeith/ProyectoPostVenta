@@ -26,9 +26,13 @@ function mostrarBoleta(data){
         //table Cliente
 		var rut_p = $("#rut_p");
 		var nombre_cliente = $("#nombre_cliente");
+		var email_cli = $("#email");
+		var tel_cli = $("#numero_tel");
 		var direccion = $("#direccion");
 		rut_p.html(data.rut);
 		nombre_cliente.html(data.nombre_cl);
+		email_cli.html(data.email);
+		tel_cli.html(data.num_telf);
 		direccion.html(data.direccion);
 		//table Boletas
 		$("#table_checkbox").find("tbody").empty();
