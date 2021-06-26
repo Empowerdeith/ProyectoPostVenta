@@ -356,11 +356,13 @@ function TestingBoletaCantidad(data){
 		//-------------------------------------------------------
 		var  dineros = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
 		content += "<td>" + dia+"/"+mes+"/"+annio + "</td>";
-		//Inicio Cálculo total		
-		/*for(let j = 0; j < data.boletas[i].ItemProductos.length; j++){
-
-			
-		}*/
+		//Inicio Cálculo total
+		console.log("Inicio cálculo total");		
+		for(let j = 0; j < data.boletas[i].ItemProductos.length; j++){
+			var cantidad;
+			cantidad = data.boletas[i].ItemProductos[j].cantidad;
+			console.log(cantidad);
+		}
 		//content += "<td>" + dineros.format(data.boletas[i].total) + "</td>";
 		content += "</tr>";
 	}
