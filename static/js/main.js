@@ -90,24 +90,14 @@ function mostrarBoleta(data){
 							contenido += "<td>" + nombre_producto + "</td>";	
 							var  monea = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
 							contenido += "<td>" + monea.format(precio_pro) + "</td>";
-							contenido += "<td><input type=\"number\" name=\"cantidad_producto\" min=\"1\" max=\""+cantidad+"\" value=\""+cantidad+"\" onkeypress=\"return false;\">"+"</td>";
+							contenido += "<td><input type=\"number\" name=\"cantidad_producto\" min=\"1\" max=\""+cantidad+"\" value=\""+cantidad+"\" onkeydown=\"return false;\">"+"</td>";
 							//contenido += "<td>" + cantidad + "</td>";
 							contenido += "</tr>";
 							//calc = precio_pro*cantidad;
 							//console.log(nombre_producto);
 							/*console.log(precio_pro);
 							console.log(cantidad);*/
-
 						}
-						//console.log(data.boletas[id].ItemProductos[0].cantidad);
-						/*
-						for(let k = 0; k < data.boletas[id].productos.length; k++){
-							contenido += "<tr><td><input id=\""+k+"\" type=\"checkbox\" name=\"producto\" >"+"</td>";
-							contenido += "<td>" + data.boletas[id].productos[k].nombre_pro + "</td>";
-							var  monea = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
-							contenido += "<td>" + monea.format(data.boletas[id].productos[k].precio) + "</td>";
-							contenido += "</tr>";
-						}*/
 						$("#table_product").find( "tbody" ).html(contenido);
 					}
 				}
