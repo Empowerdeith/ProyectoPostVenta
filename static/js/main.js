@@ -78,6 +78,19 @@ function mostrarBoleta(data){
 						$("#table_product").find("tbody").empty();
 						$( "#tabla_de_productos" ).show();
 						console.log(data.boletas[id].ItemProductos.length);
+						//Inicio Cálculo total
+						console.log("Inicio cálculo total");	
+						for(let j = 0; j < data.boletas[id].ItemProductos.length; j++){
+							var cantidad, precio_pro, nombre;
+							nombre = data.boletas[id].ItemProductos[j].productos.nombre_pro;
+							cantidad = data.boletas[id].ItemProductos[j].cantidad;
+							precio_pro = data.boletas[id].ItemProductos[j].productos.precio;
+							//calc = precio_pro*cantidad;
+							console.log(precio_pro);
+							console.log(cantidad);
+							console.log(nombre);
+							//console.log(calc);
+						}
 						//console.log(data.boletas[id].ItemProductos[0].cantidad);
 						/*
 						for(let k = 0; k < data.boletas[id].productos.length; k++){
