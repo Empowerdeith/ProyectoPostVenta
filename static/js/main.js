@@ -213,7 +213,7 @@ Object.prototype.isEmpty = function () {
 }
 //-------------------------------------------------------
 //Función que realiza el fetch a la ip
-/*function prueba(){
+function prueba(){
 	var buscar1 = $('#id_buscar').val().toString();
 
 	// console.log(buscar1);
@@ -231,7 +231,7 @@ Object.prototype.isEmpty = function () {
 		hide_table()
 		$("#error_msg").html("<br><br>Debe ingresar un número de transacción.");
 	}
-}*/
+}
 //
 /*-----------------------------------------------------------------------------------
 			Funciones para Reset de checkboxes        
@@ -316,82 +316,3 @@ function alerta_bton(){
 }
 
 /*---------------Zona de testing--------*/
-function TestingBoletaCantidad(data){
-	console.log(data);
-	$("#error_msg").html("");
-	$( "#myData" ).show();
-	//table Cliente
-	var rut_p = $("#rut_p");
-	var nombre_cliente = $("#nombre_cliente");
-	var direccion = $("#direccion");
-	rut_p.html(data.rut);
-	nombre_cliente.html(data.nombre_cl);
-	direccion.html(data.direccion);
-	//table Boletas
-	/*console.log(data.boletas[0].ItemProductos.length);
-	console.log(data.boletas[0].ItemProductos[0].cantidad);
-	console.log(data.boletas[0].ItemProductos[0].productos.nombre_pro);
-	console.log(data.boletas[0].ItemProductos[0].productos.precio);
-	var precio_prod, cantidad_prod, calc_prec_prod;
-
-	precio_prod = data.boletas[0].ItemProductos[0].productos.precio;
-
-	cantidad_prod = data.boletas[0].ItemProductos[0].cantidad;
-
-	calc_prec_prod = precio_prod*cantidad_prod;
-
-	console.log(calc_prec_prod);*/
-
-	$("#table_checkbox").find("tbody").empty();
-	var content = "";
-	var total = 0;
-	for(let i = 0; i < data.boletas.length; i++){
-		content += "<tr><td><input id=\""+i+"\" type=\"checkbox\" name=\"boleta\" >"+"</td>";
-		content += "<td>" + data.boletas[i].num_boleta + "</td>";
-		//---------Sección fechas---------------------------------
-		var fecha_obtenida = new Date(data.boletas[i].created_at);
-		var dia = fecha_obtenida.getDate();
-		var mes = fecha_obtenida.getMonth()+1;
-		var annio = fecha_obtenida.getFullYear();
-		//-------------------------------------------------------
-		var  dineros = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
-		content += "<td>" + dia+"/"+mes+"/"+annio + "</td>";
-		//Inicio Cálculo total
-		console.log("Inicio cálculo total");		
-		for(let j = 0; j < data.boletas[i].ItemProductos.length; j++){
-			var cantidad, precio_pro, calc;
-			cantidad = data.boletas[i].ItemProductos[j].cantidad;
-			precio_pro = data.boletas[i].ItemProductos[j].productos.precio;
-			calc = precio_pro*cantidad;
-			total += calc;
-			console.log(precio_pro);
-			console.log(cantidad);
-			console.log(calc);
-		}
-		console.log("Total boleta: "+total);
-		content += "<td>" + dineros.format(total) + "</td>";
-		content += "</tr>";
-	}
-	$("#table_checkbox").find( "tbody" ).html(content);
-
-
-}
-function prueba(){
-	var buscar1 = $('#id_buscar').val().toString();
-
-	// console.log(buscar1);
-	if(!buscar1.isEmpty()){
-		let url="http://3.83.24.216/api/cl/"+buscar1
-		fetch(url)
-		.then(response => response.json())
-		.then(data => TestingBoletaCantidad(data))
-		.catch(error => console.log(error))
-		//$("#table_product").find("tbody").empty();
-		//esconder_prod();
-
-	}
-	else{
-		//hide_table()
-		$("#error_msg").html("<br><br>Debe ingresar un número de transacción.");
-	}
-}
