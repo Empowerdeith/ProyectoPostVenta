@@ -114,7 +114,13 @@ function mostrarBoleta(data){
 					console.log(cantidad_prod_select);
 				});
 				console.log("Cantidad de productos: "+arr_cantidad);
-				console.log(arr);
+				console.log("Contenido de arreglo: "+arr);
+				arr.forEach(function(arr, index){
+						var result = data.boletas[id].ItemProductos[arr].productos.nombre_pro;
+						var price = data.boletas[id].ItemProductos[arr].productos.precio;
+						console.log(result, price);
+					}
+				);
 
 				//-----------------------------------------Inicio Swal-----------------------------------
 				/*swal({
