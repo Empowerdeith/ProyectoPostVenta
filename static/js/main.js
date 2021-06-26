@@ -359,8 +359,10 @@ function TestingBoletaCantidad(data){
 		//Inicio Cálculo total
 		console.log("Inicio cálculo total");		
 		for(let j = 0; j < data.boletas[i].ItemProductos.length; j++){
-			var cantidad;
+			var cantidad, precio_pro;
 			cantidad = data.boletas[i].ItemProductos[j].cantidad;
+			precio_pro = data.boletas[i].ItemProductos[j].productos.precio;
+			console.log(precio_pro);
 			console.log(cantidad);
 		}
 		//content += "<td>" + dineros.format(data.boletas[i].total) + "</td>";
