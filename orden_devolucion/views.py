@@ -1,7 +1,7 @@
 from rest_framework import routers, serializers, viewsets, status
 from rest_framework.response import Response
-from .serializers import ProductoSerializer, BoletaSerializer, ClienteSerializer,ProductoSerializerDepth, BoletaSerializerDepth, ClienteSerializerDepth
-from .models import Producto, Cliente, Boleta
+from .serializers import ProductoSerializer, BoletaSerializer, ClienteSerializer, ItemProductoSerializer,ProductoSerializerDepth, BoletaSerializerDepth, ClienteSerializerDepth, ItemProductoSerializerDepth
+from .models import Producto, Cliente, Boleta, ItemProducto
 from rest_framework import filters
 from rest_framework.decorators import api_view
 from rest_framework.views import APIView
@@ -24,6 +24,11 @@ class ClienteApi(viewsets.ModelViewSet):
     permission_classes = ()
     queryset = Cliente.objects.all()
     serializer_class = ClienteSerializer
+
+class ItemProductoApi(viewsets.ModelViewSet):
+    permission_classes = ()
+    queryset = ItemProducto.objects.all()
+    serializer_class = ItemProductoSerializer
 
 def revision(request):
     lista_clientes = Cliente.objects.all()
@@ -68,6 +73,11 @@ class ClienteApiDepth(viewsets.ModelViewSet):
     permission_classes = ()
     queryset = Cliente.objects.all()
     serializer_class = ClienteSerializerDepth
+
+class ItemProductoApiDepth(viewsets.ModelViewSet):
+    permission_classes = ()
+    queryset = ItemProducto.objects.all()
+    serializer_class = ItemProductoSerializerDepth
 
 @api_view(['GET'])
 def cliente_detail_viewDepth(request,pk=None):
