@@ -99,6 +99,7 @@ function mostrarBoleta(data){
 							console.log(cantidad);*/
 						}
 						$("#table_product").find( "tbody" ).html(contenido);
+						console.log($('input[name="cantidad_producto"]').val());
 					}
 				}
 			});
