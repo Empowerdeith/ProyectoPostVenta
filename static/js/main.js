@@ -103,11 +103,19 @@ function mostrarBoleta(data){
 			$('#button_save').off('click');
 			$('#button_save').click(function(){
 				var arr = [];
+				var arr_cantidad = [];
 				$('input[name="producto"]:checked').each(function(){
 					arr.push(parseInt($(this).attr('id')));
-					var respuesta = $(this).parent().siblings().find('input[name="cantidad_producto"]').val();
-					console.log(respuesta);
+
+					arr_cantidad.push(parseInt($(this).parent().siblings().find('input[name="cantidad_producto"]').val()));
+
+					var cantidad_prod_select = $(this).parent().siblings().find('input[name="cantidad_producto"]').val();
+					//var precio_prod_select = $(this).parent().siblings().find('input[name="cantidad_producto"]').val();
+					console.log(cantidad_prod_select);
 				});
+				console.log("Cantidad de productos: "+arr_cantidad);
+				console.log(arr);
+
 				//-----------------------------------------Inicio Swal-----------------------------------
 				/*swal({
 					title: "¿Desea confirmar la devolución de está boleta?",
@@ -128,23 +136,6 @@ function mostrarBoleta(data){
 					}
 				});*/
 				//-----------------------------------------Término Swal-----------------------------------
-				/*function productos(){
-					for(let k = 0; k < arr.length; k++){
-						var formprod = new FormData();
-						formprod.append("id",data2.boletas[id].productos[k].id);
-						formprod.append("nombre_pro", data2.boletas[id].productos[k].nombre_pro);
-						formprod.append("precio", data2.boletas[id].productos[k].precio);
-						var requestOptions = {
-							method: 'POST',
-							body: formprod,
-							redirect: 'follow'
-						};
-						fetch("http://18.207.25.202/api/devolucion/Producto/", requestOptions)
-						.then(response => response.json())
-						//.then(data => console.log(data))
-						.catch(error => console.log('error', error));
-					}
-				}*/
 				function boleta(){
 					var formboleta = new FormData();
 					formboleta.append("num_boleta", data.boletas[id].num_boleta);
