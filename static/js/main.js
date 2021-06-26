@@ -82,15 +82,21 @@ function mostrarBoleta(data){
 						console.log("Inicio cálculo total");	
 						for(let j = 0; j < data.boletas[id].ItemProductos.length; j++){
 							var cantidad, precio_pro, nombre;
-							nombre = data.boletas[id].ItemProductos[j].productos.nombre_pro;
+							nombre_producto = data.boletas[id].ItemProductos[j].productos.nombre_pro;
 							cantidad = data.boletas[id].ItemProductos[j].cantidad;
 							precio_pro = data.boletas[id].ItemProductos[j].productos.precio;
-							//calc = precio_pro*cantidad;
-							console.log(nombre);
-							console.log(precio_pro);
-							console.log(cantidad);
 
-							//console.log(calc);
+							contenido += "<tr><td><input id=\""+j+"\" type=\"checkbox\" name=\"producto\" >"+"</td>";
+							contenido += "<td>" + nombre_producto + "</td>";	
+							var  monea = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
+							contenido += "<td>" + monea.format(precio_pro) + "</td>";
+							contenido += "<td>" + cantidad + "</td>";
+							contenido += "</tr>";
+							//calc = precio_pro*cantidad;
+							//console.log(nombre_producto);
+							/*console.log(precio_pro);
+							console.log(cantidad);*/
+
 						}
 						//console.log(data.boletas[id].ItemProductos[0].cantidad);
 						/*
