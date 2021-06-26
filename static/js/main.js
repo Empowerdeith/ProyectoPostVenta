@@ -115,9 +115,11 @@ function mostrarBoleta(data){
 				});
 				console.log("Cantidad de productos: "+arr_cantidad);
 				console.log("Contenido de arreglo: "+arr);
+				console.log(arr_cantidad[0]);
 				arr.forEach(function(arr, index){
 						var result = data.boletas[id].ItemProductos[arr].productos.nombre_pro;
 						var price = data.boletas[id].ItemProductos[arr].productos.precio;
+						//total += price*
 						console.log(result, price);
 					}
 				);
