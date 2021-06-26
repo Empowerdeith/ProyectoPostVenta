@@ -78,7 +78,7 @@ function mostrarBoleta(data){
 						$("#table_product").find("tbody").empty();
 						$( "#tabla_de_productos" ).show();
 						console.log(data.boletas[id].ItemProductos.length);
-						console.log(data.boletas[id].ItemProductos[0].cantidad);
+						//console.log(data.boletas[id].ItemProductos[0].cantidad);
 						/*
 						for(let k = 0; k < data.boletas[id].productos.length; k++){
 							contenido += "<tr><td><input id=\""+k+"\" type=\"checkbox\" name=\"producto\" >"+"</td>";
