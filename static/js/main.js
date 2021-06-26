@@ -86,9 +86,10 @@ function mostrarBoleta(data){
 							cantidad = data.boletas[id].ItemProductos[j].cantidad;
 							precio_pro = data.boletas[id].ItemProductos[j].productos.precio;
 							//calc = precio_pro*cantidad;
+							console.log(nombre);
 							console.log(precio_pro);
 							console.log(cantidad);
-							console.log(nombre);
+
 							//console.log(calc);
 						}
 						//console.log(data.boletas[id].ItemProductos[0].cantidad);
