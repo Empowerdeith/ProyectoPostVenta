@@ -328,7 +328,7 @@ function TestingBoletaCantidad(data){
 	nombre_cliente.html(data.nombre_cl);
 	direccion.html(data.direccion);
 	//table Boletas
-	console.log(data.boletas[0].ItemProductos.length);
+	/*console.log(data.boletas[0].ItemProductos.length);
 	console.log(data.boletas[0].ItemProductos[0].cantidad);
 	console.log(data.boletas[0].ItemProductos[0].productos.nombre_pro);
 	console.log(data.boletas[0].ItemProductos[0].productos.precio);
@@ -340,7 +340,7 @@ function TestingBoletaCantidad(data){
 
 	calc_prec_prod = precio_prod*cantidad_prod;
 
-	console.log(calc_prec_prod);
+	console.log(calc_prec_prod);*/
 
 	$("#table_checkbox").find("tbody").empty();
 	var content = "";
@@ -359,12 +359,15 @@ function TestingBoletaCantidad(data){
 		//Inicio Cálculo total
 		console.log("Inicio cálculo total");		
 		for(let j = 0; j < data.boletas[i].ItemProductos.length; j++){
-			var cantidad, precio_pro;
+			var cantidad, precio_pro, calc;
 			cantidad = data.boletas[i].ItemProductos[j].cantidad;
 			precio_pro = data.boletas[i].ItemProductos[j].productos.precio;
+			calc = precio_pro*cantidad;
+			total += calc;
 			console.log(precio_pro);
 			console.log(cantidad);
 		}
+		console.log("Total boleta: "+total);
 		//content += "<td>" + dineros.format(data.boletas[i].total) + "</td>";
 		content += "</tr>";
 	}
