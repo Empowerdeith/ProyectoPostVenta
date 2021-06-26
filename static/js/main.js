@@ -103,6 +103,7 @@ function mostrarBoleta(data){
 			});
 			$('#button_save').off('click');
 			$('#button_save').click(function(){
+				total=0;
 				var arr = [];
 				var arr_cantidad = [];
 				$('input[name="producto"]:checked').each(function(){
