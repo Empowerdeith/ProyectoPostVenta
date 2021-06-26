@@ -369,7 +369,7 @@ function TestingBoletaCantidad(data){
 			console.log(calc);
 		}
 		console.log("Total boleta: "+total);
-		//content += "<td>" + dineros.format(data.boletas[i].total) + "</td>";
+		content += "<td>" + dineros.format(total) + "</td>";
 		content += "</tr>";
 	}
 	$("#table_checkbox").find( "tbody" ).html(content);
