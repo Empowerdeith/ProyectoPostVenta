@@ -328,6 +328,7 @@ function TestingBoletaCantidad(data){
 	nombre_cliente.html(data.nombre_cl);
 	direccion.html(data.direccion);
 	//table Boletas
+	console.log(data.boletas.ItemProductos.length);
 	$("#table_checkbox").find("tbody").empty();
 	var content = "";
 	for(let i = 0; i < data.boletas.length; i++){
