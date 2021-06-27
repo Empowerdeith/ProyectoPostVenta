@@ -144,7 +144,7 @@ function mostrarBoleta(data){
 							title: "Su devolución ha sido ingresada.",
 							icon: "success"
 						});
-						//item_boleta();
+						item_boleta();
 						//boleta();
 					}
 				});
