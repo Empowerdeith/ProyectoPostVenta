@@ -112,14 +112,13 @@ function mostrarBoleta(data){
 
 					arr_cantidad.push(parseInt($(this).parent().siblings().find('input[name="cantidad_producto"]').val()));
 				});
-				console.log("Cantidad de productos: "+arr_cantidad);
-				console.log("Contenido de arreglo: "+arr);
+				//console.log("Cantidad de productos: "+arr_cantidad);
 				//console.log(arr_cantidad[0]);
 				arr.forEach(function(arr, index){
 						var result = data.boletas[id].ItemProductos[arr].productos.nombre_pro;
 						var price = data.boletas[id].ItemProductos[arr].productos.precio;
 						total += price*arr_cantidad[index];
-						console.log(result, price);
+						//console.log(result, price);
 					}
 				);
 				var total_bol = data.boletas[id].total;
@@ -149,6 +148,7 @@ function mostrarBoleta(data){
 						//boleta();
 					}
 				});
+				console.log("Contenido de arreglo: "+arr);
 				arr.forEach(function(arr, index){
 					var id_items = data.boletas[id].ItemProductos[arr].id_item;
 					var cantidades = arr_cantidad[index];
