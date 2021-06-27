@@ -23,8 +23,8 @@ class Boleta(models.Model):
 class ItemProducto(models.Model):
     id_item = models.IntegerField(primary_key=True)
     cantidad = models.IntegerField(default=0,null=True, blank=True)
-    productos = models.ForeignKey(Producto, on_delete=models.CASCADE)
-
+    productos = models.ManyToManyField('Producto', related_name='productos', blank=True)
+    
 class Cliente(models.Model):
     rut = models.CharField(max_length=100, primary_key=True)
     nombre_cl = models.CharField(max_length=100)
