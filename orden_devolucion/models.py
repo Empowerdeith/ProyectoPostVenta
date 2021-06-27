@@ -7,7 +7,7 @@ from django.db.models import Sum, Count
 class Producto(models.Model):
     id_prod = models.IntegerField(primary_key=True)
     nombre_pro = models.CharField(max_length=100)
-    precio = models.IntegerField()
+    precio = models.IntegerField(default=0)
     
     def __str__(self):
         return self.nombre_pro    
@@ -15,7 +15,9 @@ class Producto(models.Model):
 class Boleta(models.Model):
     num_boleta = models.IntegerField(primary_key=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    total = models.IntegerField()
+    total = models.IntegerField(default=0)
+    total_dev = models.IntegerField(default=0)
+    monto_dev = models.IntegerField(default=0)
     ItemProductos = models.ManyToManyField('ItemProducto', related_name='ItemProductos', blank=True)
 
 class ItemProducto(models.Model):
