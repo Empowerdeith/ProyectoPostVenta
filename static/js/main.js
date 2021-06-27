@@ -103,6 +103,7 @@ function mostrarBoleta(data){
 			});
 			$('#button_save').off('click');
 			$('#button_save').click(function(){
+				var  platita = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
 				total=0;
 				var arr = [];
 				var arr_cantidad = [];
@@ -130,7 +131,7 @@ function mostrarBoleta(data){
 				//-----------------------------------------Inicio Swal-----------------------------------
 				swal({
 					title: "¿Desea confirmar la devolución de está boleta?",
-					text: "2<br>1\nAl confirmar, usted acepta nuestros términos y condiciones de devolución.",
+					text: "El monto actual de su boleta es: "+platita.format(total_bol)+"\nAl confirmar, usted acepta nuestros términos y condiciones de devolución.",
 					icon: "warning",
 					buttons: {
 						cancel: "Cancelar",
