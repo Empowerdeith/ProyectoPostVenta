@@ -18,7 +18,7 @@ class Boleta(models.Model):
     total = models.IntegerField(default=0)
     total_dev = models.IntegerField(default=0)
     monto_dev = models.IntegerField(default=0)
-    itemProductos = models.ManyToManyField('ItemProducto', related_name='itemProductos', blank=True)
+    ItemProductos = models.ManyToManyField('ItemProducto', related_name='ItemProductos', blank=True)
 
 class ItemProducto(models.Model):
     id_item = models.IntegerField(primary_key=True)
