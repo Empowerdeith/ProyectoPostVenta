@@ -110,10 +110,6 @@ function mostrarBoleta(data){
 					arr.push(parseInt($(this).attr('id')));
 
 					arr_cantidad.push(parseInt($(this).parent().siblings().find('input[name="cantidad_producto"]').val()));
-
-					//var cantidad_prod_select = $(this).parent().siblings().find('input[name="cantidad_producto"]').val();
-					//var precio_prod_select = $(this).parent().siblings().find('input[name="cantidad_producto"]').val();
-					//console.log(cantidad_prod_select);
 				});
 				console.log("Cantidad de productos: "+arr_cantidad);
 				console.log("Contenido de arreglo: "+arr);
@@ -132,9 +128,9 @@ function mostrarBoleta(data){
 				console.log("Monto de devolución: "+calc_devolucion_costo);
 
 				//-----------------------------------------Inicio Swal-----------------------------------
-				/*swal({
+				swal({
 					title: "¿Desea confirmar la devolución de está boleta?",
-					text: "Al confirmar, usted acepta nuestros términos y condiciones de devolución.",
+					text: "2<br>1\nAl confirmar, usted acepta nuestros términos y condiciones de devolución.",
 					icon: "warning",
 					buttons: {
 						cancel: "Cancelar",
@@ -147,10 +143,13 @@ function mostrarBoleta(data){
 							title: "Su devolución ha sido ingresada.",
 							icon: "success"
 						});
-						boleta();
+						//boleta();
 					}
-				});*/
+				});
 				//-----------------------------------------Término Swal-----------------------------------
+				function item_boleta(){
+
+				}
 				function boleta(){
 					var formboleta = new FormData();
 					formboleta.append("num_boleta", data.boletas[id].num_boleta);
@@ -313,12 +312,7 @@ function revisionShow(data){
 			$("#tabla_revision_prod").find( "tbody" ).html(prods);
 		}
 		$("#tabla_cliente").find( "tbody" ).html(bloc);
-
-		/*let url="http:18.207.25.202/api/bol2/"+id_bol
-		fetch(url)
-		.then(response => response.json())
-		.then(data)*/
-	}	
+	}
 }
 function alerta_bton(){
 	swal({
