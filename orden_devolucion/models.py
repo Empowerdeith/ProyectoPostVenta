@@ -18,12 +18,12 @@ class Boleta(models.Model):
     total = models.IntegerField(default=0)
     total_dev = models.IntegerField(default=0)
     monto_dev = models.IntegerField(default=0)
-    ItemProductos = models.ManyToManyField('ItemProducto', related_name='ItemProductos', blank=True)
+    itemProductos = models.ManyToManyField('ItemProducto', related_name='itemProductos', blank=True)
 
 class ItemProducto(models.Model):
     id_item = models.IntegerField(primary_key=True)
     cantidad = models.IntegerField(default=0,null=True, blank=True)
-    productos = models.ManyToManyField('Producto', related_name='productos', blank=True)
+    productos = models.ForeignKey(Producto, on_delete=models.CASCADE)
     
 class Cliente(models.Model):
     rut = models.CharField(max_length=100, primary_key=True)
