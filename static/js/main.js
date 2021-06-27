@@ -127,7 +127,9 @@ function mostrarBoleta(data){
 				);
 				console.log(total);
 				var total_bol = data.boletas[id].total;
+				var calc_devolucion_costo = total_bol-total;
 				console.log(total_bol);
+				console.log("Monto de devolución: "+calc_devolucion_costo);
 
 				//-----------------------------------------Inicio Swal-----------------------------------
 				/*swal({
