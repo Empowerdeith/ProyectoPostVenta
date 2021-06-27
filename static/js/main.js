@@ -111,9 +111,9 @@ function mostrarBoleta(data){
 
 					arr_cantidad.push(parseInt($(this).parent().siblings().find('input[name="cantidad_producto"]').val()));
 
-					var cantidad_prod_select = $(this).parent().siblings().find('input[name="cantidad_producto"]').val();
+					//var cantidad_prod_select = $(this).parent().siblings().find('input[name="cantidad_producto"]').val();
 					//var precio_prod_select = $(this).parent().siblings().find('input[name="cantidad_producto"]').val();
-					console.log(cantidad_prod_select);
+					//console.log(cantidad_prod_select);
 				});
 				console.log("Cantidad de productos: "+arr_cantidad);
 				console.log("Contenido de arreglo: "+arr);
