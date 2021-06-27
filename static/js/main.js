@@ -97,7 +97,7 @@ function mostrarBoleta(data){
 							contenido += "</tr>";
 						}
 						$("#table_product").find( "tbody" ).html(contenido);
-						console.log($('input[name="cantidad_producto"]').val());
+						//console.log($('input[name="cantidad_producto"]').val());
 					}
 				}
 			});
@@ -117,7 +117,7 @@ function mostrarBoleta(data){
 				});
 				console.log("Cantidad de productos: "+arr_cantidad);
 				console.log("Contenido de arreglo: "+arr);
-				console.log(arr_cantidad[0]);
+				//console.log(arr_cantidad[0]);
 				arr.forEach(function(arr, index){
 						var result = data.boletas[id].ItemProductos[arr].productos.nombre_pro;
 						var price = data.boletas[id].ItemProductos[arr].productos.precio;
@@ -126,6 +126,8 @@ function mostrarBoleta(data){
 					}
 				);
 				console.log(total);
+				var total_bol = data.boletas[id].total;
+				console.log(total_bol);
 
 				//-----------------------------------------Inicio Swal-----------------------------------
 				/*swal({
