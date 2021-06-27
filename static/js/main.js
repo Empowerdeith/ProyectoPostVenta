@@ -153,9 +153,13 @@ function mostrarBoleta(data){
 					var id_items = data.boletas[id].ItemProductos[arr].id_item;
 					var cantidades = arr_cantidad[index];
 					var productos1 = data.boletas[id].ItemProductos[arr].productos.id_prod;
+					var nombre_producto = data.boletas[id].ItemProductos[arr].productos.nombre_pro;
+					console.log("-------------Inicio Item Boleta------------------");
 					console.log("id item_boleta: "+id_items);
 					console.log("cantidad productos: "+cantidades);
 					console.log("id_producto: "+productos1);
+					console.log("nombre_producto: "+nombre_producto);
+					console.log("-------------------------------------------------");
 				});
 				//-----------------------------------------Término Swal-----------------------------------
 				function item_boleta(){
