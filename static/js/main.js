@@ -292,21 +292,27 @@ function prueba(){
 			Funciones para Reset de checkboxes        
 ----------------------------------------------------------------------------------*/
 function selectall(){
-	$( "#table_product").find( "input" ).prop('checked', true);
+	$("#table_product").find( "input" ).prop('checked', true);
 }
 function unselectall(){
 	$( "#table_product").find( "input" ).prop('checked', false);
 }
 function checking_checkboxes(){
+	if($("#seleccionar_productos_table").prop('checked') == true){
+		$("#table_product").find( "input" ).prop('checked', true);
+	}
+	else{
+		$("#table_product").find( "input" ).prop('checked', false);
+	}
 	/*$('#seleccionar_productos_table').click(function() {
 		console.log("me ejecuto");
 		var c = this.checked;
 		$("#table_product").find('input[name="cantidad_producto"]').prop('checked', c);
  	 	//$(':checkbox').prop('checked', c);
  	});*/
- 	$("#seleccionar_productos_table").change(function () {
+ 	/*$("#seleccionar_productos_table").change(function () {
     	$("#table_product").find('input[name="producto"]').prop("checked", $(this).prop("checked"));
-    });
+    });*/
 
 }
 
