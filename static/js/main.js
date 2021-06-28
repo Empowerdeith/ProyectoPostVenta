@@ -297,12 +297,15 @@ function selectall(){
 function unselectall(){
 	$( "#table_product").find( "input" ).prop('checked', false);
 }
-$('#seleccionar_productos_table').click(function() {
-	console.log("me ejecuto");
-	var c = this.checked;
-	$("#table_product").find('input[name="cantidad_producto"]').prop('checked', c);
-  //$(':checkbox').prop('checked', c);
-});
+function checking_checkboxes(){
+	$('#seleccionar_productos_table').click(function() {
+		console.log("me ejecuto");
+		var c = this.checked;
+		$("#table_product").find('input[name="cantidad_producto"]').prop('checked', c);
+ 	 	//$(':checkbox').prop('checked', c);
+ 	});
+}
+
 /*--------------------------------------------------------------------------------------------------------------------------------------------------------
 																GEt Api PostVenta																									
 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
