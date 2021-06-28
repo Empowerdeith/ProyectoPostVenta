@@ -305,7 +305,7 @@ function checking_checkboxes(){
  	 	//$(':checkbox').prop('checked', c);
  	});*/
  	$("#seleccionar_productos_table").change(function () {
-    	$('input[type="checkbox"][name="cantidad_producto"]').prop("checked", $(this).prop("checked"));
+    	$('input[type="checkbox"][name="producto"]').prop("checked", $(this).prop("checked"));
     });  
 
 }
