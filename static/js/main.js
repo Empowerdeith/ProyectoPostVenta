@@ -298,12 +298,16 @@ function unselectall(){
 	$( "#table_product").find( "input" ).prop('checked', false);
 }
 function checking_checkboxes(){
-	$('#seleccionar_productos_table').click(function() {
+	/*$('#seleccionar_productos_table').click(function() {
 		console.log("me ejecuto");
 		var c = this.checked;
 		$("#table_product").find('input[name="cantidad_producto"]').prop('checked', c);
  	 	//$(':checkbox').prop('checked', c);
- 	});
+ 	});*/
+ 	$("#seleccionar_productos_table").change(function () {
+    	$('input[type="checkbox"]').prop("checked", $(this).prop("checked"));
+    });  
+
 }
 
 /*--------------------------------------------------------------------------------------------------------------------------------------------------------
