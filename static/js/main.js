@@ -126,6 +126,10 @@ function mostrarBoleta(data){
 				/*console.log("Monto total boleta anterior: "+total_bol);
 				console.log("Monto Total actual: "+total);
 				console.log("Monto de devolución: "+calc_devolucion_costo);*/
+				if (calc_devolucion_costo==0){
+					calc_devolucion_costo=total_bol;
+					total=0;
+				}
 
 				//-----------------------------------------Inicio Swal-----------------------------------
 				swal({
