@@ -14,7 +14,8 @@ class Producto(models.Model):
 
 class Boleta(models.Model):
     num_boleta = models.IntegerField(primary_key=True)
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField()
+    fecha_devolucion = models.DateTimeField(auto_now_add=True)
     total = models.IntegerField(default=0)
     total_dev = models.IntegerField(default=0)
     monto_dev = models.IntegerField(default=0)

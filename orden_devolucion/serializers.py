@@ -12,7 +12,7 @@ class ClienteSerializer(serializers.ModelSerializer):
 class BoletaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Boleta
-        fields = ('num_boleta','created_at','total','total_dev','monto_dev','ItemProductos')
+        fields = ('num_boleta','created_at','fecha_devolucion','total','total_dev','monto_dev','ItemProductos')
 
 class ItemProductoSerializer(serializers.ModelSerializer):
     boletas = BoletaSerializer(many=True, read_only=True)
@@ -40,7 +40,7 @@ class ClienteSerializerDepth(serializers.ModelSerializer):
 class BoletaSerializerDepth(serializers.ModelSerializer):
     class Meta:
         model = Boleta
-        fields = ('num_boleta','created_at','total','total_dev','monto_dev','ItemProductos')
+        fields = ('num_boleta','created_at','fecha_devolucion','total','total_dev','monto_dev','ItemProductos')
         depth = 4
 
 class ItemProductoSerializerDepth(serializers.ModelSerializer):
