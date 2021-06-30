@@ -148,8 +148,8 @@ function mostrarBoleta(data){
 							title: "Su devolución ha sido ingresada.",
 							icon: "success"
 						});
-						//item_boleta();
-						boleta();
+						item_boleta();
+						//boleta();
 					}
 				});
 				console.log("Contenido de arreglo: "+arr);
@@ -194,7 +194,7 @@ function mostrarBoleta(data){
 					formboleta.append("monto_dev", calc_devolucion_costo);
 					//arreglo id productos
 					arr.forEach(function(arr, index){
-						formboleta.append("ItemProductos", data.boletas[id].ItemProductos[arr].id_item);
+						formboleta.append("ItemProductos", parseInt(data.boletas[id].ItemProductos[arr].id_item));
 					});
 					var requestOptions = {
 						method: 'POST',
