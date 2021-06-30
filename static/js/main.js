@@ -148,8 +148,8 @@ function mostrarBoleta(data){
 							title: "Su devolución ha sido ingresada.",
 							icon: "success"
 						});
-						item_boleta();
-						//boleta();
+						//item_boleta();
+						boleta();
 					}
 				});
 				console.log("Contenido de arreglo: "+arr);
