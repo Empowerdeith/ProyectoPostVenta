@@ -148,8 +148,8 @@ function mostrarBoleta(data){
 							title: "Su devolución ha sido ingresada.",
 							icon: "success"
 						});
-						item_boleta();
-						//boleta();
+						//item_boleta();
+						boleta();
 					}
 				});
 				console.log("Contenido de arreglo: "+arr);
@@ -189,24 +189,26 @@ function mostrarBoleta(data){
 					var formboleta = new FormData();
 					formboleta.append("num_boleta", data.boletas[id].num_boleta);
 					formboleta.append("created_at", data.boletas[id].created_at);
-					formboleta.append("total", data.boletas[id].total);
+					formboleta.append("total", total_bol);
+					formboleta.append("total_dev", total);
+					formboleta.append("monto_dev", calc_devolucion_costo);
 					//arreglo id productos
 					arr.forEach(function(arr, index){
-						formboleta.append("productos", data.boletas[id].productos[arr].id);
+						formboleta.append("ItemProductos", data.boletas[id].ItemProductos[arr].id_item);
 					});
 					var requestOptions = {
 						method: 'POST',
 						body: formboleta,
 						redirect: 'follow'
 					};
-					let status;
+					//let status;
 					fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
 					.then((response) => {
 						// Get status using response.status
-						status = response.ok;
+						/*status = response.ok;
 						if (status==true){
 							cliente();
-						}
+						}*/
 						//console.log(`status in first then ${status}`);
 						return response.json();
 					})
