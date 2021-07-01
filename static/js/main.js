@@ -233,8 +233,8 @@ function mostrarBoleta(data){
 					var formclient = new FormData();
 					formclient.append("rut", data.rut);
 					formclient.append("nombre_cl", data.nombre_cl);
-					formclient.append("num_telf", data.boletas[id].num_telf);
-					formclient.append("email", data.boletas[id].email.toString());
+					formclient.append("num_telf", data.num_telf);
+					formclient.append("email", data.email);
 					formclient.append("direccion", data.direccion);
 					formclient.append("boletas", data.boletas[id].num_boleta);
 
