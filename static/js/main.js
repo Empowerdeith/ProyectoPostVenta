@@ -148,8 +148,8 @@ function mostrarBoleta(data){
 							title: "Su devolución ha sido ingresada.",
 							icon: "success"
 						});
-						//item_boleta();
-						boleta();
+						item_boleta();
+						//boleta();
 					}
 				});
 				console.log("Contenido de arreglo: "+arr);
@@ -178,10 +178,19 @@ function mostrarBoleta(data){
 							body: formdata,
 							redirect: 'follow'
 						};
-
+						let status;
 						fetch("http://18.207.25.202/api/devolucion/ItemProducto/", requestOptions)
-						.then(response => response.text())
-						.then(result => console.log(result))
+						//.then(response => response.text())
+						.then((response) => {
+							// Get status using response.status
+							status = response.ok;
+							if (status==true){
+								boleta();
+							}
+							//console.log(`status in first then ${status}`);
+							return response.json();
+						})
+						.then(data => console.log(data))
 						.catch(error => console.log('error', error));
 					});
 				}
@@ -201,12 +210,13 @@ function mostrarBoleta(data){
 						body: formboleta,
 						redirect: 'follow'
 					};
-					//let status;
+					let status;
 					fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
 					.then((response) => {
 						// Get status using response.status
 						/*status = response.ok;
 						if (status==true){
+							boleta();
 							cliente();
 						}*/
 						//console.log(`status in first then ${status}`);
@@ -214,18 +224,22 @@ function mostrarBoleta(data){
 					})
 					.then (data => console.log(data))
 					.catch(error => console.log('error', error));
+					cliente();
 				}
 				//----Sección datos Cliente----------------------------------------------------------------
 				function cliente(){
 
-					var formdata = new FormData();
-					formdata.append("rut", data.rut);
-					formdata.append("nombre_cl", data.nombre_cl);
-					formdata.append("direccion", data.direccion);
-					formdata.append("boletas", data.boletas[id].num_boleta);
+					var formclient = new FormData();
+					formclient.append("rut", data.rut);
+					formclient.append("nombre_cl", data.nombre_cl);
+					formclient.append("num_telf", data.boletas[id].num_telf);
+					formclient.append("email", data.boletas[id].email);
+					formclient.append("direccion", data.direccion);
+					formclient.append("boletas", data.boletas[id].num_boleta);
+
 					var requestOptions = {
 						method: 'POST',
-						body: formdata,
+						body: formclient,
 						redirect: 'follow'
 					};
 					fetch("http://18.207.25.202/api/devolucion/Cliente/", requestOptions)
