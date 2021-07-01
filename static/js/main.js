@@ -105,6 +105,8 @@ function mostrarBoleta(data){
 			$('#button_save').off('click');
 			$('#button_save').click(function(){
 				console.log(id);
+				var mensaje_error_ok = "";
+				var check_correct = true;
 				var  platita = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
 				total=0;
 				var arr = [];
@@ -116,174 +118,148 @@ function mostrarBoleta(data){
 				});
 				if(arr.length==0){
 					console.log("Seleccione al menos 1 producto a devolver");
+					check_correct=false;
 				}
-				//console.log("Cantidad de productos: "+arr_cantidad);
-				//console.log(arr_cantidad[0]);
-				arr.forEach(function(arr, index){
-						var result = data.boletas[id].ItemProductos[arr].productos.nombre_pro;
-						var price = data.boletas[id].ItemProductos[arr].productos.precio;
-						total += price*arr_cantidad[index];
-						//console.log(result, price);
-					}
-				);
-				var total_bol = data.boletas[id].total;
-				var calc_devolucion_costo = total_bol-total;
-				/*console.log("Monto total boleta anterior: "+total_bol);
-				console.log("Monto Total actual: "+total);
-				console.log("Monto de devolución: "+calc_devolucion_costo);*/
-				if (calc_devolucion_costo==0){
-					calc_devolucion_costo=total_bol;
-					total=0;
-				}
-
-				//-----------------------------------------Inicio Swal-----------------------------------
-				swal({
-					title: "¿Desea confirmar la devolución de está boleta?\n\n",
-					text: "El monto actual de su boleta es: "+platita.format(total_bol)+".\nEl monto de su devolución es: "+platita.format(calc_devolucion_costo)+
-					".\nEl monto final de su boleta, una vez aplicada la devolución es: "+platita.format(total)+".\nAl confirmar, usted acepta nuestros términos y condiciones de devolución.",
-					icon: "warning",
-					buttons: {
-						cancel: "Cancelar",
-						confirm: "Confirmar"
-					}
-				}).then (val => {
-					console.log(val);
-					if(val){
-						swal({
-							title: "Su devolución ha sido ingresada.",
-							icon: "success"
-						});
-						//item_boleta();
-						//boleta();
-						cliente();
-					}
-				});
-				console.log("Contenido de arreglo: "+arr);
-				arr.forEach(function(arr, index){
-					var id_items = data.boletas[id].ItemProductos[arr].id_item;
-					var cantidades = arr_cantidad[index];
-					var productos1 = data.boletas[id].ItemProductos[arr].productos.id_prod;
-					var nombre_producto = data.boletas[id].ItemProductos[arr].productos.nombre_pro;
-					console.log("-------------Inicio Item Boleta------------------");
-					console.log("id item_boleta: "+id_items);
-					console.log("cantidad productos: "+cantidades);
-					console.log("id_producto: "+productos1);
-					console.log("nombre_producto: "+nombre_producto);
-					console.log("-------------------------------------------------");
-				});
-				//-----------------------------------------Término Swal-----------------------------------
-				function item_boleta(){
+				if (check_correct==true){
+					//console.log("Cantidad de productos: "+arr_cantidad);
+					//console.log(arr_cantidad[0]);
 					arr.forEach(function(arr, index){
-						var formdata = new FormData();
-						formdata.append("id_item", data.boletas[id].ItemProductos[arr].id_item);
-						formdata.append("cantidad", arr_cantidad[index]);
-						formdata.append("productos", data.boletas[id].ItemProductos[arr].productos.id_prod);
+							var result = data.boletas[id].ItemProductos[arr].productos.nombre_pro;
+							var price = data.boletas[id].ItemProductos[arr].productos.precio;
+							total += price*arr_cantidad[index];
+							//console.log(result, price);
+						}
+					);
+					var total_bol = data.boletas[id].total;
+					var calc_devolucion_costo = total_bol-total;
+					/*console.log("Monto total boleta anterior: "+total_bol);
+					console.log("Monto Total actual: "+total);
+					console.log("Monto de devolución: "+calc_devolucion_costo);*/
+					if (calc_devolucion_costo==0){
+						calc_devolucion_costo=total_bol;
+						total=0;
+					}
 
+					//-----------------------------------------Inicio Swal-----------------------------------
+					swal({
+						title: "¿Desea confirmar la devolución de está boleta?\n\n",
+						text: "El monto actual de su boleta es: "+platita.format(total_bol)+".\nEl monto de su devolución es: "+platita.format(calc_devolucion_costo)+
+						".\nEl monto final de su boleta, una vez aplicada la devolución es: "+platita.format(total)+".\nAl confirmar, usted acepta nuestros términos y condiciones de devolución.",
+						icon: "warning",
+						buttons: {
+							cancel: "Cancelar",
+							confirm: "Confirmar"
+						}
+					}).then (val => {
+						console.log(val);
+						if(val){
+							swal({
+								title: "Su devolución ha sido ingresada.",
+								icon: "success"
+							});
+							//item_boleta();
+							//boleta();
+							cliente();
+						}
+					});
+					console.log("Contenido de arreglo: "+arr);
+					arr.forEach(function(arr, index){
+						var id_items = data.boletas[id].ItemProductos[arr].id_item;
+						var cantidades = arr_cantidad[index];
+						var productos1 = data.boletas[id].ItemProductos[arr].productos.id_prod;
+						var nombre_producto = data.boletas[id].ItemProductos[arr].productos.nombre_pro;
+						console.log("-------------Inicio Item Boleta------------------");
+						console.log("id item_boleta: "+id_items);
+						console.log("cantidad productos: "+cantidades);
+						console.log("id_producto: "+productos1);
+						console.log("nombre_producto: "+nombre_producto);
+						console.log("-------------------------------------------------");
+					});
+					//-----------------------------------------Término Swal-----------------------------------
+					function item_boleta(){
+						arr.forEach(function(arr, index){
+							var formdata = new FormData();
+							formdata.append("id_item", data.boletas[id].ItemProductos[arr].id_item);
+							formdata.append("cantidad", arr_cantidad[index]);
+							formdata.append("productos", data.boletas[id].ItemProductos[arr].productos.id_prod);
+
+							var requestOptions = {
+								method: 'POST',
+								body: formdata,
+								redirect: 'follow'
+							};
+							let status;
+							fetch("http://18.207.25.202/api/devolucion/ItemProducto/", requestOptions)
+							//.then(response => response.text())
+							.then((response) => {
+								// Get status using response.status
+								status = response.ok;
+								if (status==true){
+									boleta();
+								}
+								//console.log(`status in first then ${status}`);
+								return response.json();
+							})
+							.then(data => console.log(data))
+							.catch(error => console.log('error', error));
+						});
+					}
+					function boleta(){
+						var formboleta = new FormData();
+						formboleta.append("num_boleta", data.boletas[id].num_boleta);
+						formboleta.append("created_at", data.boletas[id].created_at);
+						formboleta.append("total", total_bol);
+						formboleta.append("total_dev", total);
+						formboleta.append("monto_dev", calc_devolucion_costo);
+						//arreglo id productos
+						arr.forEach(function(arr, index){
+							formboleta.append("ItemProductos", parseInt(data.boletas[id].ItemProductos[arr].id_item));
+						});
 						var requestOptions = {
 							method: 'POST',
-							body: formdata,
+							body: formboleta,
 							redirect: 'follow'
 						};
 						let status;
-						fetch("http://18.207.25.202/api/devolucion/ItemProducto/", requestOptions)
-						//.then(response => response.text())
+						fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
 						.then((response) => {
 							// Get status using response.status
-							status = response.ok;
+							/*status = response.ok;
 							if (status==true){
 								boleta();
-							}
+								cliente();
+							}*/
 							//console.log(`status in first then ${status}`);
 							return response.json();
 						})
+						.then (data => console.log(data))
+						.catch(error => console.log('error', error));
+						cliente();
+					}
+					//----Sección datos Cliente----------------------------------------------------------------
+					function cliente(){
+
+						var formclient = new FormData();
+						formclient.append("rut", data.rut);
+						formclient.append("nombre_cl", data.nombre_cl);
+						formclient.append("num_telf", data.num_telf);
+						formclient.append("email", data.email);
+						formclient.append("direccion", data.direccion);
+						formclient.append("boletas", data.boletas[id].num_boleta);
+
+
+						var requestOptions = {
+							method: 'POST',
+							body: formclient,
+							redirect: 'follow'
+						};
+						fetch("http://18.207.25.202/api/devolucion/Cliente/", requestOptions)
+						.then(response => response.json())
 						.then(data => console.log(data))
 						.catch(error => console.log('error', error));
-					});
-				}
-				function boleta(){
-					var formboleta = new FormData();
-					formboleta.append("num_boleta", data.boletas[id].num_boleta);
-					formboleta.append("created_at", data.boletas[id].created_at);
-					formboleta.append("total", total_bol);
-					formboleta.append("total_dev", total);
-					formboleta.append("monto_dev", calc_devolucion_costo);
-					//arreglo id productos
-					arr.forEach(function(arr, index){
-						formboleta.append("ItemProductos", parseInt(data.boletas[id].ItemProductos[arr].id_item));
-					});
-					var requestOptions = {
-						method: 'POST',
-						body: formboleta,
-						redirect: 'follow'
-					};
-					let status;
-					fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
-					.then((response) => {
-						// Get status using response.status
-						/*status = response.ok;
-						if (status==true){
-							boleta();
-							cliente();
-						}*/
-						//console.log(`status in first then ${status}`);
-						return response.json();
-					})
-					.then (data => console.log(data))
-					.catch(error => console.log('error', error));
-					cliente();
-				}
-				//----Sección datos Cliente----------------------------------------------------------------
-				function cliente(){
-
-					var formclient = new FormData();
-					formclient.append("rut", data.rut);
-					formclient.append("nombre_cl", data.nombre_cl);
-					formclient.append("num_telf", data.num_telf);
-					formclient.append("email", data.email);
-					formclient.append("direccion", data.direccion);
-					formclient.append("boletas", data.boletas[id].num_boleta);
-
-
-					var requestOptions = {
-						method: 'POST',
-						body: formclient,
-						redirect: 'follow'
-					};
-					fetch("http://18.207.25.202/api/devolucion/Cliente/", requestOptions)
-					.then(response => response.json())
-					.then(data => console.log(data))
-					.catch(error => console.log('error', error));
+					}
 				}
 				//----------------------Término operaciones Post----------------------------------
-
-				/*var fecha_obtenida = new Date(data.boletas[id].created_at);
-				var dia = fecha_obtenida.getDate();
-				var mes = fecha_obtenida.getMonth()+1;
-				var annio = fecha_obtenida.getFullYear();
-				console.log("Datos Boleta");
-				console.log("id_boleta: "+id);
-				console.log("numero boleta: "+data.boletas[id].num_boleta);
-				console.log("fecha: "+dia+"/"+mes+"/"+annio);
-				console.log("total boleta: "+data.boletas[id].total);
-				console.log("--------------------------");
-				console.log("Datos cliente");
-				console.log("rut: "+data.rut);
-				console.log("nombre: "+data.nombre_cl);
-				console.log("dirección: "+data.direccion);
-				console.log("--------------------------");
-				var arr = [];
-				$('input[name="producto"]:checked').each(function(){
-					arr.push(parseInt($(this).attr('id')));
-				});
-				//----------------------Inicio operaciones Post-----------------------------------
-				console.log("arreglo con cantidad de productos");
-				//console.log(arr);
-				//console.log(arr.length);
-				arr.forEach(function(arr, index){
-					console.log("producto: "+data.boletas[id].productos[arr].nombre_pro);
-				});
-				console.log("Termino boleta");
-				*/
 			});
 		}
 	}
