@@ -238,6 +238,7 @@ function mostrarBoleta(data){
 					formclient.append("direccion", data.direccion);
 					formclient.append("boletas", data.boletas[id].num_boleta);
 
+
 					var requestOptions = {
 						method: 'POST',
 						body: formclient,
