@@ -101,8 +101,10 @@ function mostrarBoleta(data){
 					}
 				}
 			});
+
 			$('#button_save').off('click');
 			$('#button_save').click(function(){
+				console.log(id);
 				var  platita = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
 				total=0;
 				var arr = [];
