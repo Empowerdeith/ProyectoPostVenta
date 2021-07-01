@@ -126,8 +126,8 @@ function mostrarBoleta(data){
 					swal({
 						title: "Error\n\n",
 						text: ""+mensaje_error_ok+"",
-						icon: "warning",
-						button: "ok",
+						icon: "error",
+						button: "Ok",
 					});
 				}
 				else if (check_correct==true){
