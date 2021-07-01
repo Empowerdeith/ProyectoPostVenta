@@ -148,8 +148,9 @@ function mostrarBoleta(data){
 							title: "Su devolución ha sido ingresada.",
 							icon: "success"
 						});
-						item_boleta();
+						//item_boleta();
 						//boleta();
+						cliente();
 					}
 				});
 				console.log("Contenido de arreglo: "+arr);
@@ -233,7 +234,7 @@ function mostrarBoleta(data){
 					formclient.append("rut", data.rut);
 					formclient.append("nombre_cl", data.nombre_cl);
 					formclient.append("num_telf", data.boletas[id].num_telf);
-					formclient.append("email", data.boletas[id].email);
+					formclient.append("email", data.boletas[id].email.toString());
 					formclient.append("direccion", data.direccion);
 					formclient.append("boletas", data.boletas[id].num_boleta);
 
