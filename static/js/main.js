@@ -117,10 +117,20 @@ function mostrarBoleta(data){
 					arr_cantidad.push(parseInt($(this).parent().siblings().find('input[name="cantidad_producto"]').val()));
 				});
 				if(arr.length==0){
-					console.log("Seleccione al menos 1 producto a devolver");
 					check_correct=false;
+					mensaje_error_ok+="Seleccione al menos 1 producto a devolver.";
+					console.log("Seleccione al menos 1 producto a devolver");
 				}
-				if (check_correct==true){
+
+				if (check_correct==false){
+					swal({
+						title: "Error\n\n",
+						text: ""+mensaje_error_ok+"",
+						icon: "warning",
+						button: "ok",
+					});
+				}
+				else if (check_correct==true){
 					//console.log("Cantidad de productos: "+arr_cantidad);
 					//console.log(arr_cantidad[0]);
 					arr.forEach(function(arr, index){
