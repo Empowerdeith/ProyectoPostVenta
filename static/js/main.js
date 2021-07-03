@@ -257,6 +257,7 @@ function mostrarBoleta(data){
 						let status_test;
 						fetch("http://18.207.25.202/api/devolucion/Cliente/"+cliente_rut, requestOptions)
 						.then(response => {
+							console.log(status_test);
 							status_test = response.ok;
 							return response.json();
 						})
@@ -265,6 +266,7 @@ function mostrarBoleta(data){
 							cliente();
 						}*/
 						.then(result => {
+							console.log(status_test);
 							if(status_test==true){
 								console.log("hola");
 							}
