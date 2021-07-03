@@ -188,7 +188,7 @@ function mostrarBoleta(data){
 					});*/
 					//-----------------------------------------Término Swal-----------------------------------
 					function item_boleta(){
-						var status;
+						//var status;
 						arr.forEach(function(arr, index){
 							var formdata = new FormData();
 							formdata.append("id_item", data.boletas[id].ItemProductos[arr].id_item);
@@ -212,9 +212,10 @@ function mostrarBoleta(data){
 							.then(data => console.log(data))
 							.catch(error => console.log('error', error));
 						});
-						if(status==true){
+						boleta();
+						/*if(status==true){
 							boleta();
-						}
+						}*/
 					}
 					function boleta(){
 						var formboleta = new FormData();
