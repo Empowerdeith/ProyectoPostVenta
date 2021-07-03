@@ -270,11 +270,11 @@ function mostrarBoleta(data){
 								}
 								arr_bol.push(id_boleta_update);
 
-								arr_bol.forEach(function(arr_bol, index){
+								/*arr_bol.forEach(function(arr_bol, index){
 									console.log(arr_bol);
-								});
+								});*/
 
-								/*var formclientupdt = new FormData();
+								var formclientupdt = new FormData();
 								arr_bol.forEach(function(arr_bol, index){
 									formclientupdt.append("boletas", arr_bol);
 								});
@@ -284,10 +284,10 @@ function mostrarBoleta(data){
 									redirect: 'follow'
 								};
 
-								fetch("http://18.207.25.202/api/devolucion/Cliente/123/", requestOptions)
+								fetch("http://18.207.25.202/api/devolucion/Cliente/"+cliente_rut, requestOptions)
 								.then(response => response.text())
 								.then(result => console.log(result))
-								.catch(error => console.log('error', error));*/
+								.catch(error => console.log('error', error));
 
 								console.log(data5);
 								console.log(data5.boletas);
