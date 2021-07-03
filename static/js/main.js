@@ -258,12 +258,16 @@ function mostrarBoleta(data){
 						fetch("http://18.207.25.202/api/devolucion/Cliente/"+cliente_rut, requestOptions)
 						.then(response => {
 							status_test = response.ok;
-							if(status_test==true){
-								console.log("hola");
 
-							}
 							return response.json();
 						})
+						if(status_test==true){
+							console.log("hola");
+
+						}
+						/*else{
+							cliente();
+						}*/
 						.then(result => console.log(result))
 						.catch(error => console.log('error', error));
 					}
