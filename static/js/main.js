@@ -169,7 +169,8 @@ function mostrarBoleta(data){
 							});
 							//item_boleta();
 							//boleta();
-							cliente();
+							//cliente();
+							test_clientes();
 						}
 					});
 					console.log("Contenido de arreglo: "+arr);
@@ -247,6 +248,25 @@ function mostrarBoleta(data){
 						cliente();
 					}
 					//----Sección datos Cliente----------------------------------------------------------------
+					function test_clientes(){
+						var cliente_rut= data.rut.toString();
+						var requestOptions = {
+							method: 'GET',
+							redirect: 'follow'
+						};
+						let status_test;
+						fetch("http://18.207.25.202/api/devolucion/Cliente/"+cliente_rut, requestOptions)
+						.then(response => {
+							status_test = response.ok;
+							if(status_test==true){
+								console.log("hola");
+
+							}
+							return response.json();
+						})
+						.then(result => console.log(result))
+						.catch(error => console.log('error', error));
+					}
 					function cliente(){
 
 						var formclient = new FormData();
