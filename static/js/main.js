@@ -240,7 +240,6 @@ function mostrarBoleta(data){
 						})
 						.then (data => console.log(data))
 						.catch(error => console.log('error', error));
-						cliente();
 					}
 					//----Sección datos Cliente----------------------------------------------------------------
 					function test_clientes(){
