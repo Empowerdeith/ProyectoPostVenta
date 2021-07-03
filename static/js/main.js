@@ -261,15 +261,15 @@ function mostrarBoleta(data){
 
 							return response.json();
 						})
-						if(status_test==true){
-							console.log("hola");
 
-						}
 						/*else{
 							cliente();
 						}*/
 						.then(result => console.log(result))
-						.catch(error => console.log('error', error));
+						.catch(error => console.log('error', error));						
+						if(status_test==true){
+							console.log("hola");
+						}
 					}
 					function cliente(){
 
