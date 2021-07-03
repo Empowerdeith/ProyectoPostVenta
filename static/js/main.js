@@ -265,9 +265,10 @@ function mostrarBoleta(data){
 							if(status_test==true){
 								arr_num_boletas = [];
 								//arr_num_boletas.push();
-								for(let z = 0; z < data.boletas.length; z++){
-									arr_num_boletas.push(parseInt(data.boletas[z].num_boleta));
+								for(let i = 0; i < data.boletas.length; i++){
+									arr_num_boletas.push(parseInt(data.boletas[i].num_boleta));
 								}
+								console.log(data);
 								console.log(arr_num_boletas);
 								console.log(data.boletas);
 								console.log(data.boletas.length);
