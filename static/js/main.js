@@ -266,7 +266,7 @@ function mostrarBoleta(data){
 								arr_num_boletas = [];
 								//arr_num_boletas.push();
 								for(let z = 0; z < data.boletas.length; z++){
-									arr_num_boletas.push(data.boletas[z].num_boleta);
+									arr_num_boletas.push(parseInt(data.boletas[z].num_boleta));
 								}
 								console.log(arr_num_boletas);
 								console.log(data.boletas);
