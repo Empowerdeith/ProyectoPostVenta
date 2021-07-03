@@ -104,7 +104,7 @@ function mostrarBoleta(data){
 
 			$('#button_save').off('click');
 			$('#button_save').click(function(){
-				console.log(id);
+				//console.log(id);
 				var mensaje_error_ok = "";
 				var check_correct = true;
 				var  platita = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
@@ -161,7 +161,7 @@ function mostrarBoleta(data){
 							confirm: "Confirmar"
 						}
 					}).then (val => {
-						console.log(val);
+						//console.log(val);
 						if(val){
 							swal({
 								title: "Su devolución ha sido ingresada.",
