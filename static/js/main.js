@@ -167,10 +167,10 @@ function mostrarBoleta(data){
 								title: "Su devolución ha sido ingresada.",
 								icon: "success"
 							});
-							//item_boleta();
+							item_boleta();
 							//boleta();
 							//cliente();
-							test_clientes();
+							//test_clientes();
 						}
 					});
 					console.log("Contenido de arreglo: "+arr);
