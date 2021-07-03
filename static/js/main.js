@@ -257,19 +257,24 @@ function mostrarBoleta(data){
 						let status_test;
 						fetch("http://18.207.25.202/api/devolucion/Cliente/"+cliente_rut, requestOptions)
 						.then(response => {
-							console.log(status_test);
 							status_test = response.ok;
 							return response.json();
 						})
-
-						/*else{
-							cliente();
-						}*/
-						.then(result => {
-							console.log(status_test);
+						.then(data => {
+							//console.log(status_test); esto funciona
 							if(status_test==true){
-								console.log("hola");
-							}
+								arr_num_boletas = [];
+								//arr_num_boletas.push();
+								for(let z = 0; z < data.boletas.length; z++){
+									arr_num_boletas.push(data.boletas[z].num_boleta);
+								}
+								console.log(arr_num_boletas);
+								console.log(data.boletas);
+								console.log(data.boletas.length);
+							}						
+							/*else{
+								cliente();
+							}*/
 						})
 						.catch(error => console.log('error', error));
 					}
