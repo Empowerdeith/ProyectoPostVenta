@@ -264,8 +264,7 @@ function mostrarBoleta(data){
 						.then(data5 => {
 							//console.log(status_test); esto funciona
 							if(status_test==true){
-								var arr_bol = [];
-								arr_bol=data5.boletas;								
+								var arr_bol = [];							
 								for(let i = 0; i < data5.boletas.length; i++){
 									arr_bol.push(data5.boletas[i]);
 								}
