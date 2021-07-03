@@ -200,19 +200,19 @@ function mostrarBoleta(data){
 								body: formdata,
 								redirect: 'follow'
 							};
-							//let status;
+							let status;
 							fetch("http://18.207.25.202/api/devolucion/ItemProducto/", requestOptions)
 							.then((response) => {
 								status = response.ok;
-								/*if (status==true){
+								if (status==true){
 									boleta();
-								}*/
+								}
 								return response.json();
 							})
 							.then(data => console.log(data))
 							.catch(error => console.log('error', error));
 						});
-						boleta();
+						//boleta();
 						/*if(status==true){
 							boleta();
 						}*/
