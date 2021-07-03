@@ -249,7 +249,8 @@ function mostrarBoleta(data){
 					}
 					//----Sección datos Cliente----------------------------------------------------------------
 					function test_clientes(){
-						var cliente_rut= data.rut.toString();
+						var cliente_rut = data.rut.toString();
+						var id_boleta_update = data.boletas[id].num_boleta;
 						var requestOptions = {
 							method: 'GET',
 							redirect: 'follow'
@@ -265,7 +266,7 @@ function mostrarBoleta(data){
 							if(status_test==true){
 								var arr_bol = [];
 								arr_bol=data.boletas;
-								arr_bol.push(data.boletas[id].num_boleta);
+								arr_bol.push(id_boleta_update);
 								/*for(let i = 0; i < data.boletas.length; i++){
 									arr_bol.push(parseInt(data.boletas[i].num_boleta));
 									arr_bol.push(data.boletas[i].num_boleta);
