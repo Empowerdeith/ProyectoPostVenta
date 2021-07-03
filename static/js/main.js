@@ -55,7 +55,7 @@ function mostrarBoleta(data){
 		test(data);
 		//selección de boleta
 		function test(data){
-			console.log("testing");
+			//console.log("testing");
 			console.log(data);
 			var total=0;
 			var id;
@@ -173,7 +173,7 @@ function mostrarBoleta(data){
 							//test_clientes();
 						}
 					});
-					console.log("Contenido de arreglo: "+arr);
+					/*console.log("Contenido de arreglo: "+arr);
 					arr.forEach(function(arr, index){
 						var id_items = data.boletas[id].ItemProductos[arr].id_item;
 						var cantidades = arr_cantidad[index];
@@ -185,7 +185,7 @@ function mostrarBoleta(data){
 						console.log("id_producto: "+productos1);
 						console.log("nombre_producto: "+nombre_producto);
 						console.log("-------------------------------------------------");
-					});
+					});*/
 					//-----------------------------------------Término Swal-----------------------------------
 					function item_boleta(){
 						arr.forEach(function(arr, index){
