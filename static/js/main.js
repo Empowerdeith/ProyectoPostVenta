@@ -263,7 +263,7 @@ function mostrarBoleta(data){
 						.then(data => {
 							//console.log(status_test); esto funciona
 							if(status_test==true){
-								arr_num_boletas = [];
+								var arr_num_boletas = [];
 								//arr_num_boletas.push();
 								for(let i = 0; i < data.boletas.length; i++){
 									arr_num_boletas.push(parseInt(data.boletas[i].num_boleta));
