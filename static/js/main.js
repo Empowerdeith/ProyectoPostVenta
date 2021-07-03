@@ -201,14 +201,11 @@ function mostrarBoleta(data){
 							};
 							let status;
 							fetch("http://18.207.25.202/api/devolucion/ItemProducto/", requestOptions)
-							//.then(response => response.text())
 							.then((response) => {
-								// Get status using response.status
 								status = response.ok;
 								if (status==true){
 									boleta();
 								}
-								//console.log(`status in first then ${status}`);
 								return response.json();
 							})
 							.then(data => console.log(data))
@@ -235,12 +232,10 @@ function mostrarBoleta(data){
 						fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
 						.then((response) => {
 							// Get status using response.status
-							/*status = response.ok;
+							status = response.ok;
 							if (status==true){
-								boleta();
-								cliente();
-							}*/
-							//console.log(`status in first then ${status}`);
+								test_clientes();
+							}
 							return response.json();
 						})
 						.then (data => console.log(data))
@@ -262,7 +257,6 @@ function mostrarBoleta(data){
 							return response.json();
 						})
 						.then(data5 => {
-							//console.log(status_test); esto funciona
 							if(status_test==true){
 								var arr_bol = [];							
 								for(let i = 0; i < data5.boletas.length; i++){
@@ -294,9 +288,9 @@ function mostrarBoleta(data){
 								console.log(data5.boletas.length);
 								console.log(arr_bol);
 							}						
-							/*else{
+							else{
 								cliente();
-							}*/
+							}
 						})
 						.catch(error => console.log('error', error));
 					}
