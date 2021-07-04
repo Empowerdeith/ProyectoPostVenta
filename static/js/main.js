@@ -356,24 +356,6 @@ function selectall(){
 function unselectall(){
 	$( "#table_product").find( "input" ).prop('checked', false);
 }
-function checking_checkboxes(){
-	if($("#seleccionar_productos_table").prop('checked') == true){
-		$("#table_product").find( "input" ).prop('checked', true);
-	}
-	else{
-		$("#table_product").find( "input" ).prop('checked', false);
-	}
-	/*$('#seleccionar_productos_table').click(function() {
-		console.log("me ejecuto");
-		var c = this.checked;
-		$("#table_product").find('input[name="cantidad_producto"]').prop('checked', c);
- 	 	//$(':checkbox').prop('checked', c);
- 	});*/
- 	/*$("#seleccionar_productos_table").change(function () {
-    	$("#table_product").find('input[name="producto"]').prop("checked", $(this).prop("checked"));
-    });*/
-
-}
 
 /*--------------------------------------------------------------------------------------------------------------------------------------------------------
 																GEt Api PostVenta																									
@@ -383,7 +365,7 @@ function revision_search(){
 
 	// console.log(buscar1);
 	if(!buscar2.isEmpty()){
-		let url="http:18.207.25.202/api/cl2/"+buscar2
+		let url="http://18.207.25.202/api/cl2/"+buscar2
 		fetch(url)
 		.then(response => response.json())
 		.then(data => revisionShow(data))
