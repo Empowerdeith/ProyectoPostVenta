@@ -387,7 +387,9 @@ function revisionShow(data){
 		var bloc = "";
 		bloc +="<tr><td>" + data.rut + "</td>";
 		bloc +="<td>" + data.nombre_cl + "</td>"
-		bloc +="<td>" + data.direccion + "</td>";
+		bloc +="<td>" + data.num_telf + "</td>";
+		bloc +="<td>" + data.email + "</td>";
+		bloc +="<td>" + data.direccion + "</td></tr>";
 		//console.log(data.boletas.length);
 		//Todo esto es provisional y debe ser removido.
 		/*for(let i = 0; i < data.boletas.length; i++){
