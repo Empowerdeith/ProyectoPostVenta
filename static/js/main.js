@@ -390,7 +390,7 @@ function revisionShow(data){
 		bloc +="<td>" + data.direccion + "</td>";
 		//console.log(data.boletas.length);
 		//Todo esto es provisional y debe ser removido.
-		for(let i = 0; i < data.boletas.length; i++){
+		/*for(let i = 0; i < data.boletas.length; i++){
 			bloc +="<td>" + data.boletas[i].num_boleta + "</td></tr>";
 			var prods = "";
 			console.log(data.boletas[i].productos.length);
@@ -401,7 +401,7 @@ function revisionShow(data){
 				prods += "</tr>";
 			}
 			$("#tabla_revision_prod").find( "tbody" ).html(prods);
-		}
+		}*/
 		$("#tabla_cliente").find( "tbody" ).html(bloc);
 	}
 }
