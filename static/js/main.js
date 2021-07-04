@@ -392,7 +392,7 @@ function revisionShow(data){
 		bloc +="<td>" + data.direccion + "</td></tr>";
 		var bol_fill ="";
 		for(let i = 0; i < data.boletas.length; i++){
-			bol_fill += "<td>" + data.boletas[i].num_boleta + "</td>";
+			bol_fill += "<tr><td>" + data.boletas[i].num_boleta + "</td>";
 			//---------Sección fechas---------------------------------
 			var fecha_obtenida = new Date(data.boletas[i].created_at);
 			var dia = fecha_obtenida.getDate();
