@@ -188,8 +188,6 @@ function mostrarBoleta(data){
 					});*/
 					//-----------------------------------------Término Swal-----------------------------------
 					function item_boleta(){
-						//var status;
-						var check=false;
 						arr.forEach(function(arr, index){
 							var formdata = new FormData();
 							formdata.append("id_item", data.boletas[id].ItemProductos[arr].id_item);
@@ -202,21 +200,16 @@ function mostrarBoleta(data){
 								redirect: 'follow'
 							};
 							let status;
-							
 							fetch("http://18.207.25.202/api/devolucion/ItemProducto/", requestOptions)
 							.then((response) => {
 								status = response.ok;
-								check=true;
-								/*if (status==true){
+								if (status==true){
 									boleta();
-								}*/
+								}
 								return response.json();
 							})						
 							.then(data => console.log(data))
 							.catch(error => console.log('error', error));
-							if(index+1==arr.length){
-								console.log("hola");
-							}
 						});
 					}
 					function boleta(){
