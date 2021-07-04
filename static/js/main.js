@@ -153,8 +153,8 @@ function mostrarBoleta(data){
 					//-----------------------------------------Inicio Swal-----------------------------------
 					swal({
 						title: "¿Desea confirmar la devolución de está boleta?\n\n",
-						text: "El monto actual de su boleta es: "+platita.format(total_bol)+".\nEl monto de su devolución es: "+platita.format(calc_devolucion_costo)+
-						".\nEl monto final de su boleta, una vez aplicada la devolución es: "+platita.format(total)+".\nAl confirmar, usted acepta nuestros términos y condiciones de devolución.",
+						text: "El monto actual de su boleta es: "+platita.format(total_bol)+".\nEl monto de su devolución es: "+platita.format(total)+
+						".\nEl monto final de su boleta, una vez aplicada la devolución es: "+platita.format(calc_devolucion_costo)+".\nAl confirmar, usted acepta nuestros términos y condiciones de devolución.",
 						icon: "warning",
 						buttons: {
 							cancel: "Cancelar",
