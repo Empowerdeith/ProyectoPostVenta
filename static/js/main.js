@@ -390,6 +390,23 @@ function revisionShow(data){
 		bloc +="<td>" + data.num_telf + "</td>";
 		bloc +="<td>" + data.email + "</td>";
 		bloc +="<td>" + data.direccion + "</td></tr>";
+		var bol_fill ="";
+		for(let i = 0; i < data.boletas.length; i++){
+			bol_fill += "<td>" + data.boletas[i].num_boleta + "</td>";
+			//---------Sección fechas---------------------------------
+			var fecha_obtenida = new Date(data.boletas[i].created_at);
+			var dia = fecha_obtenida.getDate();
+			var mes = fecha_obtenida.getMonth()+1;
+			var annio = fecha_obtenida.getFullYear();
+			//-------------------------------------------------------
+			var  dineros = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
+			bol_fill += "<td>" + dia+"/"+mes+"/"+annio + "</td>";
+			bol_fill += "<td>" + dineros.format(data.boletas[i].total) + "</td>";
+			bol_fill += "<td>" + dineros.format(data.boletas[i].total_dev) + "</td>";
+			bol_fill += "<td>" + dineros.format(data.boletas[i].monto_dev) + "</td>";
+			bol_fill += "</tr>";
+		}
+		$("#tabla_revision_boleta").find( "tbody" ).html(content);
 		//console.log(data.boletas.length);
 		//Todo esto es provisional y debe ser removido.
 		/*for(let i = 0; i < data.boletas.length; i++){
