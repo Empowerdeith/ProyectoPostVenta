@@ -406,7 +406,7 @@ function revisionShow(data){
 			bol_fill += "<td>" + dineros.format(data.boletas[i].monto_dev) + "</td>";
 			bol_fill += "</tr>";
 		}
-		$("#tabla_revision_boleta").find( "tbody" ).html(content);
+		$("#tabla_revision_boleta").find( "tbody" ).html(bol_fill);
 		//console.log(data.boletas.length);
 		//Todo esto es provisional y debe ser removido.
 		/*for(let i = 0; i < data.boletas.length; i++){
