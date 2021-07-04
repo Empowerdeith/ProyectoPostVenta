@@ -189,10 +189,6 @@ function mostrarBoleta(data){
 					//-----------------------------------------Término Swal-----------------------------------
 					function item_boleta(){
 						arr.forEach(function(arr, index){
-							console.log(arr_cantidad[index]);
-						});
-
-						/*arr.forEach(function(arr, index){
 							var formdata = new FormData();
 							formdata.append("id_item", data.boletas[id].ItemProductos[arr].id_item);
 							formdata.append("cantidad", arr_cantidad[index]);
@@ -214,15 +210,15 @@ function mostrarBoleta(data){
 							})						
 							.then(data => console.log(data))
 							.catch(error => console.log('error', error));
-						});*/
+						});
 					}
 					function boleta(){
 						var formboleta = new FormData();
 						formboleta.append("num_boleta", data.boletas[id].num_boleta);
 						formboleta.append("created_at", data.boletas[id].created_at);
 						formboleta.append("total", total_bol);
-						formboleta.append("total_dev", total);
-						formboleta.append("monto_dev", calc_devolucion_costo);
+						formboleta.append("total_dev", calc_devolucion_costo);
+						formboleta.append("monto_dev", total);
 						//arreglo id productos
 						arr.forEach(function(arr, index){
 							formboleta.append("ItemProductos", parseInt(data.boletas[id].ItemProductos[arr].id_item));
