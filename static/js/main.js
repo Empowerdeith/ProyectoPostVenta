@@ -392,7 +392,9 @@ function revisionShow(data){
 		bloc +="<td>" + data.direccion + "</td></tr>";
 		var bol_fill ="";
 		for(let i = 0; i < data.boletas.length; i++){
+			bol_fill += "<tr><td><input id=\""+i+"\" type=\"checkbox\" name=\"boleta_rev\" >"+"</td>";
 			bol_fill += "<tr><td>" + data.boletas[i].num_boleta + "</td>";
+			$("#tabla_cliente").find( "tbody" ).html(bloc);
 			//---------Sección fechas---------------------------------
 			var fecha_obtenida = new Date(data.boletas[i].created_at);
 			var dia = fecha_obtenida.getDate();
@@ -407,21 +409,31 @@ function revisionShow(data){
 			bol_fill += "</tr>";
 		}
 		$("#tabla_revision_boleta").find( "tbody" ).html(bol_fill);
-		//console.log(data.boletas.length);
-		//Todo esto es provisional y debe ser removido.
-		/*for(let i = 0; i < data.boletas.length; i++){
-			bloc +="<td>" + data.boletas[i].num_boleta + "</td></tr>";
-			var prods = "";
-			console.log(data.boletas[i].productos.length);
-			for(let k = 0; k < data.boletas[i].productos.length; k++){
-				prods += "<tr><td>" + data.boletas[i].productos[k].nombre_pro + "</td>";
-				var  monea = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
-				prods += "<td>" + monea.format(data.boletas[i].productos[k].precio) + "</td>";
-				prods += "</tr>";
-			}
-			$("#tabla_revision_prod").find( "tbody" ).html(prods);
-		}*/
-		$("#tabla_cliente").find( "tbody" ).html(bloc);
+		mostrar_correspondientes_prod(data);
+		function mostrar_correspondientes_prod(){
+			var id_rev;
+			$('input[type="checkbox"]').on('change', function() {$('input[name="boleta_rev"]').not(this).prop('checked', false);});
+			$('input[type="checkbox"][name="boleta_rev"]').click(function(){
+				if($(this).prop("checked") == true) {
+					var contenido = "";
+					id_rev = parseInt($(this).attr('id'));
+					for(let j = 0; j < data.boletas[id_rev].ItemProductos.length; j++){
+						var cantidad, precio_pro, nombre;
+						nombre_producto = data.boletas[id_rev].ItemProductos[j].productos.nombre_pro;
+						cantidad = data.boletas[id_rev].ItemProductos[j].cantidad;
+						precio_pro = data.boletas[id_rev].ItemProductos[j].productos.precio;
+						var  monea = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
+						//Llenado tabla de productos
+						contenido += "<tr><td>" + nombre_producto + "</td>";
+						contenido += "<td>" + monea.format(precio_pro) + "</td>";
+						contenido += "<td>" + cantidad + "</td>";
+						contenido += "</tr>";
+					}
+					$("#tabla_revision_prod").find( "tbody" ).html(contenido);
+				}
+			});
+		}
+		
 	}
 }
 function alerta_bton(){
