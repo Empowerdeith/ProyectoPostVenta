@@ -393,7 +393,7 @@ function revisionShow(data){
 		var bol_fill ="";
 		for(let i = 0; i < data.boletas.length; i++){
 			bol_fill += "<tr><td><input id=\""+i+"\" type=\"checkbox\" name=\"boleta_rev\" >"+"</td>";
-			bol_fill += "<tr><td>" + data.boletas[i].num_boleta + "</td>";
+			bol_fill += "<td>" + data.boletas[i].num_boleta + "</td>";
 			$("#tabla_cliente").find( "tbody" ).html(bloc);
 			//---------Sección fechas---------------------------------
 			var fecha_obtenida = new Date(data.boletas[i].created_at);
