@@ -214,16 +214,10 @@ function mostrarBoleta(data){
 							})						
 							.then(data => console.log(data))
 							.catch(error => console.log('error', error));
+							if(index+1==arr.length){
+								console.log("hola");
+							}
 						});
-						if(check==true){
-							console.log("Test");
-						}
-
-						
-						//boleta();
-						/*if(status==true){
-							boleta();
-						}*/
 					}
 					function boleta(){
 						var formboleta = new FormData();
