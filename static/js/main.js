@@ -189,6 +189,10 @@ function mostrarBoleta(data){
 					//-----------------------------------------Término Swal-----------------------------------
 					function item_boleta(){
 						arr.forEach(function(arr, index){
+							console.log(arr_cantidad[index]);
+						});
+
+						/*arr.forEach(function(arr, index){
 							var formdata = new FormData();
 							formdata.append("id_item", data.boletas[id].ItemProductos[arr].id_item);
 							formdata.append("cantidad", arr_cantidad[index]);
@@ -210,7 +214,7 @@ function mostrarBoleta(data){
 							})						
 							.then(data => console.log(data))
 							.catch(error => console.log('error', error));
-						});
+						});*/
 					}
 					function boleta(){
 						var formboleta = new FormData();
