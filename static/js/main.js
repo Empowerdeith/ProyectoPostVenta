@@ -78,7 +78,6 @@ function mostrarBoleta(data){
 						$("#error_msg2").html("");
 						$("#table_product").find("tbody").empty();
 						$( "#tabla_de_productos" ).show();
-						//console.log(data.boletas[id].ItemProductos.length);
 						//Inicio Cálculo total
 						//console.log("Inicio cálculo total");	
 						for(let j = 0; j < data.boletas[id].ItemProductos.length; j++){
@@ -137,7 +136,6 @@ function mostrarBoleta(data){
 							var result = data.boletas[id].ItemProductos[arr].productos.nombre_pro;
 							var price = data.boletas[id].ItemProductos[arr].productos.precio;
 							total += price*arr_cantidad[index];
-							//console.log(result, price);
 						}
 					);
 					var total_bol = data.boletas[id].total;
@@ -145,16 +143,15 @@ function mostrarBoleta(data){
 					/*console.log("Monto total boleta anterior: "+total_bol);
 					console.log("Monto Total actual: "+total);
 					console.log("Monto de devolución: "+calc_devolucion_costo);*/
-					if (calc_devolucion_costo==0){
-						calc_devolucion_costo=total_bol;
-						total=0;
-					}
 
+					// Monto final boleta, después de devolución es: calc_devolucion_costo
+					// Monto de devolucion es variable: total
+					// Monto inicial boleta es: total_boleta
 					//-----------------------------------------Inicio Swal-----------------------------------
 					swal({
 						title: "¿Desea confirmar la devolución de está boleta?\n\n",
-						text: "El monto actual de su boleta es: "+platita.format(total_bol)+".\nEl monto de su devolución es: "+platita.format(total)+
-						".\nEl monto final de su boleta, una vez aplicada la devolución es: "+platita.format(calc_devolucion_costo)+".\nAl confirmar, usted acepta nuestros términos y condiciones de devolución.",
+						text: "El monto inicial de su boleta era: "+platita.format(total_bol)+".\nEl valor total de los productos seleccionados para su devolución es: "+platita.format(total)+
+						".\nEl monto final de su boleta, una vez aplicada la devolución es: "+platita.format(calc_devolucion_costo)+".\nAl confirmar, usted acepta nuestros términos y condiciones.",
 						icon: "warning",
 						buttons: {
 							cancel: "Cancelar",
@@ -219,6 +216,9 @@ function mostrarBoleta(data){
 						formboleta.append("total", total_bol);
 						formboleta.append("total_dev", calc_devolucion_costo);
 						formboleta.append("monto_dev", total);
+						// Monto final boleta, después de devolución es: calc_devolucion_costo
+						// Monto de devolucion es variable: total
+						// Monto inicial boleta es: total_boleta
 						//arreglo id productos
 						arr.forEach(function(arr, index){
 							formboleta.append("ItemProductos", parseInt(data.boletas[id].ItemProductos[arr].id_item));
@@ -231,7 +231,6 @@ function mostrarBoleta(data){
 						let status;
 						fetch("http://18.207.25.202/api/devolucion/Boleta/", requestOptions)
 						.then((response) => {
-							// Get status using response.status
 							status = response.ok;
 							if (status==true){
 								test_clientes();
@@ -281,11 +280,11 @@ function mostrarBoleta(data){
 								.then(response => response.text())
 								.then(result => console.log(result))
 								.catch(error => console.log('error', error));
-
+								/*
 								console.log(data5);
 								console.log(data5.boletas);
 								console.log(data5.boletas.length);
-								console.log(arr_bol);
+								console.log(arr_bol);*/
 							}						
 							else{
 								cliente();
@@ -362,8 +361,6 @@ function unselectall(){
 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
 function revision_search(){
 	var buscar2 = $('#id_buscar5').val().toString();
-
-	// console.log(buscar1);
 	if(!buscar2.isEmpty()){
 		let url="http://18.207.25.202/api/cl2/"+buscar2
 		fetch(url)
@@ -436,24 +433,4 @@ function revisionShow(data){
 		
 	}
 }
-function alerta_bton(){
-	swal({
-		title: "¿Desea confirmar la devolución de está boleta?",
-		icon: "info",
-		text: "Al aceptar, usted acepta nuestros términos y condiciones de devolución.",
-		buttons: {
-			cancel: "Cancelar",
-			confirm: {text:'Confirmar',className: 'bton_confirmar_dev'}
-		}
-	}).then (val => {
-		console.log(val);
-		if(val){
-			swal({
-				title: "Su devolución ha sido ingresada.",
-				icon: "success"
-			});
-		}
-	});
-}
-
 /*---------------Zona de testing--------*/
