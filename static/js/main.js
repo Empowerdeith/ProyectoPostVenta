@@ -12,7 +12,7 @@ function esconder_revision(){
 }
 
 function esconder_prod_revision(){
-	$("#tabla_revision_prod").hide();
+	$("#tabla_revision_productos_mostrar").hide();
 }
 setTimeout(esconder_prod, 40);
 
@@ -436,7 +436,7 @@ function revisionShow(data){
 						contenido += "</tr>";
 					}
 					$("#tabla_revision_prod").find( "tbody" ).html(contenido);
-					$("#tabla_revision_prod").show();
+					$("#tabla_revision_productos_mostrar").show();
 				}
 			});
 		}
