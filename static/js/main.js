@@ -10,9 +10,15 @@ function esconder_prod(){
 function esconder_revision(){
 	$( "#tabla_revision_cli" ).hide();
 }
+
+function esconder_prod_revision(){
+	$("#tabla_revision_prod").hide();
+}
 setTimeout(esconder_prod, 40);
 
 setTimeout(esconder_revision, 40);
+
+setTimeout(esconder_prod_revision, 40);
 
 //Mostrar información principal de Boleta
 function mostrarBoleta(data){
@@ -367,6 +373,8 @@ function revision_search(){
 		.then(response => response.json())
 		.then(data => revisionShow(data))
 		.catch(error => console.log(error))
+		$("#tabla_revision_prod").find("tbody").empty();
+		esconder_prod_revision();
 	}
 	else{
 		$("#error_msg5").html("<br><br>Debe ingresar un número de transacción.");
@@ -388,6 +396,7 @@ function revisionShow(data){
 		bloc +="<td>" + data.email + "</td>";
 		bloc +="<td>" + data.direccion + "</td></tr>";
 		var bol_fill ="";
+
 		for(let i = 0; i < data.boletas.length; i++){
 			bol_fill += "<tr><td><input id=\""+i+"\" type=\"checkbox\" name=\"boleta_rev\" >"+"</td>";
 			bol_fill += "<td>" + data.boletas[i].num_boleta + "</td>";
@@ -427,6 +436,7 @@ function revisionShow(data){
 						contenido += "</tr>";
 					}
 					$("#tabla_revision_prod").find( "tbody" ).html(contenido);
+					$("#tabla_revision_prod").show();
 				}
 			});
 		}
