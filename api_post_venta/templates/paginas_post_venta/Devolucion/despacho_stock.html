@@ -1,0 +1,115 @@
+{% extends "paginas_post_venta/base/main.html" %}
+{% block contenido %}
+{% load static %}
+<div class="main_contenededor poppins">
+	<br><br><br>
+	<h1 class="aligncenter decoracion_linea text-white">Consulta retiro de Productos.</h1>
+	<br><br>
+	<div class="search-bar mt-sm-2">
+		<input type="text" class="form-control tamfuente22" name="q" id="id_buscar" placeholder="Ingrese Rut de cliente aquí...">
+		<button class="btn btn-lg btn-primary btn-block" onclick="prueba_g()" id="bton_buscar2" type="button">Buscar</button>
+		<div id="error_msg" class="aligncenter"></div>
+		<br><br>
+		<div id="myData">
+			<table class="table table-striped dt-responsive nowrap table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Número Solicitud</th>
+						<th scope="col">Fecha Ingreso</th>
+						<th scope="col">Nombre Cliente</th>
+						<th scope="col">Rut</th>
+						<th scope="col">Teléfono</th>
+						<th scope="col">Email</th>
+						<th scope="col">Dirección</th>
+						<th scope="col">Nombre Producto</th>
+						<th scope="col">Estado Orden</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td id="num_solicitud"></td>
+						<td id="fecha_ingreso"></td>
+						<td id="nombre_cl"></td>
+						<td id="rut"></td>
+						<td id="num_telf"></td>
+						<td id="email"></td>
+						<td id="direccion"></td>
+						<td id="nombre_pro"></td>
+						<td id="estado_orden"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<h1 class="aligncenter decoracion_linea text-white">Gestion restablecimiento stock.</h1>
+	<br><br>
+	<div class="search-bar mt-sm-2">
+		<input type="text" class="form-control tamfuente22" name="q2" id="id_buscar2" placeholder="ingrese nombre de producto a ingresar...">
+		<button class="btn btn-lg btn-primary btn-block" onclick="prueba_s()" id="bton_buscar2" type="button">Buscar</button>
+		<div id="error_msg" class="aligncenter"></div>
+		<br><br>
+		<div id="myData2">
+			<table class="table table-striped dt-responsive nowrap table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">ID Producto</th>
+						<th scope="col">Nombre Producto</th>
+						<th scope="col">Precio</th>
+						<th scope="col">Cantidad</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td id="id_prod"></td>
+						<td id="nombre_pro2"></td>
+						<td id="precio"></td>
+						<td id="cantidad"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<br><br>
+		<h1 class="aligncenter decoracion_linea text-white">Agregar Cantidad a Stock.</h1>
+		<br>
+		<div class="container">
+			<div class="row mt-3">
+				<div class="col">
+					<form class="form text-white" id="myForm">
+						<label for="ID Producto" class="aligncenter">ID Producto:</label>
+						<div class="form-group">
+							<input type="text" name="id_prod2" id="id_prod2"><br>
+						</div>
+						<label for="cantidad" class="aligncenter">Cantidad:</label>
+						<div class="form-group">
+							<input type="text" name="cantidad" id="cantidad"><br>
+						</div>
+						<br>
+						<button class="btn btn-primary bton_color2"type="submit">Enviar</button>
+					</form>
+					<br><br>
+				</div>
+			</div>
+		</div>
+		<script>
+			const myForm = document.getElementById('myForm');
+
+			myForm.addEventListener('submit', function (e){
+				e.preventDefault();
+
+				const formData = new FormData(this);
+				id_prod2 = $('#id_prod2').val().toString();
+				fetch("http://3.222.189.59/stk_patch/"+id_prod2,{
+				method: 'PATCH',
+	  			body: formData,
+				}).then(function (response){
+					return response.text();
+				}).then(function (text){
+					console.log(text);
+				}).catch(function(error){
+					console.error(error);
+				})			
+			});
+		</script>
+</div>
+{% endblock contenido %}
