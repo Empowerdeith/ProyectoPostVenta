@@ -149,10 +149,11 @@ function enviar_orden_retiro(){
 	}
 }
 function clean_retiro_a_despacho(){
-	$("#rut_1").value("");
-	$('#nombre_cl_1').html("");
-	$('#num_telf_1').html("");
-	$('#email_1').html("");
-	$('#nombre_pro_1').html("");
-	$('#direccion_1').html("");
+	document.getElementById('#rut_1').value = '';
+	//var rut_ret = $('#rut_1').val();
+	var nom_ret = $('#nombre_cl_1').val();
+	var tel_ret = $('#num_telf_1').val();
+	var email_ret = $('#email_1').val();
+	var produc_ret = $('#nombre_pro_1').val();
+	var direc_ret = $('#direccion_1').val();
 }
