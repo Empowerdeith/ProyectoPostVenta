@@ -124,6 +124,10 @@ function enviar_orden_retiro(){
 		});
 	}
 	if (check_results==true){
+		swal({
+			title: "El retiro se ha realizado exitosamente.",
+			icon: "success"
+		});
 		var ordenretiro_postvt = new FormData();
 		ordenretiro_postvt.append("rut", rut_ret);
 		ordenretiro_postvt.append("nombre_cl", nom_ret);
@@ -143,5 +147,12 @@ function enviar_orden_retiro(){
 		  .then(result => console.log(result))
 		  .catch(error => console.log('error', error));
 	}
-
+}
+function clean_retiro_a_despacho(){
+	$("#rut_1").html("");
+	$('#nombre_cl_1').html("");
+	$('#num_telf_1').html("");
+	$('#email_1').html("");
+	$('#nombre_pro_1').html("");
+	$('#direccion_1').html("");
 }
