@@ -94,37 +94,37 @@
 					<form class="form text-white" id="myForm">
 						<label for="Rut" class="aligncenter">Rut:</label>
 						<div class="form-group">
-							<input type="text" name="rut" id="rut"><br>
+							<input type="text" name="rut" id="rut_1"><br>
 						</div>
 						<label for="nombre_cl" class="aligncenter">Nombre Cliente:</label>
 						<div class="form-group">
-							<input type="text" name="nombre_cl" id="nombre_cl"><br>
+							<input type="text" name="nombre_cl" id="nombre_cl_1"><br>
 						</div>
 						<label for="num_telf" class="aligncenter">Teléfono:</label>
 						<div class="form-group">
-							<input type="number" name="num_telf" id="num_telf"><br>
+							<input type="number" name="num_telf" id="num_telf_1"><br>
 						</div>
 						<label for="email" class="aligncenter">Email:</label>
 						<div class="form-group">
-							<input type="email" name="email" id="email"><br>
+							<input type="email" name="email" id="email_1"><br>
 						</div>
 						<label for="nombre_pro" class="aligncenter">Producto(s):</label>
 						<div class="form-group">
-							<input type="text" name="nombre_pro" id="nombre_pro"><br>
+							<input type="text" name="nombre_pro" id="nombre_pro_1"><br>
 						</div>												
 						<label for="direccion" class="aligncenter">Dirección:</label>
 						<div class="form-group">
-							<input type="text" name="direccion" id="direccion"><br>
+							<input type="text" name="direccion" id="direccion_1"><br>
 						</div>
 						<br>
-						<button class="btn btn-primary bton_color2"type="submit">Enviar</button>
+						<button class="btn btn-primary bton_color2"type="submit" onclick="enviar_orden_retiro()">Enviar</button>
 					</form>
 					<br><br>
 				</div>
 			</div>
 		</div>
 	
-		<script>
+		<!--<script>
 			const myForm = document.getElementById('myForm');
 
 			myForm.addEventListener('submit', function (e){
@@ -142,7 +142,7 @@
 					console.error(error);
 				})			
 			});
-		</script>
+		</script>-->
 	</div>
 </div>
 {% endblock contenido %}
