@@ -13,15 +13,17 @@
 	  <ul class="nav nav-pill  tam-fuente aligncenter">
 	    <li class="nav-item"><a href="{% url 'home' %}" class="nav-link text-white" aria-current="page">Inicio</a></li>
 	    <li class="nav-item"><a href="{% url 'devolucion' %}" class="nav-link text-white">Devoluciones</a></li>
-	   	<li class="nav-item dropdown" id="proceso_devolucion">
-			<a class="nav-link dropdown-toggle text-white" href="#" id="dropdown05" data-bs-toggle="dropdown" 
-			aria-expanded="false">Proceso Devolución</a>
-			<ul class="dropdown-menu" aria-labelledby="dropdown05" id="panel_devolucion_proc">
-				<li><a class="dropdown-item aligncenter text-white" href="{% url 'revision' %}">Gestión de Revisión</a></li>
-				<li><a class="dropdown-item aligncenter text-white" href="{% url 'despacho_stock' %}">Gestión de Stock</a></li>
-				<li><a class="dropdown-item aligncenter text-white" href="{% url 'anexo_boleta' %}">Gestión Anexo Boleta</a></li>
-			</ul>
-        </li>	
+	    <div style="width: 300px;">
+		   	<li style="width: inherit !important;" class="nav-item dropdown" id="proceso_devolucion">
+				<a class="nav-link dropdown-toggle text-white" href="#" id="dropdown05" data-bs-toggle="dropdown" 
+				aria-expanded="false">Proceso Devolución</a>
+				<ul style="width: inherit !important;" class="dropdown-menu" aria-labelledby="dropdown05" id="panel_devolucion_proc">
+					<li><a class="dropdown-item aligncenter text-white" href="{% url 'revision' %}">Gestión de Revisión</a></li>
+					<li><a class="dropdown-item aligncenter text-white" href="{% url 'despacho_stock' %}">Gestión de Stock</a></li>
+					<li><a class="dropdown-item aligncenter text-white" href="{% url 'anexo_boleta' %}">Gestión Anexo Boleta</a></li>
+				</ul>
+	        </li>
+    	</div>
 	    <li class="nav-item"><a href="#" class="nav-link text-white">Preguntas Frecuentes</a></li>
 	    <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-white" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Cuenta</a>
