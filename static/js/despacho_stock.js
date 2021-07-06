@@ -98,7 +98,7 @@ function hide_table2() {
       }
   }
 
-  function anexo_boletas_exec(){
+/*function anexo_boletas_exec(){
   	var myForm = document.getElementById('myForm');
   	var formData = new FormData(myForm);
 	fetch("http://35.171.203.143/AnexoBoleta/",{
@@ -115,4 +115,4 @@ function hide_table2() {
 		console.error(error);
 	})
 
-  }
+}*/
