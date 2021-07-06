@@ -149,7 +149,7 @@ function enviar_orden_retiro(){
 	}
 }
 function clean_retiro_a_despacho(){
-	$("#rut_1").html("");
+	$("#rut_1").value("");
 	$('#nombre_cl_1').html("");
 	$('#num_telf_1').html("");
 	$('#email_1').html("");
