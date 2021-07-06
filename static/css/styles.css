@@ -162,6 +162,9 @@ tbody{
 #panel_devolucion_proc{
 	background-color: transparent!important;
 }
+#panel_cuenta_proc{
+	background-color: transparent!important;
+}
 .dropdown-item:focus, .dropdown-item:hover {
     background-color: #00386f!important;
 }
