@@ -168,3 +168,6 @@ tbody{
 .dropdown-item:focus, .dropdown-item:hover {
     background-color: #00386f!important;
 }
+.dropdown-menu{
+	text-align: center!important;
+}
