@@ -111,7 +111,7 @@ function enviar_orden_retiro(){
 		check_results = false;
 		message_error_checksum+="Complete los campos faltantes.";
 	}
-	else if(isNaN(tel_ret)){
+	if(isNaN(tel_ret)){
 		check_results = false;
 		message_error_checksum+="El telefono debe ser númerico";
 	}
