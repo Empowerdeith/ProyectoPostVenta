@@ -115,6 +115,10 @@ function enviar_orden_retiro(){
 		check_results = false;
 		message_error_checksum+="\n-El telefono debe ser númerico.";
 	}
+	if(!validateEmail(email_ret)){
+		check_results = false;
+		message_error_checksum+="\n-El correo no es válido.";
+	}
 	if (check_results==false){
 		swal({
 			title: "Ha ocurrido un error.\n\n",
@@ -155,4 +159,8 @@ function clean_retiro_a_despacho(){
 	$('#email_1').val("");
 	$('#nombre_pro_1').val("");
 	$('#direccion_1').val("");
+}
+function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
 }
