@@ -97,3 +97,22 @@ function hide_table2() {
           $("#error_msg").html("<br><br>Debe ingresar un producto.");
       }
   }
+
+  function anexo_boletas_exec(){
+  	var myForm = document.getElementById('myForm');
+  	var formData = new FormData(myForm);
+	fetch("http://35.171.203.143/AnexoBoleta/",{
+		method: 'POST',
+		body: formData,
+	})
+	.then(function (response){
+		return response.text();
+	})
+	.then(function (text){
+		console.log(text);
+	})
+	.catch(function(error){
+		console.error(error);
+	})
+
+  }

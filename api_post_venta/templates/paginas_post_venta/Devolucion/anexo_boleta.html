@@ -104,13 +104,13 @@
 							<input type="number" name="monto_dev" id="monto_dev"><br>
 						</div>                                                                                                                        
 						<br>
-						<button class="btn btn-primary bton_color2"type="submit">Enviar</button>
+						<button class="btn btn-primary bton_color2"type="submit" onclick="anexo_boletas_exec()">Enviar</button>
 					</form>
 					<br><br>
 				</div>
 			</div>
 		</div>	
-		<script>
+		<!--<script>
 			const myForm = document.getElementById('myForm');
 
 			myForm.addEventListener('submit', function (e){
@@ -118,17 +118,20 @@
 
 				const formData = new FormData(this);
 				fetch("http://35.171.203.143/AnexoBoleta/",{
-				method: 'POST',
-	  			body: formData,
-				}).then(function (response){
+
+					method: 'POST',
+	  				body: formData,})
+				.then(function (response){
 					return response.text();
-				}).then(function (text){
+				})
+				.then(function (text){
 					console.log(text);
-				}).catch(function(error){
+				})
+				.catch(function(error){
 					console.error(error);
 				})			
 			});
-		</script>
+		</script>-->
 	</div>
 </div>
 
