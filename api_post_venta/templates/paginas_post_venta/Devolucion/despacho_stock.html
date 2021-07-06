@@ -67,8 +67,7 @@
 				</tbody>
 			</table>
 		</div>
-	</div>
-	<br><br>
+		<br><br>
 		<h1 class="text-white">Agregar Cantidad a Stock:</h1>
 		<br>
 		<div class="container">
@@ -90,25 +89,26 @@
 				</div>
 			</div>
 		</div>
-		<script>
-			const myForm = document.getElementById('myForm');
+	</div>
+	<script>
+		const myForm = document.getElementById('myForm');
 
-			myForm.addEventListener('submit', function (e){
-				e.preventDefault();
+		myForm.addEventListener('submit', function (e){
+			e.preventDefault();
 
-				const formData = new FormData(this);
-				id_prod2 = $('#id_prod2').val().toString();
-				fetch("http://3.222.189.59/stk_patch/"+id_prod2,{
-				method: 'PATCH',
-	  			body: formData,
-				}).then(function (response){
-					return response.text();
-				}).then(function (text){
-					console.log(text);
-				}).catch(function(error){
-					console.error(error);
-				})			
-			});
-		</script>
+			const formData = new FormData(this);
+			id_prod2 = $('#id_prod2').val().toString();
+			fetch("http://3.222.189.59/stk_patch/"+id_prod2,{
+			method: 'PATCH',
+  			body: formData,
+			}).then(function (response){
+				return response.text();
+			}).then(function (text){
+				console.log(text);
+			}).catch(function(error){
+				console.error(error);
+			})			
+		});
+	</script>
 </div>
 {% endblock contenido %}
