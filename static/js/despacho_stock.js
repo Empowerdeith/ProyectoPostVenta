@@ -109,16 +109,16 @@ function enviar_orden_retiro(){
 
 	if(rut_ret.isEmpty()||nom_ret.isEmpty()||tel_ret.isEmpty()||email_ret.isEmpty()||produc_ret.isEmpty()||direc_ret.isEmpty()){
 		check_results = false;
-		message_error_checksum+="Complete los campos faltantes.";
+		message_error_checksum+="-Complete los campos faltantes.";
 	}
 	if(isNaN(tel_ret)){
 		check_results = false;
-		message_error_checksum+="El telefono debe ser númerico";
+		message_error_checksum+="-El telefono debe ser númerico.";
 	}
 	if (check_results==false){
 		swal({
 			title: "Ha ocurrido un error.\n\n",
-			text: ""+message_error_checksum+"",
+			text: ""+message_error_checksum+"\n",
 			icon: "error",
 			button: "Ok",
 		});
