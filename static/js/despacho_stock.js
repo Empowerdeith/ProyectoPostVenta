@@ -149,8 +149,9 @@ function enviar_orden_retiro(){
 	}
 }
 function clean_retiro_a_despacho(){
-	document.getElementById('#rut_1').value = '';
+	//document.getElementById('#rut_1').value = '';
 	//var rut_ret = $('#rut_1').val();
+	$('#rut_1').val("");
 	var nom_ret = $('#nombre_cl_1').val();
 	var tel_ret = $('#num_telf_1').val();
 	var email_ret = $('#email_1').val();
