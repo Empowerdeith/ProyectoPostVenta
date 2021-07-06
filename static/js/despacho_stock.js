@@ -118,7 +118,7 @@ function enviar_orden_retiro(){
 	if (check_results==false){
 		swal({
 			title: "Ha ocurrido un error.\n\n",
-			text: ""+message_error_checksum+"\n",
+			text: "\n"+message_error_checksum+"\n",
 			icon: "error",
 			button: "Ok",
 		});
