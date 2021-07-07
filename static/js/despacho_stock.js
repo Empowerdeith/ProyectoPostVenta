@@ -194,10 +194,7 @@ function agregar_cantidad_a_stock_prod(){
 		});
 	}
 	if(checkerman==true){
-		swal({
-			title: "La cantidad del producto con id: "+id_prod_despacho_stock1+", ha sido exitosamente cambiada a: "+cantidad_despacho_stock1+".",
-			icon: "success"
-		});
+
 		var formdata = new FormData();
 		formdata.append("cantidad", cantidad_despacho_stock1);
 
@@ -208,8 +205,13 @@ function agregar_cantidad_a_stock_prod(){
 		};
 
 		fetch("http://3.222.189.59/stk_patch/"+id_prod_despacho_stock1.toString()+"/", requestOptions)
-		.then(response => response.text())
-		.then(result => console.log(result))
+		.then(response => response.json())
+		.then(result => {
+			swal({
+				title: "La cantidad del producto:"+result.nombre_pro+" con id: "+id_prod_despacho_stock1+", ha sido exitosamente cambiada a: "+cantidad_despacho_stock1+".",
+				icon: "success"
+			});
+		})
 		.catch(error => console.log('error', error));
 	}
 
