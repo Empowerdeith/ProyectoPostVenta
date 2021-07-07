@@ -319,8 +319,8 @@ function anexoBoletaSearch(){
 		.then(response => response.json())
 		.then(data => anexoBoletaShow_stuff(data))
 		.catch(error => console.log(error))
-		//$("#tabla_revision_prod").find("tbody").empty();
-		//esconder_prod_revision();
+		$("#tabla_anexo_bol_prod").find("tbody").empty();
+		esconder_anexo_bol_productos();
 	}
 	else{
 		$("#error_msg10").html("<br><br>Debe ingresar un número de transacción.");
@@ -329,7 +329,7 @@ function anexoBoletaSearch(){
 function anexoBoletaShow_stuff(data){
 	console.log(data);
 	if (data == "No existe cliente."){
-		//esconder_revision();
+		esconder_anexo_cli();
 		$("#error_msg10").html("<br><br>No Existe el cliente ingresado.");
 	}
 	else{
