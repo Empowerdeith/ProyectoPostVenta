@@ -329,12 +329,12 @@ function anexoBoletaSearch(){
 function anexoBoletaShow_stuff(data){
 	console.log(data);
 	if (data == "No existe cliente."){
-		esconder_anexo_cli();
+		esconder_todo_div_anexo_cli();
 		$("#error_msg10").html("<br><br>No Existe el cliente ingresado.");
 	}
 	else{
 		$("#error_msg10").html("");
-		$( "#tabla_cliente_fill_anexo" ).show();
+		$( "#tabla_anexo_cli" ).show();
 		var bloc = "";
 		bloc +="<tr><td>" + data.rut + "</td>";
 		bloc +="<td>" + data.nombre_cl + "</td>"
@@ -388,12 +388,16 @@ function anexoBoletaShow_stuff(data){
 		}	
 	}
 }
-function esconder_anexo_cli(){
+/*function esconder_anexo_cli(){
 	$( "#tabla_cliente_fill_anexo" ).hide();
-}
+}*/
 function esconder_anexo_bol_productos(){
-	$("#tabla_revision_productos_mostrar").hide();
+	$("#tabla_anexo_bol_prod").hide();
 }
-setTimeout(esconder_anexo_cli, 40);
+function esconder_todo_div_anexo_cli(){
+	$("#tabla_anexo_cli").hide();
+}
+//setTimeout(esconder_anexo_cli, 40);
+setTimeout(esconder_todo_div_anexo_cli, 40);
 
 setTimeout(esconder_anexo_bol_productos, 40);
