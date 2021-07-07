@@ -128,10 +128,7 @@ function enviar_orden_retiro(){
 		});
 	}
 	if (check_results==true){
-		swal({
-			title: "El retiro se ha realizado exitosamente.",
-			icon: "success"
-		});
+
 		var ordenretiro_postvt = new FormData();
 		ordenretiro_postvt.append("rut", rut_ret);
 		ordenretiro_postvt.append("nombre_cl", nom_ret);
@@ -147,9 +144,16 @@ function enviar_orden_retiro(){
 		};
 
 		fetch("http://3.88.62.216/OrdenRetiro/", requestOptions)
-		  .then(response => response.text())
-		  .then(result => console.log(result))
-		  .catch(error => console.log('error', error));
+		.then(response => response.text())
+		.then(result => {
+		  	swal({
+				title: "El retiro se ha realizado exitosamente.",
+				icon: "success"
+			});
+			clean_retiro_a_despacho();
+		  	console.log(result);
+		  })
+		.catch(error => console.log('error', error));
 	}
 }
 function clean_retiro_a_despacho(){
