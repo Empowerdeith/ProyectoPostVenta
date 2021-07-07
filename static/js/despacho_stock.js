@@ -334,7 +334,7 @@ function anexoBoletaShow_stuff(data){
 	}
 	else{
 		$("#error_msg10").html("");
-		//$( "#tabla_revision_cli" ).show();
+		$( "#tabla_cliente_fill_anexo" ).show();
 		var bloc = "";
 		bloc +="<tr><td>" + data.rut + "</td>";
 		bloc +="<td>" + data.nombre_cl + "</td>"
@@ -382,10 +382,18 @@ function anexoBoletaShow_stuff(data){
 						contenido += "</tr>";
 					}
 					$("#tabla_anexo_bol_prod").find( "tbody" ).html(contenido);
-					//$("#tabla_revision_productos_mostrar").show();
+					$("#tabla_anexo_bol_prod").show();
 				}
 			});
-		}
-		
+		}	
 	}
 }
+function esconder_anexo_cli(){
+	$( "#tabla_cliente_fill_anexo" ).hide();
+}
+function esconder_anexo_bol_productos(){
+	$("#tabla_revision_productos_mostrar").hide();
+}
+setTimeout(esconder_anexo_cli, 40);
+
+setTimeout(esconder_anexo_bol_productos, 40);
