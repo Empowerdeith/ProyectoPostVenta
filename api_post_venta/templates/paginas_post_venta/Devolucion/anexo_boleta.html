@@ -69,48 +69,47 @@
 		<br>
 		<div class="container">
 			<div class="row mt-3">
-				<div class="col">
-					<form class="form text-white" id="myForm">
+				<div class="col text-white">
 						<label for="Rut" class="aligncenter">Rut:</label>
-						<div class="form-group">
-							<input type="text" name="rut" id="rut"><br>
-						</div>
-						<label for="nombre_cl" class="aligncenter">Nombre Cliente:</label>
-						<div class="form-group">
-							<input type="text" name="nombre_cl" id="nombre_cl"><br>
-						</div>
-						<label for="num_telf" class="aligncenter">Teléfono:</label>
-						<div class="form-group">
-							<input type="number" name="num_telf" id="num_telf"><br>
-						</div>
-						<label for="email" class="aligncenter">Email:</label>
-						<div class="form-group">
-							<input type="email" name="email" id="email"><br>
-						</div>
-						<label for="direccion" class="aligncenter">Dirección:</label>
-						<div class="form-group">
-							<input type="text" name="direccion" id="direccion"><br>
-						</div>
-						<label for="total" class="aligncenter">Total antes devolución:</label>
-						<div class="form-group">
-							<input type="number" name="total" id="total"><br>
-						</div>
-						<label for="total_dev" class="aligncenter">Monto a devolver:</label>
-						<div class="form-group">
-							<input type="number" name="total_dev" id="total_dev"><br>
-						</div>
-						<label for="monto_dev" class="aligncenter">Monto boleta tras devolucion:</label>
-						<div class="form-group">
-							<input type="number" name="monto_dev" id="monto_dev"><br>
-						</div>                                                                                                                        
 						<br>
-						<button class="btn btn-primary bton_color2"type="submit">Enviar</button>
-					</form>
+						<input type="text" name="rut" id="rut12">
+						<br>
+						<label for="nombre_cl" class="aligncenter">Nombre Cliente:</label>
+						<br>
+						<input type="text" name="nombre_cl" id="nombre_cl12">
+						<br>
+						<label for="num_telf" class="aligncenter">Teléfono:</label>
+						<br>
+						<input type="text" name="num_telf" id="num_telf12">
+						<br>
+						<label for="email" class="aligncenter">Email:</label>
+						<br>
+						<input type="email" name="email" id="email12">
+						<br>
+						<label for="direccion" class="aligncenter">Dirección:</label>
+						<br>
+						<input type="text" name="direccion" id="direccion12">
+						<br>
+						<label for="total" class="aligncenter">Total antes devolución:</label>
+						<br>
+						<input type="text" name="total" id="total12">
+						<br>
+						<label for="total_dev" class="aligncenter">Monto a devolver:</label>
+						<br>
+						<input type="text" name="total_dev" id="total_dev12">
+						<br>
+						<label for="monto_dev" class="aligncenter">Monto boleta tras devolución:</label>
+						<br>
+						<input type="text" name="monto_dev" id="monto_dev12">
+						<br>
+						<br>
+						<button class="btn btn-primary bton_color2" onclick="">Enviar</button>
+						<button class="btn btn-primary bton_color2" onclick="clean_retiro_a_despacho()">Limpiar</button>
 					<br><br>
 				</div>
 			</div>
 		</div>	
-		<script>
+		<!--<script>
 			const myForm = document.getElementById('myForm');
 
 			myForm.addEventListener('submit', function (e){
@@ -131,7 +130,7 @@
 					console.error(error);
 				})			
 			});
-		</script>
+		</script>-->
 	</div>
 </div>
 

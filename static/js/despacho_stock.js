@@ -226,3 +226,78 @@ function limpiar_agreg_cantidad_stock(){
 	$('#id_prod_despacho_stock').val("");
 	$('#cantidad_despacho_stock').val("");
 }
+
+function enviar_anexo_boleta_func(){
+	var check_results3 = true;
+	var message_error_checksum3 = "";
+	var rut_ret2 = $('#rut12').val();
+	var nombrecli_ret2 = $('#nombre_cl12').val();
+	var tel_ret2 = $('#num_telf12').val();
+	var email_ret2 = $('#email12').val();
+	var direcc_ret2 = $('#direccion12').val();
+	var total_ret2 = $('#total12').val();
+	var total_dev_ret2 = $('#total_dev12').val();
+	var monto_dev_ret2 = $('#monto_dev12').val();
+
+	if(rut_ret2.isEmpty()||nombrecli_ret2.isEmpty()||tel_ret2.isEmpty()||email_ret2.isEmpty()||direcc_ret2.isEmpty()||total_ret2.isEmpty()||
+		total_dev_ret2.isEmpty()||monto_dev_ret2.isEmpty()){
+		check_results3 = false;
+		message_error_checksum3 += "\n-Complete los campos faltantes.";
+	}
+	if(isNaN(tel_ret2)){
+		check_results3 = false;
+		message_error_checksum3+="\n-El teléfono debe ser númerico.";
+	}
+	if(isNaN(total_ret2)){
+		check_results3 = false;
+		message_error_checksum3+="\n-El total antes de devolución debe ser númerico.";
+	}
+	if(isNaN(total_dev_ret2)){
+		check_results3 = false;
+		message_error_checksum3+="\n-El monto a devolver debe ser númerico.";
+	}
+	if(isNaN(monto_dev_ret2)){
+		check_results3 = false;
+		message_error_checksum3+="\n-El monto tras boleta de devolución debe ser númerico.";
+	}
+	if(!validateEmail(email_ret2)){
+		check_results3 = false;
+		message_error_checksum3+="\n-El correo no es válido.";
+	}
+	if(check_results3==false){
+		swal({
+			title: "Ha ocurrido un error.\n\n",
+			text: ""+message_error_checksum3+"",
+			icon: "error",
+			button: "Ok",
+		});
+	}
+	if(check_results3==true){
+		var formdata = new FormData();
+		formdata.append("rut", rut_ret2);
+		formdata.append("nombre_cl", nombrecli_ret2);
+		formdata.append("num_telf", tel_ret2);
+		formdata.append("email", email_ret2);
+		formdata.append("direccion", direcc_ret2);
+		formdata.append("total", total_ret2);
+		formdata.append("total_dev", total_dev_ret2);
+		formdata.append("monto_dev", monto_dev_ret2);
+
+		var requestOptions = {
+		  method: 'POST',
+		  body: formdata,
+		  redirect: 'follow'
+		};
+
+		fetch("http://35.171.203.143/AnexoBoleta/", requestOptions)
+		.then(response => response.text())
+		.then(result => {
+			swal({
+				title: "Se ha creado exitosamente el anexo de boleta para este cliente.",
+				icon: "success"
+			});
+			console.log(result);
+		})
+		.catch(error => console.log('error', error));
+	}
+}
