@@ -5,10 +5,10 @@ setTimeout(hide_table, 40);
 function mostrarOrden(data){
 	if (data == "No existe la orden ingresada."){
 		hide_table()
-		$("#error_msg").html("<br><br>"+data);
+		$("#error_msg7").html("<br><br>"+data);
 	}
 	else{
-		$("#error_msg").html("");
+		$("#error_msg7").html("");
 		$( "#myData" ).show();
 		var num_solicitud = $("#num_solicitud");
 		var nombre_cl = $("#nombre_cl");
@@ -52,7 +52,7 @@ function prueba_g(){
 	}
 	else{
 		hide_table()
-		$("#error_msg").html("<br><br>Debe ingresar un número de orden.");
+		$("#error_msg7").html("<br><br>Debe ingresar un número de orden.");
 	}
 }
 
@@ -63,10 +63,10 @@ setTimeout(hide_table2, 40);
 function mostrarProducto(data){
 	if (data == "No existe la producto ingresada."){
 	  hide_table2()
-	  $("#error_msg").html("<br><br>"+data);
+	  $("#error_msg8").html("<br><br>"+data);
 	}
 	else{
-	  $("#error_msg").html("");
+	  $("#error_msg8").html("");
 	  $( "#myData2" ).show();
 	  var id_prod = $("#id_prod");
 	  var nombre_pro = $("#nombre_pro2");
@@ -94,7 +94,7 @@ function prueba_s(){
 	}
 	else{
 	  hide_table2()
-	  $("#error_msg").html("<br><br>Debe ingresar un producto.");
+	  $("#error_msg8").html("<br><br>Debe ingresar un producto.");
 	}
 }
 function enviar_orden_retiro(){
@@ -300,4 +300,14 @@ function enviar_anexo_boleta_func(){
 		})
 		.catch(error => console.log('error', error));
 	}
+}
+function limpiar_anexus_boletus(){
+	$('#rut12').val("");
+	$('#nombre_cl12').val("");
+	$('#num_telf12').val("");
+	$('#email12').val("");
+	$('#direccion12').val("");
+	$('#total12').val("");
+	$('#total_dev12').val("");
+	$('#monto_dev12').val("");
 }
