@@ -296,6 +296,7 @@ function enviar_anexo_boleta_func(){
 				title: "Se ha creado exitosamente el anexo de boleta para este cliente.",
 				icon: "success"
 			});
+			limpiar_anexus_boletus();
 			console.log(result);
 		})
 		.catch(error => console.log('error', error));
