@@ -113,7 +113,7 @@ function enviar_orden_retiro(){
 	}
 	if(isNaN(tel_ret)){
 		check_results = false;
-		message_error_checksum+="\n-El telefono debe ser númerico.";
+		message_error_checksum+="\n-El teléfono debe ser númerico.";
 	}
 	if(!validateEmail(email_ret)){
 		check_results = false;
@@ -163,4 +163,59 @@ function clean_retiro_a_despacho(){
 function validateEmail(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
+}
+
+/*Sección despacho a Stock*/
+//--------------------------------------------------------------------------------------
+function agregar_cantidad_a_stock_prod(){
+	var checkerman = true;
+	var message_error_checksum2 = "";
+	var id_prod_despacho_stock1 = $('#id_prod_despacho_stock').val();
+	var cantidad_despacho_stock1 = $('#cantidad_despacho_stock').val();
+
+	if(id_prod_despacho_stock1.isEmpty()||cantidad_despacho_stock1.isEmpty()){
+		checkerman = false;
+		message_error_checksum2+="\n-Complete los campos faltantes.";
+	}
+	if(isNaN(id_prod_despacho_stock1)){
+		checkerman = false;
+		message_error_checksum2+="\n-El Id de producto debe ser númerico.";
+	}
+	if(isNaN(cantidad_despacho_stock1)){
+		checkerman = false;
+		message_error_checksum2+="\n-La cantidad de producto debe ser númerico.";
+	}
+	if(checkerman==false){
+		swal({
+			title: "Ha ocurrido un error.\n\n",
+			text: ""+message_error_checksum2+"",
+			icon: "error",
+			button: "Ok",
+		});
+	}
+	if(checkerman==true){
+		swal({
+			title: "La cantidad del producto con id: "+id_prod_despacho_stock1+", ha sido exitosamente cambiada a: "+cantidad_despacho_stock1+".",
+			icon: "success"
+		});
+		var formdata = new FormData();
+		formdata.append("cantidad", cantidad_despacho_stock1);
+
+		var requestOptions = {
+		  method: 'PATCH',
+		  body: formdata,
+		  redirect: 'follow'
+		};
+
+		fetch("http://3.222.189.59/stk_patch/"+id_prod_despacho_stock1.toString()+"/", requestOptions)
+		.then(response => response.text())
+		.then(result => console.log(result))
+		.catch(error => console.log('error', error));
+	}
+
+
+}
+function limpiar_agreg_cantidad_stock(){
+	$('#id_prod_despacho_stock').val("");
+	$('#cantidad_despacho_stock').val("");
 }

@@ -72,25 +72,24 @@
 		<br>
 		<div class="container">
 			<div class="row mt-3">
-				<div class="col">
-					<form class="form text-white" id="myForm">
+				<div class="col text-white">
 						<label for="ID Producto" class="aligncenter">ID Producto:</label>
-						<div class="form-group">
-							<input type="text" name="id_prod2" id="id_prod2"><br>
-						</div>
-						<label for="cantidad" class="aligncenter">Cantidad:</label>
-						<div class="form-group">
-							<input type="text" name="cantidad" id="cantidad"><br>
-						</div>
 						<br>
-						<button class="btn btn-primary bton_color2"type="submit">Enviar</button>
-					</form>
+						<input type="text" name="id_prod2" id="id_prod_despacho_stock">
+						<br>
+						<label for="cantidad" class="aligncenter">Cantidad:</label>
+						<br>
+						<input type="text" name="cantidad" id="cantidad_despacho_stock">
+						<br>
+						<br>
+						<button class="btn btn-primary bton_color2" onclick="agregar_cantidad_a_stock_prod()">Enviar</button>
+						<button class="btn btn-primary bton_color2" onclick="">Limpiar</button>
 					<br><br>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script>
+	<!--<script>
 		const myForm = document.getElementById('myForm');
 
 		myForm.addEventListener('submit', function (e){
@@ -109,6 +108,6 @@
 				console.error(error);
 			})			
 		});
-	</script>
+	</script>-->
 </div>
 {% endblock contenido %}
