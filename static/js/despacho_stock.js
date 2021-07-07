@@ -382,22 +382,19 @@ function anexoBoletaShow_stuff(data){
 						contenido += "</tr>";
 					}
 					$("#tabla_anexo_bol_prod").find( "tbody" ).html(contenido);
-					$("#tabla_anexo_bol_prod").show();
+					$("#tabla_anexo_bol_productos_mostrar").show();
 				}
 			});
 		}	
 	}
 }
-/*function esconder_anexo_cli(){
-	$( "#tabla_cliente_fill_anexo" ).hide();
-}*/
+
 function esconder_anexo_bol_productos(){
-	$("#tabla_anexo_bol_prod").hide();
+	$("#tabla_anexo_bol_productos_mostrar").hide();
 }
 function esconder_todo_div_anexo_cli(){
 	$("#tabla_anexo_cli").hide();
 }
-//setTimeout(esconder_anexo_cli, 40);
 setTimeout(esconder_todo_div_anexo_cli, 40);
 
 setTimeout(esconder_anexo_bol_productos, 40);
