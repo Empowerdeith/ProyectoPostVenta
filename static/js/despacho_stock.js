@@ -208,7 +208,7 @@ function agregar_cantidad_a_stock_prod(){
 		.then(response => response.json())
 		.then(result => {
 			swal({
-				title: "La cantidad del producto:\n"+result.nombre_pro+"\n con id: "+id_prod_despacho_stock1+", \nha sido exitosamente cambiada a: "+cantidad_despacho_stock1+".",
+				title: "La cantidad del producto:\n"+result.nombre_pro+",\nha sido exitosamente cambiada a: "+cantidad_despacho_stock1+".",
 				icon: "success"
 			});
 		})
