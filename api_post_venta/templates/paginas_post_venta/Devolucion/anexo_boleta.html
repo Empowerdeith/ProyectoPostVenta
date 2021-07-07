@@ -6,14 +6,14 @@
 	<h1 class="aligncenter decoracion_linea text-white">Gestión Anexo Boleta.</h1>
 	<br><br><br>
 	<div class="search-bar mt-sm-2">
-		<input type="text" class="form-control tamfuente22" name="q" id="id_buscar5" placeholder="Escriba el Rut de la petición a buscar...">
-		<button class="btn btn-lg btn-primary btn-block" id="bton_buscar3" onclick="revision_search()" type="button">Buscar</button>
-		<div id="error_msg5" class="aligncenter text-white"></div>
+		<input type="text" class="form-control tamfuente22" name="q" id="id_buscar20" placeholder="Escriba el Rut de la petición a buscar...">
+		<button class="btn btn-lg btn-primary btn-block" id="bton_buscar3" onclick="anexoBoletaSearch()" type="button">Buscar</button>
+		<div id="error_msg10" class="aligncenter text-white"></div>
 		<br><br>
 		<div id="tabla_revision_cli">
 			<h2 class="text-white">Datos del Cliente:</h2>
 			<br>
-			<table class="table table-striped dt-responsive nowrap table-bordered" id="tabla_cliente">
+			<table class="table table-striped dt-responsive nowrap table-bordered" id="tabla_cliente_fill_anexo">
 					<thead>
 						<tr>
 							<th scope="col">Rut</th>
@@ -27,11 +27,11 @@
 					</tbody>
 			</table>
 			<br>
-			<div id="error_msg2" class="aligncenter"></div>
+			<div id="error_msg11" class="aligncenter"></div>
 			<div id="tabla_Boletas_cd">
 				<h2 class="text-white">Boletas:</h2>
 				<br>
-				<table class="table table-striped dt-responsive nowrap table-bordered" id="tabla_revision_boleta">
+				<table class="table table-striped dt-responsive nowrap table-bordered" id="tabla_anexo_boleta_stuff">
 					<thead>
 						<tr>
 							<th scope="col">Mostrar Productos</th>
@@ -49,7 +49,7 @@
 			<div id="tabla_revision_productos_mostrar">
 				<h2 class="text-white">Productos de Boleta en proceso de devolución:</h2>
 				<br>
-				<table class="table table-striped dt-responsive nowrap table-bordered" id="tabla_revision_prod">
+				<table class="table table-striped dt-responsive nowrap table-bordered" id="tabla_anexo_bol_prod">
 					<thead>
 						<tr>
 							<th scope="col">Producto</th>

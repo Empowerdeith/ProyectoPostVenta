@@ -311,3 +311,81 @@ function limpiar_anexus_boletus(){
 	$('#total_dev12').val("");
 	$('#monto_dev12').val("");
 }
+function anexoBoletaSearch(){
+	var buscar10 = $('#id_buscar20').val().toString();
+	if(!buscar10.isEmpty()){
+		let url="http://18.207.25.202/api/cl2/"+buscar10
+		fetch(url)
+		.then(response => response.json())
+		.then(data => anexoBoletaShow_stuff(data))
+		.catch(error => console.log(error))
+		//$("#tabla_revision_prod").find("tbody").empty();
+		//esconder_prod_revision();
+	}
+	else{
+		$("#error_msg10").html("<br><br>Debe ingresar un número de transacción.");
+	}
+}
+function anexoBoletaShow_stuff(data){
+	console.log(data);
+	if (data == "No existe cliente."){
+		//esconder_revision();
+		$("#error_msg10").html("<br><br>No Existe el cliente ingresado.");
+	}
+	else{
+		$("#error_msg10").html("");
+		//$( "#tabla_revision_cli" ).show();
+		var bloc = "";
+		bloc +="<tr><td>" + data.rut + "</td>";
+		bloc +="<td>" + data.nombre_cl + "</td>"
+		bloc +="<td>" + data.num_telf + "</td>";
+		bloc +="<td>" + data.email + "</td>";
+		bloc +="<td>" + data.direccion + "</td></tr>";
+		var bol_fill ="";
+
+		for(let i = 0; i < data.boletas.length; i++){
+			bol_fill += "<tr><td><input id=\""+i+"\" type=\"checkbox\" name=\"boleta_rev\" >"+"</td>";
+			bol_fill += "<td>" + data.boletas[i].num_boleta + "</td>";
+			$("#tabla_cliente_fill_anexo").find( "tbody" ).html(bloc);
+			//---------Sección fechas---------------------------------
+			var fecha_obtenida = new Date(data.boletas[i].created_at);
+			var dia = fecha_obtenida.getDate();
+			var mes = fecha_obtenida.getMonth()+1;
+			var annio = fecha_obtenida.getFullYear();
+			//-------------------------------------------------------
+			var  dineros = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
+			bol_fill += "<td>" + dia+"/"+mes+"/"+annio + "</td>";
+			bol_fill += "<td>" + dineros.format(data.boletas[i].total) + "</td>";
+			bol_fill += "<td>" + dineros.format(data.boletas[i].total_dev) + "</td>";
+			bol_fill += "<td>" + dineros.format(data.boletas[i].monto_dev) + "</td>";
+			bol_fill += "</tr>";
+		}
+		$("#tabla_anexo_boleta_stuff").find( "tbody" ).html(bol_fill);
+		mostrar_correspondientes_prod(data);
+		function mostrar_correspondientes_prod(){
+			var id_rev;
+			$('input[type="checkbox"]').on('change', function() {$('input[name="boleta_rev"]').not(this).prop('checked', false);});
+			$('input[type="checkbox"][name="boleta_rev"]').click(function(){
+				if($(this).prop("checked") == true) {
+					var contenido = "";
+					id_rev = parseInt($(this).attr('id'));
+					for(let j = 0; j < data.boletas[id_rev].ItemProductos.length; j++){
+						var cantidad, precio_pro, nombre;
+						nombre_producto = data.boletas[id_rev].ItemProductos[j].productos.nombre_pro;
+						cantidad = data.boletas[id_rev].ItemProductos[j].cantidad;
+						precio_pro = data.boletas[id_rev].ItemProductos[j].productos.precio;
+						var  monea = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
+						//Llenado tabla de productos
+						contenido += "<tr><td>" + nombre_producto + "</td>";
+						contenido += "<td>" + monea.format(precio_pro) + "</td>";
+						contenido += "<td>" + cantidad + "</td>";
+						contenido += "</tr>";
+					}
+					$("#tabla_anexo_bol_prod").find( "tbody" ).html(contenido);
+					//$("#tabla_revision_productos_mostrar").show();
+				}
+			});
+		}
+		
+	}
+}
