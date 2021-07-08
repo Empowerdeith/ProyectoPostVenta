@@ -1,15 +1,17 @@
-function hide_table() {
-  $( "#myData" ).hide();
+
+function hide_table3() {
+  $( "#myData3" ).hide();
 }
-setTimeout(hide_table, 40);
+setTimeout(hide_table3, 40);
+//Todo esto es despacho
 function mostrarOrden(data){
 	if (data == "No existe la orden de retiro ingresada."){
-		hide_table()
+		hide_table3()
 		$("#error_msg7").html("<br><br>"+data);
 	}
 	else{
 		$("#error_msg7").html("");
-		$( "#myData" ).show();
+		$( "#myData3" ).show();
 		var num_solicitud = $("#num_solicitud");
 		var nombre_cl = $("#nombre_cl");
 		var fecha_ingreso = $("#fecha_ingreso");
@@ -41,7 +43,7 @@ Object.prototype.isEmpty = function () {
     return Object.keys(this).length == 0;
 }
 function prueba_g(){
-	var buscar1 = $('#id_buscar').val().toString();
+	var buscar1 = $('#id_buscar3').val().toString();
 	// console.log(buscar1);
 	if(!buscar1.isEmpty()){
 		let url="http://3.88.62.216/orden_g/"+buscar1
@@ -51,15 +53,16 @@ function prueba_g(){
 		.catch(error => console.log(error))
 	}
 	else{
-		hide_table()
+		hide_table3()
 		$("#error_msg7").html("<br><br>Debe ingresar un número de orden.");
 	}
 }
-
+//Todo Stock
 function hide_table2() {
     $( "#myData2" ).hide();
 }
 setTimeout(hide_table2, 40);
+
 function mostrarProducto(data){
 	if (data == "No existe producto."){
 	  hide_table2()
