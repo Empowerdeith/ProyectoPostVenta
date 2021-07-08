@@ -61,7 +61,7 @@ function hide_table2() {
 }
 setTimeout(hide_table2, 40);
 function mostrarProducto(data){
-	if (data == "No existe la producto ingresada."){
+	if (data == "No existe producto."){
 	  hide_table2()
 	  $("#error_msg8").html("<br><br>"+data);
 	}
