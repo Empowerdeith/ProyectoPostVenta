@@ -3,7 +3,7 @@ function hide_table() {
 }
 setTimeout(hide_table, 40);
 function mostrarOrden(data){
-	if (data == "No existe la orden ingresada."){
+	if (data == "No existe la orden de retiro ingresada."){
 		hide_table()
 		$("#error_msg7").html("<br><br>"+data);
 	}
